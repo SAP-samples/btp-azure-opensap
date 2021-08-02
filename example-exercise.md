@@ -1,8 +1,8 @@
+This exercise is part of the openSAP course [Building applications on SAP Business Technology Platform with Microsoft services](https://open.sap.com/courses/btpma1) - there you will find more information and context. 
+
 # Unit-Titel
 
 Describe in a nutshell what the functional aspsect of this unit is in 3-4 words. Remember: Users may have no idea what they are going to do or what services they'll use. It's potentially their first time touching the service at all. This will also be the teaser text for the exercise page on openSAP. Additionally, tell them what they need to have to finish the exercise. (services/tools)
-
-This exercise is part of the openSAP course [Building applications on SAP Business Technology Platform with Microsoft services](https://open.sap.com/courses/btpma1) - there you will find more information and context. 
 
 Example: 
 TODO Link to Haruts exercise
