@@ -17,7 +17,7 @@ Split up the scenario in consumable bits & pieces before you cut them into singl
 
 **Remember:** Users DO(!) struggle with particular steps in this exercises. Make it easy for them to tell in the openSAP forum where they might be stuck. Do not combine multiple steps in a single step otherwise the explanation of the users may look like: "hey, the reply of the command in step1.1 for the third click is ...". compared to: "Hey, step1.1 doesn't work". 
 
-1.1) Sign up on sap.com
+1.1) Sign up on sap.com 
      [Screenshot]
 1.2) login with your credentials
      [Screenshot]
