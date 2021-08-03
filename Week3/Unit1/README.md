@@ -29,11 +29,11 @@ As the booster completes, your subaccount will be ready to start building using 
    
 1.1.  Go to your SAP BTP trial account and go to **Boosters** section. Find the **"Set up account for Workflow Management"** booster and open it.
 
-    ![Boosters](./images/boosterstart.png)
+![Boosters](./images/boosterstart.png)
 
 1.2. Get overview which Services and Subscriptions are part of this booster and start the booster
 
-    ![Booster Overview](./images/boosteroverview.png)
+![Booster Overview](./images/boosteroverview.png)
 
 1.3. Booster will start executing following tasks:
    * Assigning Service Quotas
@@ -44,7 +44,7 @@ As the booster completes, your subaccount will be ready to start building using 
    
    After finishing all the tasks you will see a success message.
 
-    ![Booster Execution](./images/boosterexecution.png)
+![Booster Execution](./images/boosterexecution.png)
 
 1.4. After successful execution you can navigate to **Instances and Subscriptions** of your subaccount and find
    * Application Subscriptions to **SAP Business Application Studio** and **Workflow Management**
@@ -54,35 +54,35 @@ As the booster completes, your subaccount will be ready to start building using 
 
 1.5. After booster execution you can also find all the required roles assigned to your user, so no manual assignment is necessary.
    
-    ![Workflow Roles](./images/workflowroles.png)
+   ![Workflow Roles](./images/workflowroles.png)
 
 1.6. In upcoming Units we will use workflow APIs and for that we need to add the required authorization scopes to the services instance. Using the "Instances and Subscriptions" menu item on the left, update the *wm_workflow* service instance by using the "Update" button and following the dialog flow, paying attention at each of the steps:
 
-    ![Update WF Service instance](./images/wf_update_service_instance.png)
+![Update WF Service instance](./images/wf_update_service_instance.png)
 
-      - Step "Basic info": make sure that you don't change the name
-      - Step "Parameters": specify the following authorization scopes in the text area:
+- Step "Basic info": make sure that you don't change the name
+- Step "Parameters": specify the following authorization scopes in the text area:
 
-      	```
-          {
-      	    "authorities": [
-      	      "TASK_COMPLETE",
-      	      "WORKFLOW_DEFINITION_DEPLOY",
-      	      "TASK_GET_CONTEXT",
-      	      "TASK_UPDATE",
-      	      "TASK_GET_FORM_MODEL",
-      	      "TASK_GET_FORM",
-      	      "TASK_GET",
-      	      "TASK_GET_ATTRIBUTES",
-      	      "PROCESS_TEMPLATE_DEPLOY",
-      	      "PROCESS_VARIANT_DEPLOY",
-      	      "TASK_GET_ATTACHMENTS",
-      	      "WORKFLOW_INSTANCE_START"
-              ]
-      	}
-          ```
+    ```
+        {
+        "authorities": [
+            "TASK_COMPLETE",
+            "WORKFLOW_DEFINITION_DEPLOY",
+            "TASK_GET_CONTEXT",
+            "TASK_UPDATE",
+            "TASK_GET_FORM_MODEL",
+            "TASK_GET_FORM",
+            "TASK_GET",
+            "TASK_GET_ATTRIBUTES",
+            "PROCESS_TEMPLATE_DEPLOY",
+            "PROCESS_VARIANT_DEPLOY",
+            "TASK_GET_ATTACHMENTS",
+            "WORKFLOW_INSTANCE_START"
+            ]
+    }
+    ```
 
-        ![Update WF Service instance](./images/wf_update_scopes.png)
+![Update WF Service instance](./images/wf_update_scopes.png)
 
 > The authorities you specified in the "Parameters" step will be needed in a later unit, when you come to call the Workflow API.
 
@@ -91,11 +91,11 @@ As the booster completes, your subaccount will be ready to start building using 
 
 2.1. Open BTP cockpit and navigated to **Instances and Subscriptions** inside your trial subaccount. Find **"SAP Business Application Studio"** within Application Subscriptions and launch it either from launch icon or "..." --> "Go to Application"
    
-   ![Start Business Application Studio](./images/bas_launch.png)
+![Start Business Application Studio](./images/bas_launch.png)
    
 2.2. Create a new development Space 
    
-    ![Create Dev Space](./images/bas_create_space.png)
+![Create Dev Space](./images/bas_create_space.png)
     
 2.3. Select Following Extensions to enable them in the development space:
     * Java Tools - For developing and running Java Apps

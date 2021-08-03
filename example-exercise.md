@@ -5,7 +5,7 @@ This exercise is part of the openSAP course [Building applications on SAP Busine
 Describe in a nutshell what the functional aspsect of this unit is in 3-4 words. Remember: Users may have no idea what they are going to do or what services they'll use. It's potentially their first time touching the service at all. This will also be the teaser text for the exercise page on openSAP. Additionally, tell them what they need to have to finish the exercise. (services/tools)
 
 Example: 
-TODO Link to Haruts exercise
+[Week3 Unit1 - Title](Week3/Unit1/README.md#Step-1---Set-up-your-trial-account-for-SAP-Workflow-Management)
 
 ## Problems
 > If you have any issues with the exercises, don't hesitate to open a question in the openSAP Discussion forum for this course. Provide the exact step number: "Week3Unit1, Step 1.1: Command cannot be executed. My expected result was [...], my actual result was [...]". Logs, etc. are always highly appreciated. 
@@ -28,11 +28,11 @@ Split up the scenario in consumable bits & pieces before you cut them into singl
      [Screenshot]
 1.3. ...
    
-TODO: Link to Haruts exercise
+[Week3 Unit1 - Step 1](Week3/Unit1/README.md#Setting-up-for-Workflow-Management-on-SAP-Business-Technology-Platform)
 
 ## Step 2 - Here's a sub-scenario title (e.g. "Configure Business Application Studio for development")
 
-TODO: Link to Haruts exercise
+[Week3 Unit1 - Step 2](Week3/Unit1/README.md#Step-2---Configure-Business-Application-Studio-for-development)
 
 ## Summary
 
