@@ -8,8 +8,8 @@ Example:
 TODO Link to Haruts exercise
 
 ## Problems
-> If you have any issues with the exercises, don't hesitate to open a question in the openSAP discussion forum for this course. Provide the exact step number: "Week3Unit1, Step 1.1: Command cannot be executed. My expected result was [...], my actual result was [...]". Logs, etc. are always highly appreciated. 
-> TODO: screenshot openSAP page einfügen
+> If you have any issues with the exercises, don't hesitate to open a question in the openSAP Discussion forum for this course. Provide the exact step number: "Week3Unit1, Step 1.1: Command cannot be executed. My expected result was [...], my actual result was [...]". Logs, etc. are always highly appreciated. 
+ ![OpenSAP Discussion](./images/opensap-forum.png)
 
 ## Step 1 - Here's a sub-scenario title (e.g. "Setting up BTP Trial")
 
@@ -19,14 +19,14 @@ Split up the scenario in consumable bits & pieces before you cut them into singl
 
 **Remember:** Users DO(!) struggle with particular steps in this exercises. Make it easy for them to tell in the openSAP forum where they might be stuck. Do not combine multiple steps in a single step otherwise the explanation of the users may look like: "hey, the reply of the command in step1.1 for the third click is ...". compared to: "Hey, step1.1 doesn't work". 
 
-1.1) Sign up on sap.com 
+1.1. Sign up on sap.com 
 
      [Screenshot]
 
-1.2) login with your credentials
+1.2. login with your credentials
 
      [Screenshot]
-1.3) ...
+1.3. ...
    
 TODO: Link to Haruts exercise
 
