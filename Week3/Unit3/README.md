@@ -11,7 +11,7 @@ Extend the exercise with SAP workflow to SAP Conversational AI to learn how to c
 
 ## Step 1 - Create Leave Request Chatbot with SAP Conversational AI
 
-1. Create SAP Conversational AI account
+1.1. Create SAP Conversational AI account
 
     Go to  [SAP Conversational AI](https://cai.tools.sap/) and click Sign Up in the upper-right corner.
     > Use your BTP Account User/E-Mail to simplify the Identity authentication for later steps
@@ -22,7 +22,7 @@ Extend the exercise with SAP workflow to SAP Conversational AI to learn how to c
 
     You will get an email with a link to validate your account.
 
-2. Fork following [LeaveRequest](https://cai.tools.sap/maximilianstreifeneder/leaverequest/train/intents) bot into your account
+1.2. Fork following [LeaveRequest](https://cai.tools.sap/maximilianstreifeneder/leaverequest/train/intents) bot into your account
    
    ![CAI Fork LeaveRequest](./images/cai_fork.png)
 
@@ -30,7 +30,7 @@ Extend the exercise with SAP workflow to SAP Conversational AI to learn how to c
 
    ![CAI Fork LeaveRequest](./images/cai_after_fork.png)
 
-3. Understand the 4 stages of a bot's life
+1.3. Understand the 4 stages of a bot's life
    
    The 4 phases are represented in the bot project by the 4 tabs.
    
@@ -67,7 +67,7 @@ Extend the exercise with SAP workflow to SAP Conversational AI to learn how to c
 
 ## Step 2 - Configure the Action to trigger Leave Request workflow
 
-1. Go to the Bot Builder tab of CAI and open **leave-request** skill
+2.1. Go to the Bot Builder tab of CAI and open **leave-request** skill
     
     ![CAI Leave Request skill](./images/cai_build_lr.png)
 
@@ -80,15 +80,15 @@ Extend the exercise with SAP workflow to SAP Conversational AI to learn how to c
    
    ![CAI Leave Request skill](./images/cai_skill.png)
 
-2. Go to **Actions** to configure the workflow API request
+2.2. Go to **Actions** to configure the workflow API request
    
    ![CAI Leave Request action](./images/cai_actions.png)
 
-3. Find the **API Service Configuration** and edit it
+2.3. Find the **API Service Configuration** and edit it
    
    ![CAI API config](./images/cai_api_edit.png)
    
-4. Update the request URL and Authentication credentials
+2.4. Update the request URL and Authentication credentials
    
     ```
     Request URL =  workflow_rest_url + "/v1/workflow-instances" 
@@ -100,7 +100,7 @@ Extend the exercise with SAP workflow to SAP Conversational AI to learn how to c
     ```
     The parameters **workflow_rest_url, uaa.url, uaa.clientid and uaa.clientsecret** you can get from workflow service instance by BTP cockpit or CLI
 
-5. Get the parameters required for previous step
+2.5. Get the parameters required for previous step
    
    Go to BTP cockpit and navigate to **"Instances and Subscriptions"**. Find the Workflow service instance **"wm_workflow"** and click on credentials 
 
@@ -111,30 +111,34 @@ Extend the exercise with SAP workflow to SAP Conversational AI to learn how to c
     ![CAI WF credentials](./images/cai_wf_credentials_1.png)
     ![CAI WF credentials](./images/cai_wf_credentials_2.png)
     
-5. After updating API, save the API configuration
+2.5. After updating API, save the API configuration
    
    ![CAI API config save](./images/cai_api_config_save.png)
 
    Now the leave request bot is ready and we can test it in next Step
 ## Step 3 - Test the Leave Request by chatting with bot
 
-1. You can open Chat Preview and start conversation with the bot.
+3.1. You can open Chat Preview and start conversation with the bot.
    
    ![CAI chat preview](./images/cai_chat_preview.png)
 
-2. Sample conversation
+3.2. Sample conversation
    
    ![CAI chat conversation](./images/cai_chat.png)
 
-3. Check the triggered workflow in My Inbox
+3.3. Check the triggered workflow in My Inbox
 
    Go to Workflow Management launchpad and open My Inbox application
 
     ![WF My Inbox](./images/wf_myinbox.png)
 
-4. You will find here the leave request triggered by Conversational AI
+3.4. You will find here the leave request triggered by Conversational AI
    
    ![CAI WF request](./images/cai_wf_request.png)
+
+## Step 4 - Connect with Azure Bot and Microsoft Teams
+
+TODO: step 4   
    
 TODO: Troubleshooting   
 
