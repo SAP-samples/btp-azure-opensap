@@ -14,210 +14,14 @@ From a service perspective, you'll be using a number of SAP BTP and Microsoft se
 > If you have any issues with the exercises, don't hesitate to open a question in the openSAP Discussion forum for this course. Provide the exact step number: "Week2Unit1, Step 1.1: Command cannot be executed. My expected result was [...], my actual result was [...]". Logs, etc. are always highly appreciated. 
  ![OpenSAP Discussion](./images/opensap-forum.png)
 
-## Step 1 - "Setting up BTP Trial"
 
-[Week2 Unit1 - Step 1](Week2/Unit1/README.md#Lorem-Ipsum)
-
-
-### 1.1. Log into the SAP website 
-
-Visit [SAP Log On Screen](https://www.sap.com) and click the Log On icon in the upper-right corner.
-
-![SAP Log On](./images/trial_saplogon.png)
-
-If you have an account on www.sap.com (e.g. a P, S, C, D or I number) you can enter it or the associated email along with your password. If you don’t have an account yet, you can select one of the other login methods or click Register to create an account.
-
-![SAP Log On Screen](./images/trial_logonscreen.png)
-
-If you don’t need to register with sap.com, you can skip to Step 1.4. 
-
-### 1.2. Register at sap.com
-
-If you don’t have an account you will see a register dialog on the left-hand side of the dialog. Fill in the required fields, and click Submit.
-
-![SAP Registration](./images/trial_registration.png)
-
-You will see a message that an activation link has been sent to you.
-
-### 1.3. Activate your account
-
-Check your emails to find the activation button **Click to activate your account**.
-
-![Email Validation](./images/trial_emailvalidation.png)
-
-You will see a success message after activating your account.
-
-### 1.4. Log on to SAP BTP Trial
-
-After activation, or if you already had an SAP account, go to the [SAP BTP Trial page](https://https://account.hanatrial.ondemand.com/) and click **Log On**.
-
-You will see an dialog to confirm the terms and condition for the SAP BTP Trial. **Check the check boxes** and click **Accept**. This simply adds the SAP.com registration to your login account on SAP Cloud Identity.
-
-### 1.5. Verify your phone number
-
-You will see an screen, asking you to verify your account with a valid phone number. 
-
-![Phone Verification](./images/trial_phoneverification.png)
-
-Enter your phone number and click **New Code** to retrieve a code. Please enter this code and click **Continue** to verify your account. After the verification, you will be logged off automatically.
-
-### 1.6. Access the welcome screen
-
-Click on Log on to log on to your verified account.
-
-You will see one main button on the welcome screen of the SAP BTP Cockpit. Click on Enter Your Trial Account to navigate to your global account.
-
-![Trial Landingpage](./images/trial_landingpage.png)
-
-> Bookmark the link for fast and quick access to the cockpit.
-
-### 1.7. Navigate to the subaccount
-
-Here, you can now create a subaccount that lives in a geographic region. Choose any region from this list and click Create Account to trigger the provisioning process.
-
-![Trial Region](./images/trial_chooseregion.png)
-
-You will then see a dialog box while the account is set up. When complete, click **Continue** to close to popup and to navigate to the new account.
-
-The global trial account contains **one** subaccount and space. Navigate to subaccount by clicking on the tile named **trial** (this name may vary if you created the subaccount manually).
-
-![Trial Global Account](./images/trial_globalaccount.png)
-
-This page will display the current state of the subaccount. You can manage your subscriptions and jump into the different runtime environments. It also shows you fundamental; information of the Cloud Foundry environment, such as the API endpoint and the available spaces.
-
-![Trial Subaccount](./images/trial_globalaccount.png)
-
-
-## Step 2 - Subscribe to Integration Suite SaaS
-
-[Week2 Unit1 - Step 2](Week1/Unit1/README.md#Step-2---Lorem-Ipsum)
-
-### 2.1. Subscribe to the Integration Suite SaaS
-
-In your BTP Trial account go to **"Services" -> "Service Marketplace"**. Search for **Integration** and select the **Integration Suite** from the search results. 
-
-![Integration Suite](./images/iss_001.png)
-
-
-Click on **Create** on the right side of your screen. 
-
-![Integration Suite](./images/iss_002.png)
-
-
-In the popup, select the service plan **trial** for the service type **Integration Suite** and click on **Create**.
-
-![Integration Suite](./images/iss_003.png)
-
-### 2.2. Check the Integration Suite SaaS subscription status
-
-Your request for a new subscription is submitted and you can watch the status by clicking on **View Subscriptions**.
-
-![Integration Suite](./images/iss_004.png)
-
-
-Check your **Integration Suite** subscription in the **Instances and Subscriptions** menu. Once the status changes to **Subscribed**, the Integration Suite instance is ready to be used. 
-
-![Integration Suite](./images/iss_005.png)
-
-
-## Step 3 - Create a Micrsoft SharePoint site
+## Step 1 - Create a Micrsoft SharePoint site
 
 [Week2 Unit1 - Step 3](Week2/Unit1/README.md#Step-3---Lorem-Ipsum)
 
-### 3.1. Create a Microsoft Developer Account
+### 1.1. Create your first SharePoint site
 
-Go to [Microsoft 365 Dev Center](https://developer.microsoft.com/en-us/microsoft-365/dev-program) and click on **Join now** to create a new account.
-
-![Microsoft SharePoint](./images/mss_0010.png)
-
-
-Enter an mail address of your choice and click on **Next**.
-
-![Microsoft SharePoint](./images/mss_0020.png)
-
-
-Enter a password of your choice and click on **Next**.
-
-![Microsoft SharePoint](./images/mss_0030.png)
-
-
-Select your country/region, enter your birthdate click on **Next**.
-
-![Microsoft SharePoint](./images/mss_0040.png)
-
-
-You should have received a confirmation mail for the mail you recently provided. Within this mail you can find a security code. Copy this security code for the next step of the process. 
-
-![Microsoft SharePoint](./images/mss_0050.png)
-
-
-Paste the copied security code into the respective field, to verify your mail address. Then click on **Next**. 
-
-![Microsoft SharePoint](./images/mss_0060.png)
-
-
-You might be asked to solve a challenge like a puzzle, to verify you're not a robot. Click on **Next** to proceed with the next step afterwards. 
-
-![Microsoft SharePoint](./images/mss_0080.png)
-
-
-### 3.2. Provide details for the Microsoft Developer Program
-
-After creating your Microsoft profile, you have to provide some further information to join the Microsoft 365 Developer program. Select you country/region, enter a company name and decide your preferred language. Accept the T&Cs and click on **Next** afterwards.
-
-![Microsoft SharePoint](./images/mss_0090.png)
-
-
-Decide for the primary purpose of using the respective Developer program subscription. Click on **Next**.
-
-![Microsoft SharePoint](./images/mss_0100.png)
-
-
-Select the areas of Microsoft 365 development, which you're personally most interested in (e.g. SharePoint Framework). Click on **Save** to finish the process.
-
-![Microsoft SharePoint](./images/mss_0110.png)
-
-
-You will see a message, that you successfully joined the Microsoft 365 Developer Program. You can close this message to see your profile page.
-
-![Microsoft SharePoint](./images/mss_0120.png)
-
-You have successfully joined the Microsoft 365 Developer Program. 
-
-
-### 3.2. Add a Microsoft 365 E5 subscription to your Developer account
-
-You can now add a free Microsoft 365 E5 subscription to your account, which allows you to work with latest Microsoft 365 apps like **SharePoint** and **Azure AD**. To do so, click on **Set up E5 subscription**.
-
-![Microsoft SharePoint](./images/mss_0130.png)
-
-
-Enter a username and decide for a domain. This is required to setup your subscription and a subdomain will be created in the **\<domain>.onmicrosoft.com** environment. Decide for a password and click on **Continue**.
-
-![Microsoft SharePoint](./images/mss_0140.png)
-
-
-You have to provide a phone number in the following screen, which will be verified by an SMS which is sent you, once you click on **Send Code**. Make sure, that you provide your phone number **without the country code and without a leading 0**.
-
-![Microsoft SharePoint](./images/mss_0150.png)
-
-
-Enter the code which you received via SMS, to verify your phone number. Click on **Set up** afterwards.
-
-![Microsoft SharePoint](./images/mss_0160.png)
-
-
-Your Microsoft 365 E5 subscription will be set up. 
-
-![Microsoft SharePoint](./images/mss_0170.png)
-
-
-Once the subscription is set up, you will see your profile, showing the remaining days of the subscription. You have successfully added the required Microsoft 365 E5 subscription to your Developer account.
-
-
-### 3.3. Create your first SharePoint site
-
-To create your first SharePoint site, now click on **Go to subscription**. 
+To create your first SharePoint site go to your [Microsoft 365 DEV Center](https://developer.microsoft.com/en-us/microsoft-365/profile), sign in whith the account you created in Week1 and click on **Go to subscription**. 
 
 ![Microsoft SharePoint](./images/mss_0180.png)
 
@@ -257,7 +61,7 @@ With this a site named **General** will be created for you. You can optionally c
 ![Microsoft SharePoint](./images/mss_0250.png)
 
 
-### 3.4. Add a sample file to your SharePoint site
+### 1.2. Add a sample file to your SharePoint site
 
 To showcase the reading of the documents stored in SharePoint via Open Connectors you can add a sample document named **welcome.docx** which will be used for testing purpose.
 To add a new document, select **Document -> + New** and from the dropdown select **Word document**.
@@ -290,13 +94,13 @@ Rename your document **welcome.docx** and click on **Rename**. The file name wil
 With this a SharePoint team site named General has been successfully created. 
 
 
-## Step 4 - Create an Azure AD app registration
+## Step 2 - Create an Azure AD app registration
 
 [Week2 Unit1 - Step 4](Week2/Unit1/README.md#Step-4---Lorem-Ipsum)
 
 For using the SharePoint connector from Open Connectors capability of SAP Business Technology Platform Integration Suite, you will need an OAuth key and Secret to connect to your SharePoint account. In this step, configurations required to connect to your SharePoint Online account are covered.
 
-### 4.1. Create a new app registration in Azure AD
+### 2.1. Create a new app registration in Azure AD
 
 Logon to your [Azure Portal](https://portal.azure.com/) using your subscription credentials. You defined these, during the set up of your Microsoft 365 E5 subscription (e.g. testuser@demotrial.onmicrosoft.com). In case you own multiple Microsoft accounts, select the respective subscription account. 
 
@@ -320,7 +124,7 @@ In the application registration prompt, enter an application name say SharePoint
 ![Azure AD](./images/aar_0080.png)
 
 
-### 4.2. Add the reuqired app permissions for SharePoint access
+### 2.2. Add the reuqired app permissions for SharePoint access
 
 The registered application by default only has the User.Read permission from Microsoft Graph APIs and you will need to add in the required permission to access SharePoint REST APIs. Select **API permissions** tab and then click on **Add a permission** to add in the permissions for SharePoint REST APIs.
 
@@ -361,7 +165,7 @@ After successful operation, the status will change to Granted for your user.
 ![Azure AD](./images/aar_0180.png)
 
 
-### 4.3. Create an OAuth secret for your app
+### 2.3. Create an OAuth secret for your app
 
 For connecting to your SharePoint from SAP BTP Open Connectors, an OAuth secret is required. To get your OAuth Secret, select **Certificates & secrets** tab, click on **New client secret**.
 
@@ -386,11 +190,11 @@ For connecting to your SharePoint Online account from SAP BTP Open Connectors, a
 You have successfully configured your Azure AD for the usage with SAP Business Technology Platform Open Connectors. 
 
 
-## Step 5 - Configure Integration Suite Open Connectors
+## Step 3 - Configure Integration Suite Open Connectors
 
 [Week2 Unit1 - Step 5](Week2/Unit1/README.md#Step-5---Lorem-Ipsum)
 
-### 5.1. Provision the required Integration Suite components
+### 3.1. Provision the required Integration Suite components
 
 Go to your Business Technolgy Platform trial account [BTP Trial Account](hanatrial.ondemand.com). Click on **Go To Your Trial Account**.
 
@@ -432,7 +236,7 @@ Click on **Finish** to provision your required capabilities.
 ![Open Connectors](./images/ioc_0080.png)
 
 
-### 5.2. Make sure your Integration Suite components are provisioned successfully
+### 3.2. Make sure your Integration Suite components are provisioned successfully
 
 On the following page, you can see the provisioning status of the Integration Suite components. 
 
@@ -444,7 +248,7 @@ Wait until all components are in state **Active**. You might need to refresh you
 ![Open Connectors](./images/ioc_0100.png)
 
 
-### 5.3. Create the required Open Connectors SharePoint connector
+### 3.3. Create the required Open Connectors SharePoint connector
 
 
 Go to your BTP Cockpit and open the Integration Suite once again. 
@@ -497,7 +301,7 @@ Select **Create Instance** to create SharePoint connector instance.
 ![Open Connectors](./images/ioc_0187.png)
 
 
-### 5.3. Test your Open Connectors SharePoint connector instance
+### 3.3. Test your Open Connectors SharePoint connector instance
 
 After the authenticated connection to your Microsoft account has been created successfully, you will be able to test out the connection from SAP BTP Open Connectors. To try out the SharePoint connector APIs, click on the option **Test in the API Docs**.
 
@@ -530,13 +334,13 @@ In the **Curl** subsection, please copy the values in the Authorization header, 
 With this you have successfully created a SharePoint connector instance from Open Connectors capability of SAP Business Technology Platform Integration Suite. You would be able to use this connector instance in Cloud Integration to integrate data from SAP system to SharePoint or build an application connecting to your SharePoint account.
 
 
-## Step 6 - Check out SAP API Business Hub and fetch API Key
+## Step 4 - Check out SAP API Business Hub and fetch API Key
 
 [Week2 Unit1 - Step 6](Week2/Unit1/README.md#Step-6---Lorem-Ipsum)
 
 The SAP API Business Hub is the central catalog of all SAP and partner APIs for developers to build sample apps, extensions and open integrations with SAP. In this tutorial, [Billing Document – Read, Cancel, GetPDF](https://api.sap.com/api/API_BILLING_DOCUMENT_SRV/resource) from SAP S/4HANA Cloud APIs has been used.
 
-### 6.1. Discover the Billing Document API in the SAP API Business Hub
+### 4.1. Discover the Billing Document API in the SAP API Business Hub
 
 To discover and explore SAP S/4HANA Cloud APIs navigate to [SAP API Business Hub](https://api.sap.com).
 
@@ -574,7 +378,7 @@ Enter '9002930' (including the single quotes) into the **BillingDocument** field
 ![API Business Hub](./images/sah_0060.png)
 
 
-### 6.2. Get your SAP API Business Hub API Key
+### 4.2. Get your SAP API Business Hub API Key
 
 Your request should return with a **200** return code. To make use of the sample API within your Cloud Integration flow, you need to retrieve your API key. Therefor, click on **Show API key** on the top right of your screen.
 
@@ -587,11 +391,11 @@ Select **Copy Key and Close** to copy this API Key. This API Key will be used fr
 
 
 
-## Step 7 - Create your SharePoint Integration Flow
+## Step 5 - Create your SharePoint Integration Flow
 
 [Week2 Unit1 - Step 7](Week2/Unit1/README.md#Step-7---Lorem-Ipsum)
 
-### 7.1. Check your authorization to use the Cloud Integration tool
+### 5.1. Check your authorization to use the Cloud Integration tool
 
 Go to your Business Technolgy Platform trial account [BTP Trial Account](hanatrial.ondemand.com). Click on **Go To Your Trial Account**.
 
@@ -618,7 +422,7 @@ In case you see the following error message, you're missing the required privile
 ![Cloud Integration](./images/cif_0040.png)
 
 
-### 7.2. Assign the required privileges
+### 5.2. Assign the required privileges
 
 Go back to the BTP Cockpit browser tab and select the **Security** menu. Go to **Users** and select your user. 
 
@@ -635,7 +439,7 @@ Search for **PI_Integration_Developer** and add the respective role from the sea
 ![Cloud Integration](./images/cif_0070.png)
 
 
-### 7.3. Validate the assigned Cloud Integration developer privileges 
+### 5.3. Validate the assigned Cloud Integration developer privileges 
 
 Go back to the Integration Suite browser tab, and make sure that the new Role Collection is applied to your session, by selecting **Logout** from the user's menu. 
 
@@ -653,7 +457,7 @@ You should now be able to open the **Design, Develop and Operate Integrate Scena
 
 
 
-### 7.3. Create your SharePoint Integration Flow 
+### 5.3. Create your SharePoint Integration Flow 
 
 Once you opened the Cloud Integration tool, you can close the **What's New?** popup and start working on your first integration flow. 
 
@@ -694,7 +498,7 @@ Select the newly created Integration Flow named **Post Billing Document to Share
 ![Cloud Integration](./images/cif_0180.png)
 
 
-### 7.4. Define a Start object for your integration flow
+### 5.4. Define a Start object for your integration flow
 
 Since a timer-based integration flow will be used the default start message can be deleted. Select the default start message and select **Delete**.
 
@@ -706,7 +510,7 @@ Select and add the Timer integration step. The default property of timer integra
 ![Cloud Integration](./images/cif_0200.png)
 
 
-### 7.5. Add a Content Modifier to provided S/4HANA Cloud API properties
+### 5.5. Add a Content Modifier to provided S/4HANA Cloud API properties
 
 To set values like API key and the billing document id to read data from SAP S/4HANA Cloud API Sandbox from SAP API Business Hub, a Content Modifier can be used. Select the **Content Modifier** integration step from the integration palette and drop it into the Integration Process canvas.
 
@@ -736,7 +540,7 @@ Select the **Exchange Property** tab and click on **Add**. From the action dropd
 ![Cloud Integration](./images/cif_0280.png)
 
 
-### 7.6. Add a Request Reply object to allow a call to the S/4HANA Cloud API
+### 5.6. Add a Request Reply object to allow a call to the S/4HANA Cloud API
 
 To read the billing document in PDF format, the [Request Reply](https://blogs.sap.com/2015/01/05/blog-2-request-reply-pattern-in-integration-flows-hci-pi/) integration pattern with a HTTP Receiver adapter can be used. Select **Request Reply** from External Call integration palette and drop it into Integration Process canvas.
 
@@ -756,7 +560,7 @@ Select and connect the **Initialize S4HC Value** integration step with the **Fet
 
 
 
-### 7.7. Add a Receiver object reflecting your S/4HANA Cloud system and configure the HTTP API call
+### 5.7. Add a Receiver object reflecting your S/4HANA Cloud system and configure the HTTP API call
 
 Add an **Receiver** integration step to invoke the SAP S/4HANA Cloud OData API.
 
@@ -796,7 +600,7 @@ Extend the size of your **Integration Process** area by moving the **End** butto
 ![Cloud Integration](./images/cif_0400.png)
 
 
-### 7.8. Add a filter object to process the API response
+### 5.8. Add a filter object to process the API response
 
 The **GetPDF service operation** of the SAP S/4HANA Cloud ODataAPI, returns the PDF document in the base64 encoded format.
 Add a Filter step to read this file content with XPath expression.
@@ -819,7 +623,7 @@ Select and connect Fetch Billing Document to Read File Data integration step.
 ![Cloud Integration](./images/cif_0440.png)
 
 
-### 7.9. Configure your Integration Flow XML namespace property
+### 5.9. Configure your Integration Flow XML namespace property
 
 Since the XPath Expression uses XML namespaces, this namespace needs to be defined or declared at the Integration flow.
 To declare the namespace, click anywhere within your integration flow. This allows you to configure the Integration flow settings at the bottom of your page.
@@ -833,7 +637,7 @@ Enter **xmlns:d=http://schemas.microsoft.com/ado/2007/08/dataservices** in the n
 ![Cloud Integration](./images/cif_0460.png)
 
 
-### 7.10. Convert your S/4HANA Cloud document to a multipart form request
+### 5.10. Convert your S/4HANA Cloud document to a multipart form request
 
 The SharePoint connector of Open Connectors requires the file content to be passed as a [multipart form request](https://www.ietf.org/rfc/rfc2388.txt). To create the required multipart form request a Groovy Script is leveraged.
 
@@ -932,7 +736,7 @@ Select and connect the **Read File Data** to the **Convert to File Format** inte
 ![Cloud Integration](./images/cif_0530.png)
 
 
-### 7.11. Add the required request parameters to call your Open Connectors SharePoint API
+### 5.11. Add the required request parameters to call your Open Connectors SharePoint API
 
 Add a **Content Modifier** step, to initialize the SharePoint connector instance authorization token and the SharePoint team site, where the document will be posted.
 
@@ -959,7 +763,7 @@ Select and connect the **Convert to File Format** and **Initialize SP Values** i
 ![Cloud Integration](./images/cif_0600.png)
 
 
-### 7.12. Add a Request Reply to allow the usage of the Open Connectors SharePoint API 
+### 5.12. Add a Request Reply to allow the usage of the Open Connectors SharePoint API 
 
 To post a file document to SharePoint via Open Connectors an HTTP Receiver adapter can be used. Select the **Request Reply** from the **External Call** integration palette and drop it into the Integration Process canvas.
 
@@ -978,7 +782,7 @@ Select and connect the **Initialize SP Values** and **Post File to SharePoint** 
 ![Cloud Integration](./images/cif_0650.png)
 
 
-### 7.13. Add a Receiver object reflecting your Open Connectors SharePoint API
+### 5.13. Add a Receiver object reflecting your Open Connectors SharePoint API
 
 Add a receiver from the Participants integration palette and place it below the **Post File to SharePoint** integration step. Alternatively, you can also take the existing receiver from your canvas and place it below the respective integration step.
 
@@ -990,7 +794,7 @@ Change the name of the added **Receiver** step to **SharePoint** to improve read
 ![Cloud Integration](./images/cif_0680.png)
 
 
-### 7.14. Configure the details of your HTTP API call to the Open Connectors SharePoint API
+### 5.14. Configure the details of your HTTP API call to the Open Connectors SharePoint API
 
 Select and connect the **Post File to SharePoint** Request Reply step to the recently placed **Receiver**. 
 
@@ -1020,7 +824,7 @@ Select and connect the **Post File to SharePoint** to the **End message** to com
 ![Cloud Integration](./images/cif_0720.png)
 
 
-### 7.15. Save, deploy and monitor the execution of your Integration Flow
+### 5.15. Save, deploy and monitor the execution of your Integration Flow
 
 Select **Save** and then click the **Deploy** button to deploy this integration flow to SAP BTP Integration tenant.
 
@@ -1061,11 +865,11 @@ If status is **Completed**, then the billing document read from SAP S/4HANA Clou
 ![Cloud Integration](./images/cif_0920.png)
 
 
-## Step 8 - Review result in SharePoint
+## Step 6 - Review result in SharePoint
 
 [Week2 Unit1 - Step 8](Week2/Unit1/README.md#Step-8---Lorem-Ipsum)
 
-### 8.1. Check the uploaded document in SharePoint
+### 6.1. Check the uploaded document in SharePoint
 
 Go to your SharePoint site once again and check if the PDF billing document is available. 
 
