@@ -1077,6 +1077,12 @@ Open the billing document and check if the PDF document can be opened as desired
 ![Cloud Integration](./images/res_0020.png)
 
 
+## Special Thanks
+
+A special thanks to [Divya Mary](https://people.sap.com/divya.mary), who has written an excellent blog series, which this tutorial is based on.
+
+https://blogs.sap.com/2020/09/29/blog-series-posting-documents-to-sharepoint/
+
 
 ## Summary
 
