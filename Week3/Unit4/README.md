@@ -60,7 +60,67 @@ https://fa41fb92trial-dev-wfs-forms-adaptive-cards.cfapps.ap21.hana.ondemand.com
 ![click on Log On](./images/A06-Appvoed.png)
 
 
-## Step 2 - 
+## Step 2 - Update and deploy the Adaptive Card Sender App
+
+2.1. Open Business Application Studio
+
+2.2. In Unit 2 you already cloned the repository in your Business Application Studio Workspace. 
+
+In case you didn't clone the repo, or removed your workspace, you can clone it once again
+
+```bash/Shell
+git clone https://github.com/maxstreifeneder/btp-azure-draft.git
+```
+
+2.3. Adaptive Card Sender Java App is located infolder **btp-wf-outlook-integration**
+
+ ![ca](./images/A06-Appvoe)
+
+Get familiar with the project, 
+
+2.4. Open manifest.yaml file from
+
+ ```
+   sample-coding
+    └── btp-wf-outlook-integration
+        └── manifest.yaml
+```
+
+ Replace the **applications: name** with the first part of the URL that you configured in the previous step for the Target URL
+ ```
+ <your-trial-account>-<your-cf-space-name>-wfs-forms-adaptive-cards
+```
+ e.g. *c2a2584ctrial-dev-wfs-forms-adaptive-cards*
+
+ ![ca](./images/A06-Appvoe)
+
+ 2.5. Open application.properties file from
+
+  ```
+   sample-coding
+    └── btp-wf-outlook-integration
+        └── src
+            └── main
+                └── resources
+                     └── application.properties
+                
+```
+
+Update ...
+
+ ![ca](./images/A06-Appvoe)
+
+ 2.6. Before deploying, create destination service install
+
+ 2.7. Build Java App
+
+ 2.8. Deploy Java App
+
+ 2.9. Download the Destination file **bpmworkflowruntime_mail** and import in BTP Cockpit
+
+ 2.10. Make changes in Destination
+
+## Step 3 - Test the scenario
 
 # Summary
 
