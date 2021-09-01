@@ -15,9 +15,11 @@ From a service perspective, you'll be using a number of SAP BTP and Microsoft se
  ![OpenSAP Discussion](./images/opensap-forum.png)
 
 
-## Step 1 - Create a Micrsoft SharePoint site
+## Step 1 - Setup SAP Cloud Integration 
 
-[Week2 Unit1 - Step 3](Week2/Unit1/README.md#Step-3---Lorem-Ipsum)
+In this step, you will setup two SAP Cloud Integration tenants in two different regions. 
+
+**IMPORTANT: Therefore, two subaccounts in two different regions are necessary.** Not only will you subscribe to the SAP Integration Suite but further on provision the SAP Cloud Integration tenant and assign the needed roles to your user. 
 
 ### 1.1. Create your first SharePoint site
 
