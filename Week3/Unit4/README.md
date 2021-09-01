@@ -49,7 +49,6 @@ A resulting URL could look like this: e.g.
 https://fa41fb92trial-dev-wfs-forms-adaptive-cards.cfapps.ap21.hana.ondemand.com/
 
 
-
 1.6. Scroll further down (you do not need to specify a Public Key) and select Test Users (Test your provider on users from same tenant, auto-approved)
 ![click on Log On](./images/A04-Scope.png)
 
@@ -72,11 +71,11 @@ In case you didn't clone the repo, or removed your workspace, you can clone it o
 git clone https://github.com/maxstreifeneder/btp-azure-draft.git
 ```
 
-2.3. Adaptive Card Sender Java App is located infolder **btp-wf-outlook-integration**
+2.3. Adaptive Card Sender Java App is located in folder **btp-wf-outlook-integration**
 
- ![ca](./images/A06-Appvoe)
+ ![BAS Project Structure](./images/bas_project.png)
 
-Get familiar with the project, 
+Get familiar with the project
 
 2.4. Open manifest.yaml file from
 
@@ -90,9 +89,9 @@ Get familiar with the project,
  ```
  <your-trial-account>-<your-cf-space-name>-wfs-forms-adaptive-cards
 ```
- e.g. *c2a2584ctrial-dev-wfs-forms-adaptive-cards*
+ e.g. *fa41fb92trial-dev-wfs-forms-adaptive-cards*
 
- ![ca](./images/A06-Appvoe)
+ ![Manifest](./images/u4_manifest.png)
 
  2.5. Open application.properties file from
 
@@ -106,24 +105,121 @@ Get familiar with the project,
                 
 ```
 
-Update ...
+Update following properties:
 
- ![ca](./images/A06-Appvoe)
+* **card.submission.url** - *https://< trial org name >-< space name >-wfs-forms-adaptive-cards.cfapps.< region >.hana.ondemand.com*  like the target URL from **Step 1.5.** ( e.g. http://fa41fb92trial-dev-wfs-forms-adaptive-cards.cfapps.ap21.hana.ondemand.com )
+  
+* **mail.smtp.host**  - If you are going to use the SMTP server for Office 365, use smtp.office365.com if you are using your private @outlook.com or @gmail.com address use either smtp-mail.outlook.com or smtp.gmail.com 
+  
+* **organization.id**  - The Organization Info from Step 1.3 or copy from [Actionable Email Developer Dashboard](https://outlook.office.com/connectors/oam/publish) (e.g. 94226edf-ea13-4d46-9802-ae70bbf95922) 
+  
+* **originator.id** - The Provider ID from Step 1.3 or copy from [Actionable Email Developer Dashboard](https://outlook.office.com/connectors/oam/publish) (e.g. 70da4bde-68f6-4d82-9435-bca03899199b) 
+  
 
- 2.6. Before deploying, create destination service install
+ ![Application Properties](./images/u4_app_prop.png)
+
+ 2.6. Before deploying the application, create destination service instance
+
+* Open a new **Terminal** and login in your BTP CF account using your credentials
+  
+    ```bash/Shell
+    cf login
+    ```
+    ![CF Login](./images/u4_cf_login.png)
+
+* Create Destination service instance
+  
+    ```bash/Shell
+    cf create-service destination lite wm_destination
+    ```
+    ![CF Login](./images/u4_cf_create_dest.png)
 
  2.7. Build Java App
 
- 2.8. Deploy Java App
+```bash/Shell
+cd sample-coding/btp-wf-outlook-integration
 
- 2.9. Download the Destination file **bpmworkflowruntime_mail** and import in BTP Cockpit
+mvn clean install
+```
 
- 2.10. Make changes in Destination
+![Build](./images/u4_mvn_install.png)
+
+ 2.8. Deploy Java App on SAP BTP
+
+ ```bash/Shell
+cf push
+```
+
+![Deploy](./images/u4_cf_push.png)
+
+ 2.9. Download the Destination file **bpmworkflowruntime_mail** and import in BTP Cockpit to setup mail server information used from workflow service
+
+* Download the destination file
+    ```
+    sample-coding
+    └── btp-wf-outlook-integration
+        └── bpmworkflowruntime_mail
+    ```
+
+* Go to SAP BTP Cockpit into Connectivity/Destinations and *Import Destination*
+  ![Import Destination](./images/u4_import_dest.png)
+
+* Update the Destination properties based on your mail server and credentials
+  
+  In this example I'm using mail server for Office 365 ( smtp.office365.com )
+
+  | Field Name | Input Value |
+  | ---------- | ------------|
+  | User | Email for logging in to the mail server |
+  | Password | Password for logging in to the mail server |
+  | mail.smtp.from | Mail address to use as the "From" address of mails sent by the workflow capability |
+  | mail.smtp.host | Host name of your mail server |
+  | mail.smtp.port | Port on which your mail server listens for connections (typically 587, in rare cases 465) |
+
+  ![Destination Properties](./images/u4_mail_destination.png)
 
 ## Step 3 - Test the scenario
 
+3.1. Open Microsoft teams and request a leave
+
+![Request Leave](./images/u4_test_teams.png)
+
+3.2. We can go to SAP Workflow Management and open Workflow Instance Monitor, to validate that the task was successfully created. 
+    
+![WF Monitor](./images/u4_wm_monitor.png)
+
+You can see that the task is created and is running.
+
+![WF Monitor](./images/u4_wm_task.png)
+
+3.3. After confirmation that the workflow task was successfully triggered, open your Outlook
+
+>Note, in this demo example the requestor and approver are the same person
+
+In your Outlook Inbox you will find an email from your employee requesting leave with the necessary information including **"Accept"** and **"Reject"** buttons to directly approve or reject the request from outlook. The Email is rendered as an Adaptive Cards and allows you to perform actions.
+
+![Request Leave](./images/u4_outlook.png)
+
+3.4. Now when you Accept or Decline the request, the workflow task will be completed accordingly
+
+* Click on **Accept**, you should get a confirmation that task has completed
+  ![Confirm request](./images/u4_task_completed_1.png)
+
+* Go again to SAP Workflow Management, where you will find as well that lately created task has been completed
+  ![Confirm request](./images/u4_task_completed_2.png)
+
+## Step 4 - Troubleshooting
+
+There are two approaches, to troubleshoot the application and adaptive cards, in case you are facing issues.
+
+* In case of issues with Java Application, go to SAP BTP Cockpit and open the Application where you can find the Logs (see below). The logs will give you overview of the issue, in case there are some.
+  ![Confirm request](./images/u4_app_logs.png)
+
+* In case of rendering issues with Actionable Message, you could find the add-in to Microsoft Outlook called “Actionable Messages Debugger”. It will help you to identify issues with your message
+ ![“Actionable Messages Debugger”](./images/u4_debugger_ac.png)
+
+
 # Summary
 
-Congratulations! you successfully created leave request chatbot with SAP Conversational AI and integrated it with Workflow Management and Microsoft Teams.
+Congratulations! you successfully ... TBD
 
-If you want to learn more how to build chatbot with SAP Conversational AI, please check following OpenSAP course: [How to Build Chatbots with SAP Conversational AI](https://open.sap.com/courses/cai1)
