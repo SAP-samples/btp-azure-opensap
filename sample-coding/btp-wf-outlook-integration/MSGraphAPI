@@ -1,0 +1,12 @@
+#clientSecret=<< Existing password/certificate removed on export >>
+#
+#Wed Apr 21 11:21:55 UTC 2021
+Type=HTTP
+clientId=
+TrustAll=true
+Authentication=OAuth2ClientCredentials
+Name=MSGraphAPI
+tokenServiceURL=https\://login.microsoftonline.com/<Directory (tenant) ID>/oauth2/v2.0/token
+ProxyType=Internet
+URL=https\://graph.microsoft.com
+scope=https\://graph.microsoft.com/.default
