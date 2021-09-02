@@ -221,5 +221,5 @@ There are two approaches, to troubleshoot the application and adaptive cards, in
 
 # Summary
 
-Congratulations! you successfully ... TBD
+Congratulations! you successfully completed the Unit 4. You learned how to transform workflow tasks into adaptive cards using the custom Java application and sent it to Microsoft Outlook.
 
