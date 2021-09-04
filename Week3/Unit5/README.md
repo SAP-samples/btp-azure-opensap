@@ -117,5 +117,12 @@ Click on **Accept**, you should get a confirmation that task has completed
 
 # Summary
 
-Congratulations! you successfully completed the Unit 5 and the entire Week 3. ....
+Congratulations! you successfully completed the Unit 5 where you learned how to create a calendar entry using Microsoft Graph and SAP BTP. Moreover you should  now know how to explore the APIs using Microsoft Graph Explorer, register an app in Azure Active Directory, finally configure a destination in SAP BTP.
+
+
+This is end of Week 3. You learned how to extend your business workflow with Microsoft Teams and Microsoft Outlook using SAP Business Technology Platform and Microsoft Azure.
+Now you know how to trigger an SAP workflow from an SAP Conversational AI bot,
+integrate SAP Conversational AI with Azure Bot and Microsoft Teams. Moreover you learned how to transform SAP Workflow Forms into Microsoft Adaptive Card format 
+and send adaptive cards from an SAP workflow. Finally do a quick actions right within the Microsoft Outlook email client using Outlook actionable messages
+
 
