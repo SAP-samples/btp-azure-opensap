@@ -226,25 +226,25 @@ In this step, you will create a REST API in SAP Cloud Integration that will act 
 
 2.2 <a name="download"></a>Open a new tab in your browser and go to https://github.com/SAP-samples/btp-cloud-integration-intelligent-routing/blob/mission/02-SetupMonitoringEndpoint/flow-azuretm.zip. **Download** the ZIP File containing the Integration Package with the sample REST API for SAP Cloud Integration.
 
-![Download Button on GitHub](./images/01.png)
+![Download Button on GitHub](./images/29.png)
 
 2.3 Go back to the SAP Cloud Integration web interface and choosse **Design** in the navigation area. 
 
-![Navigate to the Design menu](./images/02.png)
+![Navigate to the Design menu](./images/30.png)
 
 > Note: You can expand the navigation area using the hamburger icon. 
 
 2.4 Import the previously downloaded Integration Package (ZIP file from Step 2).  
 
-![Import content package](./images/03.png)
+![Import content package](./images/31.png)
 
 2.6 Select the newly uploaded Integration Package called **Azure Traffic Manager**.
 
-![Select new integration package](./images/04.png)
+![Select new integration package](./images/32.png)
 
 2.7 Go to the **Artifacts** tab and click on the **ping** artifact of type REST API to open the SAP Cloud Integration editor. 
 
-![Select new REST API](./images/05.png)
+![Select new REST API](./images/33.png)
 
 You should now see a very basic REST API that offers an HTTP endpoint and returns a message using the HTTP body to the sender. This REST API is used for different purposes: 
 
@@ -253,25 +253,25 @@ You should now see a very basic REST API that offers an HTTP endpoint and return
 
 2.8 Change into the **Edit** mode and confirm potential messages with **Yes**.
 
-![changed into edit mode](./images/06.png)
+![changed into edit mode](./images/34.png)
 
 2.9 Double-Click **Reply Tenant Identifier**.
 
-![changed into edit mode](./images/07.png)
+![changed into edit mode](./images/35.png)
 
 2.10 Select the **Message Body** tab so you can type in whatever message you want to reply to the sender. For testing purposes it helps, if you replace the placeholder with the subaccount region, the current SAP Cloud Integration instance is located in. That way, you can easily identify which tenant is handling the traffic routed by Azure Traffic Manager. 
 
-![replace placeholder Message Body](./images/08.png)
+![replace placeholder Message Body](./images/36.png)
 
 2.11 **Save** and **Deploy** the REST API. 
 
-![Save and deploy](./images/09.png)
+![Save and deploy](./images/37.png)
 
 2.12 Open a new browser tab and navigate to your subaccount in the SAP BTP Cockpit. 
 
 2.13 Create space in Cloud Foundry environment to control use of resources. Therefore, **Enable Cloud Foundry**. 
 
-![Enable Cloud Foundry button](./images/10.png)
+![Enable Cloud Foundry button](./images/38.png)
 
 > If you already have a Cloud Foundry space, you can skip steps 12 - 15. 
 
@@ -279,61 +279,61 @@ You should now see a very basic REST API that offers an HTTP endpoint and return
 
 2.15 Create a new Cloud Foundry space using the **Create Space** button.
 
-![Create space button](./images/11.png)
+![Create space button](./images/39.png)
 
 2.16 Enter a space name and select the permissions you would like to assign to your ID and save the changes by using the **Create** button.
     
-![space name and creation button](./images/12.png)
+![space name and creation button](./images/40.png)
 
 2.17 Select the newly created space. 
 
-![space name and creation button](./images/12.1.png)
+![space name and creation button](./images/41.png)
     
 2.18 Go to **Services > Service Marketplace** and search for **Process Integration Runtime**.
 
-![Process Integration Runtime tile](./images/13.png)
+![Process Integration Runtime tile](./images/42.png)
 
 2.19 Select the tile and **Create** a instance of the Process Integration Runtime service.
 
-![Service instance creation](./images/14.png)
+![Service instance creation](./images/43.png)
 
 2.20 In the New Instance or Subscription dialog box, select the Plan **integration-flow** and provide a instance name. Continue with **Next**.
 
-![Service instance name and plan](./images/15.png)
+![Service instance name and plan](./images/44.png)
 
 2.21 In the Parameter menu switch to the **JSON** tab and insert the following content in the text area to assign roles. This authorizes the sender system to call a tenant and allows to process the messages on the tenant.
 
 > Note: The role name is case-sensitive and the authentication mode used is basic authentication.
 
-![Service instance name and plan](./images/16.png)
+![Service instance name and plan](./images/45.png)
 
 2.22 Continue with **Create**. 
 
 2.23 Select **View Instance** to see the progress of the service instance creation. 
 
-![Service instance creation progress](./images/17.png)
+![Service instance creation progress](./images/46.png)
 
 2.24 <a name="servicekey"></a> In the Instance View, select **Create** in the **Service Keys** section to create a service key. 
 
-![service key creation](./images/18.png)
+![service key creation](./images/47.png)
 
 2.25 Enter a name (e.g. sk1) for the service key and choose **Create**. 
 
 2.26 Click on the recently created service key to retrieve the credential information from the service key. Keep this tab opened since you will need the credentials in one of the next steps.  
 
-![service key detail](./images/19.png)
+![service key detail](./images/48.png)
 
 2.27 Go back to the tab with the SAP SAP Cloud Integration web interface or open a new one. Navigate to the **Monitor** item in the navigation area. 
 
-![SAP Cloud Integration Monitor section](./images/20.png)
+![SAP Cloud Integration Monitor section](./images/49.png)
 
 2.28 In the **Manage Integration Content** area, select the **Started** tile to have a look at the REST API you have deployed in step 10. 
 
-![SAP Cloud Integration Monitor section](./images/21.png)
+![SAP Cloud Integration Monitor section](./images/50.png)
 
 2.29 <a name="endpoint"></a>Select **ping** and copy the endpoint URL of the REST API. 
 
-![REST API endpoint](./images/22.png)
+![REST API endpoint](./images/51.png)
 
 2.30 Open a terminal on your machine and try to execute the following command. 
 
@@ -348,7 +348,7 @@ curl <endpoint_from_sapcloudintegration> -u '<clientid_from_servicekey>:<clients
 > The command could possibly look like: 
 > curl https://mysubaccount.it-cpi003-rt.cfapps.eu20.hana.ondemand.com/http/ping -u 'sb-50162a35-56d0-4c06-adb0-3f315df3b0c3!b2657|it-rt-xxxxyzwzwze!b196:af36f2ea-561a-44a3-977d-831f8ed9d129$Ta8rQN1LMzY9l9SvowftrpclBRqHNGJDvaX07veirIx='
 
-![Hit REST API endpoint](./images/23.png)
+![Hit REST API endpoint](./images/52.png)
 
 > Note: It could happen that Windows machines are trying to authenticate implicitly with certificates against the endpoint. This can cause problems. 
 > In case you're facing the error message "The filename, directory name, or volume label syntax is incorrect.", encode special characters like '|' in the username. 
@@ -372,9 +372,9 @@ The steps below describe the process using a custom domain bought via Azure. The
 3.2 Install the [custom domain plugin for the Cloud Foundry CLI](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/9f98dd0fcf9447019f233403f4ca60c1.html). 
 
 3.3 Copy the **API Endpoint** and **Org Name** of your first subaccount to your clipboard. The information can be taken from the subaccount overview in the SAP BTP Cockpit. 
-![API Endpoint](./images/00.png)
+![API Endpoint](./images/53.png)
 
-3.4 Log in to the right Cloud Foundry space that you have created in the previous exercises using the following command. Insert the corresponding **API Endpoint** from the previous step. 
+3.4 Log in to the right Cloud Foundry space that you have created in the previous steps using the following command. Insert the corresponding **API Endpoint** from the previous step. 
 
 ```
 cf login -a <API_ENDPOINT>
@@ -404,7 +404,7 @@ cf domains
 cf custom-domain-create-key key1 "CN=*.example.com, O=<Organization e.g. SAP>, L=<Location e.g. Walldorf>, C=<Country e.g. DE>" "*.example.com"
 ```
 
-![Create signing request](./images/01.png)
+![Create signing request](./images/54.png)
 
 3.9  Download certificate signing request corresponding to the new key:
 
@@ -412,7 +412,7 @@ cf custom-domain-create-key key1 "CN=*.example.com, O=<Organization e.g. SAP>, L
 cf custom-domain-get-csr key1 key1_unsigned.pem
 ```
 
-![Download signing request](./images/02.png)
+![Download signing request](./images/55.png)
 
 > Note: The file key1_unsigned.pem is downloaded to your current working directory. Use `pwd` (for Linux/macOs) or `dir` (Windows) to find out the current working directory.
 
@@ -436,34 +436,34 @@ certbot certonly --manual --preferred-challenges dns --server "https://acme-v02.
 sudo certbot certonly --manual --preferred-challenges dns --server "https://acme-v02.api.letsencrypt.org/directory" --domain "*.example.com" --email your.mail@example.com --csr key1_unsigned.pem --no-bootstrap --agree-tos
 ```
 
-![DNS Challenge 01](./images/03.png)
+![DNS Challenge 01](./images/56.png)
 
 > Don't forget to fill in your domain and mail address instead of example.com! You now have to proof that you are in control of the domain - certbot is now executing a DNS challenge. 
 
 3.12 Open a new broswer tab, go to the [Azure Portal](http://portal.azure.com) and navigate into the DNS zone of your bought domain. 
 
-![DNS Zone Search](./images/04.png)
-![DNS Zone selection](./images/05.png)
+![DNS Zone Search](./images/57.png)
+![DNS Zone selection](./images/58.png)
 
 3.13 **Create a new record set** and enter the details that the certbot command (Step 8) has printed out. 
 
-![Record creation in DNS Zone](./images/06.png)
+![Record creation in DNS Zone](./images/59.png)
 
 3.14 Hit **Enter** in the Terminal (where you have recently executed the certbot command in Step 11) to continue the verification process. 
 
 **Windows**
 
-![Verification process continuation ](./images/07a.png)
+![Verification process continuation ](./images/60.png)
 
 **macOS**
 
-![Verification process continuation ](./images/07.png)
+![Verification process continuation ](./images/61.png)
 
 > IMPORTANT: sometimes it could happen that you have to repeat the last steps a few times, depending on the output in the terminal. 
 
 3.15 Open the certificate chain that has been created in the previous step in a text editor of your choice. 
 
-![Certificate in text editor](./images/08.png)
+![Certificate in text editor](./images/62.png)
 
 3.16 Open a new broswer tab, go to <https://www.identrust.com/dst-root-ca-x3> and copy the content of the entire DST Root CA X3 Certificate. 
 
@@ -471,7 +471,7 @@ sudo certbot certonly --manual --preferred-challenges dns --server "https://acme
     
 3.17 Paste the content of the DST Root CA X3 Certificate to the end of the created certificate chain on your local machine that you have opened during step 15. Save it as a new file, for instance **certificate1.pem**. 
 
-![Certificate in text editor](./images/09.png)
+![Certificate in text editor](./images/63.png)
 
 3.18 Upload and activate the certificates: 
 
@@ -479,7 +479,7 @@ sudo certbot certonly --manual --preferred-challenges dns --server "https://acme
 cf custom-domain-upload-certificate-chain key1 certificate1.pem
 ```
 
-![Custom domain upload certificate](./images/10.png)
+![Custom domain upload certificate](./images/64.png)
 
 > Note: *key1* refers to the key you have created in Step 5, certificate.pem is the name of the file that you have created in the previous step.
 
@@ -489,7 +489,7 @@ cf custom-domain-upload-certificate-chain key1 certificate1.pem
 cf custom-domain-activate key1 "*.example.com"
 ```
 
-![Custom domain activation](./images/11.png)
+![Custom domain activation](./images/65.png)
 
 
 3.20 Verify the custom domain activation: 
@@ -498,7 +498,7 @@ cf custom-domain-activate key1 "*.example.com"
 cf custom-domain-list
 ```
 
-![Custom domain activation verification](./images/12.png)
+![Custom domain activation verification](./images/66.png)
 
 > Note: It can take a few minutes up to a few hours until the custom domain is activated. 
 
@@ -510,7 +510,7 @@ cf custom-domain-map-route <endpoint_from_sapcloudintegration> cloudintegration.
 
 > Example: cf custom-domain-map-route mysubaccount.it-cpi003-rt.cfapps.eu20.hana.ondemand.com cloudintegration.saptfe-demo.com. 
 
-> Note: If you don't know your SAP Cloud Integration runtime endpoint, go back to the [previous exercise, step 28](../02-SetupPolicyEndpoint/README.md#endpoint) - don't include a specific endpoint for an Integration flow or REST API, just the basic endpoint without any path. 
+> Note: If you don't know your SAP Cloud Integration runtime endpoint, go back to the [Step 2.28](#endpoint) - don't include a specific endpoint for an Integration flow or REST API, just the basic endpoint without any path. 
 
 > Note: Most likely the TXT validation entry (step 14) does not need to be set again and can further be used. In this case, certbot will not ask for a renewal of the entry. 
 
@@ -528,15 +528,15 @@ In this step, you will configure Azure Traffic Manager (actually the Azure Traff
 
 4.2 Search for **Traffic Manager profile** and select the corresponding item.
 
-![Azure Traffic Manager profile search using Azure Portal](./images/01.png)
+![Azure Traffic Manager profile search using Azure Portal](./images/67.png)
 
 4.3 **Create** a new Traffic Manager profile. 
 
-![Azure Traffic Manager profile search using Azure Portal](./images/02.png)
+![Azure Traffic Manager profile search using Azure Portal](./images/68.png)
 
 4.4 Provide a meaningful name (e.g. *cloudintegration-failover*) for the Azure Traffic Manager profile, select **Priority** as the Routing method and assign it to one of your subscriptions. If necessary, create a new Resource Group. 
 
-![Azure Traffic Manager profile creation details](./images/03.png)
+![Azure Traffic Manager profile creation details](./images/69.png)
 
 4.5 Continue with **Create**. 
 
@@ -544,11 +544,11 @@ In this step, you will configure Azure Traffic Manager (actually the Azure Traff
 
 > Alternatively you can also refresh the list of all Azure Traffic Manager profiles and select the recently created Traffic Manager profile.
 
-![Traffic Manager profile details after deployment](./images/04.png)
+![Traffic Manager profile details after deployment](./images/70.png)
 
 4.7 Select **Configuration** in the navigation area. 
 
-![Traffic Manager profile details after deployment](./images/05.png)
+![Traffic Manager profile details after deployment](./images/71.png)
 
 4.8 <a name="tm-configuration"></a>Provide the following settings: 
 
@@ -562,17 +562,17 @@ In this step, you will configure Azure Traffic Manager (actually the Azure Traff
 - Tolerated number of failures: 1
 - Probe timeout: 5
 
-![Traffic Manager profile configuration settings](./images/06.png)
+![Traffic Manager profile configuration settings](./images/72.png)
 
 > **IMPORTANT**: Those settings enable the fatest failover that's possible based on DNS time to live & the **fast endpoint failover settings**. The more often the **monitor** endpoint (/http/ping) the higher the amount of messages the SAP Cloud Integration needs to handle. How often the monitor endpoint is called is defined by the combination of probe timeout and probing interval. Adjust the settings for your productive scenario depending on your needs. 
 
-> Note: The path you have defined is later on used to monitor every defined endpoint in the Azure Traffic Manager profile. The exact path is then concatenated with the endpoints target that we'll define in one of the subsequent steps. **/http/ping* is the path of the REST API that you have deployed in one of the [previous exercises](../02-SetupMonitoringEndpoint/README.md#endpoint).
+> Note: The path you have defined is later on used to monitor every defined endpoint in the Azure Traffic Manager profile. The exact path is then concatenated with the endpoints target that we'll define in one of the subsequent steps. **/http/ping* is the path of the REST API that you have deployed in one of the [previous steps](#endpoint).
 
 4.9 Continue with **Save**.
 
 4.10 Select **Endpoints** in the navigation area. 
 
-![Traffic Manager profile configuration settings](./images/07.png)
+![Traffic Manager profile configuration settings](./images/73.png)
 
 4.11 **Add** a new endpoint and set the following parameters:
 
@@ -581,15 +581,15 @@ In this step, you will configure Azure Traffic Manager (actually the Azure Traff
 - Fully-qualified domain name (FQDN) or IP: SAP Cloud Integration runtime endpoint EU20 (without any protocol)
 - Priority: 1
 
-> Note: The SAP Cloud Integration runtime endpoint is the FQDN of the deployed REST API (without */http/ping*) that you have also mapped in the [previous exercise](../03-MapCustomDomainRoutes/README.md#endpointmapping). 
+> Note: The SAP Cloud Integration runtime endpoint is the FQDN of the deployed REST API (without */http/ping*) that you have also mapped in the [previous step](#endpointmapping). 
 
-![Cloud Integration EU](./images/08.png)
+![Cloud Integration EU](./images/74.png)
 
 4.12 Open a new browser tab and navigate to the SAP BTP Cockpit, go to your first subaccount and open the **Instances and Subscriptions** view. Select the service with the service plan **integration-flow** and display the service key details. 
 
-![Service Key details in SAP BTP Cockpit](./images/09.png)
+![Service Key details in SAP BTP Cockpit](./images/75.png)
 
-> You have created the service instance and service key in one of the previous exercises, [Setup Monitoring Endpoint](../02-SetupMonitoringEndpoint/README.md#servicekey).
+> You have created the service instance and service key in [Step 2.24](#servicekey).
 
 4.13 Open another browser tab and go to <http://base64encode.org>. Encode the **clientid** and **clientsecret** from the service key (see previous step) in the following format: 
 
@@ -599,7 +599,7 @@ In this step, you will configure Azure Traffic Manager (actually the Azure Traff
 
 > Example: sb-50162a35-56d0-4c06-adb0-3f315df3b0c3!b2657|it-rt-xyz34567!b196:af36f2ea-561a-44a3-977d-831f8ed9d129$Ta8rQN1LMzY9l9SvowftrpclBRqHNGJDvaX07vxyz123
 
-![Encoding clientid and clientsecret via base64encode.org](./images/10.png)
+![Encoding clientid and clientsecret via base64encode.org](./images/76.png)
 
 
 4.14 Copy the encoded information to your clipboard. 
@@ -612,9 +612,9 @@ Authorization:Basic <encoded clientid:clientsecret>
 
 > Example: Authorization:Basic c2ItNTAxNjJhMzUtNTZkMC00YzA2LWFkYjAtM2YzMTVkZjNiMGMzIWIyNjU3fGl0LXJ0LW1234WQ2ZWQydHJpYWwhYjE5NjphZjM2ZjJlYS01NjFhLTQ0YTMtOTc3ZC04MzFmOGVkOWQxMjkkVGE4clFOMUxNelk5bDlTdm93ZnRycGNsQlJxSE5HSkR2YVgwN3Zja1pt1234
 
-![Add Authorization details as Custom Header Settings](./images/11.png)
+![Add Authorization details as Custom Header Settings](./images/77.png)
 
-> Note: This way Azure Traffic Manager can authenticate against SAP Cloud Integration and can call the REST API without getting an HTTP 403 response. Alternatively you can call the REST API anonymously (so that the messages from Azure Traffic Manager to monitor the endpoints aren't counted as actual handled messages) but then you need to change the [monitoring settings](./README.md#tm-configuration) accordingly. A HTTP 403 response would then reveal Azure Traffic Manager that the endpoint is available, a 5xx HTTP response that the endpoint is not available. 
+> Note: This way Azure Traffic Manager can authenticate against SAP Cloud Integration and can call the REST API without getting an HTTP 403 response. Alternatively you can call the REST API anonymously (so that the messages from Azure Traffic Manager to monitor the endpoints aren't counted as actual handled messages) but then you need to change the [monitoring settings](#tm-configuration) accordingly. A HTTP 403 response would then reveal Azure Traffic Manager that the endpoint is available, a 5xx HTTP response that the endpoint is not available. 
 
 4.16 Continue with **Add**. 
 
@@ -622,14 +622,14 @@ Authorization:Basic <encoded clientid:clientsecret>
 
 4.18 Display **Overview** of your Azure Traffic Manager profile and copy the **DNS Name**. 
 
-![DNS Name of Azure Traffic Manager profile](./images/12.png)
+![DNS Name of Azure Traffic Manager profile](./images/78.png)
 
 4.19 Go to to the **DNS Zone** of your domain. 
 
-![DNS Zone search using Azure Portal](./images/13.png)
-![Select domain in Azure Portal](./images/14.png)
+![DNS Zone search using Azure Portal](./images/79.png)
+![Select domain in Azure Portal](./images/80.png)
 
-4.20 Create a record set for the subdomain that [you have mapped to the SAP Cloud Integration runtime endpoint](../03-MapCustomDomainRoutes/README.md#endpointmapping): 
+4.20 Create a record set for the subdomain that [you have mapped to the SAP Cloud Integration runtime endpoint](#endpointmapping): 
 
 - Name: subdomain that you have mapped to the SAP Cloud Integration runtime endpoint
 - Type: CNAME
@@ -637,19 +637,19 @@ Authorization:Basic <encoded clientid:clientsecret>
 - TTL: 1 Second (depending on your requirements, how fast a failover should be executed)
 - Alias: DNS Name of the Azure Traffic Manager profile that you have copied in Step 18 - without *http://*(e.g. cloudintegration-failover.trafficmanager.net)
 
-![Select domain in Azure Portal](./images/15.png)
+![Select domain in Azure Portal](./images/81.png)
 
 Congratulations. You have created an Azure Traffic Manager profile that detects which tenant should handle the messages based on a monitoring endpoint you have deployed (REST API in both SAP Cloud Integration tenants) in one of the previous steps. All requests sent to the mapped route in Cloud Foundry (cloudintegration.example.com) are going to the Azure Traffic Manager profile because of the CNAME record set in the DNS Zone of the domain. Azure Traffic Manager then decides on the priority setting which tenant should handle the request. All of this happens on DNS level. (If you want to use the Azure Traffic Manager for other scenarios like loadbalancing, reducing latency or others - have a look at the [available routing methods](https://docs.microsoft.com/en-us/azure/traffic-manager/traffic-manager-routing-methods).)
 
 A DNS Lookup shows the resolution: 
 
-![DNS Lookup](./images/16.png)
+![DNS Lookup](./images/82.png)
 
 > As an alternative to **dig** you can also use **nslookup** on Windows. 
 
 You should also see that Azure Traffic Manager indicates that both SAP Cloud Integration as online right now. 
 
-![DNS Lookup](./images/17.png)
+![DNS Lookup](./images/83.png)
 
 ## Step 5 - Test Failover Scenario
 
@@ -668,12 +668,12 @@ As you can see, the primary tenant handles the request and sends back an HTTP bo
 
 > Note: Coincidentally (and for the sake of simplicity) the REST API you call in this step is the same as the Azure Traffic Manager profile uses to monitor the endpoints. 
 
-> In this example we are not using the clientid and clientsecret (from the service key) for the particular SAP Cloud Integration tenants as they are tenant specific. Since the caller doesn't know which tenant is handling the request, a user in both subaccounts is necessary. You have assigned the needed Role Collection to your account in one of the [previous exercises](./../01-SetupCloudIntegration/README.md#rolecollection-sender). That's the reason why you should use your personal BTP login credentials in this HTTP call. 
+> In this example we are not using the clientid and clientsecret (from the service key) for the particular SAP Cloud Integration tenants as they are tenant specific. Since the caller doesn't know which tenant is handling the request, a user in both subaccounts is necessary. You have assigned the needed Role Collection to your account in one of the [previous steps](#rolecollection-sender). That's the reason why you should use your personal BTP login credentials in this HTTP call. 
 
 > Note: In case you're facing the error message "The filename, directory name, or volume label syntax is incorrect." in Windows, encode special characters like ' | ' in the username or password. 
 
 5.3 Let's now simulate that the primary tenant is not available anymore. For testing purposes you can simply undeploy the REST API that acts as the monitoring endpoint for Azure Traffic Manager. That way, Azure Traffic Manager doesn't get a HTTP 200 Response from the REST API and considers the tenant as not available. 
-Therefore, go to the **SAP Cloud Integration web interface** and select the said REST API. (**Monitor** option in the navigation area). Select **Undeploy** to undeploy the REST API from SAP Cloud Integration. You can deploy the API later again, as learned in one of the previous exercises. 
+Therefore, go to the **SAP Cloud Integration web interface** and select the said REST API. (**Monitor** option in the navigation area). Select **Undeploy** to undeploy the REST API from SAP Cloud Integration. You can deploy the API later again, as learned in one of the previous steps. 
 
 ![Undeploy REST API in SAP Cloud Integration web interface](./images/03.png)
 
@@ -1004,9 +1004,9 @@ A potential landscape could look like this:
 5.61 Go to the SAP Cloud Integration web interface of your **development** environment. 
     
 5.62 Select **Design** in the navigation area and choose an Integration Package that you would like to transport. 
-    ![Design area SAP Cloud integration](./images/38.png)
+![Design area SAP Cloud integration](./images/38.png)
 
-    > If you don't have an Integration Package yet, feel free to use one of the [previous exercises](./../02-SetupMonitoringEndpoint/README.md#download)
+> If you don't have an Integration Package yet, feel free to use one of the [previous steps](#download)
 
 5.63 **Transport** the whole package and provide a short description. 
 
