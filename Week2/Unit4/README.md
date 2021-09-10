@@ -49,13 +49,15 @@ In this step, you will setup two SAP Cloud Integration tenants in two different 
 
 **IMPORTANT: Therefore, two subaccounts in two different regions are necessary.** Not only will you subscribe to the SAP Integration Suite but further on provision the SAP Cloud Integration tenant and assign the needed roles to your user. 
 
+---
+
 1.1 If you haven't used SAP Business Technology Platform or SAP Cloud Integration yet, please go to the SAP Discovery Center Mission [Get Started with Integration Suite - Cloud Integration](https://discovery-center.cloud.sap/missiondetail/3258/3327/?tab=projectboard)_
 
 1.2 Go to your SAP BTP Cockpit and make sure that you have two subaccounts in your global account. In this case, we have both of them on Azure - one in West Europe (Netherlands, EU20), one in West US (WA, US20). If you don't have them yet, click on **New Subaccount** in order to create a new subaccount. 
 
 ![New subaccount](./images/01.png)
 
-> NOTE: If you already have two subaccounts in regions where the [SAP Integration Suite is available](https://discovery-center.cloud.sap/serviceCatalog/integration-suite?region=all&tab=service_plan), you don't necessarily need to create separate accounts for this tutorial. You can simply reuse the existing ones, if you want.
+> NOTE: If you already have two subaccounts in regions where the [SAP Integration Suite is available](https://discovery-center.cloud.sap/serviceCatalog/integration-suite?region=all&tab=service_plan), you don't necessarily need to create separate accounts for this unit. You can simply reuse the existing ones, if you want.
 
 1.3. Provide the necessary details for the new subaccount. 
 
@@ -85,10 +87,10 @@ In this step, you will setup two SAP Cloud Integration tenants in two different 
 
 1.8 Add the following entitlements: 
 
-    * SAP Integration Suite (Service Plan: standard_edition or digital_edition or premium_edition)
-    * Process Integration runtime (Service Plan: integration-flow)
-    * Process Integration runtime (Service Plan: api)
-    * Custom Domain Certificates (Service Plan: custom_domains)
+* SAP Integration Suite (Service Plan: standard_edition or digital_edition or premium_edition)
+* Process Integration runtime (Service Plan: integration-flow)
+* Process Integration runtime (Service Plan: api)
+* Custom Domain Certificates (Service Plan: custom_domains)
 
 1.9  **Save** the changes. 
 
@@ -141,7 +143,7 @@ In this step, you will setup two SAP Cloud Integration tenants in two different 
 
 ![choose environment type](./images/14a.png) 
 
-1.22 Wait until the Cloud Integration is activated. 
+1.22 Wait until Cloud Integration is activated. 
 
 ![activation status Cloud Integration in progress](./images/15.png)
 ![activation status Cloud Integration finished](./images/16.png)
@@ -222,6 +224,8 @@ In this step, you will create a REST API in SAP Cloud Integration that will act 
 
 **Important:** The following steps need to executed for both SAP Cloud Integration tenants. 
 
+---
+
 2.1 Go to the SAP Cloud Integration web interface of your first subaccount, either via the SAP Integration Suite launchpad as shown in [Setting SAP Cloud Integration](../01-SetupCloudIntegration/README.md). 
 
 2.2 <a name="download"></a>Open a new tab in your browser and go to https://github.com/SAP-samples/btp-cloud-integration-intelligent-routing/blob/mission/02-SetupMonitoringEndpoint/flow-azuretm.zip. **Download** the ZIP File containing the Integration Package with the sample REST API for SAP Cloud Integration.
@@ -234,7 +238,7 @@ In this step, you will create a REST API in SAP Cloud Integration that will act 
 
 > Note: You can expand the navigation area using the hamburger icon. 
 
-2.4 Import the previously downloaded Integration Package (ZIP file from Step 2).  
+2.4 Import the previously downloaded Integration Package (ZIP file from Step 2.2).  
 
 ![Import content package](./images/31.png)
 
@@ -273,7 +277,7 @@ You should now see a very basic REST API that offers an HTTP endpoint and return
 
 ![Enable Cloud Foundry button](./images/38.png)
 
-> If you already have a Cloud Foundry space, you can skip steps 12 - 15. 
+> If you already have a Cloud Foundry space, you can skip steps 2.13 - 2.16. 
 
 2.14 Provide unique names for the instance and org name. 
 
@@ -303,6 +307,14 @@ You should now see a very basic REST API that offers an HTTP endpoint and return
 
 2.21 In the Parameter menu switch to the **JSON** tab and insert the following content in the text area to assign roles. This authorizes the sender system to call a tenant and allows to process the messages on the tenant.
 
+```json
+{
+    "roles": [
+        "ESBMessaging.send"
+    ]
+}
+```
+
 > Note: The role name is case-sensitive and the authentication mode used is basic authentication.
 
 ![Service instance name and plan](./images/45.png)
@@ -323,11 +335,11 @@ You should now see a very basic REST API that offers an HTTP endpoint and return
 
 ![service key detail](./images/48.png)
 
-2.27 Go back to the tab with the SAP SAP Cloud Integration web interface or open a new one. Navigate to the **Monitor** item in the navigation area. 
+2.27 Go back to the tab with the SAP Cloud Integration web interface or open a new one. Navigate to the **Monitor** item in the navigation area. 
 
 ![SAP Cloud Integration Monitor section](./images/49.png)
 
-2.28 In the **Manage Integration Content** area, select the **Started** tile to have a look at the REST API you have deployed in step 10. 
+2.28 In the **Manage Integration Content** area, select the **Started** tile to have a look at the REST API you have deployed in step 2.11. 
 
 ![SAP Cloud Integration Monitor section](./images/50.png)
 
@@ -367,9 +379,11 @@ The steps below describe the process using a custom domain bought via Azure. The
 
 **Important:** The following steps need to be executed for both of the subaccounts running your SAP Cloud Integration subscriptions. 
 
+---
+
 3.1 Install the Cloud Foundry CLI and make sure you have chosen the right API Endpoint (one of the subaccounts). Follow [this tutorial](https://developers.sap.com/tutorials/cp-cf-download-cli.html) in order to do so. 
 
-3.2 Install the [custom domain plugin for the Cloud Foundry CLI](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/9f98dd0fcf9447019f233403f4ca60c1.html). 
+3.2 Install the Custom Domain plugin for the Cloud Foundry CLI. Please follow [this tutorial](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/9f98dd0fcf9447019f233403f4ca60c1.html). 
 
 3.3 Copy the **API Endpoint** and **Org Name** of your first subaccount to your clipboard. The information can be taken from the subaccount overview in the SAP BTP Cockpit. 
 ![API Endpoint](./images/53.png)
@@ -391,7 +405,7 @@ cf create-service INFRA custom_domains customdomain
 ```console
 cf create-domain <cloudfoundry_org> example.com
 ```
-> Note: Instead of example.com use your own domain that you have bought. Replace the <cloudfoundry_org> with the **Org Name** you have copied from the subaccount overview in Step 3. 
+> Note: Instead of example.com use your own domain that you have bought. Replace <cloudfoundry_org> with the **Org Name** you have copied from the subaccount overview in Step 3. 
 
 3.7 Check if the domain was registered: 
 ```console
@@ -403,6 +417,8 @@ cf domains
 ```console
 cf custom-domain-create-key key1 "CN=*.example.com, O=<Organization e.g. SAP>, L=<Location e.g. Walldorf>, C=<Country e.g. DE>" "*.example.com"
 ```
+
+> Note: Provide actual values for Organization, Location and Country instead of the example values provided in the example command. 
 
 ![Create signing request](./images/54.png)
 
@@ -523,6 +539,8 @@ Keep in mind that the Let's Encrypt certificate (the one you have create using C
 ## Step 4 - Setup Azure Traffic Manager profile
 
 In this step, you will configure Azure Traffic Manager (actually the Azure Traffic Manager profile). The Azure Traffic Manager profile is the key component in this *intelligent routing* scenario, as it defines which SAP Cloud Integration tenant should be used when, based on certain rules and policies. 
+
+---
 
 4.1 Go to the [Azure Portal](http://portal.azure.com) and log in. 
 
@@ -653,16 +671,24 @@ You should also see that Azure Traffic Manager indicates that both SAP Cloud Int
 
 ## Step 5 - Test Failover Scenario
 
+In this step you will test the recently created Azure Traffic Manager profile.
+
+In the initial situation, both tenants are online and your primary tenant (priority 1 in Azure Traffic Manager) will process the requests. Then you simulate a situation where the primary tenant is not available by undeploying the monitoring endpoint of the primary tenant. Thus, Azure Traffic Manager will no longer receive the expected response from the call (HTTP 200) and will consider the primary tenant as offline.
+
+Depending on the Failover & DNS TTL settings in Azure Traffic Manager profile, the Secondary Tenant (Priority 2 in Azure Traffic Manager) will process your upcoming requests after a certain time. The sender is effectively unaware of the process in the background, as it sends the requests to a domain regardless of the reachable tenants in the background.
+
+---
+
 5.1 Make sure the monitoring endpoints of both SAP Cloud Integration tenants are deployed. Then, go to the Azure Portal and look at the Traffic Manager profile. You should see that both tenants are considered as online. 
 
-![Azure Traffic Manager profile endpoint status](./images/01.png)
+![Azure Traffic Manager profile endpoint status](./images/84.png)
 
 5.2 Open a new terminal on your machine and call the SAP Cloud Integration REST API (*/http/ping*) that you have deployed for both SAP Cloud Integration tenants but this time with your domain. 
 
 ```console
 curl cloudintegration.example.com/http/ping -u 'firstname.lastname@example.com:yourpassword'
 ```
-![Custom Domain Call](./images/02.png)
+![Custom Domain Call](./images/85.png)
 
 As you can see, the primary tenant handles the request and sends back an HTTP body as defined in the SAP Cloud Integration REST API. 
 
@@ -675,11 +701,11 @@ As you can see, the primary tenant handles the request and sends back an HTTP bo
 5.3 Let's now simulate that the primary tenant is not available anymore. For testing purposes you can simply undeploy the REST API that acts as the monitoring endpoint for Azure Traffic Manager. That way, Azure Traffic Manager doesn't get a HTTP 200 Response from the REST API and considers the tenant as not available. 
 Therefore, go to the **SAP Cloud Integration web interface** and select the said REST API. (**Monitor** option in the navigation area). Select **Undeploy** to undeploy the REST API from SAP Cloud Integration. You can deploy the API later again, as learned in one of the previous steps. 
 
-![Undeploy REST API in SAP Cloud Integration web interface](./images/03.png)
+![Undeploy REST API in SAP Cloud Integration web interface](./images/86.png)
 
 5.4 Check the status of the endpoints in the Azure Traffic Manager profile. Depending on your failover settings in the Azure Traffic Manager profile configuration it takes a few moments until the primary tenant is considered as **Degraded**. 
 
-![Endpoints monitoring Azure Traffic Manager profile](./images/04.png)
+![Endpoints monitoring Azure Traffic Manager profile](./images/87.png)
 
 5.5 Go back to the terminal on your machine and call the REST API you have called in Step 2 again. 
 
@@ -687,7 +713,7 @@ Therefore, go to the **SAP Cloud Integration web interface** and select the said
 curl cloudintegration.example.com/http/ping -u 'firstname.lastname@example.com:yourpassword'
 ```
 
-![Custom Domain Call](./images/05.png)
+![Custom Domain Call](./images/88.png)
 
 As you can see, the secondary tenant handles the request and sends back an HTTP body as defined in the SAP Cloud Integration REST API since Azure Traffic Manager considers the primary tenant as not reachable. 
 
@@ -706,25 +732,27 @@ For the sake of simplicity we use the SAP Cloud Integration tenant of the SAP BT
 
 A potential landscape could look like this: 
 
-![Landscape](./images/01.png)
+![Landscape](./images/89.png)
+
+---
 
 5.1 **(Optional)** If you don't have a third tenant available that acts as the development environment (from which you will transport to the other two productive tenants), [setup SAP Cloud Integration in the SAP BTP Trial](https://developers.sap.com/tutorials/cp-starter-isuite-onboard-subscribe.html). 
 
 5.2 Open the SAP BTP Cockpit in the subaccount for the development (DEV) environment and look for **Content Agent** in the **Service Marketplace**. **Create** a service instance. 
 
-    > **IMPORTANT:** All the following artifacts are created in the subaccount of the development environment!
+> **IMPORTANT:** All the following artifacts are created in the subaccount of the development environment!
 
-    ![Content Agent in the Service Marketplace](./images/02.png)
+![Content Agent in the Service Marketplace](./images/90.png)
 
 5.3 Keep everything as it is and provide **contentagent** as the service instance name. Continue with **Create**.
 
-    ![Content Agent: Service instance creation details](./images/03.png)
+![Content Agent: Service instance creation details](./images/91.png)
 
 5.4 Select **View Instance** to open the details for the created service instance. 
 
 5.5 **Create a Service Key**. 
 
-    ![Content Agent: Service instance creation details](./images/04.png)
+![Content Agent: Service instance creation details](./images/92.png)
 
 5.6 Provide **contentagent_key** as the **Service Key Name** and continue with **Create**. 
 
@@ -732,91 +760,91 @@ A potential landscape could look like this:
 
 5.8 Choose **api** as the service plan and **cloudintegration_api** as the service instance name. Continue with **Next**. 
 
-    ![Process Integration runtime: Service instance creation details](./images/05.png)
+![Process Integration runtime: Service instance creation details](./images/93.png)
 
 5.9  Provide the following **JSON** as service instance parameters and continue with **Create**. 
 
-    ```json
-    {
-        "roles": ["WorkspacePackagesTransport"]
-    }
-    ```
+```json
+{
+    "roles": ["WorkspacePackagesTransport"]
+}
+```
 
-    ![Process Integration runtime: Service instance creation JSON parameter](./images/06.png)
+![Process Integration runtime: Service instance creation JSON parameter](./images/94.png)
 
 5.10 Select **View Instance** to open the details for the created service instance. 
 
 5.11 **Create a Service Key**.
 
-    ![Process Integration runtime: Service key creation](./images/07.png)
+![Process Integration runtime: Service key creation](./images/95.png)
 
 5.12 Provide **cloudintegration_apikey** as the **Service Key Name** and continue with **Create**. 
 
 5.13 Search for **Cloud Transport Management** in the **Service Marketplace** and create an instance. 
 
-    ![Cloud Transport management: Subscription creation](./images/08.png)
+![Cloud Transport management: Subscription creation](./images/96.png)
 
 5.14 Select **Standard** as plan (type **Subscription**) and continue with **Create**. 
 
-    ![Cloud Transport management: Subscription details](./images/09.png)
+![Cloud Transport management: Subscription details](./images/97.png)
 
 5.15 Additionally, Create a Service Instance of **Cloud Transport Management** for the Service Plan **standard**. 
 
-    ![Cloud Transport management: Service instance creation](./images/10.png)
+![Cloud Transport management: Service instance creation](./images/98.png)
 
 5.16 Make sure you are using the **standard** plan (type **Instance**) and provide **cloudtm** as the service instance name. 
 
-    ![Cloud Transport management: Service instance creation details](./images/11.png)
+![Cloud Transport management: Service instance creation details](./images/99.png)
 
 5.17 Continue with **Create**. 
 
 5.18 Select **Destinations** in the navigation area and create a **New Destination**. The Destination should be based on a **Service Instance** (select the tab) not on a blank template. 
 
-    ![Content Assembly Destination creation](./images/12.png)
-    
+![Content Assembly Destination creation](./images/100.png)
+
 5.19 Select **contentagent** as the service instance and provide **ContentAssemblyService** (needs to be exactly this name, case-sensitive!). 
 
-    > **Important**: Make sure the destination is called exactly **ContentAssemblyService** otherwise SAP Cloud Integration won't recognize this destination. 
+> **Important**: Make sure the destination is called exactly **ContentAssemblyService** otherwise SAP Cloud Integration won't recognize this destination. 
 
-    ![Content Assembly Destination creation detail](./images/13.png)
+![Content Assembly Destination creation detail](./images/101.png)
 
 5.20 Continue with **Next**. 
 
-    > the OAuth2 information from the service key of the selected service instance will now be loaded into the destination details. 
+> the OAuth2 information from the service key of the selected service instance will now be loaded into the destination details. 
 
 5.21 **Save** the Destination. 
 
-    ![Saving the destination](./images/14.png)
+![Saving the destination](./images/102.png)
 
 5.22 Display the service key information of the **cloudintegration_api** service instance. 
 
-    ![cloudintegration_api service details](./images/15.png)
+![cloudintegration_api service details](./images/103.png)
 
 5.23 Copy the values of **clientid**, **clientsecret** and **url** of the service key details. 
 
-    ![cloudintegration_api URL](./images/16.png)
+![cloudintegration_api URL](./images/104.png)
 
 5.24 Open a new browser tab and create a **new Destination**. 
 
-    > a new browser tab so you can later on simply copy&paste the values of service key (step 23)
+> a new browser tab so you can later on simply copy&paste the values of service key (step 23)
 
-    ![New Destination](./images/17.png)
+![New Destination](./images/105.png)
 
 5.25 Provide the following details: 
 
-    - **Name**: CloudIntegration
-    - **Type**: HTTP
-    - **Description**: Source Tenant SAP Cloud Integration
-    - **URL**: `<url from step23>/api/1.0/transportmodule/Transport`
-        (e.g.: https://e2ed6ed2trial.it-cpitrial03.cfapps.ap21.hana.ondemand.com/api/1.0/transportmodule/Transport)
-    - **Proxy Type**: Internet
-    - **Authentication**: Oauth2ClientCredentials
-    - **Token Service URL**: `<token url from step23>`
-        (e.g. https://e2ed6ed2trial.authentication.ap21.hana.ondemand.com/oauth/token)
-    - **Client ID**: `<clientid from step23>`
-    - **Client Secret**: `<clientsecret from step23>`
+  - **Name**: CloudIntegration
+  - **Type**: HTTP
+  - **Description**: Source Tenant SAP Cloud Integration
+  - **URL**: `<url from step23>/api/1.0/transportmodule/Transport`
+      (e.g.: https://e2ed6ed2trial.it-cpitrial03.cfapps.ap21.hana.ondemand.com/api/1.0/transportmodule/Transport)
+  - **Proxy Type**: Internet
+  - **Authentication**: Oauth2ClientCredentials
+  - **Token Service URL**: `<token url from step23>`
+      (e.g. https://e2ed6ed2trial.authentication.ap21.hana.ondemand.com/oauth/token)
+  - **Client ID**: `<clientid from step23>`
+  - **Client Secret**: `<clientsecret from step23>`
 
-    ![New Destination details](./images/18.png)
+  ![New Destination details](./images/106.png)
 
 5.26 **Save** the destination. 
 
@@ -824,85 +852,85 @@ A potential landscape could look like this:
 
 5.28 Select **Service Instance** and select **cloudtm** (The Cloud Transport Management service instance), the name of destination does have to be **TransportManagementService**. 
 
-    > **Important**: The destination name is canse-sensitive and needs to follow the naming convention. 
+> **Important**: The destination name is canse-sensitive and needs to follow the naming convention. 
 
-    ![SAP Cloud Transport Management Destination creation](./images/19.png)
+![SAP Cloud Transport Management Destination creation](./images/107.png)
 
 5.29 Continue with **Next** to fetch the service key information. 
 
 5.30 Add a **New Property**: 
 
-    sourceSystemId=DEV
+sourceSystemId=DEV
 
-    ![sourceSystemId as new property for the destination](./images/20.png)
-    > make sure that this ID matches exactly the Node name of the source environment in SAP Cloud Transport Management. 
+![sourceSystemId as new property for the destination](./images/108.png)
+> make sure that this ID matches exactly the Node name of the source environment in SAP Cloud Transport Management. 
 
 5.31 Continue with **Save**. 
 
 5.32 Create another Destination (still in the subaccount of the development environment): 
 
-    - **Name**: CloudIntegration EU
-    - **Type**: HTTP
-    - **Description**: Cloud Integration EU - Production
-    - **URL**: `https://deploy-service.cfapps.<region>.hana.ondemand.com/slprot/<OrgNameOfTarget>/<SpaceNameOfTarget>/slp`
-      e.g.: https://deploy-service.cfapps.eu20.hana.ondemand.com/slprot/Org%20with%20Spaces_cloudintegration-eu/dev/slp
-    - **ProxyType**: Internet
-    - **Authentication**: BasicAuthentication
-    - **User**: `<your username>`
-    - **Password** `<your password>`
+- **Name**: CloudIntegration EU
+- **Type**: HTTP
+- **Description**: Cloud Integration EU - Production
+- **URL**: `https://deploy-service.cfapps.<region>.hana.ondemand.com/slprot/<OrgNameOfTarget>/<SpaceNameOfTarget>/slp`
+    e.g.: https://deploy-service.cfapps.eu20.hana.ondemand.com/slprot/Org%20with%20Spaces_cloudintegration-eu/dev/slp
+- **ProxyType**: Internet
+- **Authentication**: BasicAuthentication
+- **User**: `<your username>`
+- **Password** `<your password>`
 
-    **Replace <region> with the region of your  productive target subaccount, in this case it is eu20.** <br>
-    **Replace <OrgNameOfTarget> and <SpaceNameOfTarget> with the Cloud Foundry information of your productive target subaccount**. 
+**Replace <region> with the region of your  productive target subaccount, in this case it is eu20.** <br>
+**Replace <OrgNameOfTarget> and <SpaceNameOfTarget> with the Cloud Foundry information of your productive target subaccount**. 
 
-    **Important: If the URL contains spaces, because your Cloud Foundry org or space contains spaces, replace the spaces with the URL escape character %20**
+**Important: If the URL contains spaces, because your Cloud Foundry org or space contains spaces, replace the spaces with the URL escape character %20**
 
-    ![Create Destination for productive target subaccount](./images/21.png)
+![Create Destination for productive target subaccount](./images/109.png)
 
-    > More information about Transport Destinations on [help.sap.com](https://help.sap.com/viewer/7f7160ec0d8546c6b3eab72fb5ad6fd8/Cloud/en-US/c9905c142cf14aea86fe2451434faed9.html)
+> More information about Transport Destinations on [help.sap.com](https://help.sap.com/viewer/7f7160ec0d8546c6b3eab72fb5ad6fd8/Cloud/en-US/c9905c142cf14aea86fe2451434faed9.html)
 
 5.33 **Save** the destination. 
 
 5.34 Check the connection. You should get the following response:
 
-    ![Check Connection for new Destination](./images/22.png)
+![Check Connection for new Destination](./images/110.png)
 
 5.35 Create another destination for the other productive target subaccount - similar to what you have done in step 32. 
 
-    - **Name**: CloudIntegration US
-    - **Type**: HTTP
-    - **Description**: Cloud Integration US - Production
-    - **URL**: `https://deploy-service.cfapps.<region>.hana.ondemand.com/slprot/<OrgNameOfTarget>/<SpaceNameOfTarget>/slp`
-      e.g.: https://deploy-service.cfapps.us20.hana.ondemand.com/slprot/Org%20with%20Spaces_cloudintegration-us/dev/slp
-    - **ProxyType**: Internet
-    - **Authentication**: BasicAuthentication
-    - **User**: `<your username>`
-    - **Password** `<your password>`
+- **Name**: CloudIntegration US
+- **Type**: HTTP
+- **Description**: Cloud Integration US - Production
+- **URL**: `https://deploy-service.cfapps.<region>.hana.ondemand.com/slprot/<OrgNameOfTarget>/<SpaceNameOfTarget>/slp`
+    e.g.: https://deploy-service.cfapps.us20.hana.ondemand.com/slprot/Org%20with%20Spaces_cloudintegration-us/dev/slp
+- **ProxyType**: Internet
+- **Authentication**: BasicAuthentication
+- **User**: `<your username>`
+- **Password** `<your password>`
 
-    **Replace <region> with the region of your  productive target subaccount, in this case it is us20.**
-    **Replace <OrgNameOfTarget> and <SpaceNameOfTarget> with the Cloud Foundry information of your productive target subaccount**. 
+**Replace <region> with the region of your  productive target subaccount, in this case it is us20.**
+**Replace <OrgNameOfTarget> and <SpaceNameOfTarget> with the Cloud Foundry information of your productive target subaccount**. 
 
-    **Important: If the URL contains spaces, because your Cloud Foundry org or space contains spaces, replace the spaces with the URL escape character %20**
+**Important: If the URL contains spaces, because your Cloud Foundry org or space contains spaces, replace the spaces with the URL escape character %20**
 
-    ![Check Connection for new Destination](./images/23.png)
+![Check Connection for new Destination](./images/111.png)
 
 5.36 Check the connection. You should get the following response:
 
-    ![Check Connection for new Destination](./images/24.png)
+![Check Connection for new Destination](./images/112.png)
 
 5.37 Create a new Role Collection **CloudIntegrationTM** in the development subaccount to enable Transport Management in the SAP Cloud Integration development tenant: 
 
-    ![Check Connection for new Destination](./images/25.png)
+![Check Connection for new Destination](./images/113.png)
 
 5.38 Select the created Role Collection from the list of all Role Collections. 
 
 5.39 Select **Edit** and add the following roles: 
 
-    - **AuthGroup_Admdinistrator**
-    - **WorkspacePackagesTransport**
+- **AuthGroup_Admdinistrator**
+- **WorkspacePackagesTransport**
 
 5.40 Assign the Role Collection to your user and **Save**. 
 
-    ![Role Collection for SAP Cloud TM](./images/26.png)
+![Role Collection for SAP Cloud TM](./images/114.png)
 
 5.41 Creat another Role Collection called **CloudTransportManagement**. 
 
@@ -910,19 +938,19 @@ A potential landscape could look like this:
 
 5.43 Add all roles of the application identifier beginning with **alm-ts**. 
 
-    ![Role Collection for SAP Cloud TM](./images/27.png)
+![Role Collection for SAP Cloud TM](./images/115.png)
 
-    > This is not a best practice to add all existing roles into a single Role Collection - this is only for the sake of simplicity in this exercise. 
+> This is not a best practice to add all existing roles into a single Role Collection - this is only for the sake of simplicity in this exercise. 
 
 5.44 Assign the Role Collection to your user and **Save**. 
 
-    ![Role Collection for SAP Cloud TM](./images/28.png)
+![Role Collection for SAP Cloud TM](./images/116.png)
 
 5.45 Open the web interface of SAP Cloud Integration the development environment and select **Settings** in the navigation area. 
 
 5.46 Open the **Transport** Tab and select **Edit**. 
 
-    ![Role Collection for SAP Cloud TM](./images/29.png)
+![Role Collection for SAP Cloud TM](./images/117.png)
 
 5.47 Change the **Transport Mode** to **Transport Management Service**. 
 
@@ -930,119 +958,119 @@ A potential landscape could look like this:
 
 5.49 Go to **Instances and Subscriptions** and open **Cloud Transport Management**. 
 
-    ![Open Cloud Transport Management](./images/30.png)
+![Open Cloud Transport Management](./images/118.png)
 
 5.50 Create the source Transport Node (development environment).
 
-    - **Name:** DEV
-    - **Description:** SAP Cloud Integration development Tenant
-    - **Allow Upload to Node**: Yes
+- **Name:** DEV
+- **Description:** SAP Cloud Integration development Tenant
+- **Allow Upload to Node**: Yes
 
-    Keep everything else as it is. 
+Keep everything else as it is. 
 
-    ![Open Cloud Transport Management](./images/31.png)
+![Open Cloud Transport Management](./images/119.png)
 
 5.51 Continue with **OK**. 
 
 5.52 Go back to the **Transport** configuration in SAP Cloud Integration and select **Check Configuration**. 
 
-    > The Configuration checks if the CloudIntegration as well as the TransportManagementService destination is reachable. Additionally, if the sourceSystemId (property of the TransportManagementService destination) is defined as a Transport Node (*with Allow Upload to Node*) in SAP Cloud Transport Management. 
+> The Configuration checks if the CloudIntegration as well as the TransportManagementService destination is reachable. Additionally, if the sourceSystemId (property of the TransportManagementService destination) is defined as a Transport Node (*with Allow Upload to Node*) in SAP Cloud Transport Management. 
 
-    ![Open Cloud Transport Management](./images/32.png)
+![Open Cloud Transport Management](./images/120.png)
 
 5.53 Go back to **SAP Cloud Transport Management** and create a **Transport Route** for the primary productive SAP Cloud Integration tenant: 
 
-    - **Name:** PROD_EU
-    - **Description:** SAP Cloud Integration productive tenant - EU
-    - **Allow Upload to Node:** Yes
-    - **Forward Mode:**: Auto
-    - **Content-Type:** Multi-Target Application
-    - **Destination:** CloudIntegrationEU
+- **Name:** PROD_EU
+- **Description:** SAP Cloud Integration productive tenant - EU
+- **Allow Upload to Node:** Yes
+- **Forward Mode:**: Auto
+- **Content-Type:** Multi-Target Application
+- **Destination:** CloudIntegrationEU
 
-    ![Open Cloud Transport Management](./images/33.png)
+![Open Cloud Transport Management](./images/121.png)
 
 5.54 Create another **Transport Route** for the secondary productive SAP Cloud Integration tenant: 
 
-    - **Name:** PROD_US
-    - **Description:** SAP Cloud Integration productive tenant - US
-    - **Allow Upload to Node:** Yes
-    - **Forward Mode:** Auto
-    - **Content-Type:** Multi-Target Application
-    - **Destination:** CloudIntegrationUS
+- **Name:** PROD_US
+- **Description:** SAP Cloud Integration productive tenant - US
+- **Allow Upload to Node:** Yes
+- **Forward Mode:** Auto
+- **Content-Type:** Multi-Target Application
+- **Destination:** CloudIntegrationUS
 
-    ![Open Cloud Transport Management](./images/34.png)
+![Open Cloud Transport Management](./images/122.png)
 
 5.55 Create Transporte Routes from DEV to both prods seperately
 
 5.56 Go to **Transport Routes** in the navigation area and **create** a new transport route. 
 
-    ![Create new transport route](./images/35.png)
+![Create new transport route](./images/123.png)
 
 5.57 Configure the Transport Route as follows: 
 
-    - **Name:** DEV-PRIMARY
-    - **Description:** From DEV to Primary Tenant (EU)
-    - **Choose a source Node:** DEV
-    - **Choose a target Node:** PROD_EU
+- **Name:** DEV-PRIMARY
+- **Description:** From DEV to Primary Tenant (EU)
+- **Choose a source Node:** DEV
+- **Choose a target Node:** PROD_EU
 
-    ![Create new transport route](./images/36.png)
+![Create new transport route](./images/124.png)
 
 5.58 Continue with **OK**. 
 
 5.59 Creater another Transport Route and configure it as follows: 
 
-    - **Name:** PRIMARY-SECONDARY
-    - **Description:** From Primary Tenant (EU) to Secondary Tenant (US)
-    - **Choose a source Node:** PROD_EU
-    - **Choose a target Node:** PROD_US
+- **Name:** PRIMARY-SECONDARY
+- **Description:** From Primary Tenant (EU) to Secondary Tenant (US)
+- **Choose a source Node:** PROD_EU
+- **Choose a target Node:** PROD_US
 
 5.60 Continue with **OK**. 
 
-    You should now have all the needed transport routes to keep your productive tenants in synch. 
-    ![Overview transport routes](./images/37.png)
+You should now have all the needed transport routes to keep your productive tenants in synch. 
+![Overview transport routes](./images/125.png)
 
 5.61 Go to the SAP Cloud Integration web interface of your **development** environment. 
-    
+
 5.62 Select **Design** in the navigation area and choose an Integration Package that you would like to transport. 
-![Design area SAP Cloud integration](./images/38.png)
+![Design area SAP Cloud integration](./images/126.png)
 
 > If you don't have an Integration Package yet, feel free to use one of the [previous steps](#download)
 
 5.63 **Transport** the whole package and provide a short description. 
 
-    > Go to the **artifacts** tab and make sure no artifacts are in draft version. If that's the case, open the artifcats in the SAP Cloud Integration editor an **Save as Version**. 
+> Go to the **artifacts** tab and make sure no artifacts are in draft version. If that's the case, open the artifcats in the SAP Cloud Integration editor an **Save as Version**. 
 
-    > Note: You can also transport individual artifacts via the Actions button next to the version number. 
+> Note: You can also transport individual artifacts via the Actions button next to the version number. 
 
-    ![Transport the content package](./images/39.png)
-    ![Transport the content package](./images/40.png)
+![Transport the content package](./images/127.png)
+![Transport the content package](./images/128.png)
 
 5.64 Go back **SAP Cloud Transport Management** and go to **Transport Nodes**. 
 
 5.65 Select **PROD_EU**. 
 
-    You should now see the Transport Request that you have previously created SAP Cloud Integration development environment appearing in the import queue. 
+You should now see the Transport Request that you have previously created SAP Cloud Integration development environment appearing in the import queue. 
 
-    ![Transport the content package](./images/41.png)
-    ![Transport Request created from SAP Cloud Integration](./images/42.png)
+![Transport the content package](./images/129.png)
+![Transport Request created from SAP Cloud Integration](./images/130.png)
 
 5.66 **Import All** Transport Requests. 
 
-    > Alternatively select requests that you want to transport and use **Import Selected**. 
+> Alternatively select requests that you want to transport and use **Import Selected**. 
 
-    ![Import All Requests in SAP Cloud Transport Management](./images/43.png)
+![Import All Requests in SAP Cloud Transport Management](./images/131.png)
 
 5.67 Check the Transport **Status** or **display the logs** for this transport request in case of errors.  
 
-    ![Transport Request Status or Logs](./images/44.png)
+![Transport Request Status or Logs](./images/132.png)
 
 5.68 Check the Primary SAP Cloud Integration Tenant if the Integration Package was imported. 
 
-    ![Imported Content Package](./images/45.png)
+![Imported Content Package](./images/133.png)
 
 5.69 Since you have already imported the Tranport Request into the primary productive tenant, go back to SAP Cloud Transport Management and go to the **PROD_US Transport Node**. 
 
-    ![Transport Request from PROD_EU](./images/46.png)
+![Transport Request from PROD_EU](./images/134.png)
 
 5.70 Import the Transport Request that was recently imported to the PROD_EU Transport Node. 
 
@@ -1050,13 +1078,13 @@ A potential landscape could look like this:
 
 5.72 Check the secondary SAP Cloud Integration Tenant if the Integration Package was imported. 
 
-    ![Imported Content Package](./images/45.png)
+![Imported Content Package](./images/135.png)
 
 5.73 Go back to SAP Cloud Transport Management and open the **PROD_EU Transport Node**. 
 
 5.74 Click on the **calendar icon** to schedule the Transport Request import process. Schedule the import for every hour. 
 
-    ![Imported Content Package](./images/47.png)
+![Imported Content Package](./images/136.png)
 
 5.75 Repeat the import scheduling for the **PROD_US Transport Node**. 
 
