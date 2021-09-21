@@ -15,12 +15,11 @@ From a service perspective, you'll be using a number of SAP BTP and Microsoft se
  ![OpenSAP Discussion](./images/opensap-forum.png)
 
 
-## Step 1 - Create a Micrsoft SharePoint site
+## Step 1 - Setup SAP Cloud Integration 
 
 [Week2 Unit3 - Step 1](Week2/Unit3/README.md#Step-1---Lorem-Ipsum)
 
 Welcome to the third unit of Week 2. In the comprehensive exercise of this unit, you will build up an end-to-end scenario, which allows you to store billing documents from S/4HANA Cloud to your SharePoint team site. To achieve this scenario, you will make use of different SAP Integration Suite components like Cloud Integration and Open Connectors, as well as Microsoft tools like SharePoint and Azure.
-
 
 ### 1.1. Create your first SharePoint site
 

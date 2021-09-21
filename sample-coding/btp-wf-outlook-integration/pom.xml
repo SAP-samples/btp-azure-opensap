@@ -1,0 +1,286 @@
+<?xml version='1.0' encoding='utf-8'?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.sap.bpm.wfs</groupId>
+    <artifactId>wfs-forms-adaptive-cards</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <properties>
+        <surefire.skipTests>false</surefire.skipTests>
+        <surefire.forkCount>1</surefire.forkCount>
+        <surefire.include>*</surefire.include>
+        <surefire.exclude />
+        <surefire.groups />
+        <surefire.excludedGroups />
+        <surefire.maxMemorySize>1024m</surefire.maxMemorySize>
+        <surefire.logLevel>info</surefire.logLevel>
+        <spring-boot.version>2.4.3</spring-boot.version>
+
+        <java.version>1.8</java.version>
+
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <maven.compiler.testSource>${java.version}</maven.compiler.testSource>
+        <maven.compiler.testTarget>${java.version}</maven.compiler.testTarget>
+
+        <project.build.resourceEncoding>UTF-8</project.build.resourceEncoding>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <argLine>-Xmx${surefire.maxMemorySize} -Dorg.slf4j.simpleLogger.defaultLogLevel=${surefire.logLevel}</argLine>
+
+        <jacoco.executionDataFile>${project.build.directory}/coverage-reports/jacoco.exec</jacoco.executionDataFile>
+        <jacoco.includes>*</jacoco.includes>
+        <jacoco.excludes>org.apache.*</jacoco.excludes>
+        <jackson.version>2.12.2</jackson.version>
+    </properties>
+
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.sap.cloud.sdk</groupId>
+                <artifactId>sdk-bom</artifactId>
+                <version>3.41.0</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.validation</groupId>
+                <artifactId>validation-api</artifactId>
+                <version>2.0.1.Final</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.sap.cloud.sdk.cloudplatform</groupId>
+            <artifactId>scp-cf</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.sap.cloud.sdk.s4hana</groupId>
+            <artifactId>s4hana-all</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.sap.hcp.cf.logging</groupId>
+            <artifactId>cf-java-logging-support-logback</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+
+        <dependency>
+            <groupId>javax.inject</groupId>
+            <artifactId>javax.inject</artifactId>
+        </dependency>
+
+        <!-- Dependencies for security setup -->
+        <!--
+        <dependency>
+            <groupId>com.sap.cloud.security.xsuaa</groupId>
+            <artifactId>xsuaa-spring-boot-starter</artifactId>
+        </dependency>
+        -->
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.schibsted.spt.data</groupId>
+            <artifactId>jslt</artifactId>
+            <version>0.1.8</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.mail</groupId>
+            <artifactId>javax.mail</artifactId>
+            <version>1.6.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.nimbusds</groupId>
+            <artifactId>oauth2-oidc-sdk</artifactId>
+            <version>5.17.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.schibsted.spt.data</groupId>
+            <artifactId>jslt</artifactId>
+            <version>0.1.8</version>
+        </dependency>
+    </dependencies>
+
+    
+
+    <build>
+        <finalName>${project.artifactId}</finalName>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-pmd-plugin</artifactId>
+                    <configuration>
+                        <rulesets>
+                            <ruleset>rulesets/cloud-sdk-qualities.xml</ruleset>
+                            <ruleset>rulesets/java/maven-pmd-plugin-default.xml</ruleset>
+                        </rulesets>
+                    </configuration>
+                    <dependencies>
+                        <dependency>
+                            <groupId>com.sap.cloud.sdk.quality</groupId>
+                            <artifactId>pmd-rules</artifactId>
+                            <version>3.41.0</version>
+                        </dependency>
+                    </dependencies>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <version>3.0.0-M3</version>
+                <executions>
+                    <execution>
+                        <id>SAP Cloud SDK Project Structure Checks</id>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <configuration>
+                            <rules>
+                                <requireMavenVersion>
+                                    <version>3.5</version>
+                                </requireMavenVersion>
+                                <requireJavaVersion>
+                                    <version>${java.version}</version>
+                                </requireJavaVersion>
+                                <requireProperty>
+                                    <property>project.artifactId</property>
+                                    <regex>[^_]+</regex>
+                                    <regexMessage>"The artifactId should not contain underscores (_) as this causes issues when deploying to Cloud Foundry."</regexMessage>
+                                </requireProperty>
+                                <reactorModuleConvergence />
+                            </rules>
+                            <fail>true</fail>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring-boot.version}</version>
+                <configuration>
+                    <attach>false</attach>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.6</version>
+                <configuration>
+                    <destFile>${jacoco.executionDataFile}</destFile>
+                    <dataFile>${jacoco.executionDataFile}</dataFile>
+                    <includes>${jacoco.includes}</includes>
+                    <excludes>${jacoco.excludes}</excludes>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>prepare-agent</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M5</version>
+                <configuration>
+                    <skipTests>${surefire.skipTests}</skipTests>
+                    <includes>
+                        <include>${surefire.include}</include>
+                    </includes>
+                    <excludes>
+                        <exclude>${surefire.exclude}</exclude>
+                    </excludes>
+                    <forkCount>${surefire.forkCount}</forkCount>
+                    <reuseForks>false</reuseForks>
+                    <groups>${surefire.groups}</groups>
+                    <excludedGroups>${surefire.excludedGroups}</excludedGroups>
+                    <systemPropertyVariables>
+                        <surefire.forkDir>${project.build.directory}/surefire-fork/${surefire.forkNumber}/
+                        </surefire.forkDir>
+                    </systemPropertyVariables>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

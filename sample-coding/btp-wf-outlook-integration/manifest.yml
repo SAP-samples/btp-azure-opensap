@@ -1,0 +1,17 @@
+---
+applications:
+- name: <trial org name>-<space name>-wfs-forms-adaptive-cards
+  memory: 1G
+  instances: 1
+  path: target/wfs-forms-adaptive-cards.jar
+  buildpack: sap_java_buildpack
+  env:
+    TARGET_RUNTIME: main
+    SPRING_PROFILES_ACTIVE: 'cloud'
+    SET_LOGGING_LEVEL: '{com.sap.bpm.wfs: INFO}'
+    LOG_REMOTE_USER: true
+    JBP_CONFIG_DEBUG: '{enabled: true}'
+  timeout: 600
+  services:
+    - wm_workflow
+    - wm_destination
