@@ -17,7 +17,7 @@ From a service perspective, you'll be using a number of SAP BTP and Microsoft se
 
 ## Step 1 - Setup SAP Cloud Integration 
 
-[Week2 Unit3 - Step 1](Week2/Unit3/README.md#Step-1---Lorem-Ipsum)
+[Week2 Unit3 - Step 1](Week2/Unit3/README.md#Step-1---Setup-SAP-Cloud-Integration)
 
 Welcome to the third unit of Week 2. In the comprehensive exercise of this unit, you will build up an end-to-end scenario, which allows you to store billing documents from S/4HANA Cloud to your SharePoint team site. To achieve this scenario, you will make use of different SAP Integration Suite components like Cloud Integration and Open Connectors, as well as Microsoft tools like SharePoint and Azure.
 
@@ -93,12 +93,12 @@ Rename your document **welcome.docx** and click on **Rename**. The file name wil
 ![Microsoft SharePoint](./images/mss_0310.png)
 
 
-With this a SharePoint team site named General has been successfully created. 
+Congratulations! By finishing the first step, your SharePoint team site named General has been successfully created. 
 
 
 ## Step 2 - Create an Azure AD app registration
 
-[Week2 Unit3 - Step 2](Week2/Unit3/README.md#Step-2---Lorem-Ipsum)
+[Week2 Unit3 - Step 2](Week2/Unit3/README.md#Step-2---Create-an-Azure-AD-app-registration)
 
 For using the SharePoint connector from Open Connectors capability of SAP Business Technology Platform Integration Suite, you will need an OAuth key and Secret to connect to your SharePoint account. In this step, configurations required to connect to your SharePoint Online account are covered.
 
@@ -189,12 +189,12 @@ For connecting to your SharePoint Online account from SAP BTP Open Connectors, a
 ![Azure AD](./images/aar_0230.png)
 
 
-You have successfully configured your Azure AD for the usage with SAP Business Technology Platform Open Connectors. 
+Congratulations! You've successfully created an App Registration within Azure Active Directory, which contains the required permissions, to interact with your SharePoint teams site. 
 
 
 ## Step 3 - Configure Integration Suite Open Connectors
 
-[Week2 Unit1 - Step 5](Week2/Unit1/README.md#Step-5---Lorem-Ipsum)
+[Week2 Unit3 - Step 3](Week2/Unit3/README.md#Step-3---Configure-Integration-Suite-Open-Connectors)
 
 ### 3.1. Create an Open Connectors SharePoint connector
 
@@ -278,12 +278,12 @@ In the **Curl** subsection, please copy the values in the Authorization header, 
 ![Open Connectors](./images/ioc_0220.png)
 
 
-With this you have successfully created a SharePoint connector instance from Open Connectors capability of SAP Integration Suite. You will be able to use this connector instance in Cloud Integration to integrate data from SAP system to SharePoint or build an application connecting to your SharePoint account.
+Congratulations! With this step, you have successfully created a SharePoint connector instance from Open Connectors capability of SAP Integration Suite. You will be able to use this connector instance in Cloud Integration to integrate data from SAP system to SharePoint or build an application connecting to your SharePoint account.
 
 
 ## Step 4 - Check out SAP API Business Hub and fetch API Key
 
-[Week2 Unit1 - Step 6](Week2/Unit1/README.md#Step-6---Lorem-Ipsum)
+[Week2 Unit3 - Step 4](Week2/Unit3/README.md#Step-4---Check-out-SAP-API-Business-Hub-and-fetch-API-Key)
 
 The SAP API Business Hub is the central catalog of all SAP and partner APIs for developers to build sample apps, extensions and open integrations with SAP. In this tutorial, [Billing Document – Read, Cancel, GetPDF](https://api.sap.com/api/API_BILLING_DOCUMENT_SRV/resource) from SAP S/4HANA Cloud APIs has been used.
 
@@ -337,10 +337,12 @@ Select **Copy Key and Close** to copy this API Key. This API Key will be used fr
 ![API Business Hub](./images/sah_0080.png)
 
 
+Congratulations! You've learned how to navigate within and how to use the SAP API Business Hub in this step and you obtained an API key. This can be used in the following steps to call the S/4HANA Cloud Sandbox API provided by the API Business Hub.  
+
 
 ## Step 5 - Create your SharePoint Integration Flow
 
-[Week2 Unit1 - Step 7](Week2/Unit1/README.md#Step-7---Lorem-Ipsum)
+[Week2 Unit3 - Step 5](Week2/Unit3/README.md#Step-5---Create-your-SharePoint-Integration-Flow)
 
 ### 5.1. Open SAP Cloud Integration 
 
@@ -765,7 +767,7 @@ Congratulations! You've successfully deployed your first Integration Flow, which
 
 ## Step 6 - Review result in SharePoint
 
-[Week2 Unit1 - Step 8](Week2/Unit1/README.md#Step-8---Lorem-Ipsum)
+[Week2 Unit3 - Step 6](Week2/Unit3/README.md#Step-6---Review-result-in-SharePoint)
 
 ### 6.1. Check the uploaded document in SharePoint
 
@@ -790,6 +792,4 @@ https://blogs.sap.com/2020/09/29/blog-series-posting-documents-to-sharepoint/
 
 ## Summary
 
-Congratulations! You've successfully accomplished this unit's quite comprehensive exercise. You've learned how to configure and develop within two components of the SAP Integration Suite (Open Connectors & Cloud Integration). Furthermore you've implemented one approach, how these services can interact with Microsoft products like SharePoint. This concludes the exercise content of Week 2. 
-
-
+Congratulations! You've successfully accomplished this unit's quite comprehensive exercise. This also concludes the complete exercise content of Week 2. You've learned how to configure and develop within two components of the SAP Integration Suite (Open Connectors & Cloud Integration). Furthermore you've implemented one approach, how these services can interact with Microsoft products like SharePoint. 

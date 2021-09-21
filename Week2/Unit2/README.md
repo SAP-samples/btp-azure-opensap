@@ -17,7 +17,7 @@ From a service perspective, you'll be using a number of SAP BTP and Microsoft se
 
 ## Step 1 - Subscribe to Integration Suite SaaS
 
-[Week2 Unit2 - Step 1](Week2/Unit2/README.md#Step-1---Lorem-Ipsum)
+[Week2 Unit2 - Step 1](Week2/Unit2/README.md#Step-1---Subscribe-to-Integration-Suite-SaaS)
 
 Welcome to the second unit of Week 2. In this first step, you will add an **Integration Suite Application Subscription** to your BTP subaccount. This will be the central entry point for all required Integration Suite components like Cloud Integration or Open Connectors.  
 
@@ -49,12 +49,12 @@ Check your **Integration Suite** subscription in the **Instances and Subscriptio
 
 ![Integration Suite](./images/iss_045.png)
 
-Congratiulations! You have successfully created an Integration Suite application subscription. In the next steps you will learn how to enable the different components of the Integration Suite and how to assign the required authorizations to your user. 
+Congratulations! You have successfully created an Integration Suite application subscription. In the next steps you will learn how to enable the different components of the Integration Suite and how to assign the required authorizations to your user. 
 
 
 ## Step 2 - Provision the required Integration Suite components 
 
-[Week2 Unit2 - Step 2](Week2/Unit2/README.md#Step-2---Lorem-Ipsum)
+[Week2 Unit2 - Step 2](Week2/Unit2/README.md#Step-2---Provision-the-required-Integration-Suite-components)
 
 In this step, you will use the **Integration Suite Provisioning** tool, to enable the required capabilities within your Integration Suite instance. This includes Cloud Integration and Open Connectors, which will be used in the subsequent steps and weeks of this course. 
 
@@ -107,12 +107,12 @@ From the Provisioning application you can navigate back to the **Integration Sui
 ![Integration Suite](./images/iss_125.png)
 
 
-Congratiulations! You have successfully provisioned the Integration Suite components. In the next step you will learn, how to assign your user the required authorizations, to access the various Integration Suite components. 
+Congratulations! You have successfully provisioned the Integration Suite components. In the next step you will learn, how to assign your user the required authorizations, to access the various Integration Suite components. 
 
 
 ## Step 3 - Assign roles and create service instances
 
-[Week2 Unit2 - Step 3](Week2/Unit2/README.md#Step-3---Lorem-Ipsum)
+[Week2 Unit2 - Step 3](Week2/Unit2/README.md#Step-3---Assign-roles-and-create-service-instances)
 
 In this step, you will execute a Booster that assigns your user the necessary roles to access the activated capabilities from Step 2. Furthermore, the Booster will create additional service instances like the **Process Integration Runtime**. This service instance defines, how the Process Integration Runtime service can be called from a remote component. In case of Cloud Integration, a service instance is an OAuth client. The service instance allows you to create Service Keys, containing credentials and other information, required to call integration flows.
 
