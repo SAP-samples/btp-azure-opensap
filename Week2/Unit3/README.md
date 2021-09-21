@@ -17,7 +17,10 @@ From a service perspective, you'll be using a number of SAP BTP and Microsoft se
 
 ## Step 1 - Create a Micrsoft SharePoint site
 
-[Week2 Unit1 - Step 3](Week2/Unit1/README.md#Step-3---Lorem-Ipsum)
+[Week2 Unit3 - Step 1](Week2/Unit3/README.md#Step-1---Lorem-Ipsum)
+
+Welcome to the third unit of Week 2. In the comprehensive exercise of this unit, you will build up an end-to-end scenario, which allows you to store billing documents from S/4HANA Cloud to your SharePoint team site. To achieve this scenario, you will make use of different SAP Integration Suite components like Cloud Integration and Open Connectors, as well as Microsoft tools like SharePoint and Azure.
+
 
 ### 1.1. Create your first SharePoint site
 
@@ -96,7 +99,7 @@ With this a SharePoint team site named General has been successfully created.
 
 ## Step 2 - Create an Azure AD app registration
 
-[Week2 Unit1 - Step 4](Week2/Unit1/README.md#Step-4---Lorem-Ipsum)
+[Week2 Unit3 - Step 2](Week2/Unit3/README.md#Step-2---Lorem-Ipsum)
 
 For using the SharePoint connector from Open Connectors capability of SAP Business Technology Platform Integration Suite, you will need an OAuth key and Secret to connect to your SharePoint account. In this step, configurations required to connect to your SharePoint Online account are covered.
 
@@ -194,88 +197,33 @@ You have successfully configured your Azure AD for the usage with SAP Business T
 
 [Week2 Unit1 - Step 5](Week2/Unit1/README.md#Step-5---Lorem-Ipsum)
 
-### 3.1. Provision the required Integration Suite components
+### 3.1. Create an Open Connectors SharePoint connector
 
-Go to your Business Technolgy Platform trial account [BTP Trial Account](hanatrial.ondemand.com). Click on **Go To Your Trial Account**.
-
-![Open Connectors](./images/ioc_0010.png)
-
-
-Select your Subaccount which you created initially. 
-
-![Open Connectors](./images/ioc_0020.png)
-
-
-In the menu on the left side of the screen, go to **Services -> Instances and Subscriptions**. Click on the small icon next to your **Integration Suite** instance to open the respective application.
-
-![Open Connectors](./images/ioc_0030.png)
-
-
-This will launch the Integration Suite in a new browser tab, where you need to add the required capabilites like Open Connectors. Therefor click on **Add Capabilities**.
-
-![Open Connectors](./images/ioc_0040.png)
-
-
-Select all available capabilites and click on **Next**.
-
-![Open Connectors](./images/ioc_0050.png)
-
-
-Click on **Next**.
-
-![Open Connectors](./images/ioc_0060.png)
-
-
-Select the checkbox for **Enable API Business Hub Enterprise** and click on **Next**.
-
-![Open Connectors](./images/ioc_0070.png)
-
-
-Click on **Finish** to provision your required capabilities. 
-
-![Open Connectors](./images/ioc_0080.png)
-
-
-### 3.2. Make sure your Integration Suite components are provisioned successfully
-
-On the following page, you can see the provisioning status of the Integration Suite components. 
-
-![Open Connectors](./images/ioc_0090.png)
-
-
-Wait until all components are in state **Active**. You might need to refresh your page to update the status.
-
-![Open Connectors](./images/ioc_0100.png)
-
-
-### 3.3. Create the required Open Connectors SharePoint connector
-
-
-Go to your BTP Cockpit and open the Integration Suite once again. 
+Go to your BTP Cockpit and open your **Integration Suite** application subscription. It will open in a new browser tab. 
 
 ![Open Connectors](./images/ioc_0105.png)
 
-
-You should now see the activated capabilites on the welcome screen. Select **Extend Non-SAP Connectivity** to open the Open Connectors application. 
+You should now see your capabilites in the **Integration Suite Launchpad**. Select **Extend Non-SAP Connectivity** to open the Open Connectors application. 
 
 ![Open Connectors](./images/ioc_0110.png)
 
-In case you are required to login again, use your sap.com credentials. 
+
+In case you are required to login again, use your **sap.com** credentials. 
 
 ![Open Connectors](./images/ioc_0130.png)
 
 
-You will navigate to the Open Connectors Home page.
+You will be redirected to the **Open Connectors** Home page.
 
 ![Open Connectors](./images/ioc_0140.png)
 
 
-Within Open Connectors, click on the Connectors tab to view all the available pre-built, feature rich connectors. 
+Within Open Connectors, click on the **Connectors tab** to view all the available pre-built connectors. 
 
 ![Open Connectors](./images/ioc_0150.png)
 
 
-Search for the SharePoint connector by entering SharePoint in the search region (top right). Hover over the Sharepoint connector and select the option Authenticate to connect to your own SharePoint account.
+Search for the SharePoint connector by typing SharePoint in the search region (top right). Hover over the Sharepoint connector and select the option Authenticate to connect to your own SharePoint account.
 
 ![Open Connectors](./images/ioc_0160.png)
 
@@ -301,7 +249,7 @@ Select **Create Instance** to create SharePoint connector instance.
 ![Open Connectors](./images/ioc_0187.png)
 
 
-### 3.3. Test your Open Connectors SharePoint connector instance
+### 3.2. Test your Open Connectors SharePoint connector instance
 
 After the authenticated connection to your Microsoft account has been created successfully, you will be able to test out the connection from SAP BTP Open Connectors. To try out the SharePoint connector APIs, click on the option **Test in the API Docs**.
 
@@ -331,7 +279,7 @@ In the **Curl** subsection, please copy the values in the Authorization header, 
 ![Open Connectors](./images/ioc_0220.png)
 
 
-With this you have successfully created a SharePoint connector instance from Open Connectors capability of SAP Business Technology Platform Integration Suite. You would be able to use this connector instance in Cloud Integration to integrate data from SAP system to SharePoint or build an application connecting to your SharePoint account.
+With this you have successfully created a SharePoint connector instance from Open Connectors capability of SAP Integration Suite. You will be able to use this connector instance in Cloud Integration to integrate data from SAP system to SharePoint or build an application connecting to your SharePoint account.
 
 
 ## Step 4 - Check out SAP API Business Hub and fetch API Key
@@ -395,71 +343,20 @@ Select **Copy Key and Close** to copy this API Key. This API Key will be used fr
 
 [Week2 Unit1 - Step 7](Week2/Unit1/README.md#Step-7---Lorem-Ipsum)
 
-### 5.1. Check your authorization to use the Cloud Integration tool
+### 5.1. Open SAP Cloud Integration 
 
-Go to your Business Technolgy Platform trial account [BTP Trial Account](hanatrial.ondemand.com). Click on **Go To Your Trial Account**.
+Go to your BTP subaccount using [https://hanatrial.ondemand.com](https://hanatrial.ondemand.com/). Select the **Instances and Subscriptions** menu on left and click on your **Integration Suite** application subscription. This will open the **Integration Suite Launchpad** in a new browser tab. 
 
 ![Cloud Integration](./images/cif_0010.png)
 
-
-Select your Subaccount which you created initially. 
-
-![Cloud Integration](./images/cif_0015.png)
-
-
-In the menu on the left side of the screen, go to **Services -> Instances and Subscriptions**. Click on the small icon next to your **Integration Suite** instance.
+In the **Integration Suite Launchpad** please click on the **Cloud Integration** capability. This will open the required component in the same window.
+> In case you're facing authorization errors, please ensure that you've successfully executed the Booster described in Week 2 - Unit 2.
 
 ![Cloud Integration](./images/cif_0020.png)
 
+### 5.2. Create your SharePoint Integration Flow 
 
-This will launch the Integration Suite Welcome page in a new browser tab. Select **Design, Develop and Operate Integrate Scenarios** to open the Cloud Integration.
-
-![Cloud Integration](./images/cif_0030.png)
-
-
-In case you see the following error message, you're missing the required privileges on BTP side. This can be easily changed by yourself in the BTP cockpit.
-
-![Cloud Integration](./images/cif_0040.png)
-
-
-### 5.2. Assign the required privileges
-
-Go back to the BTP Cockpit browser tab and select the **Security** menu. Go to **Users** and select your user. 
-
-![Cloud Integration](./images/cif_0050.png)
-
-
-Select **Assign Role Collection** to add new roles to your user. 
-
-![Cloud Integration](./images/cif_0060.png)
-
-
-Search for **PI_Integration_Developer** and add the respective role from the search results, by selecting the checkbox next to it and clicking on **Assign Role Collection**.
-
-![Cloud Integration](./images/cif_0070.png)
-
-
-### 5.3. Validate the assigned Cloud Integration developer privileges 
-
-Go back to the Integration Suite browser tab, and make sure that the new Role Collection is applied to your session, by selecting **Logout** from the user's menu. 
-
-![Cloud Integration](./images/cif_0080.png)
-
-
-Once you successfully logged out, please login again by clicking on **Login** or by opening the Integration Suite again from the BTP Cockpit. 
-
-![Cloud Integration](./images/cif_0090.png)
-
-
-You should now be able to open the **Design, Develop and Operate Integrate Scenarios** capability without an authorization error. 
-
-![Cloud Integration](./images/cif_0095.png)
-
-
-
-### 5.3. Create your SharePoint Integration Flow 
-
-Once you opened the Cloud Integration tool, you can close the **What's New?** popup and start working on your first integration flow. 
+Once you opened the Cloud Integration component, you can close the **What's New?** popup and start working on your first integration flow. 
 
 ![Cloud Integration](./images/cif_0100.png)
 
@@ -498,7 +395,7 @@ Select the newly created Integration Flow named **Post Billing Document to Share
 ![Cloud Integration](./images/cif_0180.png)
 
 
-### 5.4. Define a Start object for your integration flow
+### 5.3. Define a Start object for your integration flow
 
 Since a timer-based integration flow will be used the default start message can be deleted. Select the default start message and select **Delete**.
 
@@ -510,7 +407,7 @@ Select and add the Timer integration step. The default property of timer integra
 ![Cloud Integration](./images/cif_0200.png)
 
 
-### 5.5. Add a Content Modifier to provided S/4HANA Cloud API properties
+### 5.4. Add a Content Modifier to provided S/4HANA Cloud API properties
 
 To set values like API key and the billing document id to read data from SAP S/4HANA Cloud API Sandbox from SAP API Business Hub, a Content Modifier can be used. Select the **Content Modifier** integration step from the integration palette and drop it into the Integration Process canvas.
 
@@ -540,7 +437,7 @@ Select the **Exchange Property** tab and click on **Add**. From the action dropd
 ![Cloud Integration](./images/cif_0280.png)
 
 
-### 5.6. Add a Request Reply object to allow a call to the S/4HANA Cloud API
+### 5.5. Add a Request Reply object to allow a call to the S/4HANA Cloud API
 
 To read the billing document in PDF format, the [Request Reply](https://blogs.sap.com/2015/01/05/blog-2-request-reply-pattern-in-integration-flows-hci-pi/) integration pattern with a HTTP Receiver adapter can be used. Select **Request Reply** from External Call integration palette and drop it into Integration Process canvas.
 
@@ -560,7 +457,7 @@ Select and connect the **Initialize S4HC Value** integration step with the **Fet
 
 
 
-### 5.7. Add a Receiver object reflecting your S/4HANA Cloud system and configure the HTTP API call
+### 5.6. Add a Receiver object reflecting your S/4HANA Cloud system and configure the HTTP API call
 
 Add an **Receiver** integration step to invoke the SAP S/4HANA Cloud OData API.
 
@@ -600,7 +497,7 @@ Extend the size of your **Integration Process** area by moving the **End** butto
 ![Cloud Integration](./images/cif_0400.png)
 
 
-### 5.8. Add a filter object to process the API response
+### 5.7. Add a filter object to process the API response
 
 The **GetPDF service operation** of the SAP S/4HANA Cloud ODataAPI, returns the PDF document in the base64 encoded format.
 Add a Filter step to read this file content with XPath expression.
@@ -623,7 +520,7 @@ Select and connect Fetch Billing Document to Read File Data integration step.
 ![Cloud Integration](./images/cif_0440.png)
 
 
-### 5.9. Configure your Integration Flow XML namespace property
+### 5.8. Configure your Integration Flow XML namespace property
 
 Since the XPath Expression uses XML namespaces, this namespace needs to be defined or declared at the Integration flow.
 To declare the namespace, click anywhere within your integration flow. This allows you to configure the Integration flow settings at the bottom of your page.
@@ -637,7 +534,7 @@ Enter **xmlns:d=http://schemas.microsoft.com/ado/2007/08/dataservices** in the n
 ![Cloud Integration](./images/cif_0460.png)
 
 
-### 5.10. Convert your S/4HANA Cloud document to a multipart form request
+### 5.9. Convert your S/4HANA Cloud document to a multipart form request
 
 The SharePoint connector of Open Connectors requires the file content to be passed as a [multipart form request](https://www.ietf.org/rfc/rfc2388.txt). To create the required multipart form request a Groovy Script is leveraged.
 
@@ -736,7 +633,7 @@ Select and connect the **Read File Data** to the **Convert to File Format** inte
 ![Cloud Integration](./images/cif_0530.png)
 
 
-### 5.11. Add the required request parameters to call your Open Connectors SharePoint API
+### 5.10. Add the required request parameters to call your Open Connectors SharePoint API
 
 Add a **Content Modifier** step, to initialize the SharePoint connector instance authorization token and the SharePoint team site, where the document will be posted.
 
@@ -763,7 +660,7 @@ Select and connect the **Convert to File Format** and **Initialize SP Values** i
 ![Cloud Integration](./images/cif_0600.png)
 
 
-### 5.12. Add a Request Reply to allow the usage of the Open Connectors SharePoint API 
+### 5.11. Add a Request Reply to allow the usage of the Open Connectors SharePoint API 
 
 To post a file document to SharePoint via Open Connectors an HTTP Receiver adapter can be used. Select the **Request Reply** from the **External Call** integration palette and drop it into the Integration Process canvas.
 
@@ -782,7 +679,7 @@ Select and connect the **Initialize SP Values** and **Post File to SharePoint** 
 ![Cloud Integration](./images/cif_0650.png)
 
 
-### 5.13. Add a Receiver object reflecting your Open Connectors SharePoint API
+### 5.12. Add a Receiver object reflecting your Open Connectors SharePoint API
 
 Add a receiver from the Participants integration palette and place it below the **Post File to SharePoint** integration step. Alternatively, you can also take the existing receiver from your canvas and place it below the respective integration step.
 
@@ -794,7 +691,7 @@ Change the name of the added **Receiver** step to **SharePoint** to improve read
 ![Cloud Integration](./images/cif_0680.png)
 
 
-### 5.14. Configure the details of your HTTP API call to the Open Connectors SharePoint API
+### 5.13. Configure the details of your HTTP API call to the Open Connectors SharePoint API
 
 Select and connect the **Post File to SharePoint** Request Reply step to the recently placed **Receiver**. 
 
@@ -824,7 +721,7 @@ Select and connect the **Post File to SharePoint** to the **End message** to com
 ![Cloud Integration](./images/cif_0720.png)
 
 
-### 5.15. Save, deploy and monitor the execution of your Integration Flow
+### 5.14. Save, deploy and monitor the execution of your Integration Flow
 
 Select **Save** and then click the **Deploy** button to deploy this integration flow to SAP BTP Integration tenant.
 
@@ -859,10 +756,12 @@ Select **Monitor Message Processing**  to view the successfully executed integra
 ![Cloud Integration](./images/cif_0810.png)
 
 
-Since the integration flow was designed as a Run immediate timer-based integration, the flow will be executed as soon as it deployed. 
-If status is **Completed**, then the billing document read from SAP S/4HANA Cloud system was posted to your SharePoint team site.
+Since the integration flow was designed as a Run immediate timer-based integration, the flow will be executed as soon as it deployed. If status is **Completed**, then the billing document read from SAP S/4HANA Cloud system was posted to your SharePoint team site.
 
 ![Cloud Integration](./images/cif_0920.png)
+
+
+Congratulations! You've successfully deployed your first Integration Flow, which will be used to store billing documents coming from S/4HANA Cloud, in your SharePoint team site. In the next step, you will check if the document was successfully uploaded to Share Point, to validate if your Integration Flow is working properly.
 
 
 ## Step 6 - Review result in SharePoint
@@ -881,20 +780,17 @@ Open the billing document and check if the PDF document can be opened as desired
 ![Cloud Integration](./images/res_0020.png)
 
 
+Congratulations! Your Integration Flow is working properly and has successfully uploaded the billing document to SharePoint. 
+
+
 ## Special Thanks
 
 A special thanks to [Divya Mary](https://people.sap.com/divya.mary), who has written an excellent blog series, which this tutorial is based on.
-
 https://blogs.sap.com/2020/09/29/blog-series-posting-documents-to-sharepoint/
 
 
 ## Summary
 
-Give the user a good feeling! They have achieved something - they've did something for the very first time! And summarize what they have done in a single sentence. 
-
-Example: 
-*Good work!
-You successfully finished the setup and configuration of all necessary services and tools which is required for the Week 3 and you will use them in later Unites.*
-
+Congratulations! You've successfully accomplished this unit's quite comprehensive exercise. You've learned how to configure and develop within two components of the SAP Integration Suite (Open Connectors & Cloud Integration). Furthermore you've implemented one approach, how these services can interact with Microsoft products like SharePoint. This concludes the exercise content of Week 2. 
 
 
