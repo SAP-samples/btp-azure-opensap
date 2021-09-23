@@ -1,6 +1,6 @@
 This exercise is part of the openSAP course [Building applications on SAP Business Technology Platform with Microsoft services](https://open.sap.com/courses/btpma1) - there you will find more information and context. 
 
-# Setting up the development environment![image](https://user-images.githubusercontent.com/36535298/134520075-33e0c3ab-3447-4045-992b-6edd64042ab5.png)
+# Setting up the development environment
 
 The objective of the exercise is to setup the development environment for the following units and weeks. 
 
