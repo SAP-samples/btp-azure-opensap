@@ -10,7 +10,7 @@ Sample project where an employee can create a leave request via chatbot from M
 ![Solution Architecture](./images/wf-outlook-integration.png)
 
 
-## Units Overview
+## Unit Overview
 
 ### [Unit 1: Setting up for Workflow Management on SAP Business Technology Platform](./Unit1/README.md)
 ### [Unit 2: SAP Workflow Management: create leave request workflow](./Unit2/README.md)
