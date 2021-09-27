@@ -38,7 +38,7 @@ Subscriptions required in your SAP Business Technology Platform Account:
 
 ## Problems
 > If you have any issues with the exercises, don't hesitate to open a question in the openSAP Discussion forum for this course. Provide the exact step number: "Week2Unit1, Step 1.1: Command cannot be executed. My expected result was [...], my actual result was [...]". Logs, etc. are always highly appreciated. 
- ![OpenSAP Discussion](./images/opensap-forum.png)
+ ![OpenSAP Discussion](../../images/opensap-forum.png)
 
 
 ## Step 1 - Setup SAP Cloud Integration

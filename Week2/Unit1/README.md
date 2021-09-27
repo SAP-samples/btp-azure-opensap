@@ -8,11 +8,11 @@ The objective of the exercise is to setup the development environment for the fo
 
 ## Problems
 > If you have any issues with the exercises, don't hesitate to open a question in the openSAP Discussion forum for this course. Provide the exact step number: "Week2Unit1, Step 1.1: Command cannot be executed. My expected result was [...], my actual result was [...]". Logs, etc. are always highly appreciated. 
- ![OpenSAP Discussion](./images/opensap-forum.png)
+ ![OpenSAP Discussion](../../images/opensap-forum.png)
 
 ## Step 1 - Create a Microsoft365 Developer Account
 
-So, to get access to Microsofts365 Office products for free, you need to sign up for their Microsoft365 Developer programm.
+To get access to Microsofts365 Office products for free, you need to sign up for their Microsoft365 Developer programm.
 
 ---
 
@@ -20,7 +20,7 @@ So, to get access to Microsofts365 Office products for free, you need to sign up
 
 ![Microsoft SharePoint](./images/mss_0010.png)
 
-1.2 Enter an mail address of your choice and click on **Next**.
+1.2 Enter a mail address of your choice and click on **Next**.
 
 ![Microsoft SharePoint](./images/mss_0020.png)
 
@@ -28,15 +28,15 @@ So, to get access to Microsofts365 Office products for free, you need to sign up
 
 ![Microsoft SharePoint](./images/mss_0030.png)
 
-1.4 Select your country/region, enter your birthdate click on **Next**.
+1.4 Select your country/region, enter your birth date click on **Next**.
 
 ![Microsoft SharePoint](./images/mss_0040.png)
 
-1.5 You should have received a confirmation mail for the mail you recently provided. Within this mail you can find a security code. Copy this security code for the next step of the process. 
+1.5 You should have received a confirmation mail for the mail address you recently provided. Within this mail you can find a security code. **Copy** this security code for the next step of the process. 
 
 ![Microsoft SharePoint](./images/mss_0050.png)
 
-1.6 Paste the copied security code into the respective field, to verify your mail address. Then click on **Next**. 
+1.6 **Paste** the copied security code into the respective field, to verify your mail address. Then click on **Next**. 
 
 ![Microsoft SharePoint](./images/mss_0060.png)
 
@@ -51,7 +51,7 @@ After creating your Microsoft profile, you have to provide some further informat
 
 ---
 
-2.1 Select you country/region, enter a company name and decide your preferred language. Accept the T&Cs and click on **Next** afterwards.
+2.1 Select you country/region, enter a company name and decide your preferred language. Accept the Terms & Conditions and click on **Next** afterwards.
 
 ![Microsoft SharePoint](./images/mss_0090.png)
 
@@ -63,12 +63,11 @@ After creating your Microsoft profile, you have to provide some further informat
 
 ![Microsoft SharePoint](./images/mss_0110.png)
 
-2.4 You will see a message, that you successfully joined the Microsoft 365 Developer Program. You can close this message to see your profile page.
+2.4 You will see a message, that you have successfully joined the Microsoft 365 Developer Program. You can close this message to see your profile page.
 
 ![Microsoft SharePoint](./images/mss_0120.png)
 
 You have successfully joined the Microsoft 365 Developer Program. 
-
 
 ## Step 3 - Add a Microsoft 365 E5 subscription to your Developer account
 
@@ -80,7 +79,7 @@ You can now add a free Microsoft 365 E5 subscription to your account, which allo
 
 ![Microsoft SharePoint](./images/mss_0130.png)
 
-3.2 Enter a username and decide for a domain. This is required to setup your subscription and a subdomain will be created in the **\<domain>.onmicrosoft.com** environment. Decide for a password and click on **Continue**.
+3.2 <a name="domain"> Enter a username and decide for a domain. This is required to setup your subscription and a subdomain will be created in the **\<domain>.onmicrosoft.com** environment. Decide for a password and click on **Continue**.</a>
 
 ![Microsoft SharePoint](./images/mss_0140.png)
 
@@ -110,6 +109,8 @@ You will now setup your first SharePoint site. In Unit 2 of this week SAP Cloud 
 ![Microsoft SharePoint](./images/mss_0180.png)
 
 4.2 You might be asked to login to you're subscription domain. You've defined the respective credentials a few steps before, when you set up the subscription. The mail address of the initial subscription user (Administrator), is the username combined with the new domain which was set up in the onmicrosoft.com environment (e.g. testuser@demotrial.onmicrosoft.com). Click on **Sign in**.
+
+> You have provided the necessary information for username@domain.onmicrosoft.com in [Step 3.1](#domain)
 
 ![Microsoft SharePoint](./images/mss_0184.png)
 
@@ -145,19 +146,19 @@ To showcase the reading of the documents stored in SharePoint via Open Connector
 ---
 
 
-5.1 To add a new document, select **Document -> + New** and from the dropdown select **Word document**.
+5.1 To add a new document, select **Document -> + New** and select **Word document** from the dropdown.
 
 ![Microsoft SharePoint](./images/mss_0260.png)
 
-5.2 This will launch Word in new browser tab. Add any text of your choice like **Hello from SharePoint**.  Wait for the status to change to **Saved** for the changes to be persisted. The status can be found on the top left of the screen. Saving the document may take some time.
+5.2 This will launch Microsoft Word in new browser tab. Add any text of your choice like **Hello from SharePoint**.  Wait for the status to change to **Saved** for the changes to be persisted. The status can be found on the top left of the screen. Saving the document may take some time.
 
 ![Microsoft SharePoint](./images/mss_0270.png)
 
-5.3 This will create a word document named **Document.docx**. To view your document, click on your open SharePoint session from Browser tab. In case you cannot see the document, reload the page. 
+5.3 This will create a word document named **Document.docx**. To view your document, click on your open SharePoint session from the Browser tab. In case you cannot see the document, reload the page. 
 
 ![Microsoft SharePoint](./images/mss_0280.png)
 
-5.4 To rename the newly created document to e.g. **welcome.docx**, select your document click "Rename" in the toolbar. Alternatively you can slect your document and do a right-click. 
+5.4 To rename the newly created document to e.g. **welcome.docx**, select your document click "Rename" in the toolbar. Alternatively you can select your document and do a right-click. 
 
 ![Microsoft SharePoint](./images/mss_0290.png)
 
