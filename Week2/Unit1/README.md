@@ -170,3 +170,96 @@ To showcase the reading of the documents stored in SharePoint via Open Connector
 
 
 With this a SharePoint team site named General has been successfully created. 
+
+## Step 6 - Create an Azure AD app registration
+
+For using the SharePoint connector from Open Connectors capability of SAP Business Technology Platform Integration Suite, you will need an OAuth key and Secret to connect to your SharePoint account. In this step, configurations required to connect to your SharePoint Online account are covered.
+
+---
+
+
+6.1 Logon to your [Azure Portal](https://portal.azure.com/) using your subscription credentials. You defined these, during the set up of your Microsoft 365 E5 subscription (e.g. testuser@demotrial.onmicrosoft.com). In case you own multiple Microsoft accounts, select the respective subscription account. 
+
+![Azure AD](./images/aar_0010.png)
+
+6.2 Navigate to Azure Active Directory (Azure AD).
+
+![Azure AD](./images/aar_0030.png)
+
+![Azure AD](./images/aar_0040.png)
+
+
+6.3 Select **App Registrations**. Click **New registration** to create an OAuth application.
+
+![Azure AD](./images/aar_0050.png)
+
+
+6.4 In the application registration prompt, enter an application name say SharePointOAuthApp, select the supported account types and in the Redirect URI enter the redirect URI for SAP Business Technology Platform Open Connectors, which is https://auth.cloudelements.io/oauth. Click on **Register**. 
+
+![Azure AD](./images/aar_0080.png)
+
+
+## Step 7 - Add the reuqired app permissions for SharePoint access
+
+The registered application by default only has the User.Read permission from Microsoft Graph APIs and you will need to add in the required permission to access SharePoint REST APIs. 
+
+---
+
+7.1 Select **API permissions** tab and then click on **Add a permission** to add in the permissions for SharePoint REST APIs.
+
+![Azure AD](./images/aar_0090.png)
+
+![Azure AD](./images/aar_0100.png)
+
+7.2 Select SharePoint to add in the API permissions for SharePoint.
+
+![Azure AD](./images/aar_0110.png)
+
+7.3 In SAP Business Technolgy Platform Open Connectors, access to the API is via the signed-in user. Select **Delegated Permissions** for accessing APIs as signed-in user.
+
+![Azure AD](./images/aar_0120.png)
+
+7.4 Select the Permissions as shown in the following screenshots and select **Add permissions**.
+
+![Azure AD](./images/aar_0130.png)
+
+![Azure AD](./images/aar_0140.png)
+
+7.5 Some of the selected permissions require administrator consent. After the permissions are selected, click on **Grant admin consent**. The permission may take some time to updated as shown in the warning, so wait for few minutes before selecting the Grant admin consent option.
+
+![Azure AD](./images/aar_0160.png)
+
+7.6 You may be prompted to confirm the administrator consent. Select **Yes**.
+
+![Azure AD](./images/aar_0170.png)
+
+7.7 After successful operation, the status will change to Granted for your user.
+
+![Azure AD](./images/aar_0180.png)
+
+## Step 8 - Create an OAuth secret for your app
+
+For connecting to your SharePoint from SAP BTP Open Connectors, an OAuth secret is required. 
+
+---
+
+8.1 To get your OAuth Secret, select **Certificates & secrets** tab, click on **New client secret**.
+
+![Azure AD](./images/aar_0200.png)
+
+8.2 Enter a description for your OAuth secret say OAuthSecret, select the expiry time, select **Add**.
+
+![Azure AD](./images/aar_0210.png)
+
+8.3 Copy and note down the generated client secret, you will need to provide this while creating a SharePoint connector instance from SAP BTP Open Connectors. The generated client secret cannot be retrieved later.
+
+![Azure AD](./images/aar_0220.png)
+
+8.4 For connecting to your SharePoint Online account from SAP BTP Open Connectors, an OAuth client ID is required. To get your OAuth client ID , select the Overview tab and copy the Application (client) ID value.
+
+![Azure AD](./images/aar_0230.png)
+
+
+
+
+Congratulations! You've successfully created an App Registration within Azure Active Directory, which contains the required permissions, to interact with your SharePoint teams site. 
