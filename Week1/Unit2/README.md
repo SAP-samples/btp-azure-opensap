@@ -42,7 +42,7 @@ You will see an dialog to confirm the terms and condition for the SAP BTP Trial.
 
 ![Phone Verification](./images/trial_phoneverification.png)
 
-1.6 Click on Log on to log on to your verified account.
+1.6 Click on **Log on** to log on to your verified account.
 
 You will see one main button on the welcome screen of the SAP BTP Cockpit. Click on **Enter Your Trial Account** to navigate to your global account.
 
