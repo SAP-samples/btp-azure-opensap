@@ -2,7 +2,7 @@ This exercise is part of the openSAP course [Building applications on SAP Busine
 
 # Setting up the development environment
 
-The objective of the exercise is to setup the development environment for the following units and weeks. 
+The objective of the exercise is to setup the development environment for the following units and weeks. Specifically, for this Unit, this means that you will sign up for the Microsoft 365 programme and create a Sharepoint page, which is required for Unit 2. PDF files coming from a S/4HANA system will be stored there.
 
 ....
 
@@ -10,75 +10,162 @@ The objective of the exercise is to setup the development environment for the fo
 > If you have any issues with the exercises, don't hesitate to open a question in the openSAP Discussion forum for this course. Provide the exact step number: "Week2Unit1, Step 1.1: Command cannot be executed. My expected result was [...], my actual result was [...]". Logs, etc. are always highly appreciated. 
  ![OpenSAP Discussion](./images/opensap-forum.png)
 
-## Step 1 - "Setting up BTP Trial"
+## Step 1 - Create a Microsoft365 Developer Account
 
-[Week2 Unit1 - Step 1](Week2/Unit1/README.md#Lorem-Ipsum)
+So, to get access to Microsofts365 Office products for free, you need to sign up for their Microsoft365 Developer programm.
+
+---
+
+1.1 Go to [Microsoft 365 Dev Center](https://developer.microsoft.com/en-us/microsoft-365/dev-program) and click on **Join now** to create a new account.
+
+![Microsoft SharePoint](./images/mss_0010.png)
+
+1.2 Enter an mail address of your choice and click on **Next**.
+
+![Microsoft SharePoint](./images/mss_0020.png)
+
+1.3 Enter a password of your choice and click on **Next**.
+
+![Microsoft SharePoint](./images/mss_0030.png)
+
+1.4 Select your country/region, enter your birthdate click on **Next**.
+
+![Microsoft SharePoint](./images/mss_0040.png)
+
+1.5 You should have received a confirmation mail for the mail you recently provided. Within this mail you can find a security code. Copy this security code for the next step of the process. 
+
+![Microsoft SharePoint](./images/mss_0050.png)
+
+1.6 Paste the copied security code into the respective field, to verify your mail address. Then click on **Next**. 
+
+![Microsoft SharePoint](./images/mss_0060.png)
+
+1.7 You might be asked to solve a challenge like a puzzle, to verify you're not a robot. Click on **Next** to proceed with the next step afterwards. 
+
+![Microsoft SharePoint](./images/mss_0080.png)
 
 
-### 1.1. Log into the SAP website 
+## Step 2 - Provide details for the Microsoft Developer Program
 
-Visit [SAP Log On Screen](https://www.sap.com) and click the Log On icon in the upper-right corner.
+After creating your Microsoft profile, you have to provide some further information to join the Microsoft 365 Developer program. 
 
-![SAP Log On](./images/trial_saplogon.png)
+---
 
-If you have an account on www.sap.com (e.g. a P, S, C, D or I number) you can enter it or the associated email along with your password. If you don’t have an account yet, you can select one of the other login methods or click Register to create an account.
+2.1 Select you country/region, enter a company name and decide your preferred language. Accept the T&Cs and click on **Next** afterwards.
 
-![SAP Log On Screen](./images/trial_logonscreen.png)
+![Microsoft SharePoint](./images/mss_0090.png)
 
-If you don’t need to register with sap.com, you can skip to Step 1.4. 
+2.2 Decide for the primary purpose of using the respective Developer program subscription. Click on **Next**.
 
-### 1.2. Register at sap.com
+![Microsoft SharePoint](./images/mss_0100.png)
 
-If you don’t have an account you will see a register dialog on the left-hand side of the dialog. Fill in the required fields, and click Submit.
+2.3 Select the areas of Microsoft 365 development, which you're personally most interested in (e.g. SharePoint Framework). Click on **Save** to finish the process.
 
-![SAP Registration](./images/trial_registration.png)
+![Microsoft SharePoint](./images/mss_0110.png)
 
-You will see a message that an activation link has been sent to you.
+2.4 You will see a message, that you successfully joined the Microsoft 365 Developer Program. You can close this message to see your profile page.
 
-### 1.3. Activate your account
+![Microsoft SharePoint](./images/mss_0120.png)
 
-Check your emails to find the activation button **Click to activate your account**.
+You have successfully joined the Microsoft 365 Developer Program. 
 
-![Email Validation](./images/trial_emailvalidation.png)
 
-You will see a success message after activating your account.
+## Step 3 - Add a Microsoft 365 E5 subscription to your Developer account
 
-### 1.4. Log on to SAP BTP Trial
+You can now add a free Microsoft 365 E5 subscription to your account, which allows you to work with latest Microsoft 365 apps like **SharePoint** and **Azure AD**.
 
-After activation, or if you already had an SAP account, go to the [SAP BTP Trial page](https://https://account.hanatrial.ondemand.com/) and click **Log On**.
+---
 
-You will see an dialog to confirm the terms and condition for the SAP BTP Trial. **Check the check boxes** and click **Accept**. This simply adds the SAP.com registration to your login account on SAP Cloud Identity.
+3.1 To do so, click on **Set up E5 subscription**.
 
-### 1.5. Verify your phone number
+![Microsoft SharePoint](./images/mss_0130.png)
 
-You will see an screen, asking you to verify your account with a valid phone number. 
+3.2 Enter a username and decide for a domain. This is required to setup your subscription and a subdomain will be created in the **\<domain>.onmicrosoft.com** environment. Decide for a password and click on **Continue**.
 
-![Phone Verification](./images/trial_phoneverification.png)
+![Microsoft SharePoint](./images/mss_0140.png)
 
-Enter your phone number and click **New Code** to retrieve a code. Please enter this code and click **Continue** to verify your account. After the verification, you will be logged off automatically.
+3.3 You have to provide a phone number in the following screen, which will be verified by an SMS which is sent you, once you click on **Send Code**. Make sure, that you provide your phone number **without the country code and without a leading 0**.
 
-### 1.6. Access the welcome screen
+![Microsoft SharePoint](./images/mss_0150.png)
 
-Click on Log on to log on to your verified account.
+3.4 Enter the code which you received via SMS, to verify your phone number. Click on **Set up** afterwards.
 
-You will see one main button on the welcome screen of the SAP BTP Cockpit. Click on Enter Your Trial Account to navigate to your global account.
+![Microsoft SharePoint](./images/mss_0160.png)
 
-![Trial Landingpage](./images/trial_landingpage.png)
+Your Microsoft 365 E5 subscription will be set up. 
 
-> Bookmark the link for fast and quick access to the cockpit.
+![Microsoft SharePoint](./images/mss_0170.png)
 
-### 1.7. Navigate to the subaccount
+3.5 Once the subscription is set up, you will see your profile, showing the remaining days of the subscription. You have successfully added the required Microsoft 365 E5 subscription to your Developer account.
 
-Here, you can now create a subaccount that lives in a geographic region. Choose any region from this list and click Create Account to trigger the provisioning process.
 
-![Trial Region](./images/trial_chooseregion.png)
+### Step 4 - Create your first SharePoint site
 
-You will then see a dialog box while the account is set up. When complete, click **Continue** to close to popup and to navigate to the new account.
+You will now setup your first SharePoint site. In Unit 2 of this week SAP Cloud Integration in conjunction with SAP Open Connectors will store PDF files from S/4HANA here. 
 
-The global trial account contains **one** subaccount and space. Navigate to subaccount by clicking on the tile named **trial** (this name may vary if you created the subaccount manually).
+---
 
-![Trial Global Account](./images/trial_globalaccount.png)
+4.1 To create your first SharePoint site, now click on **Go to subscription**. 
 
-This page will display the current state of the subaccount. You can manage your subscriptions and jump into the different runtime environments. It also shows you fundamental; information of the Cloud Foundry environment, such as the API endpoint and the available spaces.
+![Microsoft SharePoint](./images/mss_0180.png)
 
-![Trial Subaccount](./images/trial_globalaccount.png)
+4.2 You might be asked to login to you're subscription domain. You've defined the respective credentials a few steps before, when you set up the subscription. The mail address of the initial subscription user (Administrator), is the username combined with the new domain which was set up in the onmicrosoft.com environment (e.g. testuser@demotrial.onmicrosoft.com). Click on **Sign in**.
+
+![Microsoft SharePoint](./images/mss_0184.png)
+
+4.3 You should now see the **Microsoft Office Home** screen. Click on the **SharePoint icon** on the left side of the screen to jump to your SharePoint instance. 
+
+![Microsoft SharePoint](./images/mss_0190.png)
+
+4.4 In case a welcome popup appears, you can click on **Not now** to continue. 
+
+![Microsoft SharePoint](./images/mss_0200.png)
+
+4.5 Select **+Create site** and select option **Team site** from section Create a site.
+
+![Microsoft SharePoint](./images/mss_0220.png)
+
+4.6 Enter a site name (e.g. **General**). This site name will be used later while accessing files from Open Connectors capability of SAP Business Technology Platform Integration Suite. Select **Next**.
+
+![Microsoft SharePoint](./images/mss_0230.png)
+
+4.7 You can optionally add additional owners or members which is not required for our use case. Select **Finish** to create the team site.
+
+![Microsoft SharePoint](./images/mss_0240.png)
+
+4.8 With this a site named **General** will be created for you. You can optionally customize the default Home Page.
+
+![Microsoft SharePoint](./images/mss_0250.png)
+
+
+## Step 5 - Add a sample file to your SharePoint site
+
+To showcase the reading of the documents stored in SharePoint via Open Connectors you can add a sample document named **welcome.docx** which will be used for testing purpose.
+
+---
+
+
+5.1 To add a new document, select **Document -> + New** and from the dropdown select **Word document**.
+
+![Microsoft SharePoint](./images/mss_0260.png)
+
+5.2 This will launch Word in new browser tab. Add any text of your choice like **Hello from SharePoint**.  Wait for the status to change to **Saved** for the changes to be persisted. The status can be found on the top left of the screen. Saving the document may take some time.
+
+![Microsoft SharePoint](./images/mss_0270.png)
+
+5.3 This will create a word document named **Document.docx**. To view your document, click on your open SharePoint session from Browser tab. In case you cannot see the document, reload the page. 
+
+![Microsoft SharePoint](./images/mss_0280.png)
+
+5.4 To rename the newly created document to e.g. **welcome.docx**, select your document click "Rename" in the toolbar. Alternatively you can slect your document and do a right-click. 
+
+![Microsoft SharePoint](./images/mss_0290.png)
+
+5.5 Rename your document **welcome.docx** and click on **Rename**. The file name will be changed to welcome.docx
+
+![Microsoft SharePoint](./images/mss_0300.png)
+
+![Microsoft SharePoint](./images/mss_0310.png)
+
+
+With this a SharePoint team site named General has been successfully created. 
