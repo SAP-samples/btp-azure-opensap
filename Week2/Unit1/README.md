@@ -2,7 +2,7 @@ This exercise is part of the openSAP course [Building applications on SAP Busine
 
 # Setting up the development environment
 
-The objective of the exercise is to setup the development environment for the following units and weeks. Specifically, for this Unit, this means that you will sign up for the Microsoft 365 programme and create a Sharepoint page, which is required for Unit 2. PDF files coming from a S/4HANA system will be stored there.
+The objective of the exercise is to setup the development environment for the following units and weeks. Specifically, for this Unit, this means that you will sign up for the Microsoft 365 program and create a SharePoint page, which is required for Unit 2. PDF files coming from a S/4HANA system will be stored there.
 
 ....
 
@@ -12,7 +12,7 @@ The objective of the exercise is to setup the development environment for the fo
 
 ## Step 1 - Create a Microsoft365 Developer Account
 
-To get access to Microsofts365 Office products for free, you need to sign up for their Microsoft365 Developer programm.
+To get access to Microsofts365 Office products for free, you need to sign up for their Microsoft365 Developer program.
 
 ---
 
@@ -47,11 +47,11 @@ To get access to Microsofts365 Office products for free, you need to sign up for
 
 ## Step 2 - Provide details for the Microsoft Developer Program
 
-After creating your Microsoft profile, you have to provide some further information to join the Microsoft 365 Developer program. 
+After creating your Microsoft profile, you're asked to provide some further information to join the Microsoft 365 Developer program. 
 
 ---
 
-2.1 Select you country/region, enter a company name and decide your preferred language. Accept the Terms & Conditions and click on **Next** afterwards.
+2.1 Select your country/region, enter a company name and decide your preferred language. Accept the Terms & Conditions and click on **Next** afterwards.
 
 ![Microsoft SharePoint](./images/mss_0090.png)
 
@@ -59,7 +59,7 @@ After creating your Microsoft profile, you have to provide some further informat
 
 ![Microsoft SharePoint](./images/mss_0100.png)
 
-2.3 Select the areas of Microsoft 365 development, which you're personally most interested in (e.g. SharePoint Framework). Click on **Save** to finish the process.
+2.3 Select the areas of Microsoft 365 development, which you're personally most interested in (e.g., SharePoint Framework). Click on **Save** to finish the process.
 
 ![Microsoft SharePoint](./images/mss_0110.png)
 
@@ -83,7 +83,7 @@ You can now add a free Microsoft 365 E5 subscription to your account, which allo
 
 ![Microsoft SharePoint](./images/mss_0140.png)
 
-3.3 You have to provide a phone number in the following screen, which will be verified by an SMS which is sent you, once you click on **Send Code**. Make sure, that you provide your phone number **without the country code and without a leading 0**.
+3.3 You need to provide a phone number in the following screen, which will be verified by an SMS which is sent you, once you click on **Send Code**. Make sure, that you provide your phone number **without the country code and without a leading 0**.
 
 ![Microsoft SharePoint](./images/mss_0150.png)
 
@@ -108,7 +108,7 @@ You will now setup your first SharePoint site. In Unit 2 of this week SAP Cloud 
 
 ![Microsoft SharePoint](./images/mss_0180.png)
 
-4.2 You might be asked to login to you're subscription domain. You've defined the respective credentials a few steps before, when you set up the subscription. The mail address of the initial subscription user (Administrator), is the username combined with the new domain which was set up in the onmicrosoft.com environment (e.g. testuser@demotrial.onmicrosoft.com). Click on **Sign in**.
+4.2 You might be asked to login to your subscription domain. You've defined the respective credentials a few steps before, when you set up the subscription. The mail address of the initial subscription user (Administrator) is the username combined with the new domain which was set up in the onmicrosoft.com environment (e.g. testuser@demotrial.onmicrosoft.com). Click on **Sign in**.
 
 > You have provided the necessary information for username@domain.onmicrosoft.com in [Step 3.1](#domain)
 
@@ -126,7 +126,7 @@ You will now setup your first SharePoint site. In Unit 2 of this week SAP Cloud 
 
 ![Microsoft SharePoint](./images/mss_0220.png)
 
-4.6 Enter a site name (e.g. **General**). This site name will be used later while accessing files from Open Connectors capability of SAP Business Technology Platform Integration Suite. Select **Next**.
+4.6 Enter a site name (e.g., **General**). This site name will be used later while accessing files from Open Connectors capability of SAP Business Technology Platform Integration Suite. Select **Next**.
 
 ![Microsoft SharePoint](./images/mss_0230.png)
 
@@ -158,7 +158,7 @@ To showcase the reading of the documents stored in SharePoint via Open Connector
 
 ![Microsoft SharePoint](./images/mss_0280.png)
 
-5.4 To rename the newly created document to e.g. **welcome.docx**, select your document click "Rename" in the toolbar. Alternatively you can select your document and do a right-click. 
+5.4 To rename the newly created document to e.g. **welcome.docx**, select your document click "Rename" in the toolbar. Alternatively, you can select your document and do a right-click. 
 
 ![Microsoft SharePoint](./images/mss_0290.png)
 
@@ -178,7 +178,7 @@ For using the SharePoint connector from Open Connectors capability of SAP Busine
 ---
 
 
-6.1 Logon to your [Azure Portal](https://portal.azure.com/) using your subscription credentials. You defined these, during the set up of your Microsoft 365 E5 subscription (e.g. testuser@demotrial.onmicrosoft.com). In case you own multiple Microsoft accounts, select the respective subscription account. 
+6.1 Logon to your [Azure Portal](https://portal.azure.com/) using your subscription credentials. You defined these, during the setup of your Microsoft 365 E5 subscription (e.g., testuser@demotrial.onmicrosoft.com). In case you own multiple Microsoft accounts, select the respective subscription account. 
 
 ![Azure AD](./images/aar_0010.png)
 
@@ -199,7 +199,7 @@ For using the SharePoint connector from Open Connectors capability of SAP Busine
 ![Azure AD](./images/aar_0080.png)
 
 
-## Step 7 - Add the reuqired app permissions for SharePoint access
+## Step 7 - Add the required app permissions for SharePoint access
 
 The registered application by default only has the User.Read permission from Microsoft Graph APIs and you will need to add in the required permission to access SharePoint REST APIs. 
 
@@ -215,7 +215,7 @@ The registered application by default only has the User.Read permission from Mic
 
 ![Azure AD](./images/aar_0110.png)
 
-7.3 In SAP Business Technolgy Platform Open Connectors, access to the API is via the signed-in user. Select **Delegated Permissions** for accessing APIs as signed-in user.
+7.3 In SAP Business Technology Platform Open Connectors, access to the API is via the signed-in user. Select **Delegated Permissions** for accessing APIs as signed-in user.
 
 ![Azure AD](./images/aar_0120.png)
 
