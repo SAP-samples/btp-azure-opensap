@@ -32,9 +32,18 @@ The objective of the exercise is to create leave request workflow, deploy and ru
 
 2.1. Clone following project from GitHub into your BAS workspace. Clone the project using either the Terminal in BAS and *git* CLI or BAS Github tools.
 
+Open the Termin via the BAS Menu. 
+   ![Open Terminal](./images/openTerminal.png)
+
+Change the directory and clone the git repo
+   ![Change and clone](./changeAndClone.png)
+
    ```bash/Shell
+   cd ~/projects/
    git clone https://github.com/maxstreifeneder/btp-azure-draft.git
    ```
+
+
 2.2. Workflow project you can find in **btp-workflow** folder.
    Project has following structure:
 
