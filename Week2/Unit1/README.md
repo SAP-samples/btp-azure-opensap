@@ -259,7 +259,4 @@ For connecting to your SharePoint from SAP BTP Open Connectors, an OAuth secret 
 
 ![Azure AD](./images/aar_0230.png)
 
-
-
-
 Congratulations! You've successfully created an App Registration within Azure Active Directory, which contains the required permissions, to interact with your SharePoint teams site. 
