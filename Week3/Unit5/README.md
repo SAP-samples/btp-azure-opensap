@@ -72,6 +72,7 @@ The custom Java app uses the SAP BTP destination service to interact with Micros
 For authentication, OAuth2ClientCredentials needs to be selected and the Client ID & Secret from the previous app registration is set.
 
 ### 2.1. Download following [Destination Configuration]([https://link](https://github.com/SAP-samples/btp-azure-opensap/blob/main/sample-coding/btp-wf-outlook-integration/MSGraphAPI))
+  ![download destination](./images/download_destination_graph.png)
 
 
 ### 2.2. Open SAP BTP Cockpit and navigate to Connectivity/Destinations and "Import Destination" from previous step
