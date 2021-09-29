@@ -66,6 +66,8 @@ In the following your credit card information is requested. As already mentioned
 
 3.3 Go to <https://portal.azure.com> and log in with the mail address you have used in the previous steps. 
 
+## Summary
+
 Congratulations! You should now have a free Azure subscription. 
 
 ![Free Azure subscription on Azure Portal](./images/08.png)

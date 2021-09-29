@@ -1,6 +1,6 @@
 This exercise is part of the openSAP course [Building applications on SAP Business Technology Platform with Microsoft services](https://open.sap.com/courses/btpma1) - there you will find more information and context. 
 
-# SAP Cloud Integration and Azure Traffic Manager - intelligent routing. 
+# Set up SAP Cloud Integration and Azure Traffic Manager
 
 **DISCLAIMER: This exercise cannot be done in the SAP BTP Trial environment**
 
@@ -1087,6 +1087,8 @@ You should now see the Transport Request that you have previously created SAP Cl
 ![Imported Content Package](./images/136.png)
 
 5.75 Repeat the import scheduling for the **PROD_US Transport Node**. 
+
+## Summary
 
 Good Job! You have set SAP Cloud Transport Management for SAP Cloud Integration packages. You have now full control over your transports using SAP Cloud Transport Management. With the scheduled import of Transport Requests both into the primary SAP Cloud Integration tenant as well as to the secondary SAP Cloud Integration tenant, your tenants should now always be in synch without manual effort. 
 

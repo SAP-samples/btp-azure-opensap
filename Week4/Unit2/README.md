@@ -3,12 +3,9 @@
 
 This exercise is part of the openSAP course [Building applications on SAP Business Technology Platform with Microsoft services](https://open.sap.com/courses/btpma1) - there you will find more information and context. 
 
-# Exercise : Setup Azure Data Explorer instance and load data 
+# Setup Azure Data Explorer instance and load data 
 
 In this exercise we will setup Azure Data Explorer, ADX and import sample data. ADX will late be connected to SAP HANA Cloud and the data surfaced in SAP Analytics Cloud. 
-
-Example: 
-[Week4 Unit2 - Title](Week3/Unit1/README.md#Step-1---Set-up-your-trial-account-for-SAP-Workflow-Management)
 
 ## Problems
 > If you have any issues with the exercises, don't hesitate to open a question in the openSAP Discussion forum for this course. Provide the exact step number: "Week4Unit2, Step 1.1: Command cannot be executed. My expected result was [...], my actual result was [...]". Logs, etc. are always highly appreciated. 
@@ -18,7 +15,9 @@ Example:
 
 Creating an Azure Data Explorer Cluster can be done via the UI using the Azure Portal or a command line interface. In the next steps we will use the Azure Portal. For this we are using the Azure Admin user created in Week 1 Unit 3 )
 
-** If you have not yet created a user in the Azure Portal, please follow the steps outlined in Week 1 Unit 3 and continue with Step 1.1.
+** If you have not yet created a user in the Azure Portal, please follow the steps outlined in Week 1 Unit 3 and continue with Step 1.1 afterwards.
+
+---
 
 
 1.1. Login to on the Azure Portal 
@@ -53,6 +52,8 @@ Once the properties have been validated you can click on Create and start the cr
 
 In order to load data into the Azure Data Explorer Cluster we need to create a database first. 
 
+---
+
 2.1. Go to the Azure Data Explorer Resource 
 Once the deployment from Step 1.7 is done, you can click on "Go to resource" to jump directly to the Azure resource. 
      ![Go to Resource](./images/07-GotoResource.jpg)
@@ -76,6 +77,8 @@ Once the database is created the Overview page is displayed again. Make sure to 
 ## Step 3 - Import data
 
 In order to simplify the import of data, a CSV file with related sample data is already available in a central Azure Blob storage. You can just access this blob storage to import the data into your database. 
+
+---
 
 3.1. Click on Ingest data 
 From the Overview screen click on "Ingest New data"

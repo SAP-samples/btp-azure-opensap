@@ -1,7 +1,7 @@
 This exercise is part of the openSAP course [Building applications on SAP Business Technology Platform with Microsoft services](https://open.sap.com/courses/btpma1) - there you will find more information and context. 
 
 
-# SAP Workflow Management: create leave request workflow
+# SAP Workflow Management: Build Leave Request workflow
 
 The objective of the exercise is to create leave request workflow, deploy and run it on BTP. Also understand the basic concepts how it works.
 
@@ -231,6 +231,6 @@ After successful deployment of leave request workflow we can see the deployment 
    ![WF Execution log](./images/wf_execution_log.png)
    
 
-# Summary
+## Summary
 
 Congrats! You successfully build and deployed the leave request workflow. You also simulated the workflow request process using the Monitoring tools provided by SAP Workflow Management.

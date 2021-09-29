@@ -1,7 +1,7 @@
 This exercise is part of the openSAP course [Building applications on SAP Business Technology Platform with Microsoft services](https://open.sap.com/courses/btpma1) - there you will find more information and context. 
 
 
-# Setting up for Workflow Management on SAP Business Technology Platform
+# Setup SAP Workflow Management in SAP BTP Trial
 
 In this unit you'll set up and configure the basic aspects of the SAP Workflow Management that you'll need to complete Week 3 of this course.   
 

@@ -10,7 +10,11 @@ The objective of the exercise is to create a SAP BTP Trial account that you can 
 > If you have any issues with the exercises, don't hesitate to open a question in the openSAP Discussion forum for this course. Provide the exact step number: "Week2Unit1, Step 1.1: Command cannot be executed. My expected result was [...], my actual result was [...]". Logs, etc. are always highly appreciated. 
  ![OpenSAP Discussion](../../images/opensap-forum.png)
 
-## Step 1 - "Setting up BTP Trial"
+## Step 1 - Setting up BTP Trial
+
+In this unit we lay the foundation for the other weeks in this course. You will frequently use SAP Business Technology Platform services that are part of the SAP Business Technology Platform Trial. In the following you will create your own trial account. 
+
+---
 
 1.1 Visit [SAP Log On Screen](https://www.sap.com) and click the Log On icon in the upper-right corner.
 
@@ -63,5 +67,7 @@ You will then see a dialog box while the account is set up. When complete, click
 This page will display the current state of the subaccount. You can manage your subscriptions and jump into the different runtime environments. It also shows you fundamental; information of the Cloud Foundry environment, such as the API endpoint and the available spaces.
 
 ![Trial Subaccount](./images/trial_globalaccount.png)
+
+## Summary
 
 Congratulations! You have succesfully created your personal SAP BTP trial account! You will use this account through the next weeks of this course to build custom extension scenarios, integration scenarios and data-to-value scenarios

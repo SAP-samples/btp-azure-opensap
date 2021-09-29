@@ -1,6 +1,6 @@
 This exercise is part of the openSAP course [Building applications on SAP Business Technology Platform with Microsoft services](https://open.sap.com/courses/btpma1) - there you will find more information and context. 
 
-# Posting documents to Microsoft SharePoint
+# Publish documents from SAP S/4HANA to SharePoint
 
 The objective of this exercise is to get your hands "dirty" and develop the target scenario, using the development environment which you've set up in the last two units. You will configure your Open Connectors instance to communicate with your SharePoint instance, and integrate the Connector into your Integration Flow. The integration flow (which you will develop end-to-end in this unit), contains all the steps and logic required, to extract the PDF files from an S/4HANA system and send it to a SharePoint page using your Open Connectors instance. 
 
@@ -579,4 +579,4 @@ https://blogs.sap.com/2020/09/29/blog-series-posting-documents-to-sharepoint/
 
 ## Summary
 
-**Congratulations! You've successfully accomplished this unit's quite comprehensive exercise. You've learned how to configure and develop within two components of the SAP Integration Suite (Open Connectors & Cloud Integration). Furthermore you've implemented one approach, how these services can interact with Microsoft products like SharePoint.**
+Congratulations! You've successfully accomplished this unit's quite comprehensive exercise. You've learned how to configure and develop within two components of the SAP Integration Suite (Open Connectors & Cloud Integration). Furthermore you've implemented one approach, how these services can interact with Microsoft products like SharePoint.

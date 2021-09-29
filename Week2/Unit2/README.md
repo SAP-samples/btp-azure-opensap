@@ -150,4 +150,4 @@ In this step, you will execute a Booster that assigns your user the necessary ro
 
 ## Summary
 
-**Congratulations! You have successfully configured your Integration Suite including the required authorizations for your user. This allows you to start development within the different components like Cloud Integration or API Management. This concludes the exercise content of Week 2 - Unit 2. You can continue with the content of Week 2 - Unit 3.**
+Congratulations! You have successfully configured your Integration Suite including the required authorizations for your user. This allows you to start development within the different components like Cloud Integration or API Management. This concludes the exercise content of Week 2 - Unit 2. You can continue with the content of Week 2 - Unit 3.

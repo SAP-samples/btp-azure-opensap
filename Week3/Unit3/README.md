@@ -1,7 +1,7 @@
 This exercise is part of the openSAP course [Building applications on SAP Business Technology Platform with Microsoft services](https://open.sap.com/courses/btpma1) - there you will find more information and context. 
 
 
-# Triggering an SAP workflow from an SAP Conversational AI bot
+# Build SAP Conversational AI bot 
 
 Extend the exercise with SAP workflow to SAP Conversational AI to learn how to create an SAP Conversational AI Bot and understand how to trigger SAP workflow from SAP Conversational AI bot. Lastly, integrate SAP Conversational AI with Azure bot and Microsoft Teams. 
 
@@ -151,16 +151,16 @@ Go to Workflow Management launchpad and open My Inbox application
 
 > Make sure you select the F0 free Pricing tier, unless you want to use it in production.
 
-| Field Name | Input Value |
-| ---------- | ------------|
-| Bot Name| A unique display name for the bot (which will appear in channels and directories – this can be changed later) |
-| Subscription | Your Azure subscription (in  trial, only one)|
-| Resource Group | Select a resource group. If you don’t have one yet,  then create a new one |
-| Location | Choose a location near where your bot is deployed |
-| Pricing Tier | F0 (10K Premium Messages) |
-| Messaging endpoint | This will be filled out later |
-| Application Insights | On |
-| Application Insights Location | Choose a location near where your bot is deployed |
+| Field Name                    | Input Value                                                                                                   |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| Bot Name                      | A unique display name for the bot (which will appear in channels and directories – this can be changed later) |
+| Subscription                  | Your Azure subscription (in  trial, only one)                                                                 |
+| Resource Group                | Select a resource group. If you don’t have one yet,  then create a new one                                    |
+| Location                      | Choose a location near where your bot is deployed                                                             |
+| Pricing Tier                  | F0 (10K Premium Messages)                                                                                     |
+| Messaging endpoint            | This will be filled out later                                                                                 |
+| Application Insights          | On                                                                                                            |
+| Application Insights Location | Choose a location near where your bot is deployed                                                             |
 
 
 ![Bot Channel Registration](./images/cai_bot-channel_reg_2.png)
