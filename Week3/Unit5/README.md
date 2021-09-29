@@ -57,6 +57,7 @@ The application will use this secret to prove its identity when requesting a tok
 * Go to permissions and "Add a permission"
   ![Permission](./images/u5_permission.png)
 * Select Microsoft Graph > Application permissions (where the application runs as a background service or daemon without a signed-in user)
+  ![Select Graph](./images/select_graph.png)
 * Add the permission **Calendars.ReadWrite** which is required for creating Calendar entry in Outlook.
  ![Permission](./images/u5_add_premission.png)
 
