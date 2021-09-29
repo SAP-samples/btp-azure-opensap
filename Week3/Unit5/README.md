@@ -57,6 +57,7 @@ The application will use this secret to prove its identity when requesting a tok
 * Go to permissions and "Add a permission"
   ![Permission](./images/u5_permission.png)
 * Select Microsoft Graph > Application permissions (where the application runs as a background service or daemon without a signed-in user)
+  ![Select Graph](./images/select_graph.png)
 * Add the permission **Calendars.ReadWrite** which is required for creating Calendar entry in Outlook.
  ![Permission](./images/u5_add_premission.png)
 
@@ -71,6 +72,7 @@ The custom Java app uses the SAP BTP destination service to interact with Micros
 For authentication, OAuth2ClientCredentials needs to be selected and the Client ID & Secret from the previous app registration is set.
 
 ### 2.1. Download following [Destination Configuration]([https://link](https://github.com/SAP-samples/btp-azure-opensap/blob/main/sample-coding/btp-wf-outlook-integration/MSGraphAPI))
+  ![download destination](./images/download_destination_graph.png)
 
 
 ### 2.2. Open SAP BTP Cockpit and navigate to Connectivity/Destinations and "Import Destination" from previous step
