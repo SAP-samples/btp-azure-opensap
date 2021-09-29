@@ -36,11 +36,11 @@ Open the Termin via the BAS Menu.
    ![Open Terminal](./images/openTerminal.png)
 
 Change the directory and clone the git repo
-   ![Change and clone](./changeAndClone.png)
+   ![Change and clone](./images/changeAndClone.png)
 
    ```bash/Shell
    cd ~/projects/
-   git clone https://github.com/maxstreifeneder/btp-azure-draft.git
+   git clone https://github.com/SAP-samples/btp-azure-opensap.git
    ```
 
 
@@ -175,6 +175,8 @@ To be able to send approval or rejection email from Mail Task, we need to config
 
    ```
     >Replace the SMTP host *mail.smtp.host* and *mail.smtp.from* also provide the credentials of SMTP Server.
+
+    >Note: For Office 365 use the SMTP server: smtp.office365.com
 
 ## Step 5 - Test the workflow definition 
 
