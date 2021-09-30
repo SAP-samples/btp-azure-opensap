@@ -3,7 +3,7 @@ This exercise is part of the openSAP course [Building applications on SAP Busine
 
 # Build SAP Conversational AI bot 
 
-Extend the exercise with SAP workflow to SAP Conversational AI to learn how to create an SAP Conversational AI Bot and understand how to trigger SAP workflow from SAP Conversational AI bot. Lastly, integrate SAP Conversational AI with Azure bot and Microsoft Teams. 
+In this exercise, learn how to create an SAP Conversational AI Bot and understand how to trigger an SAP workflow instance from a SAP Conversational AI bot. Lastly, integrate the built SAP Conversational AI with Azure Bot Channels and Microsoft Teams, so that end users can use it through Microsoft Teams.
 
 ## Problems
 > If you have any issues with the exercises, don't hesitate to open a question in the openSAP Discussion forum for this course. Provide the exact step number: "Week3Unit1, Step 1.1: Command cannot be executed. My expected result was [...], my actual result was [...]". Logs, etc. are always highly appreciated. 
