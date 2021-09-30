@@ -3,7 +3,7 @@ This exercise is part of the openSAP course [Building applications on SAP Busine
 
 # SAP Workflow Management: Build Leave Request workflow
 
-The objective of the exercise is to create leave request workflow, deploy and run it on BTP. Also understand the basic concepts how it works.
+The objective of the exercise is to create leave request workflow, deploy and run it on SAP BTP Trial. Also understand the basic concepts of how it all fits together.
 
 ## Problems
 > If you have any issues with the exercises, don't hesitate to open a question in the openSAP Discussion forum for this course. Provide the exact step number: "Week3Unit1, Step 1.1: Command cannot be executed. My expected result was [...], my actual result was [...]". Logs, etc. are always highly appreciated. 
