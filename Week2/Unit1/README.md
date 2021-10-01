@@ -111,7 +111,7 @@ We now want to invite the Microsoft365 developer account to the Azure Trial subs
 
 4.2 Choose **Users** in the side menu. 
 
-![Manage Users sidebar](./images/manage_users.png)
+![Manage Users sidebar](./images/manage-users.png)
 
 4.3 Select **New user**. 
 
@@ -131,9 +131,9 @@ We now want to invite the Microsoft365 developer account to the Azure Trial subs
 
 4.7 Send out the invitation mail to the user by clicking on the **Invite** button.
 
-The user will now receive a mail with an activation link.
+Your Microsoft365 account will now receive a mail with an activation link.
 
-4.8 Go to [https://outlook.com](outlook.com) in order to accept Azure Active Directory invitation. 
+4.8 Go to [https://outlook.com](outlook.com) in order to accept the Azure Active Directory invitation. 
 
 4.9 **Login** with your Microsoft365 Developer account (xyz@<domain>.onmicrosoft). 
 
