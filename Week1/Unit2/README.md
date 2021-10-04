@@ -30,7 +30,7 @@ If you have an account on www.sap.com (e.g. a P, S, C, D or I number) you can en
 
 > If you don’t need to register with sap.com, you can skip to Step 1.4. 
 
-1.2. If you don’t have an account you will see a register dialog on the left-hand side of the dialog. Fill in the required fields, and click Submit.
+1.2. <a href="btptrial">If you don’t have an account you will see a register dialog on the left-hand side of the dialog. Fill in the required fields, and click Submit.</a>
 
 ![SAP Registration](./images/trial_registration.png)
 

@@ -103,7 +103,9 @@ Your Microsoft 365 E5 subscription will be set up.
 
 ### Step 4 - Add Microsoft365 Developer Account as Co-Administrator in your Azure Trial subscription
 
-We now want to invite the Microsoft365 developer account to the Azure Trial subscription so that you can carry out all activities with your Microsoft365 developer account in the further stages of this course and do not have to work with several login information.
+We now want to invite the Microsoft365 developer account to the Azure Trial account so that you can carry out all activities with your Microsoft365 developer account in the further stages of this course and do not have to work with several login information.
+
+---
 
 4.1 Open the [Azure Portal](http://portal.azure.com) with your **Azure account** (the one you have created in [Week 1, Unit3](../../Week1/Unit3/README.md)) and search for Azure Active Directory in the search bar. Click on the corresponding entry to navigate there.
 
@@ -125,9 +127,9 @@ We now want to invite the Microsoft365 developer account to the Azure Trial subs
 
 ![Click on User.](./images/add-roles-to-user.png)
 
-4.6 You should then get a list of available administrator roles for your Azure Active Directory tenant. Select **Application Administrator** and continue with **Select** on the bottom of the page.
+4.6 You should then get a list of available administrator roles for your Azure Active Directory tenant. Select **Global Administrator** and continue with **Select** on the bottom of the page.
 
-![select application administrator role and click on select button](./images/select-admin-roles.png)
+![select global administrator role and click on select button](./images/select-admin-roles.png)
 
 4.7 Send out the invitation mail to the user by clicking on the **Invite** button.
 
@@ -150,14 +152,84 @@ Your Microsoft365 account will now receive a mail with an activation link.
 ![There are no apps available. That's all fine.](./images/app-overview.png)
 ### Step 5 - Add Microsoft365 Developer Account as Administrator in SAP BTP Trial account
 
+Similiarly to what you did in the previous step, you are now going to add the Microsoft365 Developer account to the SAP BTP Trial account as an administrator. Hence, you can use the Microsoft365 Developer account also for your SAP BTP Trial in subsequent steps. 
 
+--- 
+
+5.1 Go to the [SAP BTP Trial Cockpit](https://hanatrial.ondemand.com) and logon with the mail address and credentials you have provided during the [registration](../../Week1/Unit2/README.md#btprial). 
+
+> Note: You cannot use the Microsoft365 Developer Account yet. 
+
+5.2 Select **Go To Your Trial Account**. 
+
+5.3 Select the **trial** subaccount by clicking on the name of the subaccount. 
+
+![Subaccount selection](./images/trial_globalaccount.png)
+
+5.4 Go to **Users**. 
+
+![Subaccount selection](./images/users_menu.png)
+
+5.5 **Create** a new user. 
+
+![Create new user](./images/create_new_user.png)
+
+5.6 Enter your [Microsoft 365 Developer account](#domain) and continue with **Create**.
+
+![New User Dialog](./images/new_user_dialog.png)
+
+5.7 Select the newly created user from the list of all users. 
+
+![New User Dialog](./images/select_new_user.png)
+
+5.8 Click on **...** next to the Role Collections and select **Assign Role Collection**.
+
+![Assign Role Collection menu](./images/assign_role_collection.png)
+
+5.9 Pick the **Subaccount Administrator** Role Collection and finish the assignment with **Assign Role Collection**.
+
+![Select subaccount administrator](./images/subaccount_administrator.png)
+
+5.10 Go to **Cloud Foundry > Org Members**. 
+
+![Cloud Foundry org members menu](./images/org_members_menu.png)
+
+5.11 Select **Add Members**, enter your Microsoft365 Developer account and assign both **Org Manager** and **Org Auditor**. 
+
+![add Microsoft365 user to cloud foundry org](./images/add-org-member-ui.png)
+
+5.12 Go to **Cloud Foundry > Spaces**. 
+
+![Cloud Foundry Spaces menu](./images/cf-space-menu.png)
+
+5.13 Select the **dev** space. (in case you are not using the default SAP BTP Trial account, your space name might differ)
+
+![select CF dev space](./images/select_cf_space.png)
+
+5.12 Go to **Members**.
+
+![Go to members menu](./images/members_menu.png)
+
+5.13 Select **Add Members**. 
+
+![Hit Add Members button](./images/add_space_members.png)
+
+5.14 Enter again your Microsoft365 Developer account and select all available roles. 
+
+![Hit Add Members button](./images/assign_space_roles.png)
+
+---
+
+**IMPORTANT**: Congratulations! You are now able to user the same account for Microsoft365, Azure Trial and SAP BTP Trial. Please do not log on with any other credentials in the subsequent weeks and units! 
+
+---
 ### Step 6 - Create your first SharePoint site
 
 You will now setup your first SharePoint site. In Unit 2 of this week SAP Cloud Integration in conjunction with SAP Open Connectors will store PDF files from S/4HANA here. 
 
 ---
 
-6.1 Go to <https://developer.microsoft.com/en-us/microsoft-365/profile>. 
+6.1 Go to [Microsoft365 Developer Dashboard](https://developer.microsoft.com/en-us/microsoft-365/profile).
 
 6.1 To create your first SharePoint site, now click on **Go to subscription**. 
 
@@ -230,9 +302,7 @@ For using the SharePoint connector from Open Connectors capability of SAP Busine
 ---
 
 
-8.1 Logon to your [Azure Portal](https://portal.azure.com/) using your subscription credentials. You defined these, during the setup of your Microsoft 365 E5 subscription (e.g., testuser@demotrial.onmicrosoft.com). In case you own multiple Microsoft accounts, select the respective subscription account. 
-
-![Azure AD](./images/aar_0010.png)
+8.1 Logon to your [Azure Portal](https://portal.azure.com/) with your Microsoft365 Developer Account.
 
 8.2 Navigate to Azure Active Directory (Azure AD).
 
