@@ -150,6 +150,23 @@ Your Microsoft365 account will now receive a mail with an activation link.
 4.12 You should get forwarded to a page with an overview of apps of that recently joined Azure Active Directory you where you have access. There are no apps yet, so that's all fine.
 
 ![There are no apps available. That's all fine.](./images/app-overview.png)
+ 
+### Step 4a - Make the Microsoft365 Developer account a Co-Administrator for the Azure Subscription
+4a.1  Open the [Azure Portal](http://portal.azure.com) with your **Azure account** (the one you have created in [Week 1, Unit3](../../Week1/Unit3/README.md)) and search for Subscription in the search bar. Click on the corresponding entry to navigate there.
+ ![Click on Subscription](./images/Subscription.png)
+ 
+4a.2 Select the Subscription that you are using. 
+ ![Select Subscription](./images/SelectSubscription.png)
+
+4a.3 Select Access Control (IAM)
+ ![Select Access Control](./images/SelectIAM.png)
+
+4a.4 Select Add Co-Administrator
+ ![Select Co-Administrator](./images/SelectAddCoAdmin.png)
+
+4a.5 Now search for your Microsoft 365 Developer account and click on add to add this user as Co-Administrator. From now on, always use the Microsoft 365 Developer account to log on to your Azure subscription. 
+ ![Add Co-Administrator](./images/AddCoAdmin.png)
+ 
 ### Step 5 - Add Microsoft365 Developer Account as Administrator in SAP BTP Trial account
 
 Similiarly to what you did in the previous step, you are now going to add the Microsoft365 Developer account to the SAP BTP Trial account as an administrator. Hence, you can use the Microsoft365 Developer account also for your SAP BTP Trial in subsequent steps. 
