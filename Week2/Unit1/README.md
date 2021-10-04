@@ -151,20 +151,24 @@ Your Microsoft365 account will now receive a mail with an activation link.
 
 ![There are no apps available. That's all fine.](./images/app-overview.png)
  
-### Step 4a - Make the Microsoft365 Developer account a Co-Administrator for the Azure Subscription
-4a.1  Open the [Azure Portal](http://portal.azure.com) with your **Azure account** (the one you have created in [Week 1, Unit3](../../Week1/Unit3/README.md)) and search for Subscription in the search bar. Click on the corresponding entry to navigate there.
+
+---
+**Continue with your Azure account here**
+---
+
+4.13  Open the [Azure Portal](http://portal.azure.com) with your **Azure account** (the one you have created in [Week 1, Unit3](../../Week1/Unit3/README.md)) and search for Subscription in the search bar. Click on the corresponding entry to navigate there.
  ![Click on Subscription](./images/Subscription.png)
  
-4a.2 Select the Subscription that you are using. 
+4.14 Select the Subscription that you are using. 
  ![Select Subscription](./images/SelectSubscription.png)
 
-4a.3 Select Access Control (IAM)
+4.15 Select Access Control (IAM)
  ![Select Access Control](./images/SelectIAM.png)
 
-4a.4 Select Add Co-Administrator
+4.16 Select Add Co-Administrator
  ![Select Co-Administrator](./images/SelectAddCoAdmin.png)
 
-4a.5 Now search for your Microsoft 365 Developer account and click on add to add this user as Co-Administrator. From now on, always use the Microsoft 365 Developer account to log on to your Azure subscription. 
+4.17 Now search for your Microsoft 365 Developer account and click on add to add this user as Co-Administrator. From now on, always use the Microsoft 365 Developer account to log on to your Azure subscription. 
  ![Add Co-Administrator](./images/AddCoAdmin.png)
  
 ### Step 5 - Add Microsoft365 Developer Account as Administrator in SAP BTP Trial account
@@ -179,7 +183,7 @@ Similiarly to what you did in the previous step, you are now going to add the Mi
 
 5.2 Select **Go To Your Trial Account**. 
 
-5.3 Select the **trial** subaccount by clicking on the name of the subaccount. 
+5.3 Select the **trial** subaccount.
 
 ![Subaccount selection](./images/trial_globalaccount.png)
 
@@ -237,7 +241,7 @@ Similiarly to what you did in the previous step, you are now going to add the Mi
 
 ---
 
-**IMPORTANT**: Congratulations! You are now able to user the same account for Microsoft365, Azure Trial and SAP BTP Trial. Please do not log on with any other credentials in the subsequent weeks and units! 
+**IMPORTANT: Congratulations! You are now able to user the same account for Microsoft365, Azure Trial and SAP BTP Trial. Please do not log on with any other credentials in the subsequent weeks and units!**
 
 ---
 ### Step 6 - Create your first SharePoint site
