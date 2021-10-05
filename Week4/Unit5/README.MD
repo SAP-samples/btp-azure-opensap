@@ -57,3 +57,34 @@ Click Tables in the left menu and locate the table created in the previous step.
 
 3.3 Save Model
 ![SaveModel](./images/11-save-model.png) 
+
+
+## Step 4 - Create Story in SAP Analytics Cloud
+
+4.1 Create Canvas
+![CreateCanvas](./images/12-create-canvas.png) 
+
+4.2 Add Chart
+![AddChart](./images/13-add-chart.png) 
+
+4.3 Select Model
+![SelectSACModel](./images/14-select-model.png) 
+
+4.4 New Canvas with empty chart
+![OpenChart](./images/15-empty-chart.png) 
+
+4.5 Select Measure
+![SelectMeasure](./images/16-select-measure.png) 
+
+4.6 Select Dimension
+![SelectDimension](./images/17-select-dimension.png) 
+
+4.7 Chart is rendered
+![RenderChart](./images/18-chart-rendered.png) 
+
+4.8 Save Canvas
+![SaveCanvas](./images/20-save-canvas.png) 
+
+
+
+
