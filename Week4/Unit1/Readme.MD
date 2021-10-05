@@ -17,7 +17,17 @@ Open [https://www.sap.com/products/cloud-analytics/trial.html] (https://www.sap.
 ---
 
 
-1.1. Registering for SAP Trial Account.
+1.1. Register for SAP Trial Account.
 Open the SAC trial account link and click the button start your free trial. 
 
  ![Registration](./images/01-registration.png)
+
+1.2. Verify Email Address
+Email will be sent to verify the email address. Click the link to verify.
+
+ ![EmailVerification](./images/02-email-confirmation.png)
+ 
+ 1.2. Confirmation
+Once the email address is verified successfully, confirmation page will be displayed.
+
+ ![Welcome](./images/03-welcome.png)
