@@ -6,9 +6,6 @@ This exercise is part of the openSAP course [Building applications on SAP Busine
 
 In this Week 4 exercise we will setup end to end flow from Micosoft Azure Explorer to SAP HANA CLoud to SAP Analytics Cloud (SAC) via Federation.The Data will be visualized in SAP Analytics Cloud Story.
 
-## Problems
-> If you have any issues with the exercises, don't hesitate to open a question in the openSAP Discussion forum for this course. Provide the exact step number: "Week4Unit4, Step 1.1: Command cannot be executed. My expected result was [...], my actual result was [...]". Logs, etc. are always highly appreciated. 
- ![OpenSAP Discussion](../../images/opensap-forum.png)
  
 ## Architecture
 ![Architecture](./images/Architecture.png)
