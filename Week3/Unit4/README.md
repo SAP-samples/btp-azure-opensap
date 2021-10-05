@@ -3,7 +3,7 @@ This exercise is part of the openSAP course [Building applications on SAP Busine
 
 # Sending adaptive cards from an SAP workflow
 
-Now that we have configured the Workflow and can trigger it from a Chatbot in Teams we want to send the information of a new Workflow to Outlook and enable the user to Approve the workflow directly from there. In order to do this we use Actionable messages and Adaptive Cards. Adaptive Cards can render an incoming message and also allow the user to perform actions (like approving a workflow). In order to do this, we need to enable Adaptive Cards in Outlook. This can be done at an organizational level or -- like in our case -- on a case by case bases. This is especially good in a development scenario where you do not have (and need) global Exchange admin permissions.
+Now that we have configured the Workflow and can trigger it from a Chatbot in Microsoft Teams we want to send the information of a new Workflow to Microsoft Outlook and enable the user to Approve the workflow directly from there. In order to do this we use Actionable messages and Adaptive Cards. Adaptive Cards can render an incoming message and also allow the user to perform actions (like approving a workflow). In order to do this, we need to enable Adaptive Cards in Outlook. This can be done at an organizational level or -- like in our case -- on a case by case basis. This is especially good in a development scenario where you do not have (and need) global Exchange admin permissions.
 
 
 ## Problems

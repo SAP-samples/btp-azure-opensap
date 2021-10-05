@@ -3,22 +3,21 @@
 
 This exercise is part of the openSAP course [Building applications on SAP Business Technology Platform with Microsoft services](https://open.sap.com/courses/btpma1) - there you will find more information and context. 
 
-# Exercise : Setup Azure Data Explorer instance and load data 
+# Setup Azure Data Explorer instance and load data 
 
 In this exercise we will setup Azure Data Explorer, ADX and import sample data. ADX will late be connected to SAP HANA Cloud and the data surfaced in SAP Analytics Cloud. 
 
-Example: 
-[Week4 Unit2 - Title](Week3/Unit1/README.md#Step-1---Set-up-your-trial-account-for-SAP-Workflow-Management)
-
 ## Problems
 > If you have any issues with the exercises, don't hesitate to open a question in the openSAP Discussion forum for this course. Provide the exact step number: "Week4Unit2, Step 1.1: Command cannot be executed. My expected result was [...], my actual result was [...]". Logs, etc. are always highly appreciated. 
- ![OpenSAP Discussion](./images/opensap-forum.png)
+ ![OpenSAP Discussion](../../images/opensap-forum.png)
 
 ## Step 1 - Login to Azure Portal and Create an Azure Data Explorer cluster
 
 Creating an Azure Data Explorer Cluster can be done via the UI using the Azure Portal or a command line interface. In the next steps we will use the Azure Portal. For this we are using the Azure Admin user created in Week 1 Unit 3 )
 
-** If you have not yet created a user in the Azure Portal, please follow the steps outlined in Week 1 Unit 3 and continue with Step 1.1.
+** If you have not yet created a user in the Azure Portal, please follow the steps outlined in Week 1 Unit 3 and continue with Step 1.1 afterwards.
+
+---
 
 
 1.1. Login to on the Azure Portal 
@@ -49,12 +48,11 @@ Fill out the remaining properties. For the cluster name, make sure you create a 
 Once the properties have been validated you can click on Create and start the creation of the cluster. Creation can take a few minutes. 
 ![Create cluster](./images/06-AzureDataExplorer-review.jpg)
 
-
-[Week4 Unit2 - Step 1](Week4/Unit2/README.md#xxx)
-
 ## Step 2 - Create Database in Azure Data Explorer
 
 In order to load data into the Azure Data Explorer Cluster we need to create a database first. 
+
+---
 
 2.1. Go to the Azure Data Explorer Resource 
 Once the deployment from Step 1.7 is done, you can click on "Go to resource" to jump directly to the Azure resource. 
@@ -76,11 +74,11 @@ Enter a name for the database, e.g. openSAP-database-hbr and click on Create.
 Once the database is created the Overview page is displayed again. Make sure to note down / copy the URI to your Azure Data Explorer Cluster. Click on the Copy icon to retrieve the URI, e.g. https://opensapclusterhbr.northeurope.kusto.windows.net
     ![Copy URI](./images/11-RememberURI.jpg)
 
-[Week4 Unit2 - Step 2](Week4/Unit2/README.md#xxx)
-
 ## Step 3 - Import data
 
 In order to simplify the import of data, a CSV file with related sample data is already available in a central Azure Blob storage. You can just access this blob storage to import the data into your database. 
+
+---
 
 3.1. Click on Ingest data 
 From the Overview screen click on "Ingest New data"
@@ -101,10 +99,6 @@ In the last screen you should see the sample that in the Partial data preview. J
 3.5. Finish the ingestion
 Once the data is ingested you can see a success message on the screen. 
     ![Finished Ingestions](./images/16-DataIngestionFinished.jpg) 
-
-[Week4 Unit2 - Step 3](Week4/Unit2/README.md#xxx)
-
-
 ## Step 4 - Optional - Simple Kusto query
 
 In order to test the imported data, you can run a quick Kusto query.  
@@ -115,11 +109,6 @@ Enter the query
 | take 10
 and click on run
     ![Run Query](./images/17-RunQuery.jpg)
-
-
-[Week4 Unit2 - Step 4](Week4/Unit2/README.md#xxx)
-
-
 
 ## Summary
 

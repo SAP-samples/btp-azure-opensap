@@ -1,9 +1,9 @@
 This exercise is part of the openSAP course [Building applications on SAP Business Technology Platform with Microsoft services](https://open.sap.com/courses/btpma1) - there you will find more information and context. 
 
 
-# SAP Workflow Management: create leave request workflow
+# SAP Workflow Management: Build Leave Request workflow
 
-The objective of the exercise is to create leave request workflow, deploy and run it on BTP. Also understand the basic concepts how it works.
+The objective of the exercise is to create a leave request workflow definition, deploy and run it on SAP BTP Trial. Also understand the basic concepts of how it all fits together.
 
 ## Problems
 > If you have any issues with the exercises, don't hesitate to open a question in the openSAP Discussion forum for this course. Provide the exact step number: "Week3Unit1, Step 1.1: Command cannot be executed. My expected result was [...], my actual result was [...]". Logs, etc. are always highly appreciated. 
@@ -32,9 +32,18 @@ The objective of the exercise is to create leave request workflow, deploy and ru
 
 2.1. Clone following project from GitHub into your BAS workspace. Clone the project using either the Terminal in BAS and *git* CLI or BAS Github tools.
 
+Open the Termin via the BAS Menu. 
+   ![Open Terminal](./images/openTerminal.png)
+
+Change the directory and clone the git repo
+   ![Change and clone](./images/changeAndClone.png)
+
    ```bash/Shell
-   git clone https://github.com/maxstreifeneder/btp-azure-draft.git
+   cd ~/projects/
+   git clone https://github.com/SAP-samples/btp-azure-opensap.git
    ```
+
+
 2.2. Workflow project you can find in **btp-workflow** folder.
    Project has following structure:
 
@@ -167,6 +176,8 @@ To be able to send approval or rejection email from Mail Task, we need to config
    ```
     >Replace the SMTP host *mail.smtp.host* and *mail.smtp.from* also provide the credentials of SMTP Server.
 
+    >Note: For Office 365 use the SMTP server: smtp.office365.com
+
 ## Step 5 - Test the workflow definition 
 
 After successful deployment of leave request workflow we can see the deployment and test it with sample leave request
@@ -222,6 +233,6 @@ After successful deployment of leave request workflow we can see the deployment 
    ![WF Execution log](./images/wf_execution_log.png)
    
 
-# Summary
+## Summary
 
 Congrats! You successfully build and deployed the leave request workflow. You also simulated the workflow request process using the Monitoring tools provided by SAP Workflow Management.

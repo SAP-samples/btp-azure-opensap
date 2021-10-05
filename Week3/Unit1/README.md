@@ -2,7 +2,7 @@ This exercise is part of the openSAP course [Building applications on SAP Busine
 
 >NOTE: In case you skipped the previous weeks, please first setup your [SAP BTP Trial](https://github.com/SAP-samples/btp-azure-opensap/tree/main/Week1/Unit2#setting-up-sap-btp-trial) Account, [Azure Trail](https://github.com/SAP-samples/btp-azure-opensap/tree/main/Week1/Unit3#setup-free-microsoft-azure-account) and [Microsoft 365 Developer](https://github.com/SAP-samples/btp-azure-opensap/tree/main/Week2/Unit1#step-1---create-a-microsoft365-developer-account) Account before continuing with this week. For Week 3 also very important to use the **Microsoft 365 User** *<youruser>@<yourdomain>.onmicrosoft.com* for all your accounts (BTP, Azure, CAI). Make sure that the User is [added to Microsoft Azure (Step 5)]([https://link](https://github.com/SAP-samples/btp-azure-opensap/tree/main/Week2/Unit1#step-4---add-microsoft365-developer-account-as-co-administrator-in-your-azure-trial-subscription)) and [to SAP BTP (Step 5)](https://github.com/SAP-samples/btp-azure-opensap/tree/main/Week2/Unit1#step-5---add-microsoft365-developer-account-as-administrator-in-sap-btp-trial-account).
 
-# Setting up for Workflow Management on SAP Business Technology Platform
+# Setup SAP Workflow Management in SAP BTP Trial
 
 In this unit you'll set up and configure the basic aspects of the SAP Workflow Management that you'll need to complete Week 3 of this course.   
 

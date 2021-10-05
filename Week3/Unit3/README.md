@@ -1,9 +1,9 @@
 This exercise is part of the openSAP course [Building applications on SAP Business Technology Platform with Microsoft services](https://open.sap.com/courses/btpma1) - there you will find more information and context. 
 
 
-# Triggering an SAP workflow from an SAP Conversational AI bot
+# Build SAP Conversational AI bot 
 
-Extend the exercise with SAP workflow to SAP Conversational AI to learn how to create an SAP Conversational AI Bot and understand how to trigger SAP workflow from SAP Conversational AI bot. Lastly, integrate SAP Conversational AI with Azure bot and Microsoft Teams. 
+In this exercise, learn how to create an SAP Conversational AI Bot and understand how to trigger an SAP workflow instance from a SAP Conversational AI bot. Lastly, integrate the built SAP Conversational AI with Azure Bot Channels and Microsoft Teams, so that end users can use it through Microsoft Teams.
 
 ## Problems
 > If you have any issues with the exercises, don't hesitate to open a question in the openSAP Discussion forum for this course. Provide the exact step number: "Week3Unit1, Step 1.1: Command cannot be executed. My expected result was [...], my actual result was [...]". Logs, etc. are always highly appreciated. 
@@ -23,11 +23,11 @@ Extend the exercise with SAP workflow to SAP Conversational AI to learn how to c
 
    You will get an email with a link to validate your account.
 
-1.2. Fork following [LeaveRequest](https://cai.tools.sap/maximilianstreifeneder/leaverequest/train/intents) bot into your account
+1.2. Open up this URL [LeaveRequest](https://cai.tools.sap/maximilianstreifeneder/leaverequest/train/intents) and fork the bot into your account
    
    ![CAI Fork LeaveRequest](./images/cai_fork.png)
 
-   You will get a predefined and trained bot with LeaveRequest intent (Intents are what the user intends to express when entering text in the chat).
+   Now go back to your SAP Conversional AI environment, [SAP Conversational AI](https://cai.tools.sap/). You will get a predefined and trained bot with LeaveRequest intent (Intents are what the user intends to express when entering text in the chat).
 
    ![CAI Fork LeaveRequest](./images/cai_after_fork.png)
 
@@ -100,7 +100,7 @@ Extend the exercise with SAP workflow to SAP Conversational AI to learn how to c
     Authorization URL = uaa.url + "/oauth/token"
    ```
    
-   The parameters **workflow_rest_url, uaa.url, uaa.clientid and uaa.clientsecret** you can get from workflow service instance by BTP cockpit or CLI
+   Follow the steps in 2.5 to get the parameters **workflow_rest_url, uaa.url, uaa.clientid and uaa.clientsecret** you can get from workflow service instance by BTP cockpit or CLI 
 
 2.5. Get the parameters required for previous step
    
@@ -118,6 +118,11 @@ Go to BTP cockpit and navigate to **"Instances and Subscriptions"**. Find the Wo
    ![CAI API config save](./images/cai_api_config_save.png)
 
    Now the leave request bot is ready and we can test it in next Step
+
+2.6. As a final step click on Train to train the bot once
+   ![Train the bot](./images/train_bot.png)
+
+
 ## Step 3 - Test the Leave Request by chatting with bot
 
 3.1. You can open Chat Preview and start conversation with the bot.
@@ -143,34 +148,39 @@ Go to Workflow Management launchpad and open My Inbox application
 
 ## Step 4 - Connect with Azure Bot and Microsoft Teams
 
-4.1. Login into [Microsoft Azure](https://portal.azure.com/#home) and search for *"bot channel registration"* and open it to create a new Azure Bot resource
+4.1. Login into [Microsoft Azure](https://portal.azure.com/#home) and search for *"bot services"* and open it to create a new Azure Bot resource
 
-![Bot Channel Registration](./images/cai_bot-channel_reg.png)
+![Bot Channel Registration](./images/bot_services.png)
 
 4.2. Fill in the registration form and click on **Create**
 
 > Make sure you select the F0 free Pricing tier, unless you want to use it in production.
 
-| Field Name | Input Value |
-| ---------- | ------------|
-| Bot Name| A unique display name for the bot (which will appear in channels and directories – this can be changed later) |
-| Subscription | Your Azure subscription (in  trial, only one)|
-| Resource Group | Select a resource group. If you don’t have one yet,  then create a new one |
-| Location | Choose a location near where your bot is deployed |
-| Pricing Tier | F0 (10K Premium Messages) |
-| Messaging endpoint | This will be filled out later |
-| Application Insights | On |
-| Application Insights Location | Choose a location near where your bot is deployed |
+| Field Name                    | Input Value                                                                                                   |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| Bot Name                      | A unique display name for the bot (which will appear in channels and directories – this can be changed later) |
+| Subscription                  | Your Azure subscription (in  trial, only one)                                                                 |
+| Resource Group                | Select a resource group. If you don’t have one yet,  then create a new one                                    |
+| Location                      | Choose a location near where your bot is deployed                                                             |
+| Pricing Tier                  | F0 (10K Premium Messages)                                                                                     |
+| Messaging endpoint            | This will be filled out later                                                                                 |
+| Application Insights          | On                                                                                                            |
+| Application Insights Location | Choose a location near where your bot is deployed                                                             |
 
+Click on *"Review and Create"* and *"Create"* on the next screen. 
+![Bot Channel Registration](./images/create_bot.png)
 
-![Bot Channel Registration](./images/cai_bot-channel_reg_2.png)
+When the deployment is done, click on *"Go to Resource"*
+   ![Go to reource](./images/go_to_resource.png)
+
 
 4.3. After registration go to **Configuration**
 
    * Generate a **Client Secret** by clicking **Manage**, then **New Client Secret**, then **Add**
-   * Copy the **Microsoft App ID** and **Client Secret**, for use later
-  
   ![Bot Channel Registration](./images/cai_bot-channel_reg_3.png)
+
+   * Copy the **Microsoft App ID** and **Client Secret**, for use later
+  ![Manage Secret](./images/manage_client_secret.png)
 
 4.4. Go back to [SAP Conversational AI](https://cai.tools.sap/) and open your bot.
 

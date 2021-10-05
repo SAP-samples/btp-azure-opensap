@@ -1,6 +1,6 @@
 This exercise is part of the openSAP course [Building applications on SAP Business Technology Platform with Microsoft services](https://open.sap.com/courses/btpma1) - there you will find more information and context. 
 
-# SAP Cloud Integration and Azure Traffic Manager - intelligent routing. 
+# Set up SAP Cloud Integration and Azure Traffic Manager
 
 **DISCLAIMER: This exercise cannot be done in the SAP BTP Trial environment**
 
@@ -10,7 +10,7 @@ Extending your SAP S/4HANA business processes with SAP Business Technology Platf
 
 Furthermore, decoupling of the connection allows scaling of the endpoints globally as close to the end-users as possible, minimizing latency, increasing up-time and performance. Different routing techniques like performance-based, availability-based, weighted, or geo-based are typically used.
 
-In this mission you will learn how to run multiple SAP Cloud Integration tenants (SAP Integration Suite) in parallel to apply the mechanisms mentioned above. Azure Traffic Manager will play a significant role in routing the traffic intelligently to different SAP Cloud Integration tenants.
+In this unit you will learn how to run multiple SAP Cloud Integration tenants (SAP Integration Suite) in parallel to apply the mechanisms mentioned above. Azure Traffic Manager will play a significant role in routing the traffic intelligently to different SAP Cloud Integration tenants.
 
 From a service perspective, you'll be using a number of SAP BTP and Microsoft services:
 * **SAP Integration Suite**: The SAP Integration Suite helps you to quickly develop and manage reliable communication between applications, services, and systems.
@@ -37,8 +37,8 @@ Subscriptions required in your SAP Business Technology Platform Account:
 
 
 ## Problems
-> If you have any issues with the exercises, don't hesitate to open a question in the openSAP Discussion forum for this course. Provide the exact step number: "Week2Unit1, Step 1.1: Command cannot be executed. My expected result was [...], my actual result was [...]". Logs, etc. are always highly appreciated. 
- ![OpenSAP Discussion](./images/opensap-forum.png)
+> If you have any issues with the exercises, don't hesitate to open a question in the openSAP Discussion forum for this course. Provide the exact step number: "Week2Unit4, Step 1.1: Command cannot be executed. My expected result was [...], my actual result was [...]". Logs, etc. are always highly appreciated. 
+ ![OpenSAP Discussion](../../images/opensap-forum.png)
 
 
 ## Step 1 - Setup SAP Cloud Integration
@@ -1087,6 +1087,8 @@ You should now see the Transport Request that you have previously created SAP Cl
 ![Imported Content Package](./images/136.png)
 
 5.75 Repeat the import scheduling for the **PROD_US Transport Node**. 
+
+## Summary
 
 Good Job! You have set SAP Cloud Transport Management for SAP Cloud Integration packages. You have now full control over your transports using SAP Cloud Transport Management. With the scheduled import of Transport Requests both into the primary SAP Cloud Integration tenant as well as to the secondary SAP Cloud Integration tenant, your tenants should now always be in synch without manual effort. 
 
