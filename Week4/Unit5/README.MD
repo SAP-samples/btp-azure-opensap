@@ -1,13 +1,13 @@
 
 This exercise is part of the openSAP course [Building applications on SAP Business Technology Platform with Microsoft services](https://open.sap.com/courses/btpma1) - there you will find more information and context. 
 
-# Connecting SAP Analytics Cloud with SAP HANA Cloud
+# Implementation of End to End flow via Federation
 
 
-In this exercise we will setup connection between SAP Analytics Cloud (SAC) and the data surfaced in SAP Analytics Cloud story. 
+In this exercise we will implement the end to end flow. We will create a virtual table for the ADX table in HANA Cloud and consume the virtual table via Calculation view in SAP Analytics Cloud. 
 
 ## Problems
-> If you have any issues with the exercises, don't hesitate to open a question in the openSAP Discussion forum for this course. Provide the exact step number: "Week4Unit4, Step 1.1: Command cannot be executed. My expected result was [...], my actual result was [...]". Logs, etc. are always highly appreciated. 
+> If you have any issues with the exercises, don't hesitate to open a question in the openSAP Discussion forum for this course. Provide the exact step number: "Week4Unit5, Step 1.1: Command cannot be executed. My expected result was [...], my actual result was [...]". Logs, etc. are always highly appreciated. 
  ![OpenSAP Discussion](../../images/opensap-forum.png)
  
 ## Step 1 - Create Virtual Table (aka Remote Table) for ADX table in SAP HANA Cloud
@@ -31,5 +31,20 @@ Enter a name and click Create
 Click Tables in the left menu and locate the table created in the previous step. Search the table by name.
 
 ![OpenRemoteTable](./images/04-virtual-table.png)
+
+## Step 2 - Create Calculation View
+
+2.1 Create Calculation view in Business Application Studio
+![CreateCalcView](./images/05-calc-view.png)
+
+2.2 Add addtrbutes and measures
+![CreateAttrDim](./images/06-create-attributes-measures.png)
+
+2.3 Deploy Calculation View
+![DeployCV](./images/07-deploy-cv.png) 
+
+2.4 Verify Deployment
+![LocateCV](./images/08-locate-cv.png) 
+
 
 
