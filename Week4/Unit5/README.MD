@@ -47,4 +47,13 @@ Click Tables in the left menu and locate the table created in the previous step.
 ![LocateCV](./images/08-locate-cv.png) 
 
 
+## Step 3 - Create Model in SAP Analytics Cloud
 
+3.1 Create Live Data Model
+![LiveModel](./images/09-sac-model.png) 
+
+3.2 Select Data Source
+![SelectDataSourcel](./images/10-data-source.png) 
+
+3.3 Save Model
+![SaveModel](./images/11-save-model.png) 
