@@ -11,11 +11,11 @@ In this exercise, learn how to create an SAP Conversational AI Bot and understan
 
 ## Step 1 - Create Leave Request Chatbot with SAP Conversational AI
 
-1.1. Create SAP Conversational AI account
+1.1. Create an account for SAP Conversational AI Community Edition  
 
    Go to  [SAP Conversational AI](https://cai.tools.sap/) and click Sign Up in the upper-right corner.
    
-   > Use your BTP Account User/E-Mail to simplify the Identity authentication for later steps
+   > Use your Microsoft 365 User/E-Mail *youruser >@yourdomain.onmicrosoft.com* to simplify the Identity authentication for later steps
 
    Follow the instructions for creating an account. 
 
