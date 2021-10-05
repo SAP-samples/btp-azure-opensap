@@ -15,7 +15,7 @@ In this exercise, learn how to create an SAP Conversational AI Bot and understan
 
    Go to  [SAP Conversational AI](https://cai.tools.sap/) and click Sign Up in the upper-right corner.
    
-   > Use your Microsoft 365 User/E-Mail *youruser >@yourdomain.onmicrosoft.com* to simplify the Identity authentication for later steps
+   > Use your Microsoft 365 User/E-Mail *youruser@yourdomain.onmicrosoft.com* to simplify the Identity authentication for later steps
 
    Follow the instructions for creating an account. 
 
