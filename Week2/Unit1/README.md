@@ -119,7 +119,7 @@ We now want to invite the Microsoft365 developer account to the Azure Trial acco
 
 ![Click on the New User button](./images/add-user-aad.png)
 
-4.4 Select the option **Invite User** to prepare an invitation to your Microsoft65 developer account. Provide the right mail address of the Microsoft365 developer account (xyz@<domain>.onmicrosoft, you can find it [here](#microsoft365)) and provide a name for the user in the Azure Active Directory, which will be displayed at certain views.
+4.4 Select the option **Invite User** to prepare an invitation to your Microsoft65 developer account. Provide the right mail address of the Microsoft365 developer account (*youruser@yourdomain.onmicrosoft.com*, you can find it [here](#microsoft365)) and provide a name for the user in the Azure Active Directory, which will be displayed at certain views.
 
 ![Select the option Invite User](./images/invite-user-option.png)
 
@@ -137,7 +137,7 @@ Your Microsoft365 account will now receive a mail with an activation link.
 
 4.8 Go to [https://outlook.com](outlook.com) in order to accept the Azure Active Directory invitation. 
 
-4.9 **Login** with your Microsoft365 Developer account (xyz@<domain>.onmicrosoft). 
+4.9 **Login** with your Microsoft365 Developer account (*youruser@yourdomain.onmicrosoft.com*). 
 
 4.10 You should have received a mail with the subject 'Default Directory invited you to access applications within their organization'. Open the mail and click on **Accept invitation**.
 
