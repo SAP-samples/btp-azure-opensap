@@ -79,7 +79,7 @@ You can now add a free Microsoft 365 E5 subscription to your account, which allo
 
 ![Microsoft SharePoint](./images/mss_0130.png)
 
-3.2 <a name="domain"> Enter a username and decide for a domain. This is required to setup your subscription and a subdomain will be created in the **\<domain>.onmicrosoft.com** environment. Decide for a password and click on **Continue**.</a>
+3.2 <a name="domain"> Enter a username and decide for a domain. This is required to setup your subscription and a subdomain will be created in the **\<domain\>.onmicrosoft.com** environment. Decide for a password and click on **Continue**.</a>
 
 ![Microsoft SharePoint](./images/mss_0140.png)
 
@@ -119,7 +119,7 @@ We now want to invite the Microsoft365 developer account to the Azure Trial acco
 
 ![Click on the New User button](./images/add-user-aad.png)
 
-4.4 Select the option **Invite User** to prepare an invitation to your Microsoft65 developer account. Provide the right mail address of the Microsoft365 developer account (*youruser@yourdomain.onmicrosoft.com*, you can find it [here](#microsoft365)) and provide a name for the user in the Azure Active Directory, which will be displayed at certain views.
+4.4 Select the option **Invite User** to prepare an invitation to your Microsoft65 developer account. Provide the right mail address of the Microsoft365 developer account (*<youruser@yourdomain.onmicrosoft.com*, you can find it [here](#microsoft365)) and provide a name for the user in the Azure Active Directory, which will be displayed at certain views.
 
 ![Select the option Invite User](./images/invite-user-option.png)
 
