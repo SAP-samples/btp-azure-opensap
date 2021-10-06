@@ -159,7 +159,7 @@ Your Microsoft365 account will now receive a mail with an activation link.
 4.13  Open the [Azure Portal](http://portal.azure.com) with your **Azure account** (the one you have created in [Week 1, Unit3](../../Week1/Unit3/README.md)) and search for Subscription in the search bar. Click on the corresponding entry to navigate there.
  ![Click on Subscription](./images/Subscription.png)
  
-4.14 Select the Subscription that you are using. 
+4.14 Select the Subscription that you are using. (in case you are using the Azure Free Trial, the subscription should be called _Free Trial_)
  ![Select Subscription](./images/SelectSubscription.png)
 
 4.15 Select Access Control (IAM)
