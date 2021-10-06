@@ -14,7 +14,9 @@ Please do the exercises whenever they appear in the respective week pages in the
 
 Throught this course we will create and use several accounts. Obviously you need to have a private mail address (outlook.com or alike) to register for these offerings. We do not recommend using your company email address for account registration, as this can lead to authorisation problems. (For example, if your company already has an Azure subscription).
 
-So in summary we will have the following users:
+The registration of the accounts is part of the exercises, so you do not need to have any accounts beforehand.
+
+So in summary you will create the following accounts. 
 
 
 | Service                           | Mail address                              | Link to the Unit                                                                         |
@@ -24,6 +26,8 @@ So in summary we will have the following users:
 | Microsoft365 Developer Account    | \<youruser>@\<yourdomain>.onmicrosoft.com | [Week 2, Unit 1](https://github.com/SAP-samples/btp-azure-opensap/tree/main/Week2/Unit1) |
 | SAP Conversational AI account     | privatemail@outlook.com                   | [Week 3, Unit 3](https://github.com/SAP-samples/btp-azure-opensap/tree/main/Week3/Unit3) |
 | SAP Analytics Cloud Trial account | privatemail@outlook.com                   | [Week 5, Unit 1](https://github.com/SAP-samples/btp-azure-opensap/tree/main/Week5/Unit1) |
+
+Important: the Microsoft365 Developer account (\<youruser>@\<yourdomain>.onmicrosoft.com) needs to be added to the Azure Trial account. This is done in [Week2, Unit 1 (Step 1 - Step 4)]((https://github.com/SAP-samples/btp-azure-opensap/tree/main/Week2/Unit1)). From then on, you will need \<youruser>@\<yourdomain>.onmicrosoft.com to sign in to Azure.
 
 ## Known Issues
 
