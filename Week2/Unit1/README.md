@@ -170,144 +170,76 @@ Your Microsoft365 account will now receive a mail with an activation link.
 
 4.17 Now search for your Microsoft 365 Developer account and click on add to add this user as Co-Administrator. From now on, always use the Microsoft 365 Developer account to log on to your Azure subscription. 
  ![Add Co-Administrator](./images/AddCoAdmin.png)
- 
-### Step 5 - Add Microsoft365 Developer Account as Administrator in SAP BTP Trial account
 
-Similiarly to what you did in the previous step, you are now going to add the Microsoft365 Developer account to the SAP BTP Trial account as an administrator. Hence, you can use the Microsoft365 Developer account also for your SAP BTP Trial in subsequent steps. 
+ ---
 
---- 
-
-5.1 Go to the [SAP BTP Trial Cockpit](https://hanatrial.ondemand.com) and logon with the mail address and credentials you have provided during the [registration](../../Week1/Unit2/README.md#btprial). 
-
-> Note: You cannot use the Microsoft365 Developer Account yet. 
-
-5.2 Select **Go To Your Trial Account**. 
-
-5.3 Select the **trial** subaccount.
-
-![Subaccount selection](./images/trial_globalaccount.png)
-
-5.4 Go to **Users**. 
-
-![Subaccount selection](./images/users_menu.png)
-
-5.5 **Create** a new user. 
-
-![Create new user](./images/create_new_user.png)
-
-5.6 Enter your [Microsoft 365 Developer account](#domain) and continue with **Create**.
-
-![New User Dialog](./images/new_user_dialog.png)
-
-5.7 Select the newly created user from the list of all users. 
-
-![New User Dialog](./images/select_new_user.png)
-
-5.8 Click on **...** next to the Role Collections and select **Assign Role Collection**.
-
-![Assign Role Collection menu](./images/assign_role_collection.png)
-
-5.9 Pick the **Subaccount Administrator** Role Collection and finish the assignment with **Assign Role Collection**.
-
-![Select subaccount administrator](./images/subaccount_administrator.png)
-
-5.10 Go to **Cloud Foundry > Org Members**. 
-
-![Cloud Foundry org members menu](./images/org_members_menu.png)
-
-5.11 Select **Add Members**, enter your Microsoft365 Developer account and assign both **Org Manager** and **Org Auditor**. 
-
-![add Microsoft365 user to cloud foundry org](./images/add-org-member-ui.png)
-
-5.12 Go to **Cloud Foundry > Spaces**. 
-
-![Cloud Foundry Spaces menu](./images/cf-space-menu.png)
-
-5.13 Select the **dev** space. (in case you are not using the default SAP BTP Trial account, your space name might differ)
-
-![select CF dev space](./images/select_cf_space.png)
-
-5.12 Go to **Members**.
-
-![Go to members menu](./images/members_menu.png)
-
-5.13 Select **Add Members**. 
-
-![Hit Add Members button](./images/add_space_members.png)
-
-5.14 Enter again your Microsoft365 Developer account and select all available roles. 
-
-![Hit Add Members button](./images/assign_space_roles.png)
+**IMPORTANT: Congratulations! You can now use the Azure subscription with your Microsoft365 developer account. Please do not log on with any other credentials in the subsequent weeks and units!**
 
 ---
-
-**IMPORTANT: Congratulations! You are now able to user the same account for Microsoft365, Azure Trial and SAP BTP Trial. Please do not log on with any other credentials in the subsequent weeks and units!**
-
----
-### Step 6 - Create your first SharePoint site
+ ### Step 5 - Create your first SharePoint site
 
 You will now setup your first SharePoint site. In Unit 2 of this week SAP Cloud Integration in conjunction with SAP Open Connectors will store PDF files from S/4HANA here. 
 
 ---
 
-6.1 Go to [Microsoft365 Developer Dashboard](https://developer.microsoft.com/en-us/microsoft-365/profile).
+5.1 Go to [Microsoft365 Developer Dashboard](https://developer.microsoft.com/en-us/microsoft-365/profile).
 
-6.1 To create your first SharePoint site, now click on **Go to subscription**. 
+5.2 To create your first SharePoint site, now click on **Go to subscription**. 
 
 ![Microsoft SharePoint](./images/mss_0180.png)
 
-6.2 Login with your Microsoft365 Developer Account. Click on **Sign in**.
+5.3 Login with your Microsoft365 Developer Account. Click on **Sign in**.
 
 ![Microsoft SharePoint](./images/mss_0184.png)
 
-6.3 You should now see the **Microsoft Office Home** screen. Click on the **SharePoint icon** on the left side of the screen to jump to your SharePoint instance. 
+5.4 You should now see the **Microsoft Office Home** screen. Click on the **SharePoint icon** on the left side of the screen to jump to your SharePoint instance. 
 
 ![Microsoft SharePoint](./images/mss_0190.png)
 
-6.4 In case a welcome popup appears, you can click on **Not now** to continue. 
+5.5 In case a welcome popup appears, you can click on **Not now** to continue. 
 
 ![Microsoft SharePoint](./images/mss_0200.png)
 
-6.5 Select **+Create site** and select option **Team site** from section Create a site.
+5.6 Select **+Create site** and select option **Team site** from section Create a site.
 
 ![Microsoft SharePoint](./images/mss_0220.png)
 
-6.6 Enter a site name (e.g., **General**). This site name will be used later while accessing files from Open Connectors capability of SAP Business Technology Platform Integration Suite. Select **Next**.
+5.7 Enter a site name (e.g., **General**). This site name will be used later while accessing files from Open Connectors capability of SAP Business Technology Platform Integration Suite. Select **Next**.
 
 ![Microsoft SharePoint](./images/mss_0230.png)
 
-6.7 You can optionally add additional owners or members which is not required for our use case. Select **Finish** to create the team site.
+5.8 You can optionally add additional owners or members which is not required for our use case. Select **Finish** to create the team site.
 
 ![Microsoft SharePoint](./images/mss_0240.png)
 
-6.8 With this a site named **General** will be created for you. You can optionally customize the default Home Page.
+5.9 With this a site named **General** will be created for you. You can optionally customize the default Home Page.
 
 ![Microsoft SharePoint](./images/mss_0250.png)
 
-## Step 7 - Add a sample file to your SharePoint site
+## Step 6 - Add a sample file to your SharePoint site
 
 To showcase the reading of the documents stored in SharePoint via Open Connectors you can add a sample document named **welcome.docx** which will be used for testing purpose.
 
 ---
 
 
-7.1 To add a new document, select **Document -> + New** and select **Word document** from the dropdown.
+6.1 To add a new document, select **Document -> + New** and select **Word document** from the dropdown.
 
 ![Microsoft SharePoint](./images/mss_0260.png)
 
-7.2 This will launch Microsoft Word in new browser tab. Add any text of your choice like **Hello from SharePoint**.  Wait for the status to change to **Saved** for the changes to be persisted. The status can be found on the top left of the screen. Saving the document may take some time.
+6.2 This will launch Microsoft Word in new browser tab. Add any text of your choice like **Hello from SharePoint**.  Wait for the status to change to **Saved** for the changes to be persisted. The status can be found on the top left of the screen. Saving the document may take some time.
 
 ![Microsoft SharePoint](./images/mss_0270.png)
 
-7.3 This will create a word document named **Document.docx**. To view your document, click on your open SharePoint session from the Browser tab. In case you cannot see the document, reload the page. 
+6.3 This will create a word document named **Document.docx**. To view your document, click on your open SharePoint session from the Browser tab. In case you cannot see the document, reload the page. 
 
 ![Microsoft SharePoint](./images/mss_0280.png)
 
-7.4 To rename the newly created document to e.g. **welcome.docx**, select your document click "Rename" in the toolbar. Alternatively, you can select your document and do a right-click. 
+6.4 To rename the newly created document to e.g. **welcome.docx**, select your document click "Rename" in the toolbar. Alternatively, you can select your document and do a right-click. 
 
 ![Microsoft SharePoint](./images/mss_0290.png)
 
-7.5 Rename your document **welcome.docx** and click on **Rename**. The file name will be changed to welcome.docx
+6.5 Rename your document **welcome.docx** and click on **Rename**. The file name will be changed to welcome.docx
 
 ![Microsoft SharePoint](./images/mss_0300.png)
 
@@ -316,89 +248,89 @@ To showcase the reading of the documents stored in SharePoint via Open Connector
 
 With this a SharePoint team site named General has been successfully created. 
 
-## Step 8 - Create an Azure AD app registration
+## Step 7 - Create an Azure AD app registration
 
 For using the SharePoint connector from Open Connectors capability of SAP Business Technology Platform Integration Suite, you will need an OAuth key and Secret to connect to your SharePoint account. In this step, configurations required to connect to your SharePoint Online account are covered.
 
 ---
 
 
-8.1 Logon to your [Azure Portal](https://portal.azure.com/) with your Microsoft365 Developer Account.
+7.1 Logon to your [Azure Portal](https://portal.azure.com/) with your Microsoft365 Developer Account.
 
-8.2 Navigate to Azure Active Directory (Azure AD).
+7.2 Navigate to Azure Active Directory (Azure AD).
 
 ![Azure AD](./images/aar_0030.png)
 
 ![Azure AD](./images/aar_0040.png)
 
 
-8.3 Select **App Registrations**. Click **New registration** to create an OAuth application.
+7.3 Select **App Registrations**. Click **New registration** to create an OAuth application.
 
 ![Azure AD](./images/aar_0050.png)
 
 
-8.4 In the application registration prompt, enter an application name say SharePointOAuthApp, select the supported account types and in the Redirect URI enter the redirect URI for SAP Business Technology Platform Open Connectors, which is https://auth.cloudelements.io/oauth. Click on **Register**. 
+7.4 In the application registration prompt, enter an application name say SharePointOAuthApp, select the supported account types and in the Redirect URI enter the redirect URI for SAP Business Technology Platform Open Connectors, which is https://auth.cloudelements.io/oauth. Click on **Register**. 
 
 ![Azure AD](./images/aar_0080.png)
 
 
-## Step 9 - Add the required app permissions for SharePoint access
+## Step 8 - Add the required app permissions for SharePoint access
 
 The registered application by default only has the User.Read permission from Microsoft Graph APIs and you will need to add in the required permission to access SharePoint REST APIs. 
 
 ---
 
-9.1 Select **API permissions** tab and then click on **Add a permission** to add in the permissions for SharePoint REST APIs.
+8.1 Select **API permissions** tab and then click on **Add a permission** to add in the permissions for SharePoint REST APIs.
 
 ![Azure AD](./images/aar_0090.png)
 
 ![Azure AD](./images/aar_0100.png)
 
-9.2 Select SharePoint to add in the API permissions for SharePoint.
+8.2 Select SharePoint to add in the API permissions for SharePoint.
 
 ![Azure AD](./images/aar_0110.png)
 
-9.3 In SAP Business Technology Platform Open Connectors, access to the API is via the signed-in user. Select **Delegated Permissions** for accessing APIs as signed-in user.
+8.3 In SAP Business Technology Platform Open Connectors, access to the API is via the signed-in user. Select **Delegated Permissions** for accessing APIs as signed-in user.
 
 ![Azure AD](./images/aar_0120.png)
 
-9.4 Select the Permissions as shown in the following screenshots and select **Add permissions**.
+8.4 Select the Permissions as shown in the following screenshots and select **Add permissions**.
 
 ![Azure AD](./images/aar_0130.png)
 
 ![Azure AD](./images/aar_0140.png)
 
-9.5 Some of the selected permissions require administrator consent. After the permissions are selected, click on **Grant admin consent**. The permission may take some time to updated as shown in the warning, so wait for few minutes before selecting the Grant admin consent option.
+8.5 Some of the selected permissions require administrator consent. After the permissions are selected, click on **Grant admin consent**. The permission may take some time to updated as shown in the warning, so wait for few minutes before selecting the Grant admin consent option.
 
 ![Azure AD](./images/aar_0160.png)
 
-9.6 You may be prompted to confirm the administrator consent. Select **Yes**.
+8.6 You may be prompted to confirm the administrator consent. Select **Yes**.
 
 ![Azure AD](./images/aar_0170.png)
 
-9.7 After successful operation, the status will change to Granted for your user.
+8.7 After successful operation, the status will change to Granted for your user.
 
 ![Azure AD](./images/aar_0180.png)
 
-## Step 10 - Create an OAuth secret for your app
+## Step 9 - Create an OAuth secret for your app
 
 For connecting to your SharePoint from SAP BTP Open Connectors, an OAuth secret is required. 
 
 ---
 
-10.1 To get your OAuth Secret, select **Certificates & secrets** tab, click on **New client secret**.
+9.1 To get your OAuth Secret, select **Certificates & secrets** tab, click on **New client secret**.
 
 ![Azure AD](./images/aar_0200.png)
 
-10.2 Enter a description for your OAuth secret say OAuthSecret, select the expiry time, select **Add**.
+9.2 Enter a description for your OAuth secret say OAuthSecret, select the expiry time, select **Add**.
 
 ![Azure AD](./images/aar_0210.png)
 
-10.3 Copy and note down the generated client secret, you will need to provide this while creating a SharePoint connector instance from SAP BTP Open Connectors. The generated client secret cannot be retrieved later.
+9.3 Copy and note down the generated client secret, you will need to provide this while creating a SharePoint connector instance from SAP BTP Open Connectors. The generated client secret cannot be retrieved later.
 
 ![Azure AD](./images/aar_0220.png)
 
-10.4 For connecting to your SharePoint Online account from SAP BTP Open Connectors, an OAuth client ID is required. To get your OAuth client ID , select the Overview tab and copy the Application (client) ID value.
+9.4 For connecting to your SharePoint Online account from SAP BTP Open Connectors, an OAuth client ID is required. To get your OAuth client ID , select the Overview tab and copy the Application (client) ID value.
 
 ![Azure AD](./images/aar_0230.png)
 
