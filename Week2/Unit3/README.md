@@ -432,7 +432,7 @@ Enter **xmlns:d=http://schemas.microsoft.com/ado/2007/08/dataservices** in the n
 ![Cloud Integration](./images/cif_0530.png)
 
 
-### 5.10. Add the required request parameters to call your Open Connectors SharePoint API
+### Add the required request parameters to call your Open Connectors SharePoint API
 
 3.36 Add a **Content Modifier** step, to initialize the SharePoint connector instance authorization token and the SharePoint team site, where the document will be posted.
 
