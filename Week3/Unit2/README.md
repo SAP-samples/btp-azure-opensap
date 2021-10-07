@@ -9,56 +9,60 @@ The objective of the exercise is to create a leave request workflow definition, 
 > If you have any issues with the exercises, don't hesitate to open a question in the openSAP Discussion forum for this course. Provide the exact step number: "Week3Unit1, Step 1.1: Command cannot be executed. My expected result was [...], my actual result was [...]". Logs, etc. are always highly appreciated. 
  ![OpenSAP Discussion](../../images/opensap-forum.png)
 
-## Step 1 - Business Application Studio getting started
+## Step 1 - SAP Business Application Studio getting started
 
-1.1. Launch Business Application Studio from BTP cockpit
+1.1. Launch SAP Business Application Studio from BTP cockpit
    
-   ![BAS launch](./images/bas_launch.png)
+   ![SAP Business Application Studio launch](./images/bas_launch.png)
 
-1.2. Run the Workflow Development space created in previous unit
+1.2. Start the development space that you have created in the previous unit. (e.g. _WFDEV_). 
    
    ![Start WF Dev Space](./images/bas_start_space.png)
 
-1.3. Open the space. Business Application Studio will initiate all necessary tools
+1.3. Open the space through clicking on the name. The SAP Business Application Studio will initiate all necessary tools. 
    
    ![Open WF Dev Space](./images/bas_wf_space.png)
 
-1.4. IDE is now ready for development
+1.4. You are now prompted with the _Welcome Page_ of your SAP Business Application Studio developement space. You are ready to go. 
    
-   ![BAS WF Dev Space](./images/bas_ready.png)
+   ![SAP Business Application Studio WF Dev Space](./images/bas_ready.png)
 
 
 ## Step 2 - Clone the Workflow project from GitHub and get familiar with it
 
-2.1. Clone following project from GitHub into your BAS workspace. Clone the project using either the Terminal in BAS and *git* CLI or BAS Github tools.
+2.1. Clone the GitHub repository of this openSAP course using the terminal in SAP Business Application Studio. 
 
-Open the Termin via the BAS Menu. 
+Open the Terminal via the SAP Business Application Studio Menu. 
    ![Open Terminal](./images/openTerminal.png)
 
-Change the directory and clone the git repo
-   ![Change and clone](./images/changeAndClone.png)
+Change the directory and clone the git repository using the following commands: 
 
-   ```bash/Shell
+   ```bash
    cd ~/projects/
-   git clone https://github.com/SAP-samples/btp-azure-opensap.git
+   git clone https://github.com/SAP-samples/btp-azure-opensap
    ```
 
+   ![Change and clone](./images/changeAndClone.png)
 
-2.2. Workflow project you can find in **btp-workflow** folder.
-   Project has following structure:
+2.2 Open the cloned project in the File Explorer. 
+
+   ![Open the project in the File Explorer](./images/open_folder_filexplorer.png)
+
+2.3. The cloned repository not only contains the exercises like this one here but also sample coding. The relevant artifacts for this unit are part of the following structure:
 
    ![WF Project structure](./images/wf_project_structure.png)
 
-2.3. Leave request workflow is defined in
+2.4. The Leave Request workflow definition relevant for this unit can be found in **sample coding > btp-workflow > LeaveRequest > workflows**. Open the file and have a look at it. 
    
    ```
-   workflow
+   workflows
    └── EmployeeLeaveRequest.workflow
    ```
 
    ![WF Definition](./images/wf_definiition.png)
 
-    Leave request workflow definition consist of following tasks:
+   The Leave request workflow definition consist of following tasks:
+    
    * **User Task:** A flow object that illustrates a task that a human performs. User tasks appear e.g. in My Inbox where the processor of the task can complete the task instance, and view its description.
    * **Mail Task:** A flow object that you configure to send e-mails to one or more recipients.
   
@@ -68,7 +72,7 @@ Change the directory and clone the git repo
 
    **Mail Task** (MailTaskAccept, MailTaskDecline) we use to send the leave requester the approval status.
 
-2.4. Form definition for User Task is defined in
+2.4. The Form definition for the said User Task is defined in the following file. Open the file and have a look at it. 
       
    ```
    forms
@@ -78,9 +82,9 @@ Change the directory and clone the git repo
 
    ![WF Form](./images/wf_form.png)
 
-   End users can interact with a workflow through user interface with forms and in this example Manager can see the request form in MyInbox and approve or reject the request.
+   End users can interact with a workflow through user interface with forms. In this example, the manager of an employee can see the request form in the MyInbox application and approve or reject the request.
 
-2.5. To test the leave request workflow we defined sample data which can be used for testing purpose during workflow development
+2.5. To test the leave request workflow, the project contains a sample data file that can be used for testing purpose during the workflow development. Open the file and have a look at it. 
    
    ```
    sample-data
@@ -100,30 +104,47 @@ Change the directory and clone the git repo
    }
    ```
 
-   >Note, To keep the exercise simple, you will take the role of manager and approve or reject the leave request created by you. 
+   >Note, To keep this scenario as simple as possible, you will take both the role of a potential manager and approve or reject the leave request created by you as well as the role of the leave request creator. 
    
 ## Step 3 - Build and deploy the Workflow in your BTP trial account
 
-Now after exploring the leave request workflow definition, you can build and deploy it in your BTP trial account.
+After exploring the leave request workflow definition, you can build and deploy it to your SAP BTP trial account.
 
-3.1. Make sure that you are loged in your BTP account
+---
+
+3.1. Make sure that you are loged in your SAP BTP Cloud Foundry environment. Therefore, you need an API Endpoint. **Open the SAP BTP Trial Cockpit in a new tab** (you still need the SAP Business Application) and navigate to your dev space.
+
+   ![Space Overview](./images/dev_space.png)
+
+3.2 **Copy** the API Endpoint. 
+
+   ![Space Overview](./images/api_endpoint.png)
+
+3.3 Go back to the SAP Business Application Studio tab and use the following command. **Replace** the _<API Endpoint>_ placeholder with the actual value you have copied from the SAP BTP Trial Cockpit. 
+
+   bash
    ```
       cf login -a <API Endpoint>
    ```
-3.2. Right click on mta.yaml and **"Build MTA Project"**
+
+   [Space Overview](./images/cf_login.png)
+
+> Note: If you only have access to one Cloud Foundry space, then you are automatically target to this one. (If there are multiple spaces accessible for you, follow the progress in the terminal and provide the org/space numbers.)
+
+3.4. Right click on the **sample-coding/btp-workflow/mta.yaml and select **Build MTA Project**.
    
    ![WF Build](./images/wf_build.png)
 
-   > mta.yaml is the Multitarget Application development descriptor
+   > mta.yaml is the [Multitarget Application development descriptor](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.03/en-US/4486ada1af824aadaf56baebc93d0256.html)
 
-3.3. The deployable archive file you can find in  
+   The build step will produce the following file **sample-coding/btp-workflow/mta_archives/LeaveRequest_0.0.1.mtar. 
 
    ```
    mta_archives
    └── LeaveRequest_0.0.1.mtar
    ```
 
-   Right click on the archive file and **"Deploy MTA Archive"**
+3.5 Right click on the LeaveRequest_0.0.1.mtar file and select **Deploy MTA Archive**. 
    
    ![WF Deploy](./images/wf_deploy.png)
 
@@ -131,7 +152,7 @@ Now after exploring the leave request workflow definition, you can build and dep
 
 To be able to send approval or rejection email from Mail Task, we need to configure mail destination with SMTP credentials.
 
-4.1. Download the **"bpmworkflowruntime_mail"** destination from GitHub or from your BAS workspace
+4.1. Download the **"bpmworkflowruntime_mail"** destination from GitHub or from your SAP Business Application Studio workspace
    
    ![WF Mail Destination Download](./images/wf_destination_download.png)
 

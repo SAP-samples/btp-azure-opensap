@@ -116,7 +116,7 @@ The SAP Business Application Studio is a development environment available on SA
    
    ![Create Dev Space](./images/bas_new_space.png)
 
-2.4 You can find the newly defined and preconfigured development space with all required tools. In the next unit we will use this space to build and deploy the workflow definition. 
+2.4 You can find the newly defined and preconfigured development space with all required tools in the overview of your development spaces. In the next unit we will use this space to build and deploy the workflow definition. 
    
    ![BAS WF Dev Space](./images/bas_wf_space.png)
 
