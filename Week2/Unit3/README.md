@@ -494,7 +494,7 @@ Enter **xmlns:d=http://schemas.microsoft.com/ado/2007/08/dataservices** in the n
 
 
 3.48 Under the Connection tab, enter details as follows.
-* Address :-  https://api.openconnectors.trial. &lt;BTP Trial Region e.g. ap21&gt; .ext.hana.ondemand.com/elements/api-v2/files
+* Address :- ```https://api.openconnectors.trial.&lt; BTP Trial Region e.g. ap21 &gt;.ext.hana.ondemand.com/elements/api-v2/files```
 * Query :- size=${property.byteSize}&path=%2Fbilling_${property.doc_id}.pdf&overwrite=true
 * Method :- POST
 * Authentication :- None
