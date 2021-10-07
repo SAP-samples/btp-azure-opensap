@@ -127,7 +127,7 @@ After exploring the leave request workflow definition, you can build and deploy 
       cf login -a <API Endpoint>
    ```
 
-   [Space Overview](./images/cf_login.png)
+   ![Space Overview](./images/cf_login.png)
 
 > Note: If you only have access to one Cloud Foundry space, then you are automatically target to this one. (If there are multiple spaces accessible for you, follow the progress in the terminal and provide the org/space numbers.)
 
