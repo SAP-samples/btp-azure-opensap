@@ -114,9 +114,8 @@ and click on run
 
 With this you have imported sample data to the Azure Data Explorer. From here we can a quick query. 
 
-Example: 
-*Good work!
-You successfully finished the configuration of the Azure Data Explorer to be exposed to SAP Analytics Cloud later on. 
+**Good work!
+You successfully finished the configuration of the Azure Data Explorer to be exposed to SAP Analytics Cloud later on.**
 
 
 
