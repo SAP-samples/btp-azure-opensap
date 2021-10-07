@@ -29,16 +29,17 @@ This guided set of automated steps will configure entitlements of workflow manag
 As the booster completes, your subaccount will be ready to start building using SAP Workflow Management. You'll have appropriate authorizations set up and assigned to your user, an Business Application Studio (IDE) setup and configured to work with Workflow artifacts, and an instance of the main Workflow service set up explicitly.
 
 ---
-   
-1.1.  Go to your SAP BTP trial account and go to **Boosters** section. Find the **"Set up account for Workflow Management"** booster and open it.
+1.1 Go to the [SAP BTP Trial Cockpit](https://account.hanatrial.ondemand.com/) and **Go To Your Trial Account**. 
+
+1.2.  Navigate to **Boosters** section. Find the **"Set up account for Workflow Management"** booster and open it.
 
 ![Boosters](./images/boosterstart.png)
 
-1.2. Get overview which Services and Subscriptions are part of this booster and start the booster
+1.2. You then get an overview which services and subscriptions are part of this booster. **Start** the booster.
 
 ![Booster Overview](./images/boosteroverview.png)
 
-1.3. Booster will start executing following tasks:
+1.3. The booster will start executing the following tasks:
    * Assigning Service Quotas
    * Subscribing to SaaS Applications
    * Creating Service Instances
@@ -49,21 +50,26 @@ As the booster completes, your subaccount will be ready to start building using 
 
 ![Booster Execution](./images/boosterexecution.png)
 
-1.4. After successful execution you can navigate to **Instances and Subscriptions** of your subaccount and find
+
+1.4 After the successful execution navigate to your subaccount. 
+
+![Booster Execution](./images/boosterfinished_subaccount.png)
+
+1.5. Now, the **Services > Instances and Subscriptions** area of your subaccount should list
    * Application Subscriptions to **SAP Business Application Studio** and **Workflow Management**
    * Service instances of **Destination** and **Workflow** Service
 
    ![Booster Results](./images/boosterfinish.png)
 
-1.5. After booster execution you can also find all the required roles assigned to your user, so no manual assignment is necessary.
+1.6. After the booster execution, you can also find all the required roles collections assigned to your user via **Security > Users**, so no manual assignment is necessary.
    
    ![Workflow Roles](./images/workflowroles.png)
 
-1.6. In upcoming Units we will use workflow APIs and for that we need to add the required authorization scopes to the services instance. Using the "Instances and Subscriptions" menu item on the left, update the *wm_workflow* service instance by using the "Update" button and following the dialog flow, paying attention at each of the steps:
+1.7. In the upcoming units we will use some APIs of SAP Worfklow Management and for that we need to add the required authorization scopes to the services instance. Using the **Instances and Subscriptions** menu item on the left, update the *wm_workflow* service instance by using the **Update** button and following the dialog flow, paying attention at each of the steps:
 
 ![Update WF Service instance](./images/wf_update_service_instance.png)
 
-- Step "Basic info": make sure that you don't change the name
+- Step "Basic info": make sure that you don't change the name. Go on with **Next**. 
 - Step "Parameters": specify the following authorization scopes in the text area:
 
     ```
@@ -84,35 +90,37 @@ As the booster completes, your subaccount will be ready to start building using 
             ]
     }
     ```
-
+- Finish with **Update Instance**. 
+  
 ![Update WF Service instance](./images/wf_update_scopes.png)
 
-> The authorities you specified in the "Parameters" step will be needed in a later unit, when you come to call the Workflow API.
+> The authorities you specified in the "Parameters" step will be needed in a later unit, when you come to call the SAP Workflow Management APIs.
+## Step 2 - Configure SAP Business Application Studio for development
 
+The SAP Business Application Studio is a development environment available on SAP Business Technology Platform. You will use the development environment in the coming units to build and deploy workflow definitions for SAP Workflow Management. 
 
-## Step 2 - Configure Business Application Studio for development
+---
 
-2.1. Open BTP cockpit and navigated to **Instances and Subscriptions** inside your trial subaccount. Find **"SAP Business Application Studio"** within Application Subscriptions and launch it either from launch icon or "..." --> "Go to Application"
+2.1. Navigate to **Instances and Subscriptions** inside your trial subaccount. Find **"SAP Business Application Studio"** within Application Subscriptions and launch it either from launch icon or "..." --> "Go to Application"
    
 ![Start Business Application Studio](./images/bas_launch.png)
    
-2.2. Create a new development Space 
+2.2. **Create** a new development Space. 
    
 ![Create Dev Space](./images/bas_create_space.png)
     
-2.3. Select Following Extensions to enable them in the development space:
-    * Java Tools - For developing and running Java Apps
-    * MTA Tools - For build/deploy/... Multitarget Applications
-    * Workflow Management - For creating Workflow Applications
+2.3. Give the new dev space (e.g. _WFDEV_) and select the following extensions to enable them in the development space:
+* Java Tools (to develop and run Java Apps)
+* MTA Tools (to build and deploy Multitarget-Applications)
+* Workflow Management (to create workflow definitions for SAP Workflow Management)
    
    ![Create Dev Space](./images/bas_new_space.png)
 
-2.4. After creation you can find newly defined and preconfigured development space with all required tools. In the next Unit we will use this space for building and deploying the workflow application. 
+2.4. After creation you can find newly defined and preconfigured development space with all required tools. In the next Unit we will use this space to build and deploy the workflow definition. 
    
    ![BAS WF Dev Space](./images/bas_wf_space.png)
 
 ## Summary
 
-Good work!
-You successfully finished the setup and configuration of all necessary services and tools which is required for the Week 3 and you will use them in later Unites.
+**Good work! You successfully finished the setup and configuration of all necessary services and tools for SAP BTP which are required for Week 3.**
 
