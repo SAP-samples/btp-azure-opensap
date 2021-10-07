@@ -67,26 +67,21 @@ In this step, you will use the **Integration Suite Provisioning** tool, to enabl
 ![Integration Suite](./images/iss_080.png)
 
 
-2.5 Select the checkbox for **Enable API Business Hub Enterprise** and click on **Next**.
-
-![Integration Suite](./images/iss_090.png)
-
-
-2.6 Click on **Activate** to provision your required capabilities. 
+2.5 Click on **Activate** to provision your required capabilities. 
 
 ![Integration Suite](./images/iss_100.png)
 
 
-2.7 On the following page, you can see the provisioning **status** of the Integration Suite components. 
+2.6 On the following page, you can see the provisioning **status** of the Integration Suite components. 
 
 ![Integration Suite](./images/iss_110.png)
 
 
-2.8 Wait until all components are in state **Active**. You might need to refresh your page to update the status.
+2.7 Wait until all components are in state **Active**. You might need to refresh your page to update the status.
 
 ![Integration Suite](./images/iss_120.png)
 
-2.9 From the Provisioning application you can navigate back to the **Integration Suite Launchpad** by choosing the **Integration Suite button** on the header.
+2.8 From the Provisioning application you can navigate back to the **Integration Suite Launchpad** by choosing the **Integration Suite button** on the header.
 
 ![Integration Suite](./images/iss_125.png)
 
