@@ -444,7 +444,7 @@ Enter **xmlns:d=http://schemas.microsoft.com/ado/2007/08/dataservices** in the n
 ![Cloud Integration](./images/cif_0580.png)
 
 
-3.38 Navigate to the Message Header tab. Select **Add** to add new message header. Enter **Subsite** in the Name field and enter your SharePoint team site name in the format **/sites/{your_teamsite}**. In this tutorial, a team site named General was used therefore the value of **Subsite** field is **/sites/General**.
+3.38 Navigate to the Message Header tab. Select **Add** to add new message header. Enter **Subsite** in the Name field and enter your SharePoint team site name in the format **/sites/{your_teamsite}**. In this tutorial, a team site named General was used therefore the value of **Subsite** field is **/sites/General**. Select **Add** to add another message header. Enter **Authorization** in the Name field. As a value copy the Authorization header noted down in **Step 1.15**.
 
 >Note :- If your team site contains spaces , then enter the site name without any spaces in the Subsite field.
 
