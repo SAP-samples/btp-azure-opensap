@@ -27,6 +27,8 @@ In a Booster Catalog you can find booster **"Set up account for Workflow Managem
 This guided set of automated steps will configure entitlements of workflow management services, subscribe to the workflow management application, create a service instance for: workflow management, workflow, create needed destinations, and assign all needed roles to your user. In the background, the booster will also automatically enable Cloud Foundry and create default space, if not done already. Business 
 
 As the booster completes, your subaccount will be ready to start building using SAP Workflow Management. You'll have appropriate authorizations set up and assigned to your user, an Business Application Studio (IDE) setup and configured to work with Workflow artifacts, and an instance of the main Workflow service set up explicitly.
+
+---
    
 1.1.  Go to your SAP BTP trial account and go to **Boosters** section. Find the **"Set up account for Workflow Management"** booster and open it.
 
