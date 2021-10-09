@@ -42,6 +42,8 @@ Change the directory and clone the git repository using the following commands:
    git clone https://github.com/SAP-samples/btp-azure-opensap
    ```
 
+   > NOTE for validation testers: Since the repository is still private as the course hast not yet gone live, you will get a input box at the top of the SAP Business Application Studio asking you for your credentials. You need to authenticate with your mail and a Personal Access Token instead of your actual password. Please find the instructions here: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token (openSAP students aren’t faced with this “challenge” since the repo will be public by then)
+
    ![Change and clone](./images/changeAndClone.png)
 
 2.2 Open the cloned project in the File Explorer. 
@@ -131,11 +133,11 @@ After exploring the leave request workflow definition, you can build and deploy 
 
 > Note: If you only have access to one Cloud Foundry space, then you are automatically target to this one. (If there are multiple spaces accessible for you, follow the progress in the terminal and provide the org/space numbers.)
 
-3.4. Right click on the **sample-coding/btp-workflow/mta.yaml and select **Build MTA Project**.
+3.4. Right click on the **sample-coding/btp-workflow/mta.yaml** file and select **Build MTA Project**.
    
    ![WF Build](./images/wf_build.png)
 
-   > mta.yaml is the [Multitarget Application development descriptor](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.03/en-US/4486ada1af824aadaf56baebc93d0256.html)
+   > mta.yaml is the [Multitarget Application development descriptor](https://help.sap.com/viewer/c2b99f19e9264c4d9ae9221b22f6f589/2021_3_QRC/en-US/4486ada1af824aadaf56baebc93d0256.html)
 
    The build step will produce the following file **sample-coding/btp-workflow/mta_archives/LeaveRequest_0.0.1.mtar. 
 
@@ -148,11 +150,15 @@ After exploring the leave request workflow definition, you can build and deploy 
    
    ![WF Deploy](./images/wf_deploy.png)
 
+   The output in your terminal should be relatively similar to the one in the following screenshot. 
+
+   ![WF deployment result](./images/deploy_result.png)
+
 ## Step 4 - Define the Mail Destination used in Mail task to send the approval status
 
-To be able to send approval or rejection email from Mail Task, we need to configure mail destination with SMTP credentials.
+To be able to send approval or rejection mails from a so called _Mail Task_, we need to configure a mail destination with SMTP credentials.
 
-4.1. Download the **"bpmworkflowruntime_mail"** destination from GitHub or from your SAP Business Application Studio workspace
+4.1. Download the **"bpmworkflowruntime_mail"** destination from your SAP Business Application Studio workspace.
    
    ![WF Mail Destination Download](./images/wf_destination_download.png)
 
@@ -162,11 +168,11 @@ To be able to send approval or rejection email from Mail Task, we need to config
        └── bpmworkflowruntime_mail
    ```
 
-4.2. Go to BTP cockpit and navigate to destinations and import the downloaded mail destination
+4.2. Open a new tab and go to your **dev** space in the [SAP BTP Trial cockpit](https://hanatrial.ondemand.com). **Import** the downloaded mail destination.
    
    ![WF Import the mail destination](./images/wf_import_destination.png)
 
-4.3. Add your SMTP Server host and credentials
+4.3. Add your SMTP Server host and credentials.
    
    ![WF Mail Destination](./images/wf_mail_destination.png)
 
@@ -197,7 +203,7 @@ To be able to send approval or rejection email from Mail Task, we need to config
    ```
     >Replace the SMTP host *mail.smtp.host* and *mail.smtp.from* also provide the credentials of SMTP Server.
 
-    >Note: For Office 365 use the SMTP server: smtp.office365.com
+    >Note: For Office 365 use the SMTP host: smtp.office365.com
 
 ## Step 5 - Test the workflow definition 
 
