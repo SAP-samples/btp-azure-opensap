@@ -86,27 +86,23 @@ Change the directory and clone the git repository using the following commands:
 
    End users can interact with a workflow through user interface with forms. In this example, the manager of an employee can see the request form in the MyInbox application and approve or reject the request.
 
-2.5. To test the leave request workflow, the project contains a sample data file that can be used for testing purpose during the workflow development. Open the file and have a look at it. 
-   
-   ```
-   sample-data
-   └── EmployeeLeaveRequest
-       └── sampleContext.json
-   ```
+2.5. <a name="sampledata" /> To test the leave request workflow, the project contains a sample data file that can be used for testing purpose during the workflow development. **Open** the file and **replace** the placeholder <mail address of your SAP BTP Trial account> with the actual mail address of your SAP BTP Trial account. 
    
    ![WF Sample Data](./images/wf_sample_data.png)
 
    ```json
    {
-    "requestorName": "Requestor Name",
+    "requestorName": "Sample User",
     "reason": "Vacation",
-    "requestor": "Requestor E-Mail (Use the address used in BTP)",
+    "requestor": "<mail address of your SAP BTP Trial account>",
     "startdate": "2021-12-16",
     "enddate": "2021-12-19"
    }
    ```
 
    >Note, To keep this scenario as simple as possible, you will take both the role of a potential manager and approve or reject the leave request created by you as well as the role of the leave request creator. 
+
+2.6 **Save** the file. 
    
 ## Step 3 - Build and deploy the Workflow in your BTP trial account
 
@@ -139,14 +135,14 @@ After exploring the leave request workflow definition, you can build and deploy 
 
    > mta.yaml is the [Multitarget Application development descriptor](https://help.sap.com/viewer/c2b99f19e9264c4d9ae9221b22f6f589/2021_3_QRC/en-US/4486ada1af824aadaf56baebc93d0256.html)
 
-   The build step will produce the following file **sample-coding/btp-workflow/mta_archives/LeaveRequest_0.0.1.mtar. 
+   The build step will produce the following file **sample-coding/btp-workflow/mta_archives/LeaveRequest_0.0.1.mtar**. 
 
    ```
    mta_archives
    └── LeaveRequest_0.0.1.mtar
    ```
 
-3.5 Right click on the LeaveRequest_0.0.1.mtar file and select **Deploy MTA Archive**. 
+3.5 <a name="wfdeploy">Right click on the LeaveRequest_0.0.1.mtar file and select **Deploy MTA Archive**. </a>
    
    ![WF Deploy](./images/wf_deploy.png)
 
@@ -157,6 +153,8 @@ After exploring the leave request workflow definition, you can build and deploy 
 ## Step 4 - Define the Mail Destination used in Mail task to send the approval status
 
 To be able to send approval or rejection mails from a so called _Mail Task_, we need to configure a mail destination with SMTP credentials.
+
+---
 
 4.1. Download the **"bpmworkflowruntime_mail"** destination from your SAP Business Application Studio workspace.
    
@@ -172,90 +170,84 @@ To be able to send approval or rejection mails from a so called _Mail Task_, we 
    
    ![WF Import the mail destination](./images/wf_import_destination.png)
 
-4.3. Add your SMTP Server host and credentials.
+4.3. Replace <your M365 mail address> with the mail adress of your Microsoft365 developer account.
+
+   > How to setup a Microsoft365 user was covered in [Week2, Unit1](../../Week2/Unit1/README.md#microsoft365). 
+   > You can also use other mail adresses. You only need to find out your SMTP Host and Port for your mail provider and adjust it in the destination properties. You need to provide these settings in Step 4.5
    
-   ![WF Mail Destination](./images/wf_mail_destination.png)
+   **IMPORTANT**: Do not change the Destination name! The destination name bpmworkflowruntime_mail is reference in other artifacats later on. 
 
-   >Note, the destination name should be **bpmworkflowruntime_mail**, otherwise the Workflow Mail Task will not find it.
+   ![Insert mail adress](./images/smtp-mail.png)
 
-   ```
-      Type=MAIL
-      Name=bpmworkflowruntime_mail
-      ProxyType=Internet
+4.4 Provide the password for the mail account you have provided in the previous step. 
 
-      mail.user=
-      mail.password=
-      
-      mail.smtp.host=mail.example.com
-      mail.smtp.port=587
-      mail.transport.protocol=smtp
-      mail.smtp.starttls.required=true
-      mail.smtp.starttls.enable=true
-      mail.smtp.connectiontimeout=50000
-      mail.smtp.timeout=50000
-      mail.smtp.auth=true
-      
-      mail.smtp.from=cpworkflow@example.com
-      mail.smtp.ssl.checkserveridentity=true
-      
-      mail.bpm.send.disabled=false
+   ![Insert mail password](./images/smtp-password.png)
 
-   ```
-    >Replace the SMTP host *mail.smtp.host* and *mail.smtp.from* also provide the credentials of SMTP Server.
+4.5 **In case you haven't used the Microsoft365 Developer account in Step 4.3. and Step 4.4:** Change the property values _mail.smtp.host and mail.smtp.port_ with the respective values of your mail provider. 
 
-    >Note: For Office 365 use the SMTP host: smtp.office365.com
+   ![Change the SMTP properties](./images/smtp-smtp-properties.png)
 
+4.6 **Save** the destination configuration.
+   
 ## Step 5 - Test the workflow definition 
 
-After successful deployment of leave request workflow we can see the deployment and test it with sample leave request
+After the deployment of the workflow has succesfully finished, you can finally test it with a sample leave request. 
 
-5.1. Go to BTP Cockpit and navigate to **"Instances and Subscriptions"** and run the **"Workflow Management"** using the highlighted icon
+---
+
+5.1. Go to BTP Cockpit and navigate to **Instances and Subscriptions** and open the **Workflow Management** application using the highlighted icon
    
    ![WF launch](./images/wf_manag_launch.png)
    
-   It will open Workflow Management launchpad
+   It will open Workflow Management launchpad.
 
-5.2. In launchpad under Monitoring tools you can find the "Workflow Monitoring - Workflow Definition" tile. Open the application
+5.2. The Workflow Management launchpad offers a variety of tools for development and monitoring purposes. Select the **Monitor Workflow (Workflow Definitions)** tile.
    
    ![WF monitoring](./images/wf_monitoring.png)
 
-5.3. Here you can find the Employee Leave Request Workflow deployed in previous steps
+5.3. Here you can find the Employee Leave Request Workflow that you have deployed in [one of the previous steps of this unit](#wfdeploy). 
    
    ![WF leave request](./images/wf_employee_lr.png)
 
-5.4. Now you can trigger new Leave Request Workflow by clicking on **"Start new instance"** and using the sample data we defined in earlier steps.
+5.4. Now you can trigger new Leave Request Workflow by clicking on **Start new instance** and using the sample data we [defined in earlier steps](#sampledata).
+
+   > if you are still seeting the <mail address of your SAP BTP Trial account> placeholder (_requestor_ property) instead of your actual SAP BTP Trial account mail, please replace it now. Otherwise you will not receive the Task assigned in the MyInbox tile that we'll cover in one of the subsequent steps.
 
    ![WF new instance](./images/wf_new_instance.png)
 
-   >Note, later in upcoming Unit the leave request workflow will be triggered by API call from CAI chatbot
+   >Note, in one of the subsequent units the leave request workflow will be triggered by an API call from the SAP Conversational AI chatbot.
 
-5.5. Go back to Workflow Management launchpad and open "Workflow Monitoring - Workflow Instances" tile
+5.5. Go back to the SAP Workflow Management launchpad.
+
+   ![WF home](./images/wf_home.png)
+
+5.6 Open the **Workflow Monitoring (Workflow Instances)** tile.
+
+   > This is an application for administrative/developement purposes and not meant for end users to approve/reject workflow tasks.
 
    ![WF monitoring instances](./images/wf_monitoring_instances.png)
 
-5.6. Here you can find the running instance of triggered workflow
+5.6. Here you can find the running instance of the recently triggered workflow.
 
    ![WF running instances](./images/wf_running_instance.png)
 
-   You can find detailed information about the triggered workflow, see the workflow context and also analyse execution log if necessary.
-   
-   In Execution log you can see that leave request task was created and the manager can find it in MyInbox application.
+   You can find detailed information about the triggered workflow, see the workflow context and also analyse the execution log if necessary. In Execution log tab you can see that leave request task was created and the manager can find it in MyInbox application. To keep the exercise simple, you will also take on the role of the manager and approve or reject the leave request created by you.
 
-   To keep the exercise simple, you will take the role of manager and approve or reject the leave request created by you.
+5.7. Go back to SAP Workflow Management launchpad and select the **My Inbox** application.
 
-5.7. Go back to launchpad and launch **"My Inbox"** application
+   > This is the application potential end users will use to approve/reject workflow tasks.
    
    ![WF start My Inbox](./images/wf_myinbox.png)
 
-5.8. In My Inbox you will find the triggered leave request and you can "self" approve or reject it.
+5.8. In the **MyInbox** you will find the recently triggered leave request and you can "self" approve or reject it.
 
    ![WF approve or reject](./images/wf_accept_reject.png)
 
-5.9. After approval or rejection you will receive confirmation/rejection E-Mail
+5.9. After you have approved or rejected the workflow task, you will receive a confirmation/rejection mail. 
 
    ![WF E-Mail](./images/wf_approval_email.png)
     
-5.10. In Workflow Monitoring under Execution Log you can see that all steps were successfully finished.
+5.10. In the **Workflow Monitoring (Workflow Instances)** tile of SAP Workflow Management launchpad you can analyze the workflow instance in case something went wrong. The **Execution Log** you can see all steps.
     
    ![WF Execution log](./images/wf_execution_log.png)
    

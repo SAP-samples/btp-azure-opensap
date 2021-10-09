@@ -3,9 +3,9 @@
 		"49f5ead5-f089-4a28-9cee-4398eac988f6": {
 			"classDefinition": "com.sap.bpm.wfs.Model",
 			"id": "EmployeeLeaveRequest",
-			"subject": "Leave Request: ${context.reason} by ${context.employee}",
+			"subject": "Leave Request: ${context.reason} by ${context.requestorName}",
 			"name": "EmployeeLeaveRequest",
-			"documentation": "Leave Request: ${context.reason} by ${context.employee}",
+			"documentation": "Leave Request: ${context.reason} by ${context.requestorName}",
 			"lastIds": "62d7f4ed-4063-4c44-af8b-39050bd44926",
 			"events": {
 				"11a9b5ee-17c0-4159-9bbf-454dcfdcd5c3": {
@@ -68,7 +68,7 @@
 		},
 		"73f494c7-3a13-4756-b7f7-c56de56f5f8b": {
 			"classDefinition": "com.sap.bpm.wfs.UserTask",
-			"subject": "Leave Request: ${context.reason} by ${context.requestor}",
+			"subject": "Leave Request: ${context.reason} by ${context.requestorName}",
 			"description": "This workflow was triggered by ${context.requestor} via a Microsoft Teams bot",
 			"priority": "MEDIUM",
 			"isHiddenInLogForParticipant": false,

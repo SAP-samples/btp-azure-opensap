@@ -1,7 +1,7 @@
 {
-    "requestorName": "Joni S ",
+    "requestorName": "Sample User",
     "reason": "Vacation",
-    "requestor": "jonis@m365x368996.onmicrosoft.com",
-    "startdate": "2021-07-16",
-    "enddate": "2021-07-19"
+    "requestor": "<mail address of your SAP BTP Trial account>",
+    "startdate": "2021-12-16",
+    "enddate": "2021-12-19"
 }

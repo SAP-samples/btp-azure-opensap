@@ -2,10 +2,10 @@ Type=MAIL
 Name=bpmworkflowruntime_mail
 ProxyType=Internet
 
-mail.user=
+mail.user=<your M365 mail address>
 mail.password=
  
-mail.smtp.host=mail.example.com
+mail.smtp.host=smtp.office365.com
 mail.smtp.port=587
 mail.transport.protocol=smtp
 mail.smtp.starttls.required=true
@@ -14,7 +14,7 @@ mail.smtp.connectiontimeout=50000
 mail.smtp.timeout=50000
 mail.smtp.auth=true
  
-mail.smtp.from=cpworkflow@example.com
+mail.smtp.from=<your M365 mail address>
 mail.smtp.ssl.checkserveridentity=true
  
 mail.bpm.send.disabled=false
