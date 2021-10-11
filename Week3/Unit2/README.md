@@ -172,6 +172,8 @@ To be able to send approval or rejection mails from a so called _Mail Task_, we 
 
 4.3. Replace <your M365 mail address> with the mail adress of your Microsoft365 developer account.
 
+**IMPORTANT**: Make sure that Multifactor Authentication (MFA) is not active in your Microsoft365 developer account, it'll cause issues while using SMTP Destination. In general we recommend using MFA but, not for this unit. You can find in Troubleshooting section how to deactivate it, in case you already activated it.   
+
    > How to setup a Microsoft365 user was covered in [Week2, Unit1](../../Week2/Unit1/README.md#microsoft365). 
    > You can also use other mail adresses. You only need to find out your SMTP Host and Port for your mail provider and adjust it in the destination properties. You need to provide these settings in Step 4.5
    
@@ -185,7 +187,7 @@ To be able to send approval or rejection mails from a so called _Mail Task_, we 
 
 4.5 **In case you haven't used the Microsoft365 Developer account in Step 4.3. and Step 4.4:** Change the property values _mail.smtp.host and mail.smtp.port_ with the respective values of your mail provider. 
 
-   ![Change the SMTP properties](./images/smtp-smtp-properties.png)
+   ![Change the SMTP properties](./images/smtp-properties.png)
 
 4.6 **Save** the destination configuration.
    
@@ -250,8 +252,28 @@ After the deployment of the workflow has succesfully finished, you can finally t
 5.10. In the **Workflow Monitoring (Workflow Instances)** tile of SAP Workflow Management launchpad you can analyze the workflow instance in case something went wrong. The **Execution Log** you can see all steps.
     
    ![WF Execution log](./images/wf_execution_log.png)
-   
 
+## Troubleshooting   
+
+>Note: Misconfiguration of the **"bpmworkflowruntime_mail"** destination may cause some issues while trying to send the emails. 
+
+Using the **Monitor Workflow (Workflow Instances)** tools of the Workflow Management you can analyse and see the  cause of the issue.
+   
+   ![WF monitoring instances](./images/wf_monitoring_instances.png)
+
+For example in Execution Log you can see the details of the issue in detail.
+
+Often SMTP servers are having additional security protections activated, which may cause the issue below, that the smtp credentials could not be validated. 
+
+```Could not send email: The server 'smtp.office365.com' could be reached, but the login with the given credentials failed. Verify that the credentials are valid for the server.```
+
+This issue occurs in case you have activated the Multifactor Authentication (MFA) in your Microsoft365 developer account.
+
+ ![WF Troubleshooting](./images/wf-troubleshooting.png)
+
+ ### Deactivate Multifactor Authentication (MFA) in your Microsoft365 developer account.
+
+ 
 ## Summary
 
 Congrats! You successfully build and deployed the leave request workflow. You also simulated the workflow request process using the Monitoring tools provided by SAP Workflow Management.
