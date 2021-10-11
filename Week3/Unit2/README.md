@@ -172,7 +172,7 @@ To be able to send approval or rejection mails from a so called _Mail Task_, we 
 
 4.3. Replace <your M365 mail address> with the mail adress of your Microsoft365 developer account.
 
-**IMPORTANT**: Make sure that Multifactor Authentication (MFA) is not active in your Microsoft365 developer account, it'll cause issues while using SMTP Destination. In general we recommend using MFA but, not for this unit. You can find in Troubleshooting section how to deactivate it, in case you already activated it.   
+**IMPORTANT**: Make sure that Multifactor Authentication (MFA) is not active in your Microsoft365 developer account, it'll cause issues while using SMTP Destination. In general we recommend using MFA but, not for this unit. You can find in [Troubleshooting](https://github.com/SAP-samples/btp-azure-opensap/tree/main/Week3/Unit2#troubleshooting) section how to deactivate it, in case you already activated it.   
 
    > How to setup a Microsoft365 user was covered in [Week2, Unit1](../../Week2/Unit1/README.md#microsoft365). 
    > You can also use other mail adresses. You only need to find out your SMTP Host and Port for your mail provider and adjust it in the destination properties. You need to provide these settings in Step 4.5
