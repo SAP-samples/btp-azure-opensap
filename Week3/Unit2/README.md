@@ -30,7 +30,7 @@ The objective of the exercise is to create a leave request workflow definition, 
 
 ## Step 2 - Clone the Workflow project from GitHub and get familiar with it
 
-2.1. Clone the GitHub repository of this openSAP course using the terminal in SAP Business Application Studio. 
+2.1. <a name="clonerepo">Clone the GitHub repository of this openSAP course using the terminal in SAP Business Application Studio.</a>
 
 Open the Terminal via the SAP Business Application Studio Menu. 
    ![Open Terminal](./images/openTerminal.png)
@@ -110,7 +110,7 @@ After exploring the leave request workflow definition, you can build and deploy 
 
 ---
 
-3.1. Make sure that you are loged in your SAP BTP Cloud Foundry environment. Therefore, you need an API Endpoint. **Open the SAP BTP Trial Cockpit in a new tab** (you still need the SAP Business Application) and navigate to your dev space.
+3.1. <a name="cfcli" Make sure that you are loged in your SAP BTP Cloud Foundry environment. Therefore, you need an API Endpoint. **Open the SAP BTP Trial Cockpit in a new tab** (you still need the SAP Business Application) and navigate to your dev space.</a>
 
    ![Space Overview](./images/dev_space.png)
 
