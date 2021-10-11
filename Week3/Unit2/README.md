@@ -185,7 +185,7 @@ To be able to send approval or rejection mails from a so called _Mail Task_, we 
 
 4.5 **In case you haven't used the Microsoft365 Developer account in Step 4.3. and Step 4.4:** Change the property values _mail.smtp.host and mail.smtp.port_ with the respective values of your mail provider. 
 
-   ![Change the SMTP properties](./images/smtp-smtp-properties.png)
+   ![Change the SMTP properties](./images/smtp-properties.png)
 
 4.6 **Save** the destination configuration.
    
