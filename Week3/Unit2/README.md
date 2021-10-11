@@ -273,6 +273,19 @@ This issue occurs in case you have activated the Multifactor Authentication (MFA
 
  ### Deactivate Multifactor Authentication (MFA) in your Microsoft365 developer account.
 
+With this we definitely don't want to tempt you to deactivate multi-factor authentication in general and always. MFA is good and should be used as far as possible! Nevertheless, there are always reasons why a global MFA cannot be used. In this case, here are the instructions.
+
+Go to [Microsoft 365 admin center](https://portal.office.com/adminportal/home) and open Azure Active Directory.
+
+We may have to log in again and we are logged in to the Azure AD Admin Portal. Here we can manage the security standards via Azure Active Directory -> Properties.
+
+ ![Office dev portal](./images/office-dev-portal.png)
+
+In this menu we can now switch off the standards defined by Microsoft.
+You will be asked briefly why you are doing this, after which there will no longer be a request for a mandatory MFA.
+
+ ![Disasble MFA](./images/disable-mfa.png)
+
  
 ## Summary
 
