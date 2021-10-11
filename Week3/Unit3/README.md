@@ -13,9 +13,12 @@ In this exercise, learn how to create an SAP Conversational AI Bot and understan
 
 In this step you'll register for the SAP Conversational AI Community Edition and get used to the basic wording of SAP Conversational AI. 
 
+
 ---
 
-1.1 If you haven't signed up for SAP Conversational AI so far, go to <https://cai.tools.sap/> and click **Sign Up** in the upper-right corner. 
+1.1 If you haven't signed up for SAP Conversational AI so far, go to <https://cai.tools.sap/> and click **Sign Up** in the upper-right corner.
+   
+   > Use your BTP User/E-Mail to simplify the Identity authentication for later steps
 
    Follow the instructions to create an account. 
 

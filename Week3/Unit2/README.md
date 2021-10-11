@@ -172,6 +172,8 @@ To be able to send approval or rejection mails from a so called _Mail Task_, we 
 
 4.3. Replace <your M365 mail address> with the mail adress of your Microsoft365 developer account.
 
+**IMPORTANT**: Make sure that Multifactor Authentication (MFA) is not active in your Microsoft365 developer account, it'll cause issues while using SMTP Destination. In general we recommend using MFA but, not for this unit. You can find in [Troubleshooting](https://github.com/SAP-samples/btp-azure-opensap/tree/main/Week3/Unit2#troubleshooting) section how to deactivate it, in case you already activated it.   
+
    > How to setup a Microsoft365 user was covered in [Week2, Unit1](../../Week2/Unit1/README.md#microsoft365). 
    > You can also use other mail adresses. You only need to find out your SMTP Host and Port for your mail provider and adjust it in the destination properties. You need to provide these settings in Step 4.5
    
@@ -250,8 +252,41 @@ After the deployment of the workflow has succesfully finished, you can finally t
 5.10. In the **Workflow Monitoring (Workflow Instances)** tile of SAP Workflow Management launchpad you can analyze the workflow instance in case something went wrong. The **Execution Log** you can see all steps.
     
    ![WF Execution log](./images/wf_execution_log.png)
-   
 
+## Troubleshooting   
+
+>Note: Misconfiguration of the **"bpmworkflowruntime_mail"** destination may cause some issues while trying to send the emails. 
+
+Using the **Monitor Workflow (Workflow Instances)** tools of the Workflow Management you can analyse and see the  cause of the issue.
+   
+   ![WF monitoring instances](./images/wf_monitoring_instances.png)
+
+For example in Execution Log you can see the details of the issue in detail.
+
+Often SMTP servers are having additional security protections activated, which may cause the issue below, that the smtp credentials could not be validated. 
+
+```Could not send email: The server 'smtp.office365.com' could be reached, but the login with the given credentials failed. Verify that the credentials are valid for the server.```
+
+This issue occurs in case you have activated the Multifactor Authentication (MFA) in your Microsoft365 developer account.
+
+ ![WF Troubleshooting](./images/wf-troubleshooting.png)
+
+ ### Deactivate Multifactor Authentication (MFA) in your Microsoft365 developer account.
+
+With this we definitely don't want to tempt you to deactivate multi-factor authentication in general and always. MFA is good and should be used as far as possible! Nevertheless, there are always reasons why a global MFA cannot be used. In this case, here are the instructions.
+
+Go to [Microsoft 365 admin center](https://portal.office.com/adminportal/home) and open Azure Active Directory.
+
+We may have to log in again and we are logged in to the Azure AD Admin Portal. Here we can manage the security standards via Azure Active Directory -> Properties.
+
+ ![Office dev portal](./images/office-dev-portal.png)
+
+In this menu we can now switch off the standards defined by Microsoft.
+You will be asked briefly why you are doing this, after which there will no longer be a request for a mandatory MFA.
+
+ ![Disasble MFA](./images/disable-mfa.png)
+
+ 
 ## Summary
 
 Congrats! You successfully build and deployed the leave request workflow. You also simulated the workflow request process using the Monitoring tools provided by SAP Workflow Management.
