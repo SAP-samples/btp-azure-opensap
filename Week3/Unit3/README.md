@@ -18,7 +18,7 @@ In this step you'll register for the SAP Conversational AI Community Edition and
 
 1.1 If you haven't signed up for SAP Conversational AI so far, go to <https://cai.tools.sap/> and click **Sign Up** in the upper-right corner.
    
-   > Use your BTP User/E-Mail to simplify the Identity authentication for later steps
+   > Use the same mail/account that you have used to sign up for the SAP BTP Trial account to simplify the Identity authentication in other units of this week.
 
    Follow the instructions to create an account. 
 
