@@ -134,7 +134,7 @@ Click on **Accept**, you should get a confirmation that task has completed
 
 3.2 Try to create a leave request using the chat bot that you have created over the course of the last units. 
 
-![Request Leave](./images/test_teamsbot.png)
+![Request Leave](./images/u4_test_teams.png)
 
 3.3 Go to the **SAP Workflow Management launchpad** once again and open the **Monitor Workflows (Workflow Instances)**, to validate that the workflow instance was successfully created. 
     
@@ -142,7 +142,7 @@ Click on **Accept**, you should get a confirmation that task has completed
 
 You can see that the workflow was created and is running.
 
-![WF Monitor](./images/workflow_running.png)
+![WF Monitor](./images/u4_wm_task.png)
 
 3.3. Now, that you have seen that the workflow task was successfully triggered, open <https://outlook.com> and log in with your **Microsoft365 Developer account**.
 
@@ -150,7 +150,7 @@ You can see that the workflow was created and is running.
 
 You will find an email in your Outlook Inbox from your employee (actually you) requesting some time off with the necessary information including **Accept** and **Reject** buttons to directly approve or reject the request from Outlook. The Email is rendered as an Adaptive Card and allows you to perform actions.
 
-![Request Leave](./images/u5_outlook.png)
+![Request Leave](./images/u4_outlook.png)
 
 3.4. Click on **Accept**. 
 
@@ -158,17 +158,23 @@ You should get a popup saying, that the workflow was approved. Additionally, the
 
 * a new mail in your inbox saying that your workflow was approved (your the requestor and approver in this case, for the sake of simplicity)
 
-  ![Request Leave](./images/confirmation_mail.png)
+![Request Leave](./images/confirmation_mail.png)
 
-* a new event in your outlook calendar for the timeframe that you have requested using the chatbot in Microsoft Teams. 
-* 
+* a new event in your calendar for the timeframe that you have requested using the chatbot in Microsoft Teams. 
+
+
+
 3.5 Go again to SAP Workflow Management, where you will find as well that lately created task has been completed.
-  ![Confirm request](./images/u5_workflow_completed.png)
+  ![Confirm request](./images/u4_task_completed_2.png)
 
 # Summary
 
-Congratulations! you successfully completed the last unit of this week. You have learned how to create a calendar entry using Microsoft Graph and SAP BTP. Moreover you should now know how to explore the APIs using Microsoft Graph Explorer, register an app in Azure Active Directory and also use destinations in SAP BTP to point to different addresses in the SAP and non-SAP world.
+Congratulations! you successfully completed the Unit 5 where you learned how to create a calendar entry using Microsoft Graph and SAP BTP. Moreover you should  now know how to explore the APIs using Microsoft Graph Explorer, register an app in Azure Active Directory, finally configure a destination in SAP BTP.
 
-This is the end of Week 3. You learned how to extend your business workflow with Microsoft Teams and Microsoft Outlook using SAP Business Technology Platform together with Microsoft Azure. Now you know how to trigger an SAP workflow from an SAP Conversational AI bot, integrate SAP Conversational AI with Azure Bot and Microsoft Teams. Additionally, you learned how to transform SAP Workflow Forms into Microsoft Adaptive Card format and send adaptive cards from an SAP workflow. Finally, we have covvered how to use actionable messages to quicly trigger actions right within the Microsoft Outlook email client using Outlook. 
+
+This is end of Week 3. You learned how to extend your business workflow with Microsoft Teams and Microsoft Outlook using SAP Business Technology Platform and Microsoft Azure.
+Now you know how to trigger an SAP workflow from an SAP Conversational AI bot,
+integrate SAP Conversational AI with Azure Bot and Microsoft Teams. Moreover you learned how to transform SAP Workflow Forms into Microsoft Adaptive Card format 
+and send adaptive cards from an SAP workflow. Finally do a quick actions right within the Microsoft Outlook email client using Outlook actionable messages
 
 

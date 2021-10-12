@@ -133,12 +133,12 @@ public class CardSubmissionController {
         ResponseEntity<String> workflowResponce = submitCardToWorkflow(taskId, actionId, accessToken);
 
         if (workflowResponce.getStatusCodeValue() != 200) {
-            return workflowResponce; 
+            return workflowResponce;
         } else {
             if (actionId.equals("decline")) {
-                return workflowResponce; 
+                return workflowResponce;
             } else {
-               return creatCalendarItem(taskId, actionId, body);
+                return creatCalendarItem(taskId, actionId, body);
             }
         }
 
@@ -173,20 +173,21 @@ public class CardSubmissionController {
             int status = response.getStatusLine().getStatusCode();
             HttpHeaders headers = new HttpHeaders();
             switch (status) {
-            case 204:
-                headers.add("CARD-ACTION-STATUS", "The task was completed.");
-                return new ResponseEntity<>(null, headers, HttpStatus.OK);
-            case 400:
-                if ("bpm.workflowruntime.rest.task.final.status"
-                        .equalsIgnoreCase(responseNode.path("error").path("code").asText())) {
-                    headers.add("CARD-ACTION-STATUS", "The task was already completed.");
-                    return new ResponseEntity<>(null, headers, HttpStatus.BAD_REQUEST);
-                }
-                // fall through here...
-            default:
-                headers.add("CARD-ACTION-STATUS", "There was an error processing your request.");
-                LOG.error("Error while completing task {} with action {}: {}", taskId, actionId, responseNode.asText());
-                return new ResponseEntity<>(null, headers, HttpStatus.INTERNAL_SERVER_ERROR);
+                case 204:
+                    headers.add("CARD-ACTION-STATUS", "The task was completed.");
+                    return new ResponseEntity<>(null, headers, HttpStatus.OK);
+                case 400:
+                    if ("bpm.workflowruntime.rest.task.final.status"
+                            .equalsIgnoreCase(responseNode.path("error").path("code").asText())) {
+                        headers.add("CARD-ACTION-STATUS", "The task was already completed.");
+                        return new ResponseEntity<>(null, headers, HttpStatus.BAD_REQUEST);
+                    }
+                    // fall through here...
+                default:
+                    headers.add("CARD-ACTION-STATUS", "There was an error processing your request.");
+                    LOG.error("Error while completing task {} with action {}: {}", taskId, actionId,
+                            responseNode.asText());
+                    return new ResponseEntity<>(null, headers, HttpStatus.INTERNAL_SERVER_ERROR);
             }
         } catch (IOException e) {
             LOG.error("Error while completing task " + taskId + " with action " + actionId, e);
@@ -228,15 +229,15 @@ public class CardSubmissionController {
             int status = httpResponse.getStatusLine().getStatusCode();
             HttpHeaders headers = new HttpHeaders();
             switch (status) {
-            case 201:
-                headers.add("CARD-ACTION-STATUS",
-                        "The task has completed and the calendar item has been sent to the requester");
-                return new ResponseEntity<>(null, headers, HttpStatus.OK);
-            default:
-                headers.add("CARD-ACTION-STATUS", "There was an error processing graphAPI for calendear");
-                LOG.error("Error while creating calendar item for task {} with action {} and status {}", taskId,
-                        actionId, status);
-                return new ResponseEntity<>(null, headers, HttpStatus.INTERNAL_SERVER_ERROR);
+                case 201:
+                    headers.add("CARD-ACTION-STATUS",
+                            "The task has completed and the calendar item has been sent to the requester");
+                    return new ResponseEntity<>(null, headers, HttpStatus.OK);
+                default:
+                    headers.add("CARD-ACTION-STATUS", "There was an error processing graphAPI for calendar");
+                    LOG.error("Error while creating calendar item for task {} with action {} and status {}", taskId,
+                            actionId, status);
+                    return new ResponseEntity<>(null, headers, HttpStatus.INTERNAL_SERVER_ERROR);
             }
         } catch (IOException e) {
             LOG.error("Error while creating calendar item for task " + taskId + " with action " + actionId, e);
