@@ -181,7 +181,7 @@ Let's finally test the scenario from Microsoft Teams with an SAP Conversational 
 
 > We recommend using the web application of Microsoft Teams - for this development & testing scenario. 
 
-3.2 Try to create a leave request using the chat bot you have created over the course of the last units. 
+3.2 Try to create a leave request using the chat bot that you have created over the course of the last units. 
 
 ![Request Leave](./images/u4_test_teams.png)
 
@@ -193,7 +193,7 @@ You can see that the workflow was created and is running.
 
 ![WF Monitor](./images/u4_wm_task.png)
 
-3.3. Now, that you have seen that the workflow task was successfully triggered, open <https://outlook.com> and log in with your Microsoft365 Developer account. 
+3.3. Now, that you have seen that the workflow task was successfully triggered, open <https://outlook.com> and log in with your **Microsoft365 Developer account**.
 
 >Note, in this demo example the requestor and approver are the same person
 
@@ -201,12 +201,13 @@ You will find an email in your Outlook Inbox from your employee (actually you) r
 
 ![Request Leave](./images/u4_outlook.png)
 
-3.4. Now when you Accept or Decline the request, the workflow task will be completed accordingly
+3.4. Click on **Accept**. 
 
-* Click on **Accept**, you should get a confirmation that task has completed
+   **There will be an error message popping up. Don't worry this will be fixed in the next unit - approving/rejecting the workflow works nevertheless!** There should already be another mail in your inbox showing that your workflow was approved/rejected. 
   ![Confirm request](./images/u4_task_completed_1.png)
 
-* Go again to SAP Workflow Management, where you will find as well that lately created task has been completed
+
+3.5 Go again to SAP Workflow Management, where you will find as well that lately created task has been completed.
   ![Confirm request](./images/u4_task_completed_2.png)
 
 ## Step 4 - Troubleshooting
