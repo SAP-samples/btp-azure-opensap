@@ -168,11 +168,27 @@ It's time to use your SAP Conversational AI bot in an actual environment (other 
 
 4.1 Login into [Microsoft Azure](https://portal.azure.com/#home) with your **Microsoft365 developer account**. 
 
-4.2 Search for *Azure bot* and select the corresponding offering from the Marketplace. 
+4.2 Make sure that you are logged-in in the right Active Directory. 
+
+You should have 2 Directories available
+   * First on is the *directory* (Default Directory) created with your trial account and has the Azure subscription
+   * Second on is coming from Microsoft 365 Developer account
+
+For this exercise please switch to the **Default Directory** created with your Azure trial
+
+
+Click on your profile and press the "Switch directory" button.
+![Azure switch AD](./images/az-switch-dir.png)
+
+Switch to **Default Directory**
+![Azure switch AD](./images/az-switch-dir-2.png)
+
+
+4.3 Search for *Azure bot* and select the corresponding offering from the Marketplace. 
 
 ![Bot Channel Registration](./images/bot_services.png)
 
-4.3 Fill in the registration form as follows.
+4.4 Fill in the registration form as follows.
 
 > Make sure you select the F0 free Pricing tier, unless you want to use it in production.
 
@@ -187,85 +203,85 @@ It's time to use your SAP Conversational AI bot in an actual environment (other 
 
 ![Bot Channel Registration](./images/azure_bot_creation_form.png)
 
-4.4 Click on *Review and Create*. **Validation passed should appear on the next screen**.
+4.5 Click on *Review and Create*. **Validation passed should appear on the next screen**.
 
-4.5 Continue with *Create*. 
+4.6 Continue with *Create*. 
 
-4.6 Wait until the deployment has finished. Click on *"Go to Resource"*
+4.7 Wait until the deployment has finished. Click on *"Go to Resource"*
    ![Bot deployment started](./images/bot_deployment_started.png)
    ![Bot deployment complete](./images/bot_deployment_complete.png)
 
-4.7 Open **Configuration in a new tab**.
+4.8 Open **Configuration in a new tab**.
 
    ![Bot deployment complete](./images/configuration_new_tab.png)
 
-4.8 <a name="appid">Note down the **Microsoft App ID**. You will need this later on in SAP Conversational AI to establish the connectivity.</a>
+4.9 <a name="appid">Note down the **Microsoft App ID**. You will need this later on in SAP Conversational AI to establish the connectivity.</a>
 
    ![Bot deployment complete](./images/microsoft_app_id.png)
 
-4.9 Select **Manage** to navigate to the secrets section of the application.
+4.10 Select **Manage** to navigate to the secrets section of the application.
   ![Azure Manage app](./images/azure_manage_app.png)
 
-4.10 Select **New Client secret**, give the secret a name and finish the secret creation with **Add**.
+4.11 Select **New Client secret**, give the secret a name and finish the secret creation with **Add**.
 
   ![Azure secret creation](./images/azure_secret_creation.png)
 
-4.11 <a name="secret">Note down the **Client Secret**. You will need this later on in SAP Conversational AI to establish the connectivity.</a>
+4.12 <a name="secret">Note down the **Client Secret**. You will need this later on in SAP Conversational AI to establish the connectivity.</a>
   ![Manage Secret](./images/azure_secret_copy.png)
 
-4.12 Open a new tab and, go to [SAP Conversational AI](https://cai.tools.sap/) and open your bot.
+4.13 Open a new tab and, go to [SAP Conversational AI](https://cai.tools.sap/) and open your bot.
 
-4.13 Go to **Connect** tab and select Microsoft Teams via Microsoft Azure
+4.14 Go to **Connect** tab and select Microsoft Teams via Microsoft Azure
 
 ![Connect](./images/cai_connect.png)
 
-4.14 Provide the **App ID** ([in Azure known as **Microsoft App Id**, Step 4.8](#appid)) and **Password** ([in Azure known as Secret, Step 4.10](#secret)). You have noted down these values in the previous steps. 
+4.15 Provide the **App ID** ([in Azure known as **Microsoft App Id**, Step 4.8](#appid)) and **Password** ([in Azure known as Secret, Step 4.10](#secret)). You have noted down these values in the previous steps. 
 
-4.15 Click on **Connect**
+4.16 Click on **Connect**
 
 ![CAI Connect](./images/cai_bot-channel_reg_4.png)
 
-4.16 Copy the Messaging endpoint. 
+4.17 Copy the Messaging endpoint. 
 
 ![CAI Messaging endpoint](./images/cai_messaging_endpoint.png)
 
-4.17 Go back to one of the tabs that should still be open, where you have previously jumped off to create the secret. There you should have the Azure Bot configuration. **Paste** the messaging endpoint from SAP Conversational AI into the corresponding Input field in the Configuration form.
+4.19 Go back to one of the tabs that should still be open, where you have previously jumped off to create the secret. There you should have the Azure Bot configuration. **Paste** the messaging endpoint from SAP Conversational AI into the corresponding Input field in the Configuration form.
 
 ![Azure messaging endpoint](./images/azure_messaging_endpoint.png)
 
-4.18 **Apply** the changes.
+4.19 **Apply** the changes.
 
-4.19 Connect your bot to channels
+4.20 Connect your bot to channels
 
-4.20 Go to **Channels** and select the **Microsoft Teams** icon.
+4.21 Go to **Channels** and select the **Microsoft Teams** icon.
    ![Connect to Teams](./images/cai_add_teams.png)
 
-4.21 **Save** the Channel without any further adjustments.
+4.22 **Save** the Channel without any further adjustments.
    ![Connect to Teams - Save](./images/cai_add_teams_save.png)
 
-4.22 Go to **Channels (Preview)** and open your bot in Microsoft Teams.
+4.23 Go to **Channels (Preview)** and open your bot in Microsoft Teams.
 
    ![Connect to Teams](./images/azure_open_bot.png)
 
-4.23 You'll most likely get asked if you want to use your Desktop or Web app. **Make sure you are using the webapp**. 
+4.24 You'll most likely get asked if you want to use your Desktop or Web app. **Make sure you are using the webapp**. 
 
    > For the sake of simplicity we are using the web app of Microsoft Teams, where you can easily log in with your Microsoft365 user and don't get any overlaps with already logged in accounts in your Desktop app. 
 
    ![Use Web app of Microsoft Team](./images/use_webapp.png)
 
-4.24 **If you are asked to log in, use your Microsoft365 developer account!**
+4.25 **If you are asked to log in, use your Microsoft365 developer account!**
 
-4.25 You can now have a conversation with the Chatbot again, similiar as in Step 3 of this unit. 
+4.26 You can now have a conversation with the Chatbot again, similiar as in Step 3 of this unit. 
 
    ![Open Teams](./images/cai_test_teams.png)
 
-4.26 Additionally, open the SAP Workflow Management launchpad. 
+4.27 Additionally, open the SAP Workflow Management launchpad. 
 
    ![SAP Workflow Management launchpad](./images/btp_launch_wm.png)
 
-4.27 Open the **Monitor Workflows (Workflow Instances)** application. 
+4.28 Open the **Monitor Workflows (Workflow Instances)** application. 
 
-4.28 You should see that the variables **requestor** and **requestorName** are now filled (compared to the leave request that was triggered via the Chat Preview in SAP Conversational AI). Microsoft Teams recognizes who is logged in, the SAP Conversational AI bot takes these values and sends them as parameters to the SAP Workflow Management API while triggering the worklow instance. 
+4.29 You should see that the variables **requestor** and **requestorName** are now filled (compared to the leave request that was triggered via the Chat Preview in SAP Conversational AI). Microsoft Teams recognizes who is logged in, the SAP Conversational AI bot takes these values and sends them as parameters to the SAP Workflow Management API while triggering the worklow instance. 
 
    ![SAP Workflow Instance monitor - filled variables for requestor](./images/workflow_instance_monitor.png)
 

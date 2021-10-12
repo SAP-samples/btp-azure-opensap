@@ -23,46 +23,61 @@ In this step we need to create an application in Azure Active Directory to grant
 
 1.1. Sign-in in to [Azure Portal](https://portal.azure.com/) with your **Microsoft 365 User**.
 
-1.2. Search and open **App registrations**
+1.2. Make sure that you are logged-in in the right Active Directory. 
+
+You should have 2 Directories available
+   * First on is the *directory* (Default Directory) created with your trial account and has the Azure subscription
+   * Second on is coming from Microsoft 365 Developer account
+
+For this exercise please switch to the second (not default )  directory, which is coming from Microsoft 365 Developer account
+
+
+Click on your profile and press the "Switch directory" button.
+![Azure switch AD](./images/az-switch-dir.png)
+
+Switch to second **NOT Default Directory**
+![Azure switch AD](./images/az-switch-dir-3.png)
+
+1.3. Search and open **App registrations**
 
 ![Azure App Registration](./images/u5_app_reg.png)
 
-1.3. Select **New Registration**.
+1.4. Select **New Registration**.
 
 ![Azure New App](./images/u5_new_reg.png)
 
-1.4 Provide an **Application Name**,  e.g. "OpenSAP-GraphAPI".
+1.5. Provide an **Application Name**,  e.g. "OpenSAP-GraphAPI".
 
-1.5 Select the account type **Accounts in any organizational directory (Any Azure AD directory - Multitenant)**.
+1.6. Select the account type **Accounts in any organizational directory (Any Azure AD directory - Multitenant)**.
 
-1.6 Finish the registration with **Register**.
+1.7. Finish the registration with **Register**.
 
 ![Azure App Registration](./images/u5_register.png)
 
-1.7. <a name="clientcredentials"> </a> Note down the **Application (client) ID** and **Directory (tenant) ID** values. These are required for the next step.
+1.8. <a name="clientcredentials"> </a> Note down the **Application (client) ID** and **Directory (tenant) ID** values. These are required for the next step.
 
 ![App details](./images/u5_app_id.png)
 
-1.8 Go to **certificates & secrets** and create **New client secret**. Also, provide a name for that secret. (only a display name, not used anywhere else)
+1.9. Go to **certificates & secrets** and create **New client secret**. Also, provide a name for that secret. (only a display name, not used anywhere else)
 
 > The application will use this secret to prove its identity when requesting a token.
 
 ![New secret](./images/u5_new_secret.png)
 
-1.9 <a name="clientsecret"> </a> Note down the secret value for the next step - this value cannot be copied later on.
+1.10. <a name="clientsecret"> </a> Note down the secret value for the next step - this value cannot be copied later on.
 
 ![New secret](./images/u5_secret.png)
 
-1.10 Add the API Permissions for Microsoft Outlook Calendar. Therefore, Go to **API permissions** and **Add a permission**.
+1.11. Add the API Permissions for Microsoft Outlook Calendar. Therefore, Go to **API permissions** and **Add a permission**.
   ![Permission](./images/u5_permission.png)
 
-1.11 Select **Microsoft Graph**, followed by **Application permissions** (where the application runs as a background service or daemon without a signed-in user)
+1.12. Select **Microsoft Graph**, followed by **Application permissions** (where the application runs as a background service or daemon without a signed-in user)
   ![Select Graph](./images/select_graph.png)
   
-1.12 Add the permission **Calendars.ReadWrite** which is required for creating Calendar entry in Outlook.
+1.13. Add the permission **Calendars.ReadWrite** which is required for creating Calendar entry in Outlook.
  ![Permission](./images/u5_add_premission.png)
 
-1.13 **Grant admin consent for Default Directory**.
+1.14. **Grant admin consent for Default Directory**.
 
  ![Consent](./images/u5_grant_consent.png)
 
