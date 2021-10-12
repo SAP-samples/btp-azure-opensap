@@ -26,11 +26,10 @@ In this step we need to create an application in Azure Active Directory to grant
 1.2. Make sure that you are logged-in in the right Active Directory. 
 
 You should have 2 Directories available
-   * First on is the *directory* (Default Directory) created with your trial account and has the Azure subscription
-   * Second on is coming from Microsoft 365 Developer account
+   * First one is the *directory* (Default Directory) created with your Microsoft Azure trial account and has the Azure subscription
+   * Second one is coming from Microsoft 365 Developer account
 
-For this exercise please switch to the second (not default )  directory, which is coming from Microsoft 365 Developer account
-
+For this exercise please switch to the **second (not default) directory**, which is coming from Microsoft 365 Developer account
 
 Click on your profile and press the "Switch directory" button.
 ![Azure switch AD](./images/az-switch-dir.png)

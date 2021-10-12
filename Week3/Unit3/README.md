@@ -171,8 +171,8 @@ It's time to use your SAP Conversational AI bot in an actual environment (other 
 4.2 Make sure that you are logged-in in the right Active Directory. 
 
 You should have 2 Directories available
-   * First on is the *directory* (Default Directory) created with your trial account and has the Azure subscription
-   * Second on is coming from Microsoft 365 Developer account
+   * First one is the *directory* (Default Directory) created with your Microsoft Azure trial account and has the Azure subscription
+   * Second one is coming from Microsoft 365 Developer account
 
 For this exercise please switch to the **Default Directory** created with your Azure trial
 
