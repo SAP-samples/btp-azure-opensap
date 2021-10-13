@@ -10,3 +10,39 @@ In this exercise we will setup connection between SAP HANA Cloud and Microsoft A
 > If you have any issues with the exercises, don't hesitate to open a question in the openSAP Discussion forum for this course. Provide the exact step number: "Week4Unit3, Step 1.1: Command cannot be executed. My expected result was [...], my actual result was [...]". Logs, etc. are always highly appreciated. 
  ![OpenSAP Discussion](../../images/opensap-forum.png)
  
+## Step 1 - Install Data Provisioning Agent
+ 
+## Step 2 - Configuring Data Provisioning Agent (DPAgent)
+
+This section will walk you through the steps to be followed to Data provisioning agent 
+
+---
+
+2.1. Open the Data Provisioning Agent Configuration tool by running config.bat. Enter option 6 to establish connection with HANA Cloud.
+
+![OpenConfig](./images/01.png)
+
+2.2 To estabilish the connection with SAP HANA Cloud enter option 1.
+
+![HANAConnection](./images/02.png)
+
+2.3 Enter HANA Connection details like JDBC Connection(default true) hostname , port (default 443) , Agent Admin HANA User & password , Proxy server (false) , HANA User for Agent messaging and password.
+
+HANA Cloud usernames should be different for Agent Admin user and Agent Messaging. If you are using default DBAdmin for Agent Admin  User (which is not recommended) create a new HANA Cloud user for agent messaging.
+
+![HANAConnectionDetails](./images/03.png)
+
+2.4 To Register agent with your HANA Cloud go back to the main menu and enter option 7.
+
+![AgentRegistration](./images/04.png)
+
+2.5 Enter option 1 to start the registration process.
+![StartAgentRegistration](./images/05.png)
+
+2.6 Enter name of the Agent and enter the IP address of the instance where DPAgent is installed. Make sure that this IP Address is reachable from internet/HANA Cloud. 
+
+![StartAgentRegistration](./images/06.png)
+
+2.7 Verify Agent Registration by opening HANA Cloud -> Catalog -> Agents. DPAgent registered in previous step should be visitble.
+
+![StartAgentRegistration](./images/07.png)
