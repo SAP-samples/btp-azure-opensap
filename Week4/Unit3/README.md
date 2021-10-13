@@ -22,7 +22,7 @@ Note : SQL Queries will run slower with DPAgent installed in local machine compa
  
 ## Step 2 - Configuring Data Provisioning Agent (DPAgent)
 
-This section will walk you through the steps to be followed to Data provisioning agent 
+This section will walk you through the steps to be followed to configure data provisioning agent.
 
 ---
 
