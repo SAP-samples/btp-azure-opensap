@@ -68,8 +68,30 @@ HANA Cloud usernames should be different for Agent Admin user and Agent Messagin
 
 3.4 Now enter the name of the adapter as MSSQLLogReaderAdapter and fisnish the registration process.
 
-![StartAdapterRegistration](./images/11.png)
+![StartAdapterRegistration](./images/13.png)
 
 3.5. To verify the registration process open HANA Cloud -> Catalog->Adapters. Now MSSQLLogReaderAdapter will be listed for your DPAgent.
 
-![VerifyAdapter](./images/13.png)
+![VerifyAdapter](./images/14.png)
+
+## Step 4 - Create connection to Azure Data Explorer
+
+4.1 In HANA Cloud, right click on Remote Source and select Add Remote Source
+
+![AddRemoteSource](./images/15.png)
+
+4.2 Select Adapter MSSQLLogReaderAdapter registered in step 3.4. Enter your ADX host name from Unit 2 , port (default 1433) , database name from Unit 2 and additional parameter "authentication=ActiveDirectoryPassword".
+
+![EnterADXHostName](./images/16.png)
+
+4.3 Scroll to Security section. Set SSL to true and Host name in certificate to "*.kusto.windows.net"
+
+![EnterADXCertificate](./images/17.png)
+
+4.4 Scroll to Credentials section. Set Credential mode to Technical User and user name and password. Now click create. Active Directory Authentication method is one of many methods of authenticating ADX.
+
+![EnterADXAuthentication](./images/18.png)
+
+4.5 Verify the connection by opening the connection. Expand Remote Objects to locate the table created in Unit 2.
+
+![VerifyAuthentication](./images/19.png)
