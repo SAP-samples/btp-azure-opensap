@@ -37,12 +37,39 @@ HANA Cloud usernames should be different for Agent Admin user and Agent Messagin
 ![AgentRegistration](./images/04.png)
 
 2.5 Enter option 1 to start the registration process.
+
 ![StartAgentRegistration](./images/05.png)
 
 2.6 Enter name of the Agent and enter the IP address of the instance where DPAgent is installed. Make sure that this IP Address is reachable from internet/HANA Cloud. 
 
-![StartAgentRegistration](./images/06.png)
+![EnterAgentDetails](./images/06.png)
 
 2.7 Verify Agent Registration by opening HANA Cloud -> Catalog -> Agents. DPAgent registered in previous step should be visitble.
 
-![StartAgentRegistration](./images/07.png)
+![VerifyAgentRegistration](./images/07.png)
+
+## Step 3 - Register Adapter
+
+3.1 Download & Copy the MSSQL JDBC driver to the lib folder of the DPAgent installation directory. Version 7.2.2 is used for this excercise. 
+
+![CopyJDBCDriver](./images/08.png)
+
+3.2 Open DPAgent Configuration tool and enter option 8 to start the Adapter registration process.
+
+![AdapterRegistration](./images/09.png)
+
+3.3 To list all the available adapters enter option 1.
+
+![ShowAdapterList](./images/10.png)
+
+3.3 Locate MSSQLLogReaderAdapter. Note that unlike the image below your list will show that the MSSQLLogReaderAdapter will have 'NO' in the Registered column
+
+![AdapterList](./images/12.png)
+
+3.4 Now enter the name of the adapter as MSSQLLogReaderAdapter and fisnish the registration process.
+
+![StartAdapterRegistration](./images/11.png)
+
+3.5. To verify the registration process open HANA Cloud -> Catalog->Adapters. Now MSSQLLogReaderAdapter will be listed for your DPAgent.
+
+![VerifyAdapter](./images/13.png)
