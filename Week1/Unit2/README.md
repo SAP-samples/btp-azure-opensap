@@ -26,6 +26,8 @@ In this unit we lay the foundation for the other weeks in this course. You will 
 
 If you have an account on www.sap.com (e.g. a P, S, C, D or I number) you can enter it or the associated email along with your password. If you don’t have an account yet, you can select one of the other login methods or click Register to create an account.
 
+> **Important: In Week 4 of this openSAP course you will register for an SAP Analytics Cloud trial account - these can only be created with sap.com accounts that have no @gmail.com or @yahoo.com mail addresses associated. In case you have a sap.com account with a gmail.com or yahoo.com mail address we would recommend to create a new one with another mail address. 
+
 ![SAP Log On Screen](./images/trial_logonscreen.png)
 
 > If you don’t need to register with sap.com, you can skip to Step 1.4. 
