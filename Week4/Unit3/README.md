@@ -14,7 +14,7 @@ In this exercise we will setup connection between SAP HANA Cloud and Microsoft A
 
 Download SAP Data Provisioning Agent from SAP Service Market Place.
 
-Follow the the setps outlined [here](https://help.sap.com/viewer/7952ef28a6914997abc01745fef1b607/2.0_SPS02/en-US/dd8aaa71a6d4490485b8eb5123f46149.html) to install DP Agent
+Follow the the steps outlined [here](https://help.sap.com/viewer/7952ef28a6914997abc01745fef1b607/2.0_SPS02/en-US/dd8aaa71a6d4490485b8eb5123f46149.html) to install DP Agent
 
 DPAgent can be installed in your local machine or in a VM close to the source system. If you dont have access to VM install in local machine. Make sure that there are no firewall or other restrictions for HANA Cloud to communicate with your local machine's IP address.
 
