@@ -85,7 +85,7 @@ The custom Java app uses the SAP BTP destination service to interact with Micros
 For authentication, OAuth2ClientCredentials needs to be selected and the Client ID & Secret from the previous app registration is set.
 
 
->NOTE: Please make sure that the JAVA application on BTP is running before continuing the unit, since BTP Trial environment overnight is stopping all running applications. In appendix of Unit 4 you can find <a name="https://github.com/SAP-samples/btp-azure-opensap/tree/main/Week3/Unit4#appendix"> how to start the Java Application </a> 
+>NOTE: Please make sure that the JAVA application on BTP is running before continuing the unit, since BTP Trial environment overnight is stopping all running applications. In appendix of Unit 4 you can find [how to start the Java Application](https://github.com/SAP-samples/btp-azure-opensap/tree/main/Week3/Unit4#appendix) .
 
 
 ---
