@@ -47,21 +47,25 @@ The Open Connectors component of the SAP Integration Suite, simplifies the conne
 ![Open Connectors](./images/ioc_0160.png)
 
 
-1.7 In the connection wizard, enter a name for your connector instance like **SharePointApp**, enter your SharePoint address in the format {your_sharepoint_domain}.sharepoint.com, enter your copied OAuth client ID in the API Key text field, enter your copied OAuth secret in the API Secret text field (both credentials from Azure AD step) and select **Show Optional Fields**. 
+1.7 In the connection wizard: 
+
+* enter a name for your connector instance like **SharePointApp**
+* enter your SharePoint address in the format {your_sharepoint_domain}.sharepoint.com
+* enter your copied Application (client) ID from the Azure app registration in the API Key text field, 
+* enter your copied secret from the Azure app registration in the API Secret text field and select **Show Optional Fields**. 
 
 ![Open Connectors](./images/ioc_0170.png)
 
-
-1.8 During the creation of the OAuth client & Secret in the Azure portal, you selected the **Delegated user access** approached. Therefor, the **Delegate User** flag has to be set to **true** in Open Connectors as well.
+1.8 During the creation of the client & Secret in the Azure App registration, you selected the **Delegated user access** approached. Therefore, the **Delegate User** flag has to be set to **true** in Open Connectors as well.
 
 1.9 Select **Create Instance** to create SharePoint connector instance.
 
 ![Open Connectors](./images/ioc_0180.png)
 
-> You may be prompted to enter your Microsoft subscription user credentials. In case, you are already logged into your SharePoint the logged in session may be automatically taken by the browser.
+> You may be prompted to enter your Microsoft subscription user credentials. In case, you are already logged into your SharePoint the logged in session may be automatically taken by the browser. 
+> **IMPORTANT:** In any case, make sure you are logged in with your Microsoft365 Developer account. 
 
 ![Open Connectors](./images/ioc_0183.png)
-
 
 > You may be prompted to trust the SharePoint OAuth application. Select **Trust It**
 
