@@ -136,6 +136,8 @@ In this step, you will execute a Booster that assigns your user the necessary ro
 
 3.10 From the **Integration Suite Launchpad**, you should now be able to open any of the assigned capabilities without authorization errors. 
 
+**In case of authorization errors:** Please use the logout button on the upper right corner of the page and login again! 
+
 ![Integration Suite](./images/iss_230.png)
 
 3.11 Make sure, that you can e.g. open the **Cloud Integration** component (Design, Develop, and Operate Integration Scenarios) without any authorization error. 
