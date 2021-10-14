@@ -290,12 +290,12 @@ In this comprehensive step, you will create an Integration Flow within SAP Cloud
 
 
 3.23 In the **Connection** tab, enter details as follows.
-* Address :- https://sandbox.api.sap.com/s4hanacloud/sap/opu/odata/sap/API_BILLING_DOCUMENT_SRV/GetPDF
-* Query :- BillingDocument=%27${property.doc_id}%27
-* Method :- GET
-* Authentication :- None
-* Request Headers : *
-* Response Headers : *
+* Address: https://sandbox.api.sap.com/s4hanacloud/sap/opu/odata/sap/API_BILLING_DOCUMENT_SRV/GetPDF
+* Query: BillingDocument=%27${property.doc_id}%27
+* Method: GET
+* Authentication: None
+* Request Headers: *
+* Response Headers: *
 
 > In the query parameter you can notice that property doc_id is referenced dynamically as ${property.doc_id}. Since the apikey is passed via the message header set in the Initialize S4HC Value integration step the authentication type is selected to None.
 
@@ -358,6 +358,8 @@ Enter **xmlns:d=http://schemas.microsoft.com/ado/2007/08/dataservices** in the n
 
 3.34 Copy & paste the below code snippet to the created script page. Select **Ok** to persist the script changes.
 
+
+```Groovy
     /*
     The integration developer needs to create the method processData 
     This method takes Message object of package com.sap.gateway.ip.core.customdev.util 
@@ -425,6 +427,7 @@ Enter **xmlns:d=http://schemas.microsoft.com/ado/2007/08/dataservices** in the n
 
     return message;
     }
+```
 
 >In this script, the multipart format request is created from the incoming response data. For posting a file to SharePoint, the size of the uploaded documented is also required. The size of the incoming byte[] data is read and stored in a property named byteSize.
 
@@ -500,11 +503,12 @@ Enter **xmlns:d=http://schemas.microsoft.com/ado/2007/08/dataservices** in the n
 
 
 3.48 Under the Connection tab, enter details as follows.
-* Address :- ```https://api.openconnectors.trial.<BTP Trial Region e.g. ap21>.ext.hana.ondemand.com/elements/api-v2/files```
-* Query :- size=${property.byteSize}&path=%2Fbilling_${property.doc_id}.pdf&overwrite=true
-* Method :- POST
-* Authentication :- None
-* Request Headers : *
+* Address: ```https://api.openconnectors.trial.<BTP Trial Region e.g. ap21>.ext.hana.ondemand.com/elements/api-v2/files```
+* Query: size=${property.byteSize}&path=%2Fbilling_${property.doc_id}.pdf&overwrite=true
+* Method: POST
+* Authentication:- None
+* Request Headers: *
+* Response Headers: *
 
 
 >In the query parameters, you can notice the usage of the property.byteSize field. The property **byteSize** is set in the Groovy Script step. To dynamically set the document id, you can notice the usage of the property.doc_id field. The property doc_id is set in the **Initialize SP Values** integration step. The overwrite query parameter is set to true, to override existing files in SharePoint. Setting it to false, would ensure that files are not overwritten and may result in a **429 file already exists** error.
