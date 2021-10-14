@@ -14,7 +14,6 @@ Microsoft Graph provides a central endpoint with access to data and services of 
 
  ![OpenSAP Discussion](../../images/opensap-forum.png)
 
-
 ## Step 1 - Register an App in Azure Active Directory
 
 In this step we need to create an application in Azure Active Directory to grant the Microsoft Graph API permissions.
@@ -84,6 +83,10 @@ Switch to second **NOT Default Directory**
 
 The custom Java app uses the SAP BTP destination service to interact with Microsoft Graph.
 For authentication, OAuth2ClientCredentials needs to be selected and the Client ID & Secret from the previous app registration is set.
+
+
+>NOTE: Please make sure that the JAVA application on BTP is running before continuing the unit, since BTP Trial environment overnight is stopping all running applications. In appendix of Unit 4 you can find [how to start the Java Application](#appendix).
+
 
 ---
 
