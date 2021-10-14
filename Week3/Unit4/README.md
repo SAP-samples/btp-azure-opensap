@@ -210,6 +210,10 @@ You will find an email in your Outlook Inbox from your employee (actually you) r
 3.5 Go again to SAP Workflow Management, where you will find as well that lately created task has been completed.
   ![Confirm request](./images/u4_task_completed_2.png)
 
+
+3.6. Please make sure that the JAVA application is running in case you will continue working on another day, since BTP Trial environment overnight is stopping all running applications. In appendix you can find [how to start the Java Application](#appendix).
+
+
 ## Step 4 - Troubleshooting
 
 There are two approaches, to troubleshoot the application and adaptive cards, in case you are facing issues.
@@ -220,6 +224,19 @@ There are two approaches, to troubleshoot the application and adaptive cards, in
 * In case of rendering issues with Actionable Message, you could find the add-in to Microsoft Outlook called “Actionable Messages Debugger”. It will help you to identify issues with your message
  ![“Actionable Messages Debugger”](./images/u4_debugger_ac.png)
 
+## Appendix
+
+>NOTE: Please make sure that the JAVA application is running in case you will continue working on another day, since BTP Trial environment overnight is stopping all running applications.
+
+### Starting the Java Application
+
+* Go to BTP Cockpit and open **Cloud Foundry Space**
+  
+   ![Go to CF Space](./images/u4_goto_cf_space.png)
+
+* Start the Java application in case it is stopped by clicking on *"play"* icon
+  
+   ![Start Java App](./images/u4_start_app.png)
 
 # Summary
 
