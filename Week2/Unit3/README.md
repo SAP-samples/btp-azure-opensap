@@ -47,21 +47,25 @@ The Open Connectors component of the SAP Integration Suite, simplifies the conne
 ![Open Connectors](./images/ioc_0160.png)
 
 
-1.7 In the connection wizard, enter a name for your connector instance like **SharePointApp**, enter your SharePoint address in the format {your_sharepoint_domain}.sharepoint.com, enter your copied OAuth client ID in the API Key text field, enter your copied OAuth secret in the API Secret text field (both credentials from Azure AD step) and select **Show Optional Fields**. 
+1.7 In the connection wizard: 
+
+* enter a name for your connector instance like **SharePointApp**
+* enter your SharePoint address in the format {your_sharepoint_domain}.sharepoint.com
+* enter your copied Application (client) ID from the Azure app registration in the API Key text field, 
+* enter your copied secret from the Azure app registration in the API Secret text field and select **Show Optional Fields**. 
 
 ![Open Connectors](./images/ioc_0170.png)
 
-
-1.8 During the creation of the OAuth client & Secret in the Azure portal, you selected the **Delegated user access** approached. Therefor, the **Delegate User** flag has to be set to **true** in Open Connectors as well.
+1.8 During the creation of the client & Secret in the Azure App registration, you selected the **Delegated user access** approached. Therefore, the **Delegate User** flag has to be set to **true** in Open Connectors as well.
 
 1.9 Select **Create Instance** to create SharePoint connector instance.
 
 ![Open Connectors](./images/ioc_0180.png)
 
-> You may be prompted to enter your Microsoft subscription user credentials. In case, you are already logged into your SharePoint the logged in session may be automatically taken by the browser.
+> You may be prompted to enter your Microsoft subscription user credentials. In case, you are already logged into your SharePoint the logged in session may be automatically taken by the browser. 
+> **IMPORTANT:** In any case, make sure you are logged in with your Microsoft365 Developer account. 
 
 ![Open Connectors](./images/ioc_0183.png)
-
 
 > You may be prompted to trust the SharePoint OAuth application. Select **Trust It**
 
@@ -137,7 +141,7 @@ The SAP API Business Hub is the central catalog of all SAP and partner APIs for 
 
 2.8 This API endpoint returns the billing document information in a PDF format. The document identifier needs to be passed as query parameter named BillingDoument in the format **BillingDocument= 'document_id'**.  
 
-2.9 Enter '9002930' (including the single quotes) into the **BillingDocument** field. Click on **Execute** to test your request. 
+2.9 Enter '90002930' (including the single quotes) into the **BillingDocument** field. Click on **Execute** to test your request. 
 
 ![API Business Hub](./images/sah_0060.png)
 
@@ -286,12 +290,12 @@ In this comprehensive step, you will create an Integration Flow within SAP Cloud
 
 
 3.23 In the **Connection** tab, enter details as follows.
-* Address :- https://sandbox.api.sap.com/s4hanacloud/sap/opu/odata/sap/API_BILLING_DOCUMENT_SRV/GetPDF
-* Query :- BillingDocument=%27${property.doc_id}%27
-* Method :- GET
-* Authentication :- None
-* Request Headers : *
-* Response Headers : *
+* Address: https://sandbox.api.sap.com/s4hanacloud/sap/opu/odata/sap/API_BILLING_DOCUMENT_SRV/GetPDF
+* Query: BillingDocument=%27${property.doc_id}%27
+* Method: GET
+* Authentication: None
+* Request Headers: *
+* Response Headers: *
 
 > In the query parameter you can notice that property doc_id is referenced dynamically as ${property.doc_id}. Since the apikey is passed via the message header set in the Initialize S4HC Value integration step the authentication type is selected to None.
 
@@ -354,6 +358,8 @@ Enter **xmlns:d=http://schemas.microsoft.com/ado/2007/08/dataservices** in the n
 
 3.34 Copy & paste the below code snippet to the created script page. Select **Ok** to persist the script changes.
 
+
+```Groovy
     /*
     The integration developer needs to create the method processData 
     This method takes Message object of package com.sap.gateway.ip.core.customdev.util 
@@ -421,6 +427,7 @@ Enter **xmlns:d=http://schemas.microsoft.com/ado/2007/08/dataservices** in the n
 
     return message;
     }
+```
 
 >In this script, the multipart format request is created from the incoming response data. For posting a file to SharePoint, the size of the uploaded documented is also required. The size of the incoming byte[] data is read and stored in a property named byteSize.
 
@@ -445,6 +452,8 @@ Enter **xmlns:d=http://schemas.microsoft.com/ado/2007/08/dataservices** in the n
 
 
 3.38 Navigate to the Message Header tab. Select **Add** to add new message header. Enter **Subsite** in the Name field and enter your SharePoint team site name in the format **/sites/{your_teamsite}**. In this tutorial, a team site named General was used therefore the value of **Subsite** field is **/sites/General**. Select **Add** to add another message header. Enter **Authorization** in the Name field. As a value copy the Authorization header noted down in **Step 1.15**.
+
+> The Authorization header value does have the following format: "User xyz123, Organization xyz456, Element xyz789". 
 
 >Note :- If your team site contains spaces , then enter the site name without any spaces in the Subsite field.
 
@@ -494,11 +503,12 @@ Enter **xmlns:d=http://schemas.microsoft.com/ado/2007/08/dataservices** in the n
 
 
 3.48 Under the Connection tab, enter details as follows.
-* Address :- ```https://api.openconnectors.trial.<BTP Trial Region e.g. ap21>.ext.hana.ondemand.com/elements/api-v2/files```
-* Query :- size=${property.byteSize}&path=%2Fbilling_${property.doc_id}.pdf&overwrite=true
-* Method :- POST
-* Authentication :- None
-* Request Headers : *
+* Address: ```https://api.openconnectors.trial.<BTP Trial Region e.g. ap21>.ext.hana.ondemand.com/elements/api-v2/files```
+* Query: size=${property.byteSize}&path=%2Fbilling_${property.doc_id}.pdf&overwrite=true
+* Method: POST
+* Authentication:- None
+* Request Headers: *
+* Response Headers: *
 
 
 >In the query parameters, you can notice the usage of the property.byteSize field. The property **byteSize** is set in the Groovy Script step. To dynamically set the document id, you can notice the usage of the property.doc_id field. The property doc_id is set in the **Initialize SP Values** integration step. The overwrite query parameter is set to true, to override existing files in SharePoint. Setting it to false, would ensure that files are not overwritten and may result in a **429 file already exists** error.

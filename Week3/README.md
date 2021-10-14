@@ -3,9 +3,9 @@
 This repository contains code samples and step by step instructions 
 
 ## Description
-Extend productivity beyond SAP ecosystem using MS Teams and Outlook as engagement channels for workflows
+Extend productivity beyond SAP ecosystem using MS Teams and Outlook as engagement channels for workflows.
 
-Sample project where an employee can create a leave request via chatbot from Microsoft Teams integrated with SAP Conversational AI which triggers an SAP Workflow. The manager of the employee can approve or reject the leave request via a My Inbox app or directly from Microsoft Outlook inbox via Microsoft actionable messages. As soon as the request is approved, a calendar entry will be created in the employee’s Microsoft Outlook triggered via Microsoft Graph APIs
+The sample project where an employee can create a leave request via chatbot from Microsoft Teams integrated with SAP Conversational AI which triggers workflow. The manager of the employee can approve or reject the leave request via a My Inbox app in the SAP Fiori Launchpad or directly from the Microsoft Outlook inbox via Microsoft actionable messages. As soon as the request is approved, a calendar entry will automatically be created in the employee’s Microsoft Outlook triggered via Microsoft Graph APIs.
 
 ![Solution Architecture](./images/wf-outlook-integration.png)
 

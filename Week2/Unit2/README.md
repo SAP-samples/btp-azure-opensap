@@ -57,7 +57,10 @@ In this step, you will use the **Integration Suite Provisioning** tool, to enabl
 ![Integration Suite](./images/iss_060.png)
 
 
-2.3 Select all available capabilities and click on **Next**. 
+2.3 Select the following capabilities and click on **Next**: 
+
+* Design, Develop and Operate Integration Scenarios
+* Extend Non-SAP Connectivity
 
 ![Integration Suite](./images/iss_070.png)
 
@@ -135,6 +138,8 @@ In this step, you will execute a Booster that assigns your user the necessary ro
 ![Integration Suite](./images/iss_220.png)
 
 3.10 From the **Integration Suite Launchpad**, you should now be able to open any of the assigned capabilities without authorization errors. 
+
+**In case of authorization errors:** Please use the logout button on the upper right corner of the page and login again! 
 
 ![Integration Suite](./images/iss_230.png)
 

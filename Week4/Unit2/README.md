@@ -5,7 +5,7 @@ This exercise is part of the openSAP course [Building applications on SAP Busine
 
 # Setup Azure Data Explorer instance and load data 
 
-In this exercise we will setup Azure Data Explorer, ADX and import sample data. ADX will late be connected to SAP HANA Cloud and the data surfaced in SAP Analytics Cloud. 
+In this exercise we will setup Azure Data Explorer (ADX) and import sample data. ADX will later on be connected to SAP HANA Cloud and the data surfaced in SAP Analytics Cloud. 
 
 ## Problems
 > If you have any issues with the exercises, don't hesitate to open a question in the openSAP Discussion forum for this course. Provide the exact step number: "Week4Unit2, Step 1.1: Command cannot be executed. My expected result was [...], my actual result was [...]". Logs, etc. are always highly appreciated. 
