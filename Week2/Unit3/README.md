@@ -137,7 +137,7 @@ The SAP API Business Hub is the central catalog of all SAP and partner APIs for 
 
 2.8 This API endpoint returns the billing document information in a PDF format. The document identifier needs to be passed as query parameter named BillingDoument in the format **BillingDocument= 'document_id'**.  
 
-2.9 Enter '9002930' (including the single quotes) into the **BillingDocument** field. Click on **Execute** to test your request. 
+2.9 Enter '90002930' (including the single quotes) into the **BillingDocument** field. Click on **Execute** to test your request. 
 
 ![API Business Hub](./images/sah_0060.png)
 
@@ -445,6 +445,8 @@ Enter **xmlns:d=http://schemas.microsoft.com/ado/2007/08/dataservices** in the n
 
 
 3.38 Navigate to the Message Header tab. Select **Add** to add new message header. Enter **Subsite** in the Name field and enter your SharePoint team site name in the format **/sites/{your_teamsite}**. In this tutorial, a team site named General was used therefore the value of **Subsite** field is **/sites/General**. Select **Add** to add another message header. Enter **Authorization** in the Name field. As a value copy the Authorization header noted down in **Step 1.15**.
+
+> The Authorization header value does have the following format: "User xyz123, Organization xyz456, Element xyz789". 
 
 >Note :- If your team site contains spaces , then enter the site name without any spaces in the Subsite field.
 

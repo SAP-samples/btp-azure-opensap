@@ -57,7 +57,10 @@ In this step, you will use the **Integration Suite Provisioning** tool, to enabl
 ![Integration Suite](./images/iss_060.png)
 
 
-2.3 Select all available capabilities and click on **Next**. 
+2.3 Select the following capabilities and click on **Next**: 
+
+* Design, Develop and Operate Integration Scenarios
+* Extend Non-SAP Connectivity
 
 ![Integration Suite](./images/iss_070.png)
 
