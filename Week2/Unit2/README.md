@@ -11,11 +11,11 @@ The objective of this exercise is to set up your Integration Suite instance with
 
 ## Step 1 - Subscribe to Integration Suite SaaS
 
-Welcome to the Unit 2 of Week 2. In this first step, you will add an **Integration Suite Application Subscription** to your BTP subaccount. This will be the central entry point for all required Integration Suite components like Cloud Integration or Open Connectors.  
+Welcome to the Unit 2 of Week 2. In this first step, you will add an **Integration Suite Application Subscription** to your SAP BTP subaccount. This will be the central entry point for all required Integration Suite components like Cloud Integration or Open Connectors.  
 
 ---
 
-1.1. In your BTP Trial account go to **"Services" -> "Service Marketplace"**. Search for **Integration** and select the **Integration Suite** from the search results. 
+1.1. In your SAP BTP Trial account go to **"Services" -> "Service Marketplace"**. Search for **Integration** and select the **Integration Suite** from the search results. 
 
 ![Integration Suite](./images/iss_010.png)
 
@@ -34,7 +34,7 @@ Welcome to the Unit 2 of Week 2. In this first step, you will add an **Integrati
 ![Integration Suite](./images/iss_040.png)
 
 
-1.5 Check your **Integration Suite** subscription in the **Instances and Subscriptions** menu of your BTP cockpit. Once the status changes to **Subscribed**, the Integration Suite instance is ready to be used. 
+1.5 Check your **Integration Suite** subscription in the **Instances and Subscriptions** menu of your SAP BTP cockpit. Once the status changes to **Subscribed**, the Integration Suite instance is ready to be used. 
 
 ![Integration Suite](./images/iss_045.png)
 
