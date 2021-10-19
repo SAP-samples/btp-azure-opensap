@@ -26,7 +26,7 @@ First, you need a SAP Analytics Cloud Trial account. That's what we do in this s
 
 1.2 Make sure you are logged in with your user that you have created/used in [Week 1, Unit 2](../../Week1/Unit2/README.md)
 
-**IMPORTANT:Für den Fall, dass du dich mit einer gmail.com/yahoo.com Mail Adresse anmeldest: Lege dir bitte einen neuen Account an mit einer anderen Mail Adresse. Die SAP Analytics Cloud Trial sind nicht für sogenannte "Personal Accounts" zulässig.** 
+**IMPORTANT: In case you log in with a gmail.com/yahoo.com email address: Please create a new account with a different email address. The SAP Analytics Cloud Trial is not permitted for so-called "personal accounts".** 
 
 ![Registration](./images/00-login.png)
 
