@@ -10,7 +10,155 @@ In this exercise we will setup connection between SAP HANA Cloud and Microsoft A
 > If you have any issues with the exercises, don't hesitate to open a question in the openSAP Discussion forum for this course. Provide the exact step number: "Week4Unit3, Step 1.1: Command cannot be executed. My expected result was [...], my actual result was [...]". Logs, etc. are always highly appreciated. 
  ![OpenSAP Discussion](../../images/opensap-forum.png)
  
-## Step 1 - Install Data Provisioning Agent (DPAgent)
+## Step 1 - Create Azure Virtual Machine
+
+As we want to federate data that resides at Azure Data Explorer (ADX), we want to deploy the Data Provisioning Agent (DPAgent) as close as possible to the source data. Therefore we will be using Azure´s Virtual Machine service to deploy a Suse Linux Enterprise virtual machine (VM), where the DPAgent will run.
+
+---
+
+1.1 Navigate to <https://portal.azure.com> and log in with your Azure Account. 
+
+1.2 Search for **Virtual Machines** and select the corresponding entry from the result list. 
+
+![Search for Azure VMs](./images/azurevm_search.png)
+
+1.3 Create a new Azure VM via **Create > ** a new Azure VM. 
+
+![Search for Azure VMs](./images/add_azurevm.png)
+
+1.4 In the basic configuration screen set the following configuration:
+* **Subscription:** Azure Trial subscription that you have setup in [Week 1, Unit3](../../Week1/Unit3/README.md)
+* **Resource Group:** penSAPWeek4-RG (created in the previous unit)
+* **Virtual machine name:** DPAVM
+* **Region**: Same region as your Azure Data Explorer (previous unit) is located in
+* **Availability Options**: No infrastructure redundancy required (*not recommended for production*)
+* **Image**: SUSE Enterprise Linux image (e.g. SUSE Enterprise Linux 15 SP2 +Patching - Gen2)
+* **Size**: Standard_B4ms - 4 vcpus, 16 GiB memory (**IMPORTANT:** You need to click on **See all sizes to be able to select this machine)
+* **Authentication Type**: SSH public key
+* **Username**: Azureuser
+* **SSH public key source**: Generate new key pair
+* **Key pair name**: DPAVM_key
+
+![Basic Tab for VM creation](./images/vmcreation_basic.png)
+
+1.5 Proceed by selecting **Next: Disks**
+
+1.6 Select **Standard SSD** for OS disk type. 
+![Search for Azure VMs](./images/disk_type.png)
+
+1.7 Proceed with **Next: Networking**.
+
+https://itsupportportal.services.sap/itsupport?id=kb_article_view&sysparm_article=KB0011226&sys_kb_id=5a0f359b1bc92010325eeced7b4bcbcc&spa=1
+
+1.8 For the **security group** we are creating a custom one and add the public IP from the machine we are working from. Click on **create new**.
+
+> **Note:** For the virtual network, the subnet and the public IP we are sticking to the defaults.
+![New Security Group](./images/new_securitygroup.png)
+
+1.9 Keep everything as it is and continue with **OK**. 
+![New Security Group Details](./images/securitygroup_details.png)
+
+1.10 Proceed to **Review + create**. 
+![Review + Create button for VM](./images/securitygroup_details.png)
+
+1.11 Go on and **Create** the Azure VM. 
+![Review + Create button for VM](./images/create_vm.png)
+
+1.12 A prompt comes up. Make sure to **download the key pair** that will be required to log on to the VM via SSH.
+![Download SSH key](./images/download_key.png)
+
+You should then see a conformation that the virtual machine was succesfully created. 
+![Download SSH key](./images/vmdeploy_finished.png)
+
+## Step 2 - Data Provisioning Agent (DPAgent) Setup
+
+Since the Virtual Machine is succesfully created, you can now start to install the Data Provisiong Agent on the Virtual Machine. 
+
+---
+
+2.1 **WINDOWS USER ONLY: If you are using Windows, please make sure that you SSH & SCP installed. Therefore open a command prompt and execute the following commands:**
+
+```bash
+ssh
+```
+
+```bash
+scp
+```
+
+![Search for command prompt](./images/command_prompt_search.png)
+
+![Verification of SSH and SCP tool installed](./images/ssh_scp_verification.png)
+
+In case you are getting errors like *'not recognized as an internal or external command'*, please install the tools. Verify the installation again using the commands above after you have installed the mentioned tools. Installation links: 
+
+* SCP: <https://winscp.net/eng/docs/installation>
+* SSH: <https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse>
+
+> macOS users have these tools installed by default. 
+
+2.2 In case you don't have a terminal (macOS)/command prompt (Windows) open, please open one now. 
+
+2.3 Navigate to the location of your key file that you have downloaded in step 1.12 using the **cd** command. 
+
+Windows: 
+
+![Find downloaded certificate file on macOS](./images/windows_dir.png)
+
+> **dir** lists the directory content on Windows, **ls** lists the directory content on macOS. 
+
+macOS: 
+
+![Find downloaded certificate file on macOS](./images/macos_dir.png)
+
+2.4 Go to the Azure Portal (<https://portal.azure.com>) and search for your VM and select it from the result list. 
+
+![Find downloaded certificate file on macOS](./images/search_vm.png)
+
+2.5 Copy the **public IP address**.
+
+![Public IP address in the VM overview](./images/public_ip.png)
+
+2.6 Execute the following command to connect to your Azure VM: 
+
+Windows: 
+```bash
+ssh -i <.cer file name> azureuser@<public ip address>
+```
+
+![SSH connection on Windows](./images/ssh_connect_win.png)
+
+macOS: 
+```bash
+chmod 400 <.cer file name> && ssh -i <.cer file name> azureuser@<public ip address>
+```
+
+![SSH connection on Windows](./images/ssh_connect_mac.png)
+
+> **Note:** Answer 'Are you sure you want to continue connecting (yes/no/[fingerprint])? with **yes**.
+
+One you see **Have a lot of fun** in the output, you are succesfully connected to your Virtual Machine. 
+
+2.7 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 1.1. Download SAP Data Provisioning Agent from SAP Software Download Center. Click [here](https://help.sap.com/viewer/7952ef28a6914997abc01745fef1b607/2.0_SPS04/en-US/665d8ea78f0c4f0dbb530a1193737f11.html) for details
 
