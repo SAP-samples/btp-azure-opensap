@@ -14,7 +14,6 @@ Make sure that you have done the following units in order to be able to finish t
 
 * [Week 1, Unit 2](../../Week1/Unit2/README.md)
 * [Week 1, Unit 3](../../Week1/Unit3/README.md)
-* [Week 2, Unit 1 - Steps 1](../../Week2/Unit1/README.md)
  
 ## Step 1 - Setup SAP Analytics Cloud Trial Account
 
