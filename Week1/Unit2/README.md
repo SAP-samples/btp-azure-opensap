@@ -4,9 +4,7 @@ This exercise is part of the openSAP course [Building applications on SAP Busine
 
 The objective of the exercise is to create a SAP BTP Trial account that you can further use throughout this course and beyond. 
 
-If you already have an SAP BTP Trial account, you don't need to create a new one or move its content to a subaccount in another region! You can then skip this whole unit. 
-
-* **Microsoft SharePoint**: Microsoft SharePoint allows you to manage content, knowledge, and applications for teamwork and collaboration across the organization.
+If you already have an SAP BTP Trial account, you don't need to create a new one or move its content to a subaccount in another region! You can then skip this whole unit.
 
 ## Problems
 > If you have any issues with the exercises, don't hesitate to open a question in the openSAP Discussion forum for this course. Provide the exact step number: "Week2Unit1, Step 1.1: Command cannot be executed. My expected result was [...], my actual result was [...]". Logs, etc. are always highly appreciated. 
@@ -32,7 +30,7 @@ If you have an account on www.sap.com (e.g. a P, S, C, D or I number) you can en
 
 > If you don’t need to register with sap.com, you can skip to Step 1.4. 
 
-1.2. <a href="btptrial">If you don’t have an account you will see a register dialog on the left-hand side of the dialog. Fill in the required fields, and click Submit.</a>
+1.2. If you don’t have an account you will see a register dialog on the left-hand side of the dialog. Fill in the required fields, and click Submit.
 
 ![SAP Registration](./images/trial_registration.png)
 
@@ -82,4 +80,4 @@ This page will display the current state of the subaccount. You can manage your 
 
 ## Summary
 
-Congratulations! You have succesfully created your personal SAP BTP trial account! You will use this account through the next weeks of this course to build custom extension scenarios, integration scenarios and data-to-value scenarios
+Congratulations! You have succesfully created your personal SAP BTP trial account! You will use this account through the next weeks of this course to build custom extension scenarios, integration scenarios and data-to-value scenarios.
