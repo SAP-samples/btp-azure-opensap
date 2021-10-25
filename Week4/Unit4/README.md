@@ -38,5 +38,7 @@ Logon to SAP Analytics Cloud using the credentials from [Week 4, Unit1](../Unit1
   Password : <Password for DBADMIN>
   
   ![Credentials](./images/03-credentials.png)
+
+  ## Summary
   
-  Now you have successfully setup a live Connection from SAP Analytics Cloud to SAP HANA Cloud. 
+  Good Job! Now you have successfully setup a live connection from SAP Analytics Cloud to SAP HANA Cloud to

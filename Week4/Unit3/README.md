@@ -3,8 +3,7 @@ This exercise is part of the openSAP course [Building applications on SAP Busine
 
 # Connecting SAP HANA Cloud with Microsoft Azure Data Services 
 
-
-In this exercise we will setup connection between SAP HANA Cloud and Microsoft Azure Data Explorer. 
+In this exercise we will setup connection between SAP HANA Cloud and Microsoft Azure Data Explorer. There's quite some stuff that can go wrong, so watch out for the [troubleshooting section](#troubleshooting).
 
 ## Problems
 > If you have any issues with the exercises, don't hesitate to open a question in the openSAP Discussion forum for this course. Provide the exact step number: "Week4Unit3, Step 1.1: Command cannot be executed. My expected result was [...], my actual result was [...]". Logs, etc. are always highly appreciated. 
@@ -528,7 +527,9 @@ In order to be able to connect to Azure Data Explorer, a specific Smart Data Int
 * **Host Name in Certificate**: *.kusto.windows.net
 
 10.4 Scroll further to the **Security** section of the Remote Source creation form and provide the following settings: 
+## Summary
 
+Well done! You have succesfully set up an Azure Virtual Machine, installed the Data Provisioning Agent on it, connected the DPAgent with your SAP HANA Cloud instance and registered the MssqlLogReaderAdapter (to read from Azure Data Explorer). 
 ## Troubleshooting
 
 ### Failed to connect to server SAP DBTech..
@@ -548,7 +549,7 @@ In case you are facing the error shown on the screenshot below, make sure you ar
 ```shell
 su - dpa-user
 ```
-![Wrong user on Azure VM](./images/wrong_user.png)
+![Wrong user on Azure VM](./images/wrong-user.png)
 
 ### Unable to make JDBC connection to server
 
@@ -597,154 +598,6 @@ In case your Agent Status shows *Unable to make JDBC connection to server*, most
 
 
 
-
-
-
-
-
-2.1. Open the Data Provisioning Agent Configuration tool by running config.bat. Enter option 6 to establish connection with HANA Cloud.
-
-![OpenConfig](./images/01.png)
-
-2.2 To estabilish the connection with SAP HANA Cloud enter option 1.
-
-![HANAConnection](./images/02.png)
-
-2.3 Enter HANA Connection details like JDBC Connection(default true) hostname , port (default 443) , Agent Admin HANA User & password , Proxy server (false) , HANA User for Agent messaging and password.
-
-HANA Cloud usernames should be different for Agent Admin user and Agent Messaging. If you are using default DBAdmin for Agent Admin  User (which is not recommended) create a new HANA Cloud user for agent messaging.
-
-![HANAConnectionDetails](./images/03.png)
-
-2.4 To Register agent with your HANA Cloud go back to the main menu and enter option 7.
-
-![AgentRegistration](./images/04.png)
-
-2.5 Enter option 1 to start the registration process.
-
-![StartAgentRegistration](./images/05.png)
-
-2.6 Enter name of the Agent and enter the IP address of the instance where DPAgent is installed. Make sure that this IP Address is reachable from internet/HANA Cloud. 
-
-![EnterAgentDetails](./images/06.png)
-
-2.7 Verify Agent Registration by opening HANA Cloud -> Catalog -> Agents. DPAgent registered in previous step should be visitble.
-
-![VerifyAgentRegistration](./images/07.png)
-
-## Step 3 - Register Adapter
-
-3.1 Download & Copy the MSSQL JDBC driver to the lib folder of the DPAgent installation directory. Version 7.2.2 is used for this excercise. 
-
-![CopyJDBCDriver](./images/08.png)
-
-3.2 Open DPAgent Configuration tool and enter option 8 to start the Adapter registration process.
-
-![AdapterRegistration](./images/09.png)
-
-3.3 To list all the available adapters enter option 1.
-
-![ShowAdapterList](./images/10.png)
-
-3.3 Locate MSSQLLogReaderAdapter. Note that unlike the image below your list will show that the MSSQLLogReaderAdapter will have 'NO' in the Registered column
-
-![AdapterList](./images/12.png)
-
-3.4 Now enter the name of the adapter as MSSQLLogReaderAdapter and fisnish the registration process.
-
-![StartAdapterRegistration](./images/13.png)
-
-3.5. To verify the registration process open HANA Cloud -> Catalog->Adapters. Now MSSQLLogReaderAdapter will be listed for your DPAgent.
-
-![VerifyAdapter](./images/14.png)
-
-## Step 4 - Create connection to Azure Data Explorer
-
-4.1 In HANA Cloud, right click on Remote Source and select Add Remote Source
-
-![AddRemoteSource](./images/15.png)
-
-4.2 Select Adapter MSSQLLogReaderAdapter registered in step 3.4. Enter your ADX host name from Unit 2 , port (default 1433) , database name from Unit 2 and additional parameter "authentication=ActiveDirectoryPassword".
-
-![EnterADXHostName](./images/16.png)
-
-4.3 Scroll to Security section. Set SSL to true and Host name in certificate to "*.kusto.windows.net"
-
-![EnterADXCertificate](./images/17.png)
-
-4.4 Scroll to Credentials section. Set Credential mode to Technical User and user name and password. Now click create. Active Directory Authentication method is one of many methods of authenticating ADX.
-
-![EnterADXAuthentication](./images/18.png)
-
-4.5 Verify the connection by opening the connection. Expand Remote Objects to locate the table created in Unit 2.
-
-![VerifyAuthentication](./images/19.png)
-
-
-4.4 Copy the JDBC Driver into the **lib** directory of the DPAgent: 
-
-```shell
-cp <JDBC Driver filename> /usr/sap/dataprovagent/lib/
-```
-![Copy JDBC Driver into lib directory of DPAgent](./images/cp_jdbc_lib.png)
-
-4.5 To unzip the JDBC Driver ZIP file, navigate into the folder and unzip the file: 
-
-```bash
-cd /usr/sap/dataprovagent/lib/
-```
-
-
-## Step 6 - Create technical user for DPAgent connection
-
-There's a mandatory technical user for a continous connection between SAP HANA Cloud and the DPAgent that you need to create now. 
-
----
-
-6.1 Open the SAP HANA Cloud instance in the **SAP HANA Cockpit** using the actions menu. Logon with your **DBADMIN** user. 
-
-![Open HANA Cloud instance in HANA Cockpit](./images/open_hanacockpit.png)
-
-6.2 Switch from the **Monitoring** view to **Security and User Management**. 
-
-![Switch to Security and User Management view in SAP HANA Cockpit](./images/cockpit_usermanagement.png)
-
-6.3 Select **User Management**. 
-
-![User Management menu in SAP HANA Cockpit](./images/User_management.png)
-
-6.4 Create a **new User**. 
-
-![Create new user in User Management menu in SAP HANA Cockpit](./images/create_new_user.png)
-
-6.5 Configure the user as follows: 
-
-* **User Name:** SDI_DP_AGENT
-* **Authorization Mode:** Local
-* **Authentication Mechanism:** Password
-* **Password**: Provide a password (and note it down!)
-* **Force Password Change on Next Logon:** No
-
-![SDI_DP_AGENT user details](./images/sdi_user_details.png)
-
-6.6 **Save** the new user. 
-
-6.7 Select **Asign Priviliges** in the detail view of the newly created user. 
-![SDI_DP_AGENT assign privileges](./images/assign_privileges.png)
-
-6.8 Select **Edit**. 
-
-6.9 Select **Add** in the **System Privileges** tab. 
-![SDI_DP_AGENT assign privileges](./images/add_systemprivileges.png)
-
-6.10 Add the following entries: 
-
-* ADAPTER ADMIN
-* AGENT ADMIN
-* CREATE REMOTE SOURCE
-
-6.11 **Save** the changes. 
-![SDI_DP_AGENT save privileges](./images/save_privileges.png)
 
 
 
