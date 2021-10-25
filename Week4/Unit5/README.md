@@ -12,23 +12,19 @@ In this exercise we will implement the end to end flow. We will create a virtual
  
 ## Step 1 - Create Virtual Table (aka Remote Table) for ADX table in SAP HANA Cloud
 
-1.1. Open remote connection
-Open the remote connection we created in Unit 3 and locate the table in ADX created in Unit 2.
+1.1. Open the remote connection we created in the previous unit and locate the table of Azure Data Explorer created in [Week 4, Unit2](../Unit2/README.md).
 
 ![LocateTable](./images/01-locate-table.png)
 
-1.2. Create Virtual Table
-Select the table and Click the button Create Remote Table
+1.2. Select the table and click the button Create Remote Table
 
 ![CreateRemoteTable](./images/02-create-remote-table.png)
 
-1.3. Save Virtual Table
-Enter a name and click Create
+1.3. Enter a name and click Create.
 
 ![SaveRemoteTable](./images/03-remote-table-name.png)
 
-1.4. Open Virtual Table
-Click Tables in the left menu and locate the table created in the previous step. Search the table by name.
+1.4. Click Tables in the left menu and locate the table created in the previous step. Search the table by name.
 
 ![OpenRemoteTable](./images/04-virtual-table.png)
 
