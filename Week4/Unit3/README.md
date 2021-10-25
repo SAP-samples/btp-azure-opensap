@@ -22,7 +22,7 @@ As we want to federate data that resides at Azure Data Explorer (ADX), we want t
 
 ![Search for Azure VMs](./images/azurevm_search.png)
 
-1.3 Create a new Azure VM via **Create > ** a new Azure VM. 
+1.3 Create a new Azure VM via **Create** a new Azure VM. 
 
 ![Search for Azure VMs](./images/add_azurevm.png)
 
@@ -69,6 +69,23 @@ https://itsupportportal.services.sap/itsupport?id=kb_article_view&sysparm_articl
 
 You should then see a conformation that the virtual machine was succesfully created. 
 ![Download SSH key](./images/vmdeploy_finished.png)
+
+
+---
+
+**IMPORTANT:** <a name="restartvm"Stop & Start your Virtual Machine when you don't need it. The Virtual Machine is otherwise unnecessarily consuming some of your free credits (in case you are using the Azure Free Trial subscription). </a>
+
+Search for your Virtual Machine in the Azure Portal: 
+
+![Search VM via Portal](./images/portal_search_vm.png)
+
+**Start** or **Stop** the VM depending on your needs. 
+
+![Search VM via Portal](./images/start_stop_vm.png)
+
+Step 2.6 will show you how to log on to your VM again. **Every time the Virtual Machine is started again, it will have a new public IP address!**
+
+---
 
 ## Step 2 - Prepare Azure Virtual Machine
 
@@ -263,13 +280,13 @@ cd <unzipped directory name>
 
 The Data Provsioning Agent has now been succesfully installed!
 
-## Step 4 - Configure DPAgent
+## Step 4 - Configure DPAgent - JDBC Driver 
 
-Now that the installation has been finished, the DPAgent is ready to be configured and to be connected. 
+Now that the installation has been finished, the DPAgent is ready to be configured and to be connected. In order to connect to Azure Data Explorer, the DPAgent is using the *MssqlLogReaderAdapter* - therfore, you need the Microsoft JDBC driver.
 
 --- 
 
-4.1 In order to connect to Azure Data Explorer, the DPAgent is using the *MssqlLogReaderAdapter* - therfore, you need the Microsoft JDBC driver. Download the driver **version 8.4** [here](https://docs.microsoft.com/de-de/sql/connect/jdbc/release-notes-for-the-jdbc-driver?view=sql-server-ver15#84) to your local machine. 
+4.1 Download the driver **version 8.4** [here](https://docs.microsoft.com/de-de/sql/connect/jdbc/release-notes-for-the-jdbc-driver?view=sql-server-ver15#84) to your local machine. 
 
 ![Start DPAgent installer](./images/download-jdbc.png)
 
@@ -292,44 +309,298 @@ cd /tmp
 ```
 ![Go to the tmp directory](./images/jdbc_tmp_folder.png)
 
-4.4 Copy the JDBC Driver into the **lib** directory of the DPAgent: 
+4.4 Unzip the JDBC Driver ZIP file into the the **lib** directory of the DPAgent:
 
-```shell
-cp <JDBC Driver filename> /usr/sap/dataprovagent/lib/
+```bash
+unzip sqljdbc_8.4.1.0_enu.zip -d /usr/sap/dataprovagent/lib
 ```
-![Copy JDBC Driver into lib directory of DPAgent](./images/cp_jdbc_lib.png)
+
+![Unzip into /usr/sap/dataprovagent/lib directory ](./images/unzip_into_dir.png)
 
 
+## Step 5 - Double-Check SAP HANA Cloud Status
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1.1. Download SAP Data Provisioning Agent from SAP Software Download Center. Click [here](https://help.sap.com/viewer/7952ef28a6914997abc01745fef1b607/2.0_SPS04/en-US/665d8ea78f0c4f0dbb530a1193737f11.html) for details
-
-1.2. Follow the the steps outlined [here](https://help.sap.com/viewer/7952ef28a6914997abc01745fef1b607/2.0_SPS02/en-US/dd8aaa71a6d4490485b8eb5123f46149.html) to install DP Agent
-
-DPAgent can be installed in your local machine or in a VM close to the source system. If you dont have access to VM install in local machine. Make sure that there are no firewall or other restrictions for HANA Cloud to communicate with your local machine's IP address.
-
-Note : SQL Queries will run slower with DPAgent installed in local machine compared to virtual machine in same region as ADX.
- 
-## Step 2 - Configuring Data Provisioning Agent (DPAgent)
-
-This section will walk you through the steps to be followed to configure data provisioning agent.
+Since the SAP HANA Cloud instance in SAP BTP Trial is automatically stopped after a certain time, make sure that your SAP HANA Cloud instance is running. This is needed since you are going to establish a connection between the SAP HANA Cloud instance and the Data Provisioning Agent in the next step. 
 
 ---
+
+5.1 Go to the SAP BTP Trial Cockpit <https://hanatrial.ondemand.com> and navigate to your **hanacloud** subaccount where you have set up the SAP HANA Cloud instance in [Week 4, Unit1](../Unit1/README.md).
+
+![Navigate to SAP HANA Cloud subaccount](./images/hanacloud_subaccount.png)
+
+5.2 Open the **dev** space. 
+
+![Navigate to SAP HANA Cloud subaccount, dev space](./images/open_devspace.png)
+
+5.3 Navigate to the **SAP HANA Cloud** menu item. 
+
+![Navigate to SAP HANA Cloud menu](./images/hana_cloud_menu.png)
+
+5.4 Open the context menu of your SAP HANA Cloud instance using the **actions** button and select **Open in SAP HANA Cloud Central**. Sign in with your SAP BTP Trial account. 
+
+![open SAP HANA Cloud instance in HANA Cloud Central](./images/open_hanacloudcentral.png)
+
+5.5 In case your SAP HANA Cloud instance is **Stopped**, select **...** to open the available actions for this SAP HANA Cloud instance. **Start** the instance. 
+
+![Start HANA Cloud instance](./images/open_hanacloudcentral.png)
+
+5.6 Refresh the page every now and then to get the current status of the SAP HANA Cloud instance. 
+
+![Start HANA Cloud instance](./images/refresh_instancen_status.png)
+
+> Wait until SAP HANA Cloud instance is in status **Running**
+
+## Step 6 - Start DPAgent
+
+6.1 In the terminal/command prompt, where you are logged in with the **dpa-user**, navigate into the **bin** directory of the DPAgent: 
+
+```shell
+cd /usr/sap/dataprovagent/bin
+```
+
+> In case you are not logged in anymore, please revisit Step 2.6 to log in. Make sure that you have the right public IP address (Step 2.4 & Step 2.5). 
+> **IMPORTANT:** Use the **dpa-user** for this operations. ```su - dpa-user``` is the right command to switch to the **dpa-user**. 
+
+![List binary directory of DPAgent](./images/list_bindirectory.png)
+
+6.2 Start the DPAgent Configuration tool: 
+
+```shell
+./agentcli.sh --configAgent
+```
+
+![Start DPAgent config tool](./images/start_dpatool.png)
+
+6.3 Enter **2** and hit the **Enter** key to choose **Start or Stop Agent**: 
+
+![Start DPAgent config tool](./images/startmenu_agent.png)
+
+6.4 Enter **1** to start the DPAgent. After the Agent has started, press **Enter** so you can go on with other configurations in the next steps.
+
+![Start DPAgent](./images/start_agent.png)
+
+
+## Step 7 - Establish Connection between SAP HANA Cloud and Data Provisioning Agent
+
+This section will walk you through the steps to be register the DPAgent with SAP HANA Cloud. 
+
+---
+
+
+> In case you are not connected with the Azure VM anymore, please revisit Steps 2.4-2.6
+> In case your DPAgent config tool isn't running anymore, please revisit Step 6
+
+7.1 Enter **b** to navigate back to the main menu. And navigate to the SAP HANA Connection menu using **Option 6**.
+
+![Option SAP HANA Connection](./images/agent_hanaconnectionmenu.png)
+
+7.2 Enter **1** to choose Option 1 **Connect to SAP HANA Cloud via JDBC**. 
+
+7.3 Hit enter to Keep the default value for **Use encrypted JDBC connection**. 
+
+7.4 <a ="hostname">You are asked to enter the host name of your SAP HANA Cloud instance. Go back to the SAP HANA Cloud Central (Steps 5.1 - 5.3) to copy the host name of your SAP HANA Cloud instance and paste the value into the DPAgent configuration **without the port number** and **without the protocol in the beginning**.  </a>
+
+> host name example: ffd9df73-e90a-4e4e-a216-687d306ed47c.hana.trial-us10.hanacloud.ondemand.com
+
+![SAP HANA Connection endpoint](./images/hanacloud_endpoint.png)
+![Hostname in DPAgent config](./images/hostname_dpa.png)
+
+7.5 *Enter Port Number:* **443**
+
+7.6 *Enter Agent Admin HANA User:* **DBADMIN**
+
+7.7 *Enter Agent Admin HANA User Password:* **DBADMIN Password** that you have provided in [**Week 4, Unit 1**](../Unit1/README.md) during the SAP HANA Cloud instance creation. 
+
+7.8 *Repeat the password for* **DBADMIN**.
+
+7.9 *Enter Use Proxy Server[false]:* false
+
+7.10 *Enter HANA User Name for Agent Messaging:* SDI_DP_AGENT
+
+7.11 *Enter HANA User Password for Agent Messaging:* Set an initial password for the **SDI_DP_AGENT** user.
+
+7.12 *Repeat the password from the previous step.*
+
+7.13 *Do you want to create a new SAP HANA user with the specified Agent XS HANA User credentials?:* **true**
+![Rest of the DPAgent config](./images/jdbc-config-2.png)
+
+7.14 Press **Enter** to continue. 
+
+7.15 Select **Option b** to navigate pack to the main menu. 
+
+7.16 Select **Option 1** to show the Agent status. You should see that Agent is **running** and connected to your SAP HANA Cloud instance. 
+![Rest of the DPAgent config](./images/agent_status.png)
+
+## Step 8 - Register DPAgent in SAP HANA Cloud 
+
+Now, that the connection between SAP HANA Cloud and the DPAgent is established, you can register the DPAgent itself in SAP HANA Cloud. 
+
+--- 
+
+
+> In case you are not connected with the Azure VM anymore, please revisit Steps 2.4-2.6
+> In case your DPAgent config tool isn't running anymore, please revisit Step 6
+
+8.1 In the DPAgent configuration tool, select **Option 7** (Agent Registration) followed by **Option 1** (Register Agent).
+![Rest of the DPAgent config](./images/agent_status.png)
+
+8.2 Enter the following details during the interactive configuration:
+* **Agent Name**: Agent on Azure
+* **Agent Host**: <Public IP Adress from Azure Portal>
+
+> if you are wondering why the public IP of the Azure VM in the screenshots of this exercise have changed: The VM was stopped and started to save costs and therefore received a new IP. How to Stop and Star the VM can be found [earlier in this exercise](#restartvm).
+  
+![Public IP Address](./images/public_ip_azure.png)
+![Agent registration details](./images/agent_details.png)
+
+8.2 Open your SAP HANA Cloud instance in the **SAP HANA Database Explorer**, launched from SAP HANA Cloud Central.
+
+> Step 5  of this exercise describes how to navigate to the SAP HANA Cloud Central. 
+
+![Open HANA Database Explorer](./images/open_databaseexplorer.png)
+
+8.3 You should then see in the **catalog** of your SAP HANA Cloud database that you are DPAgent is registered. 
+![Registered Agent in SAP HANA Database Explorer](./images/registered_agent.png)
+
+8.4 Restart your DPAgent. Therefore go to the main menu of the DPAgent configuration tool, choose **option 2** and hit the **Enter** key to choose **Start or Stop Agent**: 
+
+![Start DPAgent config tool](./images/startmenu_agent.png)
+
+8.5 Choose **Option 2** to stop the Agent. 
+
+![Stop DPAgent](./images/stop_agent.png)
+
+8.6 Hit **Enter** to continue and start the Agent again with **Option 1**. 
+
+![Start DPAgent](./images/start_agent.png)
+
+8.7 Go back to the main menu, navigate to **SAP HANA Connection (Option 6)** to establish the JDBC Connection to SAP HANA Cloud once gain. Therefore, choose **Connect to SAP HANA Cloud via JDBC (Option 1)** and go through the interactive configuration once again as described in Step 7. 
+
+![JDBC Connection navigation DPAgent config](./images/sap_hana_connection.png)
+
+## Step 9 - Register Adapter
+
+In order to be able to connect to Azure Data Explorer, a specific Smart Data Integration (SDI) Adapter is necessary. In this step, you'll register the needed MssqlLogReaderAdapter. 
+
+---
+
+9.1 Go back to your DPAgent configuration tool on the Azure Virtual Machine that you are connected with via ssh and navigate to **Option 8** (Adapter registration) from the main menu. 
+
+> In case you are not connected with the Azure VM anymore, please revisit Steps 2.4-2.6
+> In case your DPAgent config tool isn't running anymore, please revisit Step 6
+
+![Registered Agent in SAP HANA Database Explorer](./images/menu_adapter_registration.png)
+
+9.2 Choose **Option 2** (Register Adapter) and type in **MssqlLogReaderAdapter** as the adapter name. 
+
+![MssqlLogReaderAdapter registration](./images/mssqllogreader.png)
+
+9.3 Open your SAP HANA Cloud instance in the **SAP HANA Database Explorer**, launched from SAP HANA Cloud Central.
+
+> Step 5  of this exercise describes how to navigate to the SAP HANA Cloud Central. 
+
+![Open HANA Database Explorer](./images/open_databaseexplorer.png)
+
+9.4 Open the **context menu** of the Adapters with a right-click and **Show Adapters**. You should now see that the MssqlLogReaderAdapter is registred on your DPAgent on the Azure VM. 
+
+![MssqlLogReaderAdapter registration in the HANA Database Explorer](./images/adapter_on_agent.png)
+
+## Step 10 - Create Remote Source for Azure Data Explorer 
+
+10.1 In the **SAP HANA Database Explorer**, right-click on **Remote Sources** and **Add Remote Source**. 
+
+![Open HANA Database Explorer](./images/add_remote_source.png)
+
+10.2 Provide the following settings in the **Database section** of this form: 
+
+* **Source Name:** Azure Data Explorer
+* **Adapter Name:** MssqlLogReaderAdapter
+* **Source Location:** AGENT: Agent on Azure
+* **Data Server**: URI of Azure Data Explorer cluster that you have created in [Week 4, Unit2](../Unit2/README.md)
+    (e.g. https://opensapclusterhbr1.northeurope.kusto.windows.net)
+* **Port Number:** 1433
+* **Database Name:** Database name that you have created in [Week 4, Unit2](../Unit2/README.md)
+* **Additional JDBC connection paramter:** authentication=ActiveDirectoryPassword
+
+10.3 Scroll further to the **Security** section of the Remote Source creation form and provide the following settings: 
+
+* **Use SSL:** true
+* **Host Name in Certificate**: *.kusto.windows.net
+
+10.4 Scroll further to the **Security** section of the Remote Source creation form and provide the following settings: 
+
+## Troubleshooting
+
+### Failed to connect to server SAP DBTech..
+
+In case you are facing the error shown on the screenshot below, your SAP HANA Cloud instance is most likely not running. 
+
+**Solution**: Step 5 describes how to check the status of your SAP HANA Cloud instance and how to start it.
+
+![SAP HANA Cloud instance not running](./images/failed_to_connect_to_server.png)
+
+### Error while starting DPAgent configuration tool using ./agentcli.sh --configAgent
+
+In case you are facing the error shown on the screenshot below, make sure you are logged in to the Azure VM with the right user. Only the **dpa-user** has the appropriate rights on the VM itself. 
+
+**Solution:** First switch the user to *dpa-user* (Step 3.3) and try to start the DPAgent configuration tool again. 
+
+```shell
+su - dpa-user
+```
+![Wrong user on Azure VM](./images/wrong_user.png)
+
+### Unable to make JDBC connection to server
+
+In case your Agent Status shows *Unable to make JDBC connection to server*, most likely either the SAP HANA Cloud instance was stopped or the DPAgent was stopped/interrupted. 
+
+**Solution**: Try to go through the **SAP HANA connection** setup described in Step 7 once again.
+
+![Unable to make JDBC connection to server](./images/restart_connection.png)
+
+### Failed to register adapter. Context: Connection has not been initialized yet.
+
+**Solution**: Try to go through the **SAP HANA connection** setup described in Step 7 once again.
+
+![Failed to register adapter](./images/conn_not_initialized.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 2.1. Open the Data Provisioning Agent Configuration tool by running config.bat. Enter option 6 to establish connection with HANA Cloud.
 
@@ -408,3 +679,75 @@ HANA Cloud usernames should be different for Agent Admin user and Agent Messagin
 4.5 Verify the connection by opening the connection. Expand Remote Objects to locate the table created in Unit 2.
 
 ![VerifyAuthentication](./images/19.png)
+
+
+4.4 Copy the JDBC Driver into the **lib** directory of the DPAgent: 
+
+```shell
+cp <JDBC Driver filename> /usr/sap/dataprovagent/lib/
+```
+![Copy JDBC Driver into lib directory of DPAgent](./images/cp_jdbc_lib.png)
+
+4.5 To unzip the JDBC Driver ZIP file, navigate into the folder and unzip the file: 
+
+```bash
+cd /usr/sap/dataprovagent/lib/
+```
+
+
+## Step 6 - Create technical user for DPAgent connection
+
+There's a mandatory technical user for a continous connection between SAP HANA Cloud and the DPAgent that you need to create now. 
+
+---
+
+6.1 Open the SAP HANA Cloud instance in the **SAP HANA Cockpit** using the actions menu. Logon with your **DBADMIN** user. 
+
+![Open HANA Cloud instance in HANA Cockpit](./images/open_hanacockpit.png)
+
+6.2 Switch from the **Monitoring** view to **Security and User Management**. 
+
+![Switch to Security and User Management view in SAP HANA Cockpit](./images/cockpit_usermanagement.png)
+
+6.3 Select **User Management**. 
+
+![User Management menu in SAP HANA Cockpit](./images/User_management.png)
+
+6.4 Create a **new User**. 
+
+![Create new user in User Management menu in SAP HANA Cockpit](./images/create_new_user.png)
+
+6.5 Configure the user as follows: 
+
+* **User Name:** SDI_DP_AGENT
+* **Authorization Mode:** Local
+* **Authentication Mechanism:** Password
+* **Password**: Provide a password (and note it down!)
+* **Force Password Change on Next Logon:** No
+
+![SDI_DP_AGENT user details](./images/sdi_user_details.png)
+
+6.6 **Save** the new user. 
+
+6.7 Select **Asign Priviliges** in the detail view of the newly created user. 
+![SDI_DP_AGENT assign privileges](./images/assign_privileges.png)
+
+6.8 Select **Edit**. 
+
+6.9 Select **Add** in the **System Privileges** tab. 
+![SDI_DP_AGENT assign privileges](./images/add_systemprivileges.png)
+
+6.10 Add the following entries: 
+
+* ADAPTER ADMIN
+* AGENT ADMIN
+* CREATE REMOTE SOURCE
+
+6.11 **Save** the changes. 
+![SDI_DP_AGENT save privileges](./images/save_privileges.png)
+
+
+
+
+
+

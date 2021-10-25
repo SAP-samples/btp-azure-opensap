@@ -207,7 +207,7 @@ In this comprehensive step, you will create an Integration Flow within SAP Cloud
 ![Cloud Integration](./images/cif_0150.png)
 
 
-3.8 Select the newly created Integration Flow named **Post Billing Document to SharePoint** and then select Edit to start editing the integration flow.
+3.8 Select the newly created Integration Flow named **Post Billing Document to SharePoint** and then select **Edit** to start editing the integration flow.
 
 ![Cloud Integration](./images/cif_0160.png)
 
