@@ -65,7 +65,7 @@ SAP HANA Cloud will play a substantial role in this weeks content. To be prepare
 
 2.5. Continue with **Create**. Your new subaccount gets created now. 
 
-> SAP HANA Cloud is currently only available in one of the AWS regions in the Trial Landscapes - therefore we have to create a new subaccount in this region for these exercises - but technically this makes no difference for the exercises.  Of course, in production accounts SAP HANA Cloud is available on multiple Microsoft Azure Regions as well. For an overview please go to the [Discovery Center](https://discovery-center.cloud.sap/serviceCatalog/sap-hana-cloud?region=all&tab=service_plan). 
+> SAP HANA Cloud is currently only available in one of the AWS regions in the SAP BTP Trial Landscapes - therefore you have to create a new subaccount in this region for these exercises - but technically this makes no difference for the exercises.  Of course, in production accounts SAP HANA Cloud is available on multiple Microsoft Azure Regions as well. For an overview please go to the [Discovery Center](https://discovery-center.cloud.sap/serviceCatalog/sap-hana-cloud?region=all&tab=service_plan). 
 
 ![Subaccount details](./images/07-subaccountdetails.png)
 

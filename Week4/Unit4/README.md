@@ -24,15 +24,18 @@ Logon to SAP Analytics Cloud using the credentials from [Week 4, Unit1](../Unit1
 ![NewConnection](./images/01-new-connection.png)
 
 
-1.2. Select **SAP HANA** (Connect to Live Data). 
+1.2 Select **SAP HANA** (Connect to Live Data). 
 
 ![NewHANACloud](./images/02-hana-connection.png)
 
+1.3 Switch the **Connection Type** from **SAP Cloud Platform** to **SAP HANA Cloud**. 
 
-1.3. Enter the credentials for SAP HANA Cloud and click OK.
+![Connection Type](./images/connection_type.png)
+
+1.4 Enter the credentials for **SAP HANA Cloud** and click OK.
 
   Connection Type : SAP HANA Cloud
-  Host : <your HANA Cloud instance host name> (how to get the host name: [Week 4, Unit 3 - Step 7.4](../Unit3/README.md#hostname))
+  Host : <your HANA Cloud instance host name without port> (how to get the host name: [Week 4, Unit 3 - Step 7.4](../Unit3/README.md#hostname))
   Authentication Method : User Name and Password
   User Name : DBADMIN
   Password : <Password for DBADMIN>
@@ -41,4 +44,4 @@ Logon to SAP Analytics Cloud using the credentials from [Week 4, Unit1](../Unit1
 
   ## Summary
   
-  Good Job! Now you have successfully setup a live connection from SAP Analytics Cloud to SAP HANA Cloud to
+  Good Job! Now you have successfully set up a live connection from SAP Analytics Cloud to SAP HANA Cloud. In the next unit, you will leverage this connection consume the data through a virtual table on SAP HANA Cloud. 
