@@ -25,19 +25,19 @@ In this exercise we will implement the end to end flow. We will create a virtual
 1.2 Open your SAP HANA Cloud instance in the SAP HANA Database Explorer. 
     ![Database Explorer](./images/databaseexplorer.png)
 
-1.2 Open the remote connection we created in the previous unit and locate the table of Azure Data Explorer created in [Week 4, Unit2](../Unit2/README.md).
+1.2 Open the remote connection you created in the previous unit and locate the table of Azure Data Explorer created in [Week 4, Unit2](../Unit2/README.md).
 
 ![LocateTable](./images/01-locate-table.png)
 
-1.2. Select the table and click the button Create Remote Table
+1.2. Select the table and click **Create Virtual Object(s)**.
 
 ![CreateRemoteTable](./images/02-create-remote-table.png)
 
-1.3. Enter a name and click Create.
+1.3. Enter **virtual-employee-sample-data** as table name, select **DBADMIN** as the scheman and click **Create**.
 
 ![SaveRemoteTable](./images/03-remote-table-name.png)
 
-1.4. Click Tables in the left menu and locate the table created in the previous step. Search the table by name.
+1.4. Double-Click **Tables** in the catalog and open the virtual table that you have created previously.
 
 ![OpenRemoteTable](./images/04-virtual-table.png)
 
