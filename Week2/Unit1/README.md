@@ -4,7 +4,7 @@ This exercise is part of the openSAP course [Building applications on SAP Busine
 
 The objective of the exercise is to setup the development environment for the following units and weeks. Specifically, for this Unit, this means that you will sign up for the Microsoft365 program and create a SharePoint page, which is required for Unit 2. PDF files coming from a S/4HANA system will be stored there.
 
-Additionally, you are going to add the Microsoft365 Dveloper account as an administrator to the Azure subscription. With the Microsoft365 Developer Account you have access to Microsoft Teams but to use the Microsoft Bot channel (that's coming with the Azure trial subscription) a Azure subscription is necessary. 
+Additionally, you are going to add the Microsoft365 Developer account as an administrator to the Azure subscription. With the Microsoft365 Developer Account you have access to Microsoft Teams but to use the Microsoft Bot channel (that's coming with the Azure trial subscription) a Azure subscription is necessary. 
 
 ## Problems
 > If you have any issues with the exercises, don't hesitate to open a question in the openSAP Discussion forum for this course. Provide the exact step number: "Week2Unit1, Step 1.1: Command cannot be executed. My expected result was [...], my actual result was [...]". Logs, etc. are always highly appreciated. 
