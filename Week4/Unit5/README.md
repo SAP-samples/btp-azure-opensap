@@ -43,7 +43,7 @@ In this exercise we will implement the end to end flow. We will create a virtual
 
 ## Step 2 - Create Calculation View
 
-2.1 Create Calculation view in Business Application Studio
+2.1 Create Calculation view in Business Application Studio .  Follow the tutorials first on ['How to start using SAP Business Application Studio'](https://microlearning.opensap.com/media/How+to+Start+Developing+Applications+with+SAP+Business+Application+Studio+-+SAP+HANA+Cloud/1_gbmyhpa8 ) and then on ['How to create Calculation views'](https://microlearning.opensap.com/media/How+to+Create+Calculation+Views+-+SAP+HANA+Cloud/1_1kyl8ac8 )
 ![CreateCalcView](./images/05-calc-view.png)
 
 2.2 Add addtrbutes and measures
