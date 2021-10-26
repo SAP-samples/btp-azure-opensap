@@ -98,7 +98,7 @@ In order to test the imported data, you can run a quick Kusto query.
 
 ---
 
-4.1. Select **Take 10** from the Quick query section.  
+4.1.  Select **Take 10** from the Quick query section.  
 ![Run Query](./images/quick-query.png)
 
 You should get 10 records of the recently ingested data. 

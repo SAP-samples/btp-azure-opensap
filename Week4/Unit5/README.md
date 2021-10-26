@@ -12,7 +12,20 @@ In this exercise we will implement the end to end flow. We will create a virtual
  
 ## Step 1 - Create Virtual Table (aka Remote Table) for ADX table in SAP HANA Cloud
 
-1.1. Open the remote connection we created in the previous unit and locate the table of Azure Data Explorer created in [Week 4, Unit2](../Unit2/README.md).
+1.1. Make sure you that all your involved artefacts are running. 
+
+- SAP HANA Cloud is running [Week 4, Unit 3](../Unit3/README.md#hanacloudstatus)
+- Azure VM is running - [Week 4, Unit 3](../Unit3/README.md#restartvm)
+- Data Provisioning Agent is started 
+    ![Status of DPAgent](./images/agentstatus.png)
+- SAP HANA Cloud connection is healthy. When your SAP HANA Cloud instance was stopped/restarted, you need to go back to the DPAgent configuration and re-initiate the connection to SAP HANA Cloud. [Week 4, Unit 3](../Unit3/README.md#hanaconnectioninit) shows you how to initiate the connection. 
+    ![Status of DPAgent](./images/jdbc_connection_broken.png)
+  
+  
+1.2 Open your SAP HANA Cloud instance in the SAP HANA Database Explorer. 
+    ![Database Explorer](./images/databaseexplorer.png)
+
+1.2 Open the remote connection we created in the previous unit and locate the table of Azure Data Explorer created in [Week 4, Unit2](../Unit2/README.md).
 
 ![LocateTable](./images/01-locate-table.png)
 
