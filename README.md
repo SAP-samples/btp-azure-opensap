@@ -16,6 +16,8 @@ Throught this course we will create and use several accounts. Obviously you need
 
 The registration of the accounts is part of the exercises, so you do not need to have any accounts beforehand.
 
+> **IMPORTANT: We recommend to perform all these setps in a Private-Window in your browser to make sure that you don't use your corporate or other already existing authentications.  ** 
+
 So in summary you will create the following accounts. 
 
 
