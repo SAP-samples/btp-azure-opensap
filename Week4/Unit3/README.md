@@ -523,12 +523,28 @@ In order to be able to connect to Azure Data Explorer, a specific Smart Data Int
 * **Database Name:** Database name that you have created in [Week 4, Unit2](../Unit2/README.md)
 * **Additional JDBC connection paramter:** authentication=ActiveDirectoryPassword
 
+![New Remoute Source - DB section](./images/newremotesource_db.png)
+
 10.3 Scroll further to the **Security** section of the Remote Source creation form and provide the following settings: 
 
 * **Use SSL:** true
 * **Host Name in Certificate**: *.kusto.windows.net
 
-10.4 Scroll further to the **Security** section of the Remote Source creation form and provide the following settings: 
+![New Remoute Source - Security section](./images/newremotesource_security.png)
+
+10.4 Scroll further to the **Credentials** section of the Remote Source creation form and provide the following settings: 
+
+* **Credentials Mode:** Technical User
+* **User Name:** Your Azure Portal User (that you have used to create the Azure Data Explorer cluster)
+* **Password**: Password of your Azure Portal User
+
+Click on **Create**.
+
+![New Remoute Source - Security section](./images/newremotesource_cred.png)
+
+10.5 To check the remote source status, open the context menu of Remote Sources and select **Show Remote Sources**. 
+
+![New Remoute Source - Security section](./images/showremotesourcestatus.png)
 ## Summary
 
 Well done! You have succesfully set up an Azure Virtual Machine, installed the Data Provisioning Agent on it, connected the DPAgent with your SAP HANA Cloud instance and registered the MssqlLogReaderAdapter (to read from Azure Data Explorer). 
