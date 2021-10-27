@@ -72,7 +72,7 @@ You should then see a conformation that the virtual machine was succesfully crea
 
 ---
 
-**IMPORTANT:** <a name="restartvm"Stop & Start your Virtual Machine when you don't need it. The Virtual Machine is otherwise unnecessarily consuming some of your free credits (in case you are using the Azure Free Trial subscription). </a>
+**IMPORTANT:** <a name="restartvm">Stop & Start your Virtual Machine when you don't need it. The Virtual Machine is otherwise unnecessarily consuming some of your free credits (in case you are using the Azure Free Trial subscription). </a>
 
 Search for your Virtual Machine in the Azure Portal: 
 
@@ -319,7 +319,7 @@ unzip sqljdbc_8.4.1.0_enu.zip -d /usr/sap/dataprovagent/lib
 
 ## Step 5 - Double-Check SAP HANA Cloud Status
 
-Since the SAP HANA Cloud instance in SAP BTP Trial is automatically stopped after a certain time, make sure that your SAP HANA Cloud instance is running. This is needed since you are going to establish a connection between the SAP HANA Cloud instance and the Data Provisioning Agent in the next step. 
+<a name="hanacloudstatus">Since the SAP HANA Cloud instance in SAP BTP Trial is automatically stopped after a certain time, make sure that your SAP HANA Cloud instance is running. This is needed since you are going to establish a connection between the SAP HANA Cloud instance and the Data Provisioning Agent in the next step. </a>
 
 ---
 
@@ -339,7 +339,9 @@ Since the SAP HANA Cloud instance in SAP BTP Trial is automatically stopped afte
 
 ![open SAP HANA Cloud instance in HANA Cloud Central](./images/open_hanacloudcentral.png)
 
-5.5 In case your SAP HANA Cloud instance is **Stopped**, select **...** to open the available actions for this SAP HANA Cloud instance. **Start** the instance. 
+5.5 In case your SAP HANA Cloud instance is **Stopped**, select **...** to open the available actions for this SAP HANA Cloud instance. **Start** the instance.
+
+> Starting the instance can take a few minutes. 
 
 ![Start HANA Cloud instance](./images/open_hanacloudcentral.png)
 
@@ -381,7 +383,7 @@ cd /usr/sap/dataprovagent/bin
 
 ## Step 7 - Establish Connection between SAP HANA Cloud and Data Provisioning Agent
 
-This section will walk you through the steps to be register the DPAgent with SAP HANA Cloud. 
+<a name="hanaconnectioninit">This section will walk you through the steps to be register the DPAgent with SAP HANA Cloud. </a>
 
 ---
 
@@ -397,7 +399,7 @@ This section will walk you through the steps to be register the DPAgent with SAP
 
 7.3 Hit enter to Keep the default value for **Use encrypted JDBC connection**. 
 
-7.4 <a ="hostname">You are asked to enter the host name of your SAP HANA Cloud instance. Go back to the SAP HANA Cloud Central (Steps 5.1 - 5.3) to copy the host name of your SAP HANA Cloud instance and paste the value into the DPAgent configuration **without the port number** and **without the protocol in the beginning**.  </a>
+7.4 <a name="hostname">You are asked to enter the host name of your SAP HANA Cloud instance. Go back to the SAP HANA Cloud Central (Steps 5.1 - 5.3) to copy the host name of your SAP HANA Cloud instance and paste the value into the DPAgent configuration **without the port number** and **without the protocol in the beginning**.  </a>
 
 > host name example: ffd9df73-e90a-4e4e-a216-687d306ed47c.hana.trial-us10.hanacloud.ondemand.com
 
@@ -521,12 +523,28 @@ In order to be able to connect to Azure Data Explorer, a specific Smart Data Int
 * **Database Name:** Database name that you have created in [Week 4, Unit2](../Unit2/README.md)
 * **Additional JDBC connection paramter:** authentication=ActiveDirectoryPassword
 
+![New Remoute Source - DB section](./images/newremotesource_db.png)
+
 10.3 Scroll further to the **Security** section of the Remote Source creation form and provide the following settings: 
 
 * **Use SSL:** true
 * **Host Name in Certificate**: *.kusto.windows.net
 
-10.4 Scroll further to the **Security** section of the Remote Source creation form and provide the following settings: 
+![New Remoute Source - Security section](./images/newremotesource_security.png)
+
+10.4 Scroll further to the **Credentials** section of the Remote Source creation form and provide the following settings: 
+
+* **Credentials Mode:** Technical User
+* **User Name:** Your Azure Portal User (that you have used to create the Azure Data Explorer cluster)
+* **Password**: Password of your Azure Portal User
+
+Click on **Create**.
+
+![New Remoute Source - Security section](./images/newremotesource_cred.png)
+
+10.5 To check the remote source status, open the context menu of Remote Sources and select **Show Remote Sources**. 
+
+![New Remoute Source - Security section](./images/showremotesourcestatus.png)
 ## Summary
 
 Well done! You have succesfully set up an Azure Virtual Machine, installed the Data Provisioning Agent on it, connected the DPAgent with your SAP HANA Cloud instance and registered the MssqlLogReaderAdapter (to read from Azure Data Explorer). 
