@@ -135,7 +135,7 @@ We now want to invite the Microsoft365 developer account to the Azure Trial acco
 
 Your Microsoft365 account will now receive a mail with an activation link.
 
-4.8 Go to [https://outlook.com](outlook.com) in order to accept the Azure Active Directory invitation. 
+4.8 Go to [outlook.com](https://outlook.com) in order to accept the Azure Active Directory invitation. 
 
 4.9 **Login** with your Microsoft365 Developer account (*youruser@yourdomain.onmicrosoft.com*). 
 
