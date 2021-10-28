@@ -79,7 +79,7 @@ In order to simplify the import of data, a CSV file with related sample data is 
 ![Ingest New Data](./images/12-IngestNewData.jpg)
 
 3.2. Make sure that the cluster and database that you have created previously is selected. Enter the table name **employee-sample-data** and click on **Next:Source**.
-> **IMPORTANT**: In case you cannot select any cluster, have a look at the [troubleshooting](#adduser) section
+> **IMPORTANT**: In case you cannot select any cluster, have a look at the [troubleshooting](#troubleshooting) section
     ![Crate table](./images/13-CreateTable.png)
 
 
