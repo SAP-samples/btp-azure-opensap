@@ -24,7 +24,7 @@ Important: There are no costs involved! Even if your credit card information is 
 
 1.3 Use your **personal** (e.g. outlook.com, gmail.com) mail adress and proceed through the next steps where you will be asked to define a password and provide your birth date.
 
-**IMPORTANT:** Using your corporate mail address might cause issues later on when it comes to permissions in the Azure Active Directory your company might already have in place.
+**IMPORTANT: Using your corporate mail address will most likely cause issues later on when it comes to permissions in the Azure Active Directory your company might already have in place. That's why we highly recommend using your personal accounts!**
 
 
 

@@ -7,27 +7,130 @@ In this exercise we will setup SAP Analytics Cloud (SAC) and SAP HANA Cloud. SAC
 ## Problems
 > If you have any issues with the exercises, don't hesitate to open a question in the openSAP Discussion forum for this course. Provide the exact step number: "Week4Unit2, Step 1.1: Command cannot be executed. My expected result was [...], my actual result was [...]". Logs, etc. are always highly appreciated. 
  ![OpenSAP Discussion](../../images/opensap-forum.png)
+
+## Prerequisites
+
+Make sure that you have done the following units in order to be able to finish this week: 
+
+* [Week 1, Unit 2](../../Week1/Unit2/README.md)
+* [Week 1, Unit 3](../../Week1/Unit3/README.md)
  
 ## Step 1 - Setup SAP Analytics Cloud Trial Account
 
-Open [https://www.sap.com/products/cloud-analytics/trial.html] (https://www.sap.com/products/cloud-analytics/trial.html) to request SAP Analytics Cloud trial account.
-
-** If you have not yet created a user in the Azure Portal, please follow the steps outlined in Week 1 Unit 3 and continue with Step 1.1 afterwards.
+First, you need a SAP Analytics Cloud Trial account. That's what we do in this step. 
 
 ---
 
+1.1 Open [https://www.sap.com/products/cloud-analytics/trial.html] (https://www.sap.com/products/cloud-analytics/trial.html). 
 
-1.1. Register for SAP Trial Account.
-Open the SAC trial account link and click the button start your free trial. 
+1.2 Make sure you are logged in with your user that you have created/used in [Week 1, Unit 2](../../Week1/Unit2/README.md)
 
- ![Registration](./images/01-registration.png)
+**IMPORTANT: In case you log in with a gmail.com/yahoo.com email address: Please create a new account with a different email address. The SAP Analytics Cloud Trial is not permitted for so-called "personal accounts".** 
 
-1.2. Verify Email Address
-Email will be sent to verify the email address. Click the link to verify.
+![Registration](./images/00-login.png)
 
- ![EmailVerification](./images/02-email-confirmation.png)
+> In case you have registered with a new mail address, please make sure that you check your inbox in order to finish the verification process. 
+
+1.2 Select **Start your free trial**. 
+
+1.3. You'll receive an activation mail. Select **
+
+![Activation Mail](./images/03-sac-activation.png)
  
- 1.2. Confirmation
-Once the email address is verified successfully, confirmation page will be displayed.
+1.4 Set a **new password** for your SAP Analytics Cloud Trial account. 
 
- ![Welcome](./images/03-welcome.png)
+![Set Password for new SAC account](./images/04-set-password.png)
+
+1.5 **Continue** to access your SAP Analytics Cloud Trial. 
+
+![Continue to SAC](./images/05-continue.png)
+
+ ## Step 2 - Setup SAP Hana Cloud
+
+SAP HANA Cloud will play a substantial role in this weeks content. To be prepared for the next exercises, you'll set up a SAP HANA Cloud instance in your already existing SAP BTP Trial account. 
+
+---
+
+**Please make sure that you have gone through the exercises in the [prerequisites](#prerequisites) section.**
+
+2.1.Go to your [SAP BTP Trial Cockpit](https://hanatrial.ondemand.com)
+
+2.2 Select **Go To Your Trial Account**. 
+
+2.3 **Create** a new subaccount. 
+
+![New Subaccount Button](./images/06_newsubaccount.png)
+
+2.4 Provide **hanacloud** as the name of your new subaccount. Choose **US East (VA) cf-us10** for the region. Keep everything else as it is. 
+
+2.5. Continue with **Create**. Your new subaccount gets created now. 
+
+> SAP HANA Cloud is currently only available in one of the AWS regions in the SAP BTP Trial Landscapes - therefore you have to create a new subaccount in this region for these exercises - but technically this makes no difference for the exercises.  Of course, in production accounts SAP HANA Cloud is available on multiple Microsoft Azure Regions as well. For an overview please go to the [Discovery Center](https://discovery-center.cloud.sap/serviceCatalog/sap-hana-cloud?region=all&tab=service_plan). 
+
+![Subaccount details](./images/07-subaccountdetails.png)
+
+2.6 Select the new subaccount once the subaccount is sucessfully finished. (When the *Onboarding* text disappears from the subaccount tile)
+
+2.7 Navigate to **Entitlements** and select **Configure Entitlements**. 
+
+![Navigate to Entitlements](./images/08-entitlements.png)
+
+2.8 Select **Add Service Plans**. 
+
+![Add Service Plans button](./images/09-add-service-plan.png)
+
+2.9 Search for **HANA Cloud**, select the item from the result list and select all the available plans. Continue with **Add 3 Service plans**. 
+
+> not all of the service plans would actually be needed but it's easier if you want to continue with SAP HANA Cloud for other scenarios later on. 
+
+![SAP HANA Cloud service plans](./images/10-serviceplandetails.png)
+
+2.10 Double-check if the service plans were added to the entitlements list and **Save** your changes. 
+
+![save SAP HANA Cloud service plans](./images/11-save-entitlements.png)
+
+2.11 **Navigate to your subaccount** and **Enable Cloud Foundry**. 
+
+![Enable Cloud Foundry](./images/12-enable-cf.png)
+
+2.12 Keep everything as it is and **Create** the new Cloud Foundry environment instance. 
+
+![New cloud foundry environment detail](./images/13-new-environment.png)
+
+2.13 Select **Create Space** on the overview page of the subaccount to create a new Cloud Foundry space. 
+
+![Create Cloud Foundry](./images/14-create-space.png)
+
+2.14 Provide **hanaspace** as the space name. 
+
+2.15 Navigate to **SAP HANA Cloud** in your Cloud Foundry space and select **Create > SAP HANA database**. 
+
+![Create HANA database](./images/15-create-hana-database.png)
+
+2.16 You will be asked to choose the identity provider which you want to use for authentication. Choose **Sign in with default identity provider** and you'll automatically be signed in since you are already authenticated in other tabs of your browser. 
+
+![Choose Identity Provider](./images/16-default-idp.png)
+
+2.17 Choose **SAP HANA Cloud, SAP HANA Database** when you are asked for the type of the SAP HANA Cloud instance. 
+
+![Choose Type of HANA Cloud instance](./images/17-type-hanadb.png)
+
+2.18 Set **openSAP** as the SAP Hana Database instance name and provide a password for the DBADMIN user (Database administrator user). Accept all other default options and Create the HANA Database. 
+
+![Input Forms HANA Cloud detail](./images/18-hanacloud-details.png)
+
+2.19 Continue with **Create Now**. 
+
+![Create HANA Cloud now without further input](./images/19-create-hana-now.png)
+
+2.20 You are getting a summary of the SAP HANA Cloud instance details. Select **Create Instance**. 
+
+2.21 Wait until the SAP HANA Cloud instance is in state **Running**. (refresh every now and then)
+
+![SAP HANA Cloud Central - HANA creation started](./images/20-hana-creation-started.png)
+![SAP HANA Cloud Central - HANA creation finished](./images/21-hana-creation-finished.png)
+
+# Summary
+
+Congrats, good job! You succesfully created your own SAP Analytics Cloud Trial and already instantiated a SAP HANA Cloud instance. Both of them are essential bits & pieces for the next units in order to visualize data from Azure Data Explorer in SAP Analytics Cloud.
+

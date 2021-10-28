@@ -14,31 +14,34 @@ In this exercise we will setup connection between SAP Analytics Cloud (SAC) and 
 
 This section will walk you through the steps to be followed to setup up live connection between SAP Analytics Cloud and SAP HANA Cloud.
 
-** If you have not yet created a SAP Analytics Cloud trial account, please follow the steps outlined in Week 4 Unit 1 and continue with Step 1.1 afterwards.
+**IMPORTANT:** If you have not yet created a SAP Analytics Cloud trial account, please follow the steps outlined in Week 4 Unit 1 and continue with Step 1.1 afterwards.**
 
 ---
 
 1.1. Create new connection
-Logon to SAC application and click Connections in the menu on the rightside. Then click plus on the top left side.
+Logon to SAP Analytics Cloud using the credentials from [Week 4, Unit1](../Unit1/README.md). **Expand the side menu** and **click Connections** in the menu on the rightside. Then hit the **plus sign** on the top left side.
 
 ![NewConnection](./images/01-new-connection.png)
 
 
-1.2. Select SAP HANA
-Select SAP HANA under live connections list.
+1.2 Select **SAP HANA** (Connect to Live Data). 
 
 ![NewHANACloud](./images/02-hana-connection.png)
 
+1.3 Switch the **Connection Type** from **SAP Cloud Platform** to **SAP HANA Cloud**. 
 
-1.3. Enter HANA CLoud credentials.
-Enter the credentials for SAP HANA Cloud and click OK.
+![Connection Type](./images/connection_type.png)
+
+1.4 Enter the credentials for **SAP HANA Cloud** and click OK.
 
   Connection Type : SAP HANA Cloud
-  Host : <your HANA Cloud instance>
+  Host : <your HANA Cloud instance host name without port> (how to get the host name: [Week 4, Unit 3 - Step 7.4](../Unit3/README.md#hostname))
   Authentication Method : User Name and Password
-  User Name : <username in SAP HANA Cloud>
-  Password : <Password for the HANA Cloud User>
+  User Name : DBADMIN
+  Password : <Password for DBADMIN>
   
   ![Credentials](./images/03-credentials.png)
+
+  ## Summary
   
-  Now you have successfully setup Live Connection from SAP Analytics Cloud to SAP HANA Cloud
+  Good Job! Now you have successfully set up a live connection from SAP Analytics Cloud to SAP HANA Cloud. In the next unit, you will leverage this connection consume the data through a virtual table on SAP HANA Cloud. 
