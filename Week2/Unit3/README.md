@@ -509,7 +509,10 @@ Enter **xmlns:d=http://schemas.microsoft.com/ado/2007/08/dataservices** in the n
 * Authentication:- None
 * Request Headers: *
 * Response Headers: *
+  
+**BTP Trial Region** you can find in SAP BTP Cockpit Overview Page. Shortcode of the region you can find in **API Endpoint** URL. e.g. **ap21**
 
+![BTP Region](./images/cif_region.png)
 
 >In the query parameters, you can notice the usage of the property.byteSize field. The property **byteSize** is set in the Groovy Script step. To dynamically set the document id, you can notice the usage of the property.doc_id field. The property doc_id is set in the **Initialize SP Values** integration step. The overwrite query parameter is set to true, to override existing files in SharePoint. Setting it to false, would ensure that files are not overwritten and may result in a **429 file already exists** error.
 
