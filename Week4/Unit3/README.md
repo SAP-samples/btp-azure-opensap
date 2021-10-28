@@ -443,7 +443,7 @@ Now, that the connection between SAP HANA Cloud and the DPAgent is established, 
 > In case your DPAgent config tool isn't running anymore, please revisit Step 6
 
 8.1 In the DPAgent configuration tool, select **Option 7** (Agent Registration) followed by **Option 1** (Register Agent).
-![Rest of the DPAgent config](./images/agent_status.png)
+![Rest of the DPAgent config](./images/register_agent_menu.png)
 
 8.2 Enter the following details during the interactive configuration:
 * **Agent Name**: Agent on Azure
