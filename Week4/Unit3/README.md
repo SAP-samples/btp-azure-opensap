@@ -327,7 +327,7 @@ unzip sqljdbc_8.4.1.0_enu.zip -d /usr/sap/dataprovagent/lib
 
 ![Navigate to SAP HANA Cloud subaccount](./images/hanacloud_subaccount.png)
 
-5.2 Open the **dev** space. 
+5.2 Open the **hanaspace** space. 
 
 ![Navigate to SAP HANA Cloud subaccount, dev space](./images/open_devspace.png)
 
