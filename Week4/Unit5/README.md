@@ -41,6 +41,8 @@ In this exercise we will implement the end to end flow. We will create a virtual
 
 ![OpenRemoteTable](./images/04-virtual-table.png)
 
+![OpenRemoteTable](./images/h11.png)
+
 ## Step 2 - Create Calculation View
 
 2.1.1. Go to SAP BTP cockpit. Open the subaccount 'hanacloud'.
