@@ -65,6 +65,29 @@ The SAP Business Application Studio entitlement would show up in available entit
 
 ![Add HDI Entitlements](./images/HanaHDI_Entitlements.png)
 
+
+2.1.4.1 Now navigate to SubAccount -> Space and click Instances from the left menu. Now click Create and select User-Provided Service Instance.
+
+![CreateUPS](./images/u1.png)
+
+2.1.4.2 Enter the name ups_opensap and enter the HANA Cloud details in the below format.
+{
+    "driver": "com.sap.db.jdbc.Driver",
+    "endpoint": "https://api.cf.us10.hana.ondemand.com",
+    "host": "<Host Name of HANA Cloud Instance>",
+    "password": "<Password for DBADMIN>",
+    "port": "443",
+    "schema": "DBADMIN",
+    "tags": [
+        "hana"
+    ],
+    "user": "DBADMIN"
+}
+
+
+![EnterUPSValues](./images/u2.png)
+
+
 2.1.5 Go to Service Marketplace on left and find SAP Business Application Studio and click on "Create" 
 
 ![Create BAS](./images/BAS_create.png)
