@@ -130,6 +130,16 @@ The SAP Business Application Studio entitlement would show up in available entit
 2.1.18 Now its time to deploy the project. Click the rocket icon next to the projecct
 ![FirstDeploy](./images/b8.png)
 
+ ![FirstDeploy](./images/h1.png)
+ ![FirstDeploy](./images/h2.png)
+ ![FirstDeploy](./images/h3.png)
+ ![FirstDeploy](./images/h4.png)
+ ![FirstDeploy](./images/h5.png)
+ ![FirstDeploy](./images/h6.png)
+ ![FirstDeploy](./images/h7.png)
+ ![FirstDeploy](./images/h8.png)
+ ![FirstDeploy](./images/h8.png)
+ 
 [TO DO ]
 
 
