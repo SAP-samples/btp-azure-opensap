@@ -43,8 +43,6 @@ In this exercise we will implement the end to end flow. We will create a virtual
 
 ## Step 2 - Create Calculation View
 
-2.1 Create Calculation view in Business Application Studio .
-
 2.1.1. Go to SAP BTP cockpit. Open the subaccount 'hanacloud'.
 
 ![Open Subaccount](./images/hanacloud_subaccount.png)
