@@ -70,7 +70,7 @@ The SAP Business Application Studio entitlement would show up in available entit
 
 ![CreateUPS](./images/u1.png)
 
-2.1.4.2 Enter the name ups_opensap and enter the HANA Cloud details in the below format.
+2.1.4.2 Enter the name ups_opensap and enter the HANA Cloud details in the below format and click Create button.
 {
     "driver": "com.sap.db.jdbc.Driver",
     "endpoint": "https://api.cf.us10.hana.ondemand.com",
