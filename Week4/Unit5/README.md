@@ -85,7 +85,29 @@ The SAP Business Application Studio entitlement would show up in available entit
 
 ![Create Dev Space](./images/BAS_start2.png)
 
+2.1.11 Once the dev space is created proceed to create Project and select SAP HANA Database project.
+![New Project](./images/b1.png)
 
+2.1.12 Enter name for the project as OPENSAP_WORKSPACE and click next.
+![WorkspaceName](./images/b2.png)
+
+2.1.13 Keep the other values as default values and click next button until finish.
+![FinishWorkspace](./images/b3.png)
+
+2.1.14 Open mta.yaml file and enter the highlighed values.
+![Create Dev Space](./images/b4.png)
+
+2.1.15 Click the bind buton next to ups_opensap connection service.
+![Bind](./images/b5.png)
+
+2.1.16 Select Bind to a user provided service
+![UPS](./images/b6.png)
+
+2.1.17 Select ups_opensap from the dropdown
+![ups_opensap](./images/b7.png)
+
+2.1.18 Now its time to deploy the project. Click the rocket icon next to the projecct
+![FirstDeploy](./images/b8.png)
 
 [TO DO ]
 
