@@ -233,7 +233,7 @@ Windows:
 ![SCP Transfer Windows](./images/scp_transfer_windows.png)
 
 macOS: 
-![SCP Transfer Windows](./images/scp_transfer_macOS.png)
+![SCP Transfer MacOS](./images/scp_transfer_macOS.png)
 
 3.3 After successfully copying the installer, switch back to the terminal/command prompt, where you are logged in to the VM and switch the user to the **dpa-user** by running: 
 
@@ -285,20 +285,23 @@ Now that the installation has been finished, the DPAgent is ready to be configur
 
 --- 
 
-4.1 Download the driver **version 8.4** [here](https://docs.microsoft.com/de-de/sql/connect/jdbc/release-notes-for-the-jdbc-driver?view=sql-server-ver15#84) to your local machine. 
+4.1 Download the driver **version 7.2.2** [here](https://go.microsoft.com/fwlink/?linkid=2122434) to your local machine. 
 
 ![Start DPAgent installer](./images/download-jdbc.png)
 
-4.2 Again, you need to send this JDBC Driver from your local machine to the VM running the following command in the terminal/command prompt **where you are NOT logged on with the dpa-user**:
+Extract the downloaded archive onto a local folder and look for the  **mssql-jdbc-7.2.2.jre8.jar**
+
+![Extract Driver](./images/extract_driver.png)
+
+4.2 You need to send this JDBC Driver from your local machine to the VM running the following command in the terminal/command prompt **where you are NOT logged on with the dpa-user**:
 
 ```shell
 scp -i <.cer file name> <jdbc file name> azureuser@<public ip address>:/tmp/
 ``` 
 
-Windows:
-![Copy JDBC driver on Windows](./images/copy_jdbc_win.png)
 
 macOS:
+
 ![Copy JDBC driver on macOS](./images/copy_jdbc_mac.png)
 
 4.3 Go back to the **terminal/command prompt where you are logged on with the dpa-user** and navigate to the **/tmp** directory: 
@@ -308,10 +311,10 @@ cd /tmp
 ```
 ![Go to the tmp directory](./images/jdbc_tmp_folder.png)
 
-4.4 Unzip the JDBC Driver ZIP file into the the **lib** directory of the DPAgent:
+4.4 Move or copy the JDBC Driver file into the the **lib** directory of the DPAgent:
 
 ```bash
-unzip sqljdbc_8.4.1.0_enu.zip -d /usr/sap/dataprovagent/lib
+mv mssql-jdbc-7.2.2.jre8.jar /usr/sap/dataprovagent/lib
 ```
 
 ![Unzip into /usr/sap/dataprovagent/lib directory ](./images/unzip_into_dir.png)

@@ -43,7 +43,53 @@ In this exercise we will implement the end to end flow. We will create a virtual
 
 ## Step 2 - Create Calculation View
 
-2.1 Create Calculation view in Business Application Studio .  Follow the tutorials first on ['How to start using SAP Business Application Studio'](https://microlearning.opensap.com/media/How+to+Start+Developing+Applications+with+SAP+Business+Application+Studio+-+SAP+HANA+Cloud/1_gbmyhpa8 ) and then on ['How to create Calculation views'](https://microlearning.opensap.com/media/How+to+Create+Calculation+Views+-+SAP+HANA+Cloud/1_1kyl8ac8 )
+2.1 Create Calculation view in Business Application Studio :   Follow the tutorials first on ['How to start using SAP Business Application Studio'](https://microlearning.opensap.com/media/How+to+Start+Developing+Applications+with+SAP+Business+Application+Studio+-+SAP+HANA+Cloud/1_gbmyhpa8 ) and then on ['How to create Calculation views'](https://microlearning.opensap.com/media/How+to+Create+Calculation+Views+-+SAP+HANA+Cloud/1_1kyl8ac8 )
+
+2.1.1. Go to SAP BTP cockpit. Open the subaccount 'hanacloud'.
+
+![Open Subaccount](./images/hanacloud_subaccount.png)
+
+2.1.2. Click on Entitlements on left panel and Click on Configure Entitlements and then on Add Service Plan buttons as shown:
+
+![Configure Entitlements](./images/ConfigureEntitlement.png)
+
+2.1.3 In the resulting screen find Business Application Studio , check the 'trial' plan click on 'Add 1 Service Plan' as shown:
+
+![Add service plan](./images/AddServicePlan.png)
+
+The SAP Business Application Studio entitlement would show up in available entitlements list as shown below:
+
+![BAS added](./images/BAS_added.png)
+
+2.1.4 Now repeat the above process and find SAP HANA Schema and HDI Containers and select all the options as shown and click pn 'Add Service Plans' :
+
+![Add HDI Entitlements](./images/HanaHDI_Entitlements.png)
+
+2.1.5 Go to Service Marketplace on left and find SAP Business Application Studio and click on "Create" 
+
+![Create BAS](./images/BAS_create.png)
+
+2.1.4  Accept the default values and click 'Create' :
+
+![Create BAS1](./images/BAS_create1.png)
+
+2.1.5 Clicking on Instances and Subscriptions tab on left should show the SAP Business Application Studio as 'Subscribed' as shown. Click on it to bring up the 'Go to Application' button. Click it.
+
+![Create BAS1](./images/BAS_create2.png)
+
+2.1.6 This should take you to the SAP Business Application Studio application in a new tab.
+
+![Start BAS](./images/BAS_start1.png)
+
+2.1.8  Click on 'Create Dev Space' button.
+
+![Create Dev Space](./images/BAS_start2.png)
+
+
+
+[TO DO ]
+
+
 ![CreateCalcView](./images/05-calc-view.png)
 
 2.2 Add addtrbutes and measures
