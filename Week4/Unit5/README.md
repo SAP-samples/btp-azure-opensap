@@ -198,11 +198,8 @@ The SAP Business Application Studio entitlement would show up in available entit
 4.5 Select Measure
 ![SelectMeasure](./images/16-select-measure.png) 
 
-4.6 Select Dimension
-![SelectDimension](./images/17-select-dimension.png) 
-
-4.7 Chart is rendered
-![RenderChart](./images/18-chart-rendered.png) 
+4.5 Chart is rendered
+![RenderChart](./images/sac1.png) 
 
 4.8 Save Canvas
 ![SaveCanvas](./images/20-save-canvas.png) 
