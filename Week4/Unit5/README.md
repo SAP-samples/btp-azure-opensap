@@ -175,7 +175,7 @@ The SAP Business Application Studio entitlement would show up in available entit
 ![LiveModel](./images/09-sac-model.png) 
 
 3.2 Select Data Source
-![SelectDataSourcel](./images/10-data-source.png) 
+![SelectDataSourcel](./images/sac1.png) 
 
 3.3 Save Model
 ![SaveModel](./images/11-save-model.png) 
@@ -199,7 +199,7 @@ The SAP Business Application Studio entitlement would show up in available entit
 ![SelectMeasure](./images/16-select-measure.png) 
 
 4.5 Chart is rendered
-![RenderChart](./images/sac1.png) 
+![RenderChart](./images/sac2.png) 
 
 4.8 Save Canvas
 ![SaveCanvas](./images/20-save-canvas.png) 
