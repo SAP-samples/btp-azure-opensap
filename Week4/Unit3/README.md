@@ -538,11 +538,14 @@ In order to be able to connect to Azure Data Explorer, a specific Smart Data Int
 10.4 Scroll further to the **Credentials** section of the Remote Source creation form and provide the following settings: 
 
 * **Credentials Mode:** Technical User
-* **User Name:** Your Azure Portal User (that you have used to create the Azure Data Explorer cluster)
-* **Password**: Password of your Azure Portal User
+* **User Name:** Your Microsoft Developer Account <YOUR_USER>@<YOUR_DOMAIN>.onmicrosoft.com
+* **Password**: Password of your Microsoft Developer Account
 
 Click on **Create**.
 
+If your authentication to the database fails run the below query in the ADX database.
+ .add database employeedb users(‘aaduser=<YOUR_USER>@<YOUR_DOMAIN>.onmicrosoft.com’)
+ 
 ![New Remoute Source - Security section](./images/newremotesource_cred.png)
 
 10.5 To check the remote source status, open the context menu of Remote Sources and select **Show Remote Sources**. 
