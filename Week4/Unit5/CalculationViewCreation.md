@@ -1,5 +1,5 @@
  
- ## Step 1 - Create Calculation View and deploy it in SAP HANA Cloud
+ ## Create Calculation View and deploy it in SAP HANA Cloud
  
   1. In your business application studio, select menu View -> Find Command
   ![FindCommand](./images/bh1.png)
@@ -34,10 +34,11 @@
    Note : If you have selected remote table directly in step 8, you will see more columns.
    ![ProjectSalary](./images/bh9.png)
    
-  11. Not select Aggregation and drag and drop "Salary" column to the output section.
+  11. Now select Aggregation and drag and drop "Salary" column to the output section.
    ![AggregateSalary](./images/bh10.png)
    
-  12. Click deploy button next to the project workspace. 
+  12. Click deploy button (Rocket icon) next to the project workspace and deploy the calculation view.
    ![DeployWorkspace](./images/bh11.png)
    
+   Now your calculcation view is successfully deployed to SAP HANA Cloud
   
