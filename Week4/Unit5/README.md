@@ -61,39 +61,47 @@ select "Salary" as "SALARY" , "City" , "State" , CAST("City" as nvarchar(50)) as
 
 ## Step 3 - Create Model in SAP Analytics Cloud
 
-3.1 Create Live Data Model
+Now that we have created the calculcation view, lets use it to create Live Data Model in SAP Analytics Cloud.
+
+
+3.1 Logon to SAP Analytics Cloud using the credentials from Week 4, Unit1. Expand the side menu and click Modeler in the menu on the rightside. Create Live Data Model.
 ![LiveModel](./images/09-sac-model.png) 
 
-3.2 Select Data Source
+3.2 Enter the below details and click Ok.
+
+System Type : SAP HANA
+Connection : opensap (connection created in Week 4 - Unit 4)
+Data Source : Calculation view created in ctep 2.3
+
 ![SelectDataSourcel](./images/sac1.png) 
 
-3.3 Save Model
+3.3 Once the model is created you will see Salary columns listed in the measure section. Now Save icon in the tool bar and name the model as "employee_model"
 ![SaveModel](./images/11-save-model.png) 
 
 
 ## Step 4 - Create Story in SAP Analytics Cloud
 
-4.1 Create Canvas
+4.1 Expand the side menu and click Stories in the menu on the rightside. Click Canvas to create a new canvas.
 ![CreateCanvas](./images/12-create-canvas.png) 
 
-4.2 Add Chart
+4.2 Select Chart to add chart to the story.
 ![AddChart](./images/13-add-chart.png) 
 
-4.3 Select Model
+4.3 Select employee_model created in the step 3.3.
 ![SelectSACModel](./images/14-select-model.png) 
 
-4.4 New Canvas with empty chart
+4.4 New Canvas with empty chart is create.
 ![OpenChart](./images/15-empty-chart.png) 
 
-4.5 Select Measure
+4.5 Click Edit button and Click Designer. Under the measure section select Salary.
 ![SelectMeasure](./images/16-select-measure.png) 
 
-4.5 Chart is rendered
+4.5 Once the measure is selected, the chart is automatically rendered. 
 ![RenderChart](./images/sac2.png) 
 
 4.8 Save Canvas
 ![SaveCanvas](./images/20-save-canvas.png) 
 
-
+Now your have Succcessfully visualized data in Azure Data Explorer in SAP Analytics Cloud
 
 
