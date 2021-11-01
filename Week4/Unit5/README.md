@@ -41,6 +41,12 @@ In this exercise we will implement the end to end flow. We will create a virtual
 
 ![OpenRemoteTable](./images/04-virtual-table.png)
 
+1.5. Create view by running the following SQL. If you have created the table with a different name or have renamed your columns adjust the SQL before running it.
+```SQL
+create view employee_view as 
+select "Salary" as "SALARY" , "City" , "State" , CAST("City" as nvarchar(50)) as "CITY_S" , CAST("State" as nvarchar(50) as "STATE_S" from DBADMIN."virtual-employee-sample-data"
+```
+
 ![OpenRemoteTable](./images/h11.png)
 
 ## Step 2 - Create Calculation View
