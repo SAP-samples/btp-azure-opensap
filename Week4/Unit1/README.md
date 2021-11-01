@@ -119,9 +119,9 @@ SAP HANA Cloud will play a substantial role in this weeks content. To be prepare
 
 ![Input Forms HANA Cloud detail](./images/18-hanacloud-details.png)
 
-2.19 Continue with **Create Now**. 
+2.19 Click next and continue to 5th step SAP HANA Database Advanced. Under connections select Allow All IP addressed and click  **Create Now**. 
 
-![Create HANA Cloud now without further input](./images/19-create-hana-now.png)
+![Create HANA Cloud now without further input](./images/all_all_IP.png)
 
 2.20 You are getting a summary of the SAP HANA Cloud instance details. Select **Create Instance**. 
 
