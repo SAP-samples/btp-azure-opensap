@@ -1,4 +1,4 @@
-## Setup User Provided Instance and Business Application Studio
+## Setup User Provided Service and Business Application Studio
 
 1.1. Go to SAP BTP cockpit. Open the subaccount 'hanacloud'.
 
