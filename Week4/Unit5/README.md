@@ -90,7 +90,7 @@ Data Source : Calculation view created in ctep 2.3
 4.3 Select employee_model created in the step 3.3.
 ![SelectSACModel](./images/14-select-model.png) 
 
-4.4 New Canvas with empty chart is create.
+4.4 New canvas with empty chart section is created.
 ![OpenChart](./images/15-empty-chart.png) 
 
 4.5 Click Edit button and Click Designer. Under the measure section select Salary.
