@@ -53,7 +53,7 @@ select "Salary" as "SALARY" , "City" , "State" , CAST("City" as nvarchar(50)) as
 
 2.1 [Follow steps outlined here to setup Business Application Studio and create user provided service](./BusinessApplicationStudioSetup.md)
 
-2.2 [Follow steps to configure HANA Cloud Authorization](./HANAAuthorization.md)
+2.2 [Follow steps to configure HANA Cloud authorization](./HANAAuthorization.md)
  
 2.3 [Follow steps outlined here to create calculation view](./CalculationViewCreation.md)
 
