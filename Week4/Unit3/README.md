@@ -544,7 +544,9 @@ In order to be able to connect to Azure Data Explorer, a specific Smart Data Int
 Click on **Create**.
 
 If your authentication to the database fails run the below query in the ADX database.
+ ```shell
  .add database employeedb users(‘aaduser=<YOUR_USER>@<YOUR_DOMAIN>.onmicrosoft.com’)
+  ```
  
 ![New Remoute Source - Security section](./images/newremotesource_cred.png)
 
