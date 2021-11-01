@@ -23,7 +23,7 @@
    ![Select UPS](./images/bh6.png)
 
   8. Type employee_view and click search. Once the Employee_view is listed, select it and click "Create Synonym". 
-  Note: If you have not created view in the SAP HANA Cloud for your remote table, you can search and select your remote table directly.
+  Note: If you have not created view in the SAP HANA Cloud for your remote table, you can search and select your remote table "virtual-employee-sample-data" directly.
 
    ![SelectView](./images/bh7.png)
    
