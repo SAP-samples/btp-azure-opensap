@@ -47,9 +47,9 @@ In this exercise we will implement the end to end flow. We will create a virtual
 
 2.1 [Follow steps outlined here to setup Business Application Studio and create user provided service](./BusinessApplicationStudioSetup.md)
 
-2.2 [Follow steps to configure HANA Cloud Authorization](./HANAAuthorization.md.md)
+2.2 [Follow steps to configure HANA Cloud Authorization](./HANAAuthorization.md)
  
-2.3 [Follow steps outlined here to create calculation view](./CalculationViewCreation.md.md)
+2.3 [Follow steps outlined here to create calculation view](./CalculationViewCreation.md)
 
 
 
