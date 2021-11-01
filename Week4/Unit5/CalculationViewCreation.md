@@ -1,26 +1,43 @@
-  ![FirstDeploy](./images/bh1.png)
-   ![FirstDeploy](./images/bh2.png)
-   ![FirstDeploy](./images/bh3.png)
-   ![FirstDeploy](./images/bh4.png)
-   ![FirstDeploy](./images/bh5.png)
-   ![FirstDeploy](./images/bh6.png)
-   ![FirstDeploy](./images/bh7.png)
-   ![FirstDeploy](./images/bh8.png)
-   ![FirstDeploy](./images/bh9.png)
-   ![FirstDeploy](./images/bh10.png)
-   ![FirstDeploy](./images/bh11.png)
+ 
+ ## Step 1 - Create Calculation View and deploy it in SAP HANA Cloud
+ 
+  1. In your business application studio, select menu View -> Find Command
+  ![FindCommand](./images/bh1.png)
+ 
+  2. Type "HANA Database Artifact" and select Create SAP HANA Database Artifact.
+  ![HANAArtifact](./images/bh12.png)
+  
+  3. Select artifact type as "Calculation View" and enter artifact name "Employee_calculation_view".
+   ![CreateCV](./images/bh2.png)
    
-    
-[TO DO ]
+  4. Once the calculation view is created, select the calculation view and add "Projection" to the calculation view.
+   ![AddProjection](./images/bh3.png)
+   
+  5. Select the projection and connect the projection to the Aggregation
+   ![ConnectProjectionAggregation](./images/bh4.png)
 
+  6. Select the Projection and click the Plus button to add data source
+   ![AddSource](./images/bh5.png)
+   
+  7. Click the Services drop down and select "ups_opensap"
+   ![Select UPS](./images/bh6.png)
 
-![CreateCalcView](./images/05-calc-view.png)
+  8. Type employee_view and click search. Once the Employee_view is listed, select it and click "Create Synonym". 
+  Note: If you have not created view in the SAP HANA Cloud for your remote table, you can search and select your remote table directly.
 
-2.2 Add addtrbutes and measures
-![CreateAttrDim](./images/06-create-attributes-measures.png)
-
-2.3 Deploy Calculation View
-![DeployCV](./images/07-deploy-cv.png) 
-
-2.4 Verify Deployment
-![LocateCV](./images/08-locate-cv.png) 
+   ![SelectView](./images/bh7.png)
+   
+  9. Now click Finish button.
+   ![ClickFinish](./images/bh8.png)
+   
+  10. Select projection and drag and drop "Salary" column to the output section. 
+   Note : If you have selected remote table directly in step 8, you will see more columns.
+   ![ProjectSalary](./images/bh9.png)
+   
+  11. Not select Aggregation and drag and drop "Salary" column to the output section.
+   ![AggregateSalary](./images/bh10.png)
+   
+  12. Click deploy button next to the project workspace. 
+   ![DeployWorkspace](./images/bh11.png)
+   
+  
