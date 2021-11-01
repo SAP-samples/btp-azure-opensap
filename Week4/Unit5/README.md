@@ -47,41 +47,10 @@ In this exercise we will implement the end to end flow. We will create a virtual
 
 2.1 [Follow steps outlined here to setup Business Application Studio and create user provided service](./BusinessApplicationStudioSetup.md)
 
- ![FirstDeploy](./images/h1.png)
- ![FirstDeploy](./images/h2.png)
- ![FirstDeploy](./images/h3.png)
- ![FirstDeploy](./images/h4.png)
- ![FirstDeploy](./images/h5.png)
- ![FirstDeploy](./images/h6.png)
- ![FirstDeploy](./images/h7.png)
- ![FirstDeploy](./images/h8.png)
- ![FirstDeploy](./images/h8.png)
+2.2 [Follow steps to configure HANA Cloud Authorization](./HANAAuthorization.md.md)
  
-  ![FirstDeploy](./images/bh1.png)
-   ![FirstDeploy](./images/bh2.png)
-   ![FirstDeploy](./images/bh3.png)
-   ![FirstDeploy](./images/bh4.png)
-   ![FirstDeploy](./images/bh5.png)
-   ![FirstDeploy](./images/bh6.png)
-   ![FirstDeploy](./images/bh7.png)
-   ![FirstDeploy](./images/bh8.png)
-   ![FirstDeploy](./images/bh9.png)
-   ![FirstDeploy](./images/bh10.png)
-   ![FirstDeploy](./images/bh11.png)
- 
-[TO DO ]
+2.3 [Follow steps outlined here to create calculation view](./CalculationViewCreation.md.md)
 
-
-![CreateCalcView](./images/05-calc-view.png)
-
-2.2 Add addtrbutes and measures
-![CreateAttrDim](./images/06-create-attributes-measures.png)
-
-2.3 Deploy Calculation View
-![DeployCV](./images/07-deploy-cv.png) 
-
-2.4 Verify Deployment
-![LocateCV](./images/08-locate-cv.png) 
 
 
 ## Step 3 - Create Model in SAP Analytics Cloud
