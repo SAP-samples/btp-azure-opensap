@@ -65,7 +65,7 @@ The SAP Business Application Studio entitlement would show up in available entit
 
 ![Create Dev Space](./images/BAS_start2.png)
 
-1.11 Once the dev space is created proceed to create Project and select SAP HANA Database project.
+1.11 Once the dev space is created, open the workspace and proceed to create project. Select SAP HANA Database project.
 ![New Project](./images/b1.png)
 
 1.12 Enter name for the project as OPENSAP_WORKSPACE and click next.
