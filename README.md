@@ -1,3 +1,6 @@
+[![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/btp-azure-opensap)](https://api.reuse.software/info/github.com/SAP-samples/btp-azure-opensap)
+
+
 # Building applications on SAP BTP with Microsoft Services
 
 Welcome! This repository serves as a central point for all exercises that are part of the openSAP course **Building applications on SAP BTP with Microsoft Services**. 
@@ -12,13 +15,13 @@ Please do the exercises whenever they appear in the respective week pages in the
 
 ### Accounts/Subscriptions needed in this course 
 
-Throught this course we will create and use several accounts. Obviously you need to have a private mail address (outlook.com or alike) to register for these offerings. We do not recommend using your company email address for account registration, as this can lead to authorisation problems. (For example, if your company already has an Azure subscription).
+Throughout this course you will create and use several accounts. Obviously you need to have a private email address (outlook.com or alike) to register for these offerings. We do not recommend using your company email address for account registration, as this can lead to authorisation problems. (For example, if your company already has an Azure subscription).
 
 The registration of the accounts is part of the exercises, so you do not need to have any accounts beforehand.
 
 > **IMPORTANT: We recommend to perform all these setps in a Private-Window in your browser to make sure that you don't use your corporate or other already existing authentications.** 
 
-So in summary you will create the following accounts. 
+So in summary you will create the following accounts:
 
 
 | Service                           | Mail address                              | Link to the Unit                                                                         |
