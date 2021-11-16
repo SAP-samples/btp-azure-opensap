@@ -1,3 +1,6 @@
+[![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/btp-azure-opensap)](https://api.reuse.software/info/github.com/SAP-samples/btp-azure-opensap)
+
+
 # Building applications on SAP BTP with Microsoft Services
 
 Welcome! This repository serves as a central point for all exercises that are part of the openSAP course **Building applications on SAP BTP with Microsoft Services**. 
