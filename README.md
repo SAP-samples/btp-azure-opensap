@@ -25,9 +25,11 @@ So in summary you will create the following accounts.
 | --------------------------------- | ----------------------------------------- | ---------------------------------------------------------------------------------------- |
 | SAP BTP Trial Account             | privatemail@outlook.com                   | [Week 1, Unit 2](https://github.com/SAP-samples/btp-azure-opensap/tree/main/Week1/Unit2) |
 | Azure Trial Account               | privatemail@outlook.com                   | [Week 1, Unit 3](https://github.com/SAP-samples/btp-azure-opensap/tree/main/Week1/Unit3) |
-| Microsoft365 Developer Account    | \<youruser>@\<yourdomain>.onmicrosoft.com | Week 2, Unit 1 - coming in Week 2                                                        |
+| Microsoft365 Developer Account    | \<youruser>@\<yourdomain>.onmicrosoft.com | [Week 2, Unit 1](https://github.com/SAP-samples/btp-azure-opensap/tree/main/Week2/Unit1) |
 | SAP Conversational AI account     | privatemail@outlook.com                   | Week 3, Unit 3 - coming in Week 3                                                        |
 | SAP Analytics Cloud Trial account | privatemail@outlook.com                   | Week 4, Unit 1 - coming in Week 4                                                        |
+
+Important: the Microsoft365 Developer account (\<youruser>@\<yourdomain>.onmicrosoft.com) needs to be added to the Azure Trial account. This is done in [Week2, Unit 1 (Step 1 - Step 4)]((https://github.com/SAP-samples/btp-azure-opensap/tree/main/Week2/Unit1)). From then on, you will need \<youruser>@\<yourdomain>.onmicrosoft.com to sign in to Azure.
 
 ## Known Issues
 
