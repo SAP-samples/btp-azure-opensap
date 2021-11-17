@@ -257,19 +257,33 @@ For using the SharePoint connector from Open Connectors capability of SAP Busine
 
 7.1 Logon to your [Azure Portal](https://portal.azure.com/) with your Microsoft365 Developer Account.
 
-7.2 Navigate to Azure Active Directory (Azure AD).
+7.2. Make sure that you are logged-in in the right Active Directory. 
+
+You should have 2 Directories available
+   * First one is the *directory* (Default Directory) created with your Microsoft Azure trial account and has the Azure subscription
+   * Second one is coming from Microsoft 365 Developer account
+
+For this exercise please switch to the **second (not default) directory**, which is coming from Microsoft 365 Developer account
+
+Click on your profile and press the "Switch directory" button.
+![Azure switch AD](./images/az-switch-dir.png)
+
+Switch to second **NOT Default Directory**
+![Azure switch AD](./images/az-switch-dir-3.png)
+
+7.3 Navigate to Azure Active Directory (Azure AD).
 
 ![Azure AD](./images/aar_0030.png)
 
 ![Azure AD](./images/aar_0040.png)
 
 
-7.3 Select **App Registrations**. Click **New registration** to create an OAuth application.
+7.4 Select **App Registrations**. Click **New registration** to create an OAuth application.
 
 ![Azure AD](./images/aar_0050.png)
 
 
-7.4 In the application registration prompt, enter an application name say SharePointOAuthApp, select the supported account types and in the Redirect URI enter the redirect URI for SAP Business Technology Platform Open Connectors, which is https://auth.cloudelements.io/oauth. Click on **Register**. 
+7.5 In the application registration prompt, enter an application name say SharePointOAuthApp, select the supported account types and in the Redirect URI enter the redirect URI for SAP Business Technology Platform Open Connectors, which is https://auth.cloudelements.io/oauth. Click on **Register**. 
 
 ![Azure AD](./images/aar_0080.png)
 
