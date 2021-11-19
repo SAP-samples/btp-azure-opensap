@@ -9,9 +9,6 @@ The objective of this exercise is to get your hands "dirty" and develop the targ
 > If you have any issues with the exercises, don't hesitate to open a question in the openSAP Discussion forum for this course. Provide the exact step number: "Week2Unit3, Step 1.1: Command cannot be executed. My expected result was [...], my actual result was [...]". Logs, etc. are always highly appreciated. 
  ![OpenSAP Discussion](../../images/opensap-forum.png)
 
-
-Welcome to Unit 3 of Week 2. In the comprehensive exercise of this unit, you will build up an end-to-end scenario, which allows you to store billing documents from S/4HANA Cloud to your SharePoint team site. To achieve this scenario, you will make use of different SAP Integration Suite components like Cloud Integration and Open Connectors, as well as Microsoft tools like SharePoint and Azure.
-
 ## Step 1 - Configure Integration Suite Open Connectors
 
 The Open Connectors component of the SAP Integration Suite, simplifies the connectivity to a lot of different resources like in this case **Microsoft SharePoint**. You will create a respective Open Connectors instance in this step, which will be used in the upcoming steps of this unit. So make sure your Connector is working properly before continuing with the next step. 
