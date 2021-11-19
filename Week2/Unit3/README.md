@@ -50,7 +50,7 @@ The Open Connectors component of the SAP Integration Suite, simplifies the conne
 1.7 In the connection wizard: 
 
 * enter a name for your connector instance like **SharePointApp**
-* enter your SharePoint address in the format {your_sharepoint_domain}.sharepoint.com
+* enter your SharePoint address in the format {your_sharepoint_domain}.sharepoint.com (NO HTTPS://!)
 * enter your copied Application (client) ID from the Azure app registration in the API Key text field, 
 * enter your copied secret from the Azure app registration in the API Secret text field and select **Show Optional Fields**. 
 
