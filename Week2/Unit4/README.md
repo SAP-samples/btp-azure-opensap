@@ -2,7 +2,7 @@ This exercise is part of the openSAP course [Building applications on SAP Busine
 
 # Set up SAP Cloud Integration and Azure Traffic Manager
 
-**DISCLAIMER: This exercise cannot be done in the SAP BTP Trial environment**
+**!!!! DISCLAIMER: This exercise cannot be done in the SAP BTP Trial environment**
 
 Extending your SAP S/4HANA business processes with SAP Business Technology Platform (BTP) includes making sure that you are ready to handle disaster recovery scenarios. When your SAP backend performs a failover, BTP workloads need to switch too. This can happen on configuration or on deployment level and involves adding an abstraction layer which is able to switch routing targets without the need to touch SAP S/4HANA backend configuration. For a timely recovery of the service chain, we need to apply automation to the process.
 
