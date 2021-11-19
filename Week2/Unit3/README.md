@@ -146,7 +146,7 @@ The SAP API Business Hub is the central catalog of all SAP and partner APIs for 
 ![API Business Hub](./images/sah_0060.png)
 
 
-2.10 Your request should return with a **200** return code. To make use of the sample API within your Cloud Integration flow, you need to retrieve your API key. Therefor, click on **Show API key** on the top right of your screen.
+2.10 Your request should return with a **200** return code. To make use of the sample API within your Cloud Integration flow, you need to retrieve your API key. To do so, click on **Show API key** on the top right of your screen.
 
 ![API Business Hub](./images/sah_0070.png)
 
