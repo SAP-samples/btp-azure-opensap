@@ -1,4 +1,4 @@
-**IMPORTANT: We are currently facing issues with the SAP API Business Hub: https://open.sap.com/courses/btpma1/question/90668b2e-c414-4ff9-b410-ce7f13bc7cdd**
+
 ---
 
 This exercise is part of the openSAP course [Building applications on SAP Business Technology Platform with Microsoft services](https://open.sap.com/courses/btpma1) - there you will find more information and context. 
@@ -142,8 +142,6 @@ The SAP API Business Hub is the central catalog of all SAP and partner APIs for 
 2.8 This API endpoint returns the billing document information in a PDF format. The document identifier needs to be passed as query parameter named BillingDoument in the format **BillingDocument= 'document_id'**.  
 
 2.9 Enter '90002930' (including the single quotes) into the **BillingDocument** field. Click on **Execute** to test your request. 
-
-> **IMPORTANT: We are currently facing issues with the SAP API Business Hub: https://open.sap.com/courses/btpma1/question/90668b2e-c414-4ff9-b410-ce7f13bc7cdd**
 
 ![API Business Hub](./images/sah_0060.png)
 
