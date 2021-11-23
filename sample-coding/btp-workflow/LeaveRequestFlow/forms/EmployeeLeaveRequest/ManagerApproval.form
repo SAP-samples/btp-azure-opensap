@@ -1,0 +1,62 @@
+{
+    "id": "ManagerApproval",
+    "schemaVersion": "1.1.0",
+    "name": "ManagerApproval",
+    "revision": "1.0",
+    "type": "task",
+    "readOnly": true,
+    "content": [
+        {
+            "id": "requestor",
+            "type": "string",
+            "label": "Requestor",
+            "readOnly": false,
+            "value": "${context.requestor}",
+            "constraints": {
+                "required": false
+            }
+        },
+        {
+            "id": "reason",
+            "type": "string",
+            "label": "Reason",
+            "readOnly": false,
+            "value": "${context.reason}",
+            "constraints": {
+                "required": false
+            }
+        },
+        {
+            "id": "startdate",
+            "type": "string",
+            "label": "Startdate",
+            "readOnly": false,
+            "value": "${context.startdate}",
+            "constraints": {
+                "required": false
+            }
+        },
+        {
+            "id": "enddate",
+            "type": "string",
+            "label": "Enddate",
+            "readOnly": false,
+            "value": "${context.enddate}",
+            "constraints": {
+                "required": false
+            }
+        }
+    ],
+    "decisions": [
+        {
+            "id": "accept",
+            "text": "Accept",
+            "decisionType": "positive"
+        },
+        {
+            "id": "decline",
+            "text": "Decline",
+            "decisionType": "negative"
+        }
+    ]
+}

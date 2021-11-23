@@ -1,0 +1,7 @@
+{
+    "requestorName": "Sample User",
+    "reason": "Vacation",
+    "requestor": "<mail address of your SAP BTP Trial account>",
+    "startdate": "2021-12-16",
+    "enddate": "2021-12-19"
+}

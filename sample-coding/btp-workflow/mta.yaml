@@ -1,0 +1,17 @@
+_schema-version: "3.2"
+ID: LeaveRequest
+version: 0.0.1
+modules:
+  - name: LeaveRequestFlow
+    type: com.sap.application.content
+    path: LeaveRequestFlow
+    requires:
+      - name: wm_workflow
+        parameters:
+          content-target: true
+resources:
+  - name: wm_workflow
+    parameters:
+      service: workflow
+      service-plan: lite
+    type: org.cloudfoundry.existing-service
