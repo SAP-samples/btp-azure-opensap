@@ -97,7 +97,7 @@ For authentication, OAuth2ClientCredentials needs to be selected and the Client 
 
  ![Import Destination](./images/u5_destination.png)
 
-2.3 Update the **Client ID** with the **Application (client) ID** value from the Azure app registration. Either you have noted down that value in [Step 1.7](#clientcredentials) or you can also go back to the Azure App registration and go the **overview** section of the App registration. 
+2.3 Update the **Client ID** with the **Application (client) ID** value from the Azure app registration. Either you have noted down that value in [Step 1.8](#clientcredentials) or you can also go back to the Azure App registration and go the **overview** section of the App registration. 
 
    ![Destination Client ID](./images/app_clientid.png)
 
@@ -105,7 +105,7 @@ For authentication, OAuth2ClientCredentials needs to be selected and the Client 
 
    ![Destination Client Secret](./images/copy_secret.png)
 
-2.5 Replace the placeholder **<Directory (tenant) ID>** in the **Token Service URL** with the actual **Directory (tenant) ID** from the Azure app registration. You have noted down the _Directory (tenant) ID_ in  [Step 1.7](#clientcredentials). Alternatively, you can go to the **overview** menu of the App registration to copy the value again. 
+2.5 Replace the placeholder **<Directory (tenant) ID>** in the **Token Service URL** with the actual **Directory (tenant) ID** from the Azure app registration. You have noted down the _Directory (tenant) ID_ in  [Step 1.8](#clientcredentials). Alternatively, you can go to the **overview** menu of the App registration to copy the value again. 
 
 2.6 **Save** the Destination in SAP BTP. 
 
