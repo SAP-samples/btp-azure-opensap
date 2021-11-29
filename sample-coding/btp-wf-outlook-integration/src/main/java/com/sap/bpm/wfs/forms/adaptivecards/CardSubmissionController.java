@@ -154,7 +154,8 @@ public class CardSubmissionController {
         httpPatch.setHeader("Authorization", "Bearer " + accessToken);
         httpPatch.setHeader("Content-Type", "application/json");
         httpPatch.setHeader("Accept", "application/json");
-        String json = "{\"context\": {\"result\": \"" + actionId + "\"}, \"status\": \"COMPLETED\"}";
+        String json = "{\"status\": \"COMPLETED\", \"decision\": \"" + actionId + "\"}";
+        //String json = "{\"context\": {\"result\": \"" + actionId + "\"}, \"status\": \"COMPLETED\"}";
         StringEntity entity;
         try {
             entity = new StringEntity(json);
