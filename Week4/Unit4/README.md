@@ -3,8 +3,7 @@ This exercise is part of the openSAP course [Building applications on SAP Busine
 
 # Connecting SAP Analytics Cloud with SAP HANA Cloud
 
-
-In this exercise we will setup connection between SAP Analytics Cloud (SAC) and SAP HANA Cloud. In Unit 5 we will visualize ADX data in a SAP Analytics Cloud story.
+In this exercise we will setup a connection between SAP Analytics Cloud (SAC) and SAP HANA Cloud. In Unit 5 we will finally visualize ADX data in a SAP Analytics Cloud story.
 
 ## Problems
 > If you have any issues with the exercises, don't hesitate to open a question in the openSAP Discussion forum for this course. Provide the exact step number: "Week4Unit4, Step 1.1: Command cannot be executed. My expected result was [...], my actual result was [...]". Logs, etc. are always highly appreciated. 
@@ -14,16 +13,16 @@ In this exercise we will setup connection between SAP Analytics Cloud (SAC) and 
 
 This section will walk you through the steps to be followed to setup up live connection between SAP Analytics Cloud and SAP HANA Cloud.
 
-**IMPORTANT:** If you have not yet created a SAP Analytics Cloud trial account, please follow the steps outlined in Week 4 Unit 1 and continue with Step 1.1 afterwards.**
+**IMPORTANT:** If you have not yet created a SAP Analytics Cloud trial account, please follow the steps outlined in [Week 4, Unit1](../Unit1/README.md) and continue with Step 1.1 afterwards.**
 
 ---
 
-1.1 Logon to SAP Analytics Cloud using the credentials from [Week 4, Unit1](../Unit1/README.md). **Expand the side menu** and **click Connections** in the menu on the left side. Then hit the **plus sign** on the top right side.
+1.1 Logon to SAP Analytics Cloud using the credentials from [Week 4, Unit1](../Unit1/README.md). **Expand the side menu** and click on **Connections**. Then hit the **plus sign** on the top right side.
 
 ![NewConnection](./images/01-new-connection.png)
 
 
-1.2 Select **SAP HANA** (Connect to Live Data). 
+1.2 Select **SAP HANA** (in the **Connect to Live Data** section which is easy to oversee!). 
 
 ![NewHANACloud](./images/02-hana-connection.png)
 
@@ -31,13 +30,13 @@ This section will walk you through the steps to be followed to setup up live con
 
 ![Connection Type](./images/connection_type.png)
 
-1.4 Enter the credentials for **SAP HANA Cloud** and click OK.
+1.4 Enter the credentials for **SAP HANA Cloud** and click **OK**.
 
 * Connection Type : **SAP HANA Cloud**</br>
 * Host : **\<your HANA Cloud instance host name without port\>** (how to get the host name: [Week 4, Unit 3 - Step 7.4](../Unit3/README.md#hostname))</br>
 * Authentication Method : **User Name and Password**</br>
 * User Name : **DBADMIN**</br>
-* Password : **\<Password for DBADMIN\>**
+* Password : **\<Password of DBADMIN\>**
   
   ![Credentials](./images/03-credentials.png)
 

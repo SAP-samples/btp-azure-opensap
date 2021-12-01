@@ -11,7 +11,7 @@ In this exercise we will setup connection between SAP HANA Cloud and Microsoft A
  
 ## Step 1 - Create Azure Virtual Machine
 
-As we want to federate data that resides at Azure Data Explorer (ADX), we should deploy the so called Data Provisioning Agent (DPAgent) as close as possible to the source data. Therefore we will be using Azure´s Virtual Machine service to deploy a SUSE Linux Enterprise virtual machine (VM), where the DPAgent will run.
+As we want to federate data that resides within Azure Data Explorer (ADX), we should deploy the so called Data Provisioning Agent (DPAgent) as close as possible to the source data. Therefore we will be using Azure´s **Virtual Machine service** to deploy a SUSE Linux Enterprise virtual machine (VM), where the DPAgent will run.
 
 ---
 
@@ -27,12 +27,12 @@ As we want to federate data that resides at Azure Data Explorer (ADX), we should
 
 1.4 In the basic configuration screen set the following configuration:
 * **Subscription:** Azure Trial subscription that you have setup in [Week 1, Unit3](../../Week1/Unit3/README.md)
-* **Resource Group:** penSAPWeek4-RG (created in the previous unit)
+* **Resource Group:** openSAPWeek4-RG (created in the previous unit)
 * **Virtual machine name:** DPAVM
 * **Region**: Same region as your Azure Data Explorer (previous unit) is located in
 * **Availability Options**: No infrastructure redundancy required (*not recommended for production*)
 * **Image**: SUSE Enterprise Linux image (e.g. SUSE Enterprise Linux 15 SP2 +Patching - Gen2)
-* **Security type** (if asked): Standard
+* **Security type** (if available): Standard
 * **Size**: Standard_B4ms - 4 vcpus, 16 GiB memory 
   >**IMPORTANT:** You need to click on **See all sizes** to be able to select this machine. </br>You can find a respective screenshot below!
 * **Authentication Type**: SSH public key
@@ -42,39 +42,47 @@ As we want to federate data that resides at Azure Data Explorer (ADX), we should
 
 ![Basic Tab for VM creation](./images/vmcreation_basic.png)
 
-> Hint: Select the correct size **B4ms** from the VM size selection.
+**Important**: Select the correct size **B4ms** from the VM size selection.
+
 ![Basic Tab for VM creation](./images/size_selection.png)
 
 1.5 Proceed by selecting **Next: Disks**
 
 1.6 Select **Standard SSD** for OS disk type. 
+
 ![Search for Azure VMs](./images/disk_type.png)
 
 1.7 Proceed with **Next: Networking**.
 
-11.8 For the **Virtual network**, the **Subnet** and the **Public IP** we are sticking to the defaults. Create a custom **Network security group**.
+1.8 For the **Virtual network**, the **Subnet** and the **Public IP** we are sticking to the defaults. **Create** a new **Network security group**.
 
 > **Note:** For the virtual network, the subnet and the public IP we are sticking to the defaults.
+
 ![New Security Group](./images/new_securitygroup.png)
 
-1.9 Keep everything as it is and continue with **OK**. 
+1.9 For the new **Network security group**, keep everything as it is and continue with **OK**. 
+
 ![New Security Group Details](./images/securitygroup_details.png)
 
 1.10 Proceed to **Review + create**. 
+
 ![Review + Create button for VM](./images/reviewcreate_vm.png)
 
 1.11 Go on and **Create** the Azure VM. 
+
 ![Review + Create button for VM](./images/create_vm.png)
 
 1.12 A prompt comes up. Make sure to **download the key pair** that will be required to log on to the VM via SSH.
+
 ![Download SSH key](./images/download_key.png)
 
 You should then see a conformation that the virtual machine was successfully created.
+
 ![Deployment in process](./images/vmdeploy_finished.png)
 
 
 ---
-**IMPORTANT:** <a name="restartvm">Stop your Virtual Machine when you don't need it. The Virtual Machine is otherwise unnecessarily consuming some of your free credits (in case you are using the Azure Free Trial subscription). </a>
+**IMPORTANT:** <a name="restartvm"></a>Stop your Virtual Machine when you don't need it. The Virtual Machine is otherwise unnecessarily consuming some of your free credits (in case you are using the Azure Free Trial subscription).
 
 Search for your Virtual Machine in the Azure Portal.
 
@@ -90,11 +98,11 @@ Step 2.6 will show you how to log on to your VM again. **Every time the Virtual 
 
 ## Step 2 - Prepare Azure Virtual Machine
 
-Before we can actually install the Data Provisioning Agent on the Virtual Machine, a few things like directories and users need to be created. 
+Before we can install the Data Provisioning Agent on the Virtual Machine, a few things like directories and users need to be created. 
 
 ---
 
-2.1 **WINDOWS USER ONLY: If you are using Windows, please make sure that you SSH & SCP installed. Therefore open a command prompt and execute the following commands:**
+2.1 **WINDOWS USER ONLY:** If you are using Windows, please make sure that you SSH & SCP installed. Therefore open a command prompt and execute the following commands:
 
 ```shell
 ssh
@@ -113,9 +121,9 @@ In case you are getting errors like *'not recognized as an internal or external 
 * SCP: <https://winscp.net/eng/docs/installation>
 * SSH: <https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse>
 
-> macOS users have these tools installed by default. 
+> **Hint:** macOS users have these tools installed by default. 
 
-2.2 In case you don't have a terminal (macOS)/command prompt (Windows) open, please open one now. 
+2.2 In case you don't have a terminal (macOS) or a command prompt (Windows) open, please open one now. 
 
 2.3 Navigate to the location of your key file that you have downloaded in step 1.12 using the **cd** command. 
 
@@ -139,6 +147,8 @@ macOS:
 
 2.6 Execute the following command to connect to your Azure VM.
 
+> Hint: **azureuser** is the actual username to be used! Don't replace it with another username in case you followed this tutorial. 
+
 Windows: 
 ```shell
 ssh -i <.cer file name> azureuser@<public ip address>
@@ -155,9 +165,9 @@ chmod 400 <.cer file name> && ssh -i <.cer file name> azureuser@<public ip addre
 
 > **Note:** Answer 'Are you sure you want to continue connecting (yes/no/[fingerprint])? with **yes**.
 
-One you see **Have a lot of fun** in the output, you are succesfully connected to your Virtual Machine. 
+Once you see **Have a lot of fun** in the output, you are succesfully connected to your Virtual Machine. 
 
-2.7 Next up, as we do not want to use the **azureuser**, who has root rights, to install and run the DP Agent we will create a user specific for the DPAgent activities. Therefore, execute the following command to create a new user: 
+2.7 Next up, as we do not want to use the **azureuser**, who has root privileges, to install **and** run the DP Agent we will create a user specific for the DPAgent activities. Therefore, execute the following command to create a new user: 
 
 ```shell
 sudo useradd -m dpa-user
@@ -224,13 +234,13 @@ Since the Virtual Machine is successfully created and prepared, you can now star
 
 ![Download DPAgent](./images/download_dpa.png)
 
-3.2 After the download is completed we send it from our local machine to the VM on Azure using the secure copy command. Therefore, open a **new terminal/command prompt** (to keep the existing ssh session alive) and execute the following command in a fresh terminal/command prompt.
+3.2 After the download is completed, we send it from our local machine to the VM on Azure using the secure copy command. Therefore, open a **new terminal/command prompt** (to keep the existing ssh session in the current terminal instance alive) and execute the following command in a fresh terminal/command prompt.
 
 ```shell
 scp -i <.cer file name> <downloaded DPAgent file> azureuser@<public ip address>:/tmp/
 ```
 
-> The \<.cer file name\> and  the \<public ip address\> were already used in Step 2.6. The same values should be used here. 
+> The \<.cer file name\> and the \<public ip address\> were already used in Step 2.6. The same values should be used here. 
 > The \<downloaded DPAgent file\> is the file that you have downloaded in Step 3.1. Make sure that you are using the right path to the file in this command. 
 
 Windows: 
@@ -241,12 +251,14 @@ macOS:
 
 3.3 After successfully copying the installer, switch back to the terminal/command prompt, where you are logged in to the VM and switch the user to the **dpa-user** by running: 
 
+> **Hint**: Your password will not on the screen when you're typing! Once you entered the password just hit Enter. 
+
 ```shell
 su - dpa-user
 ```
 ![Switch to DPA User](./images/switch_user.png)
 
-3.4 Navigate into the **tmp** directory, where you have copied the installer (Step 3.2) into by running: 
+3.4 Navigate into the **tmp** directory, where you have copied the installer (Step 3.2) by running: 
 
 ```shell
 cd /tmp
@@ -260,7 +272,7 @@ cd /tmp
 unzip <DPAgent ZIP File>
 ```
 
-> Note: double check if the DPAgent installer file was succesfully copied using the **ls** command to lis the directories content. 
+> Note: double check if the DPAgent installer file was succesfully copied using the **ls** command to list the directories content. 
 
 ![Unzip DPAgent Installer](./images/unzip_installer.png)
 
@@ -281,7 +293,7 @@ cd <unzipped directory name>
 ```
 ![Start DPAgent installer](./images/start_installer.png)
 
-The Data Provsioning Agent has now been succesfully installed!
+The Data Provisioning Agent has now been succesfully installed!
 
 ## Step 4 - Configure DPAgent - JDBC Driver 
 
@@ -294,7 +306,7 @@ Now that the installation has been finished, the DPAgent is ready to be configur
 ![Start DPAgent installer](./images/download-jdbc.png)
 
 
-4.2 You need to send this downloaded JDBC Driver archive from your local machine to the VM running the following command in the terminal/command prompt **where you are NOT logged on with the dpa-user**:
+4.2 You need to send this downloaded JDBC Driver archive from your local machine to the VM running the following command in the terminal/command prompt where you are **NOT logged on with the dpa-user**:
 
 ```shell
 scp -i <.cer file name> <downloaded jdbc file name> azureuser@<public ip address>:/tmp/
@@ -302,7 +314,7 @@ scp -i <.cer file name> <downloaded jdbc file name> azureuser@<public ip address
 
 ![Copy JDBC driver on macOS](./images/jdbc_driver_copy_windows.png)
 
-4.3 Go back to the **terminal/command prompt where you are logged on with the dpa-user** and navigate to the **/tmp** directory: 
+4.3 Go back to the terminal/command prompt where you are **logged on with the dpa-user** and navigate to the **/tmp** directory: 
 
 ```shell
 cd /tmp
@@ -340,17 +352,18 @@ mv mssql-jdbc-7.2.2.jre8.jar /usr/sap/dataprovagent/lib
 
 ![Navigate to SAP HANA Cloud subaccount, dev space](./images/open_devspace.png)
 
-5.3 Navigate to the **SAP HANA Cloud** menu item. 
+5.3 Navigate to the **SAP HANA Cloud** menu. 
 
 ![Navigate to SAP HANA Cloud menu](./images/hana_cloud_menu.png)
 
-5.4 Open the context menu of your SAP HANA Cloud instance using the **actions** button and select **Open in SAP HANA Cloud Central**. Sign in with your SAP BTP Trial account. 
+5.4 Open the context menu of your SAP HANA Cloud instance using the **Actions** button and select **Open in SAP HANA Cloud Central**. 
+Sign in with your SAP BTP Trial account if a login is requested.
 
 ![open SAP HANA Cloud instance in HANA Cloud Central](./images/open_hanacloudcentral.png)
 
 5.5 In case your SAP HANA Cloud instance is **Stopped**, select **...** to open the available actions for this SAP HANA Cloud instance. **Start** the instance.
 
-> Starting the instance can take a few minutes. 
+>**Note**: Starting the instance can take a few minutes. 
 
 ![Start HANA Cloud instance](./images/start_hanacloud.png)
 
@@ -358,7 +371,7 @@ mv mssql-jdbc-7.2.2.jre8.jar /usr/sap/dataprovagent/lib
 
 ![Start HANA Cloud instance](./images/refresh_instancen_status.png)
 
-> Wait until SAP HANA Cloud instance is in status **Running**
+> Wait until SAP HANA Cloud instance is in status **Running**.
 
 ## Step 6 - Start DPAgent
 
@@ -369,7 +382,8 @@ cd /usr/sap/dataprovagent/bin
 ```
 
 > In case you are not logged in anymore, please revisit Step 2.6 to log in. Make sure that you have the right public IP address (Step 2.4 & Step 2.5). 
-> **IMPORTANT:** Use the **dpa-user** for this operations. ```su - dpa-user``` is the right command to switch to the **dpa-user**. 
+
+> **IMPORTANT:** Use the **dpa-user** for the following operations operations. ```su - dpa-user``` is the right command to switch to the **dpa-user**. 
 
 ![List binary directory of DPAgent](./images/list_bindirectory.png)
 
@@ -390,55 +404,56 @@ cd /usr/sap/dataprovagent/bin
 ![Start DPAgent](./images/start_agent.png)
 
 
-## Step 7 - Establish Connection between SAP HANA Cloud and Data Provisioning Agent
+## Step 7 - Establish Connection between SAP HANA Cloud and the Data Provisioning Agent
 
 <a name="hanaconnectioninit"></a>This section will walk you through the steps to be register the DPAgent with SAP HANA Cloud. </a>
 
 ---
 
 
-> In case you are not connected with the Azure VM anymore, please revisit steps 2.4 - 2.6
+> In case you are not connected with the Azure VM anymore, please revisit steps 2.4 - 2.6.
 
-> In case your DPAgent config tool isn't running anymore, please revisit step 6
+> In case your DPAgent config tool isn't running anymore, please revisit step 6 of this unit.
 
-7.1 Enter **b** to navigate back to the main menu. And navigate to the SAP HANA Connection menu using **Option 6**.
+7.1 Enter **b** to navigate back to the main menu. And navigate to the **SAP HANA Connection** menu using Option **6**.
 
 ![Option SAP HANA Connection](./images/agent_hanaconnectionmenu.png)
 
-7.2 Enter **1** to choose Option 1 **Connect to SAP HANA Cloud via JDBC**. 
+7.2 Enter **1** to choose Option **1. Connect to SAP HANA Cloud via JDBC**. 
 
-7.3 Hit enter to Keep the default value for **Use encrypted JDBC connection**. 
+7.3 Hit enter to keep the default value for **Use encrypted JDBC connection**. 
 
 7.4 <a name="hostname"></a>You are asked to enter the host name of your SAP HANA Cloud instance. Go back to the SAP HANA Cloud Central (Steps 5.1 - 5.3) to copy the host name of your SAP HANA Cloud instance and paste the value into the DPAgent configuration **without the port number** and **without the protocol in the beginning**.
 
-> host name example: ffd9df73-e90a-4e4e-a216-687d306ed47c.hana.trial-us10.hanacloud.ondemand.com
+> Host name example: <br>
+ffd9df73-e90a-4e4e-a216-687d306ed47c.hana.trial-us10.hanacloud.ondemand.com
 
 ![SAP HANA Connection endpoint](./images/hanacloud_endpoint.png)
 ![Hostname in DPAgent config](./images/hostname_dpa.png)
 
-7.5 *Enter Port Number:* **443**
+7.5 Enter Port Number: **443**
 
-7.6 *Enter Agent Admin HANA User:* **DBADMIN**
+7.6 Enter Agent Admin HANA User: **DBADMIN**
 
-7.7 *Enter Agent Admin HANA User Password:* **DBADMIN Password** that you have provided in [**Week 4, Unit 1**](../Unit1/README.md) during the SAP HANA Cloud instance creation. 
+7.7 Enter Agent Admin HANA User Password: **DBADMIN Password** that you have created in [**Week 4, Unit 1**](../Unit1/README.md) during the SAP HANA Cloud instance creation. 
 
-7.8 *Repeat the password for* **DBADMIN**.
+7.8 Repeat the password for **DBADMIN**.
 
-7.9 *Enter Use Proxy Server[false]:* false
+7.9 Enter Use Proxy Server[false]: **false**
 
-7.10 *Enter HANA User Name for Agent Messaging:* SDI_DP_AGENT
+7.10 Enter HANA User Name for Agent Messaging: SDI_DP_AGENT
 
-7.11 *Enter HANA User Password for Agent Messaging:* Set an initial password for the **SDI_DP_AGENT** user.
+7.11 Enter HANA User Password for Agent Messaging: Set an initial password for the **SDI_DP_AGENT** user.
 
-> **IMPORTANT:** Whenever you will initiate the connection again, you will need to enter the password again.
+> **IMPORTANT:** Whenever you will initiate the connection again, you will need to enter the password again. So please make sure you note it down and store it safely!
 
-7.12 *Repeat the password from the previous step.*
+7.12 Repeat the password from the previous step.
 
-7.13 *Do you want to create a new SAP HANA user with the specified Agent XS HANA User credentials?:* **true**
+7.13 Do you want to create a new SAP HANA user with the specified Agent XS HANA User credentials?: **true**
 
 ![Rest of the DPAgent config](./images/jdbc-config-2.png)
 
-7.14 Press **Enter** to continue. 
+7.14 If the Connection to SAP HANA Cloud is configured correctly, press **Enter** to continue. 
 
 7.15 Select **Option b** to navigate pack to the main menu. 
 
@@ -446,15 +461,15 @@ cd /usr/sap/dataprovagent/bin
 
 ![Rest of the DPAgent config](./images/agent_status.png)
 
-## Step 8 - Register DPAgent in SAP HANA Cloud 
+## Step 8 - Register the DPAgent in SAP HANA Cloud 
 
 Now, that the connection between SAP HANA Cloud and the DPAgent is established, you can register the DPAgent itself in SAP HANA Cloud. 
 
 --- 
 
+> In case you are not connected with the Azure VM anymore, please revisit Steps 2.4 - 2.6. </br>
 
-> In case you are not connected with the Azure VM anymore, please revisit Steps 2.4 - 2.6 </br>
-> In case your DPAgent config tool isn't running anymore, please revisit Step 6
+> In case your DPAgent config tool isn't running anymore, please revisit Step 6.
 
 8.1 In the DPAgent configuration tool, select **Option 7** (Agent Registration) followed by **Option 1** (Register Agent).
 ![Rest of the DPAgent config](./images/register_agent_menu.png)
@@ -463,21 +478,21 @@ Now, that the connection between SAP HANA Cloud and the DPAgent is established, 
 * **Agent Name**: Agent on Azure
 * **Agent Host**: \<Public IP Adress from Azure Portal\>
 
-> if you are wondering why the public IP of the Azure VM in the screenshots of this exercise have changed: The VM was stopped and started to save costs and therefore received a new IP. How to Stop and Star the VM can be found [earlier in this exercise](#restartvm).
+> **Note**: If you are wondering why the public IP of the Azure VM in the screenshots of this exercise has changed: The VM was stopped and started to save costs and therefore received a new IP. Make sure you're using the current IP address of your VM which you can find in Azure Portal once you restart your Virtaul Machine. How to Stop and Star the VM can be found [earlier in this exercise](#restartvm).
   
 ![Public IP Address](./images/public_ip_azure.png)
 ![Agent registration details](./images/agent_details.png)
 
 8.2 Open your SAP HANA Cloud instance in the **SAP HANA Database Explorer**, launched from SAP HANA Cloud Central.
 
-> Step 5  of this exercise describes how to navigate to the SAP HANA Cloud Central. 
+> Step 5 of this exercise describes how to navigate to the SAP HANA Cloud Central. 
 
 ![Open HANA Database Explorer](./images/open_databaseexplorer.png)
 
-8.3 You should then see in the **catalog** of your SAP HANA Cloud database that you are DPAgent is registered. 
+8.3 You should then see in the **Catalog** of your SAP HANA Cloud database that you are DPAgent is registered. 
 ![Registered Agent in SAP HANA Database Explorer](./images/registered_agent.png)
 
-8.4 Restart your DPAgent. Therefore go to the main menu of the DPAgent configuration tool, choose **option 2** and hit the **Enter** key to choose **Start or Stop Agent**: 
+8.4 Restart your DPAgent. Therefore go to the main menu of the DPAgent configuration tool, choose **Option 2** and hit the **Enter** key to choose **Start or Stop Agent**: 
 
 ![Start DPAgent config tool](./images/startmenu_agent.png)
 
@@ -496,14 +511,15 @@ Now, that the connection between SAP HANA Cloud and the DPAgent is established, 
 
 ## Step 9 - Register Adapter
 
-In order to be able to connect to Azure Data Explorer, a specific Smart Data Integration (SDI) Adapter is necessary. In this step, you'll register the needed MssqlLogReaderAdapter. 
+In order to be able to connect to Azure Data Explorer, a specific Smart Data Integration (SDI) Adapter is necessary. In this step, you'll register the needed **MssqlLogReaderAdapter**. 
 
 ---
 
 9.1 Go back to your DPAgent configuration tool on the Azure Virtual Machine that you are connected with via ssh and navigate to **Option 8** (Adapter registration) from the main menu. 
 
-> In case you are not connected with the Azure VM anymore, please revisit Steps 2.4-2.6
-> In case your DPAgent config tool isn't running anymore, please revisit Step 6
+> In case you are not connected with the Azure VM anymore, please revisit Steps 2.4-2.6.
+
+> In case your DPAgent config tool isn't running anymore, please revisit Step 6.
 
 ![Registered Agent in SAP HANA Database Explorer](./images/menu_adapter_registration.png)
 
@@ -517,12 +533,12 @@ In order to be able to connect to Azure Data Explorer, a specific Smart Data Int
 
 ![Open HANA Database Explorer](./images/open_databaseexplorer.png)
 
-9.4 Open the **context menu** of the Adapters with a right-click and **Show Adapters**. You should now see that the MssqlLogReaderAdapter is registred on your DPAgent on the Azure VM. 
+9.4 Open the **context menu** of the Adapters with a right-click and **Show Adapters**. You should now see that the **MssqlLogReaderAdapter** is registred on your DPAgent on the Azure VM. 
 
 ![MssqlLogReaderAdapter registration in the HANA Database Explorer](./images/adapter_on_agent.png)
 
 
-## Step 10 - Create Remote Source for Azure Data Explorer 
+## Step 10 - Create a Remote Source for Azure Data Explorer 
 
 10.1 In the **SAP HANA Database Explorer**, right-click on **Remote Sources** and **Add Remote Source**. 
 
@@ -541,14 +557,14 @@ In order to be able to connect to Azure Data Explorer, a specific Smart Data Int
 
 ![New Remoute Source - DB section](./images/newremotesource_db.png)
 
-10.3 Scroll further to the **Security** section of the Remote Source creation form and provide the following settings: 
+10.3 Scroll further down to the **Security** section of the **Remote Source creation form** and provide the following settings: 
 
 * **Use SSL:** true
 * **Host Name in Certificate**: *.kusto.windows.net
 
 ![New Remoute Source - Security section](./images/newremotesource_security.png)
 
-10.4 Scroll further to the **Credentials** section of the Remote Source creation form and provide the following settings: 
+10.4 Scroll further down to the **Credentials** section of the **Remote Source creation form** and provide the following settings: 
 
 * **Credentials Mode:** Technical User
 * **User Name:** Your Microsoft Developer Account <YOUR_USER>@<YOUR_DOMAIN>.onmicrosoft.com
@@ -556,19 +572,25 @@ In order to be able to connect to Azure Data Explorer, a specific Smart Data Int
 
 Click on **Create**.
 
-If your authentication to the database fails run the below query in the ADX database.
- ```shell
- .add database employeedb users(‘aaduser=<YOUR_USER>@<YOUR_DOMAIN>.onmicrosoft.com’)
+> **IMPORTANT**: If your authentication to the database fails run the below query in the ADX database (see **Troubleshooting** part of [Week 4, Unit 2](../../Week4/Unit2/README.md))
+
+```shell
+ .add database employeedb users('aaduser=<YOUR_AZURE_AD_USER>@<YOUR_DOMAIN>.onmicrosoft.com')
   ```
  
 ![New Remoute Source - Security section](./images/newremotesource_cred.png)
 
-10.5 To check the remote source status, open the context menu of Remote Sources and select **Show Remote Sources**. 
+10.5 To check the Remote Source status, open the context menu of Remote Sources and select **Show Remote Sources**. 
 
 ![New Remoute Source - Security section](./images/showremotesourcestatus.png)
+
+
 ## Summary
 
 Well done! You have succesfully set up an Azure Virtual Machine, installed the Data Provisioning Agent on it, connected the DPAgent with your SAP HANA Cloud instance and registered the MssqlLogReaderAdapter (to read from Azure Data Explorer). 
+
+</br>
+
 ## Troubleshooting
 
 ### Failed to connect to server SAP DBTech
@@ -588,6 +610,7 @@ In case you are facing the error shown on the screenshot below, make sure you ar
 ```shell
 su - dpa-user
 ```
+
 ![Wrong user on Azure VM](./images/wrong-user.png)
 
 ### Unable to make JDBC connection to server

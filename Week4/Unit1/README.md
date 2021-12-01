@@ -48,7 +48,7 @@ First, you need a SAP Analytics Cloud Trial account. That's what we do in this s
 
  ## Step 2 - Setup SAP HANA Cloud
 
-SAP HANA Cloud will play a substantial role in this weeks content. To be prepared for the next exercises, you'll set up a SAP HANA Cloud instance in your already existing SAP BTP Trial account. 
+SAP HANA Cloud will play a substantial role in this week's content. To be prepared for the next exercises, you'll set up a SAP HANA Cloud instance in your already existing SAP BTP Trial account. 
 
 ---
 
@@ -70,7 +70,7 @@ SAP HANA Cloud will play a substantial role in this weeks content. To be prepare
 
 ![Subaccount details](./images/07-subaccountdetails.png)
 
-2.6 Select the new subaccount once the subaccount provisioning is sucessfully finished. (When the *Onboarding* text disappears from the subaccount tile)
+2.6 Select the new subaccount once the subaccount provisioning has finished sucessfully. (When the **Onboarding** text disappears from the subaccount tile)
 
 2.7 Navigate to **Entitlements** and select **Configure Entitlements**. 
 
@@ -82,7 +82,7 @@ SAP HANA Cloud will play a substantial role in this weeks content. To be prepare
 
 2.9 Search for **HANA Cloud**, select the item from the result list and select all the available plans. Continue with **Add 3 Service plans**. 
 
-> not all of the service plans would actually be needed but it's easier if you want to continue with SAP HANA Cloud for other scenarios later on. 
+> Not all of the service plans are actually needed for this exercise but it's easier if you want to continue with SAP HANA Cloud for other scenarios later on. 
 
 ![SAP HANA Cloud service plans](./images/10-serviceplandetails.png)
 
@@ -98,11 +98,11 @@ SAP HANA Cloud will play a substantial role in this weeks content. To be prepare
 
 ![New cloud foundry environment detail](./images/13-new-environment.png)
 
-2.13 Select **Create Space** on the overview page of the subaccount to create a new Cloud Foundry space. 
+2.13 Select **Create Space** on the overview page of the subaccount to create a new **Cloud Foundry space**. 
 
 ![Create Cloud Foundry](./images/14-create-space.png)
 
-2.14 Provide **hanaspace** as the space name and assign the proposed space roles to your user. Once created, click on the new space below the **Create Space** button.
+2.14 Provide **hanaspace** as the space name and assign the available space roles to your user. Once created, select the new space which should be visible below the **Create Space** button which you recently clicked.
 
 2.15 Navigate to **SAP HANA Cloud** in your Cloud Foundry space and select **Create > SAP HANA database**. 
 
@@ -118,11 +118,11 @@ SAP HANA Cloud will play a substantial role in this weeks content. To be prepare
 
 2.18 Set **openSAP** as the SAP HANA Database instance name and provide a password for the DBADMIN user (Database administrator user). Accept all other default options and Create the HANA Database. 
 
-> **IMPORTANT:** You are going to use the DBADMIN user throughout the next exercises, so make sure that you can remember the password. 
+> **IMPORTANT:** You are going to use the DBADMIN user throughout the next exercises, so make sure that you can remember the password. Better note it down and store it safely.
 
 ![Input Forms HANA Cloud detail](./images/18-hanacloud-details.png)
 
-2.19 Click **Next Step** until you reach step 5 - **SAP HANA Database Advanced Settings**. Under **Allowed connections**, select **Allow all IP addressed** and click **Create Now**.
+2.19 Click **Next Step** until you reach **Step 5** - **SAP HANA Database Advanced Settings**. Under **Allowed connections**, select **Allow all IP addressed** and click **Create Now**.
 
 ![Create HANA Cloud now without further input](./images/all_all_IP.png)
 
@@ -135,5 +135,5 @@ SAP HANA Cloud will play a substantial role in this weeks content. To be prepare
 
 # Summary
 
-Congrats, good job! You succesfully created your own SAP Analytics Cloud Trial and already instantiated a SAP HANA Cloud instance. Both of them are essential bits & pieces for the next units in order to visualize data from Azure Data Explorer in SAP Analytics Cloud.
+Congrats, good job! You succesfully created your own SAP Analytics Cloud Trial and already instantiated an SAP HANA Cloud instance. Both of them are essential bits & pieces for the next units in order to visualize data from Azure Data Explorer in SAP Analytics Cloud.
 
