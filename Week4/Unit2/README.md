@@ -81,6 +81,28 @@ In order to load data into the Azure Data Explorer Cluster we need to create a d
 
 ![Copy URI](./images/11-RememberURI.jpg)
 
+
+2.5 As in a later Unit you will configure the database access from SAP HANA Cloud using your **Microsoft365 Developer Account** user, please ensure that also this user has access to your recently created database. 
+
+> **Reminder**: If you followed the previous units, by now you should have two different users in your Azure Active Directory. 
+>* The admin user which was used to create the Azure account (see Step 1 of [Week 1, Unit 3](../../Week1/Unit3/README.md))
+>* The user of your Microsoft365 Developer Account (see Step 4 of [Week 2, Unit 1](../../Week2/Unit1/README.md))
+
+
+Please follow the steps below to give your **Microsoft365 Developer Account user** access to the database. By default only the user who created to database should have access to it (which is your Azure admin user).
+
+* Navigate to the **Query** menu of your Azure Data Explorer cluster
+* Select **employeedb**
+* Copy the following **query** and replace the placeholders  with the email address of your **Microsoft365 Developer Account** user!
+
+    ```
+    .add database employeedb users ('aaduser=<YOUR_USER>@<YOUR_DOMAIN>.onmicrosoft.com')  
+    ```
+
+* **Run** the query.
+
+![Add database user - query](./images/add_databaseuser_query.png)
+
 ## Step 3 - Import data
 
 In order to simplify the import of data, a CSV file with related sample data is already available in a central Azure Blob storage. You can just access this blob storage to import the data into your database. 

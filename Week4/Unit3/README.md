@@ -567,15 +567,15 @@ In order to be able to connect to Azure Data Explorer, a specific Smart Data Int
 10.4 Scroll further down to the **Credentials** section of the **Remote Source creation form** and provide the following settings: 
 
 * **Credentials Mode:** Technical User
-* **User Name:** Your Microsoft Developer Account <YOUR_USER>@<YOUR_DOMAIN>.onmicrosoft.com
+* **User Name:** Your Microsoft365 Developer Account user email </br> <YOUR_USER>@<YOUR_DOMAIN>.onmicrosoft.com
 * **Password**: Password of your Microsoft Developer Account
 
 Click on **Create**.
 
-> **IMPORTANT**: If your authentication to the database fails run the below query in the ADX database (see **Troubleshooting** part of [Week 4, Unit 2](../../Week4/Unit2/README.md))
+> **IMPORTANT**: If your authentication to the database fails run the below query in the ADX database (see Step 2.5 of [Week 4, Unit 2](../../Week4/Unit2/README.md)). Use your **Microsoft365 Developer Account** user here!
 
 ```shell
- .add database employeedb users('aaduser=<YOUR_AZURE_AD_USER>@<YOUR_DOMAIN>.onmicrosoft.com')
+ .add database employeedb users ('aaduser=<YOUR_USER>@<YOUR_DOMAIN>.onmicrosoft.com') 
   ```
  
 ![New Remoute Source - Security section](./images/newremotesource_cred.png)
