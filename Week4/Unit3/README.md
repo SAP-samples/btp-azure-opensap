@@ -324,7 +324,7 @@ cd /tmp
 4.4 Extract the JDBC library archive and navigate to the extracted subdirectory `enu` to find  **mssql-jdbc-7.2.2.jre8.jar**
 
 ```shell
-tar -xf sqljdbc_7.2.2.0_enu.tar.gz && cd sqljdbc_7.2/enu
+tar -xvf sqljdbc_7.2.2.0_enu.tar.gz && cd sqljdbc_7.2/enu
 ```
 
 ![Extract JDBC archive](./images/extract_jdbc_archive.png)
