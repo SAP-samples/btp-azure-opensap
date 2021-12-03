@@ -149,10 +149,13 @@ macOS:
 
 > Hint: **azureuser** is the actual username to be used! Don't replace it with another username in case you followed this tutorial. 
 
+
 Windows: 
 ```shell
 ssh -i <.cer file name> azureuser@<public ip address>
 ```
+
+> If the key pair you have downloaded in Step 1.12 turns out to be a .pem file, please use the .pem file in the following step instead of the .cer file. 
 
 ![SSH connection on Windows](./images/ssh_connect_win.png)
 
@@ -160,6 +163,8 @@ macOS:
 ```shell
 chmod 400 <.cer file name> && ssh -i <.cer file name> azureuser@<public ip address>
 ```
+
+> If the key pair you have downloaded in Step 1.12 turns out to be a .pem file, please use the .pem file in the following step instead of the .cer file..
 
 ![SSH connection on Windows](./images/ssh_connect_mac.png)
 
@@ -240,6 +245,7 @@ Since the Virtual Machine is successfully created and prepared, you can now star
 scp -i <.cer file name> <downloaded DPAgent file> azureuser@<public ip address>:/tmp/
 ```
 
+> If the key pair you have downloaded in Step 1.12 turns out to be a .pem file, please use the .pem file in the following step instead of the .cer file.
 > The \<.cer file name\> and the \<public ip address\> were already used in Step 2.6. The same values should be used here. 
 > The \<downloaded DPAgent file\> is the file that you have downloaded in Step 3.1. Make sure that you are using the right path to the file in this command. 
 
@@ -311,6 +317,8 @@ Now that the installation has been finished, the DPAgent is ready to be configur
 ```shell
 scp -i <.cer file name> <downloaded jdbc file name> azureuser@<public ip address>:/tmp/
 ``` 
+
+> If the key pair you have downloaded in Step 1.12 turns out to be a .pem file, please use the .pem file in the following step instead of the .cer file.
 
 ![Copy JDBC driver on macOS](./images/jdbc_driver_copy_windows.png)
 
