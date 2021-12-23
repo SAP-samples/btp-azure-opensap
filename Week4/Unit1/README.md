@@ -58,7 +58,7 @@ SAP HANA Cloud will play a substantial role in this week's content. To be prepar
 
 2.2 Select **Go To Your Trial Account**. 
 
-2.3 **Create** a new subaccount. 
+2.3 **Create** a new **Subaccount**. 
 
 ![New Subaccount Button](./images/06_newsubaccount.png)
 
