@@ -22,7 +22,7 @@ First, you need a SAP Analytics Cloud Trial account. That's what we do in this s
 
 ---
 
-1.1 Open [https://www.sap.com/products/cloud-analytics/trial.html] (https://www.sap.com/products/cloud-analytics/trial.html). 
+1.1 Open [https://www.sap.com/products/cloud-analytics/trial.html](https://www.sap.com/products/cloud-analytics/trial.html). 
 
 1.2 Make sure you are logged in with your user that you have created/used in [Week 1, Unit 2](../../Week1/Unit2/README.md)
 
