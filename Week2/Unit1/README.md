@@ -1,3 +1,9 @@
+---
+
+Even though the course is now closed, you can still access the videos and PDFs in self-paced mode via the openSAP course itself. The hands-on exercises will continue to be available for some time. However, certain steps and screenshots may be out of date as products continue to evolve. Therefore, we cannot guarantee that all exercises will work as expected after the end of the course.
+
+---
+
 This exercise is part of the openSAP course [Building applications on SAP Business Technology Platform with Microsoft services](https://open.sap.com/courses/btpma1) - there you will find more information and context. 
 
 # Setting up the development environment
@@ -5,10 +11,6 @@ This exercise is part of the openSAP course [Building applications on SAP Busine
 The objective of the exercise is to setup the development environment for the following units and weeks. Specifically, for this Unit, this means that you will sign up for the Microsoft365 program and create a SharePoint page, which is required for Unit 2. PDF files coming from a S/4HANA system will be stored there.
 
 Additionally, you are going to add the Microsoft365 Developer account as an administrator to the Azure subscription. With the Microsoft365 Developer Account you have access to Microsoft Teams but to use the Microsoft Bot channel (that's coming with the Azure trial subscription) a Azure subscription is necessary. 
-
-## Problems
-> If you have any issues with the exercises, don't hesitate to open a question in the openSAP Discussion forum for this course. Provide the exact step number: "Week2Unit1, Step 1.1: Command cannot be executed. My expected result was [...], my actual result was [...]". Logs, etc. are always highly appreciated. 
- ![OpenSAP Discussion](../../images/opensap-forum.png)
 
 ## Step 1 - Create a Microsoft365 Developer Account
 

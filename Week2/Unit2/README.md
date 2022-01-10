@@ -1,13 +1,14 @@
+---
+
+Even though the course is now closed, you can still access the videos and PDFs in self-paced mode via the openSAP course itself. The hands-on exercises will continue to be available for some time. However, certain steps and screenshots may be out of date as products continue to evolve. Therefore, we cannot guarantee that all exercises will work as expected after the end of the course.
+
+---
+
 This exercise is part of the openSAP course [Building applications on SAP Business Technology Platform with Microsoft services](https://open.sap.com/courses/btpma1) - there you will find more information and context. 
 
 # Setting up the SAP Integration Suite
 
-The objective of this exercise is to set up your Integration Suite instance within your Business Technology Platform subaccount. This is another part of your development environment, which will be required in the upcoming course units. The Integration Suite contains the **Cloud Integration** and the **Open Connectors** component, which you will use to extract PDF files from an S/4HANA system and to send them to the relevant SharePoint page. 
-
-## Problems
-> If you have any issues with the exercises, don't hesitate to open a question in the openSAP Discussion forum for this course. Provide the exact step number: "Week2Unit2, Step 1.1: Command cannot be executed. My expected result was [...], my actual result was [...]". Logs, etc. are always highly appreciated. 
- ![OpenSAP Discussion](../../images/opensap-forum.png)
-
+The objective of this exercise is to set up your Integration Suite instance within your Business Technology Platform subaccount. This is another part of your development environment, which will be required in the upcoming course units. The Integration Suite contains the **Cloud Integration** and the **Open Connectors** component, which you will use to extract PDF files from an S/4HANA system and to send them to the relevant SharePoint page.
 
 ## Step 1 - Subscribe to Integration Suite SaaS
 

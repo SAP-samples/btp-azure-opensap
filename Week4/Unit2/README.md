@@ -1,16 +1,14 @@
+---
 
+Even though the course is now closed, you can still access the videos and PDFs in self-paced mode via the openSAP course itself. The hands-on exercises will continue to be available for some time. However, certain steps and screenshots may be out of date as products continue to evolve. Therefore, we cannot guarantee that all exercises will work as expected after the end of the course.
 
+---
 
 This exercise is part of the openSAP course [Building applications on SAP Business Technology Platform with Microsoft services](https://open.sap.com/courses/btpma1) - there you will find more information and context. 
 
 # Setup Azure Data Explorer instance and load data 
 
 In this exercise we will setup Azure Data Explorer (ADX) and import sample data. ADX will later on be connected to SAP HANA Cloud and the data surfaced in SAP Analytics Cloud. 
-
-## Problems
-> If you have any issues with the exercises, don't hesitate to open a question in the openSAP Discussion forum for this course. Provide the exact step number: "Week4Unit2, Step 1.1: Command cannot be executed. My expected result was [...], my actual result was [...]". Logs, etc. are always highly appreciated. 
- ![OpenSAP Discussion](../../images/opensap-forum.png)
-
 ## Step 1 - Login to Azure Portal and Create an Azure Data Explorer cluster
 
 Creating an Azure Data Explorer Cluster can be done via the UI using the Azure Portal or a command line interface. In the next steps we will use the Azure Portal. For this we are using the Azure Admin user created in [Week 1, Unit 3](../../Week1/Unit3/README.md) )

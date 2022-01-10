@@ -14,10 +14,6 @@ The objective of the exercise is to create a free Microsoft Azure subscription t
 
 Important: There are no costs involved! Even if your credit card information is required, it will only be used to verify your identity and to check whether you have already received Free Credits before. Your credit card will not be charged!
 
-## Problems
-> If you have any issues with the exercises, don't hesitate to open a question in the openSAP Discussion forum for this course. Provide the exact step number: "Week2Unit1, Step 1.1: Command cannot be executed. My expected result was [...], my actual result was [...]". Logs, etc. are always highly appreciated. 
- ![OpenSAP Discussion](../../images/opensap-forum.png)
-
 ## Step 1 - Create a new Azure Account
 
 1.1 Visit <https://azure.microsoft.com/en-us/free/> and click the **Start free** button.

@@ -12,10 +12,6 @@ The objective of the exercise is to create a SAP BTP Trial account that you can 
 
 If you already have an SAP BTP Trial account, you don't need to create a new one or move its content to a subaccount in another region! You can then skip this whole unit.
 
-## Problems
-> If you have any issues with the exercises, don't hesitate to open a question in the openSAP Discussion forum for this course. Provide the exact step number: "Week2Unit1, Step 1.1: Command cannot be executed. My expected result was [...], my actual result was [...]". Logs, etc. are always highly appreciated. 
- ![OpenSAP Discussion](../../images/opensap-forum.png)
-
 ## Step 1 - Setting up BTP Trial
 
 In this unit we lay the foundation for the other weeks in this course. You will frequently use SAP Business Technology Platform services that are part of the SAP Business Technology Platform Trial. In the following you will create your own trial account. 

@@ -1,3 +1,9 @@
+---
+
+Even though the course is now closed, you can still access the videos and PDFs in self-paced mode via the openSAP course itself. The hands-on exercises will continue to be available for some time. However, certain steps and screenshots may be out of date as products continue to evolve. Therefore, we cannot guarantee that all exercises will work as expected after the end of the course.
+
+---
+
 This exercise is part of the openSAP course [Building applications on SAP Business Technology Platform with Microsoft services](https://open.sap.com/courses/btpma1) - there you will find more information and context. 
 
 
@@ -6,13 +12,6 @@ This exercise is part of the openSAP course [Building applications on SAP Busine
 As a final step, after sending adaptive cards, we continue and create a calendar entry in the requestors Outlook calendar triggered via an Microsoft Graph API call from SAP BTP using Microsoft Graph APIs. 
 
 Microsoft Graph provides a central endpoint with access to data and services of Microsoft 365. To test the available APIs you can use [Microsoft Graph Explorer](https://graph.microsoft.com) as a playground to test.
-
-
-
-## Problems
-> If you have any issues with the exercises, don't hesitate to open a question in the openSAP Discussion forum for this course. Provide the exact step number: "Week3Unit1, Step 1.1: Command cannot be executed. My expected result was [...], my actual result was [...]". Logs, etc. are always highly appreciated. 
-
- ![OpenSAP Discussion](../../images/opensap-forum.png)
 
 ## Step 1 - Register an App in Azure Active Directory
 
