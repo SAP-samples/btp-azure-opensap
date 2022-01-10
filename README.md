@@ -1,5 +1,12 @@
 [![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/btp-azure-opensap)](https://api.reuse.software/info/github.com/SAP-samples/btp-azure-opensap)
 
+--- 
+
+Even though the course is now closed, you can still access the videos and PDFs in self-paced mode via the [openSAP course itself](https://open.sap.com/courses/btpma1).
+The hands-on exercises will continue to be available for some time. However, certain steps and screenshots may be out of date as products continue to evolve. Therefore, we cannot guarantee that all exercises will work as expected after the end of the course.
+
+---
+
 
 # Building applications on SAP BTP with Microsoft Services
 
@@ -8,10 +15,6 @@ Welcome! This repository serves as a central point for all exercises that are pa
 For all information about the course and the corresponding content please visit the [openSAP course page](https://open.sap.com/courses/btpma1). The exercises individually are only a small subset of the course and are not meant to be used on their own.  
 
 Please do the exercises whenever they appear in the respective week pages in the openSAP course. 
-
-## How to obtain support
- If you have any issues with the exercises, don't hesitate to open a question in the openSAP Discussion forum for this course. Provide the exact step number: "Week2Unit1, Step 1.1: Command cannot be executed. My expected result was [...], my actual result was [...]". Logs, etc. are always highly appreciated. 
- ![OpenSAP Discussion](./images/opensap-forum.png)
 
 ### Accounts/Subscriptions needed in this course 
 
